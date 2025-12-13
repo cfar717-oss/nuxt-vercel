@@ -23,6 +23,11 @@ const links = [
     to: '/collection/summer-collection',
     onSelect: closeCategoryMenu,
   },
+  {
+    label: 'XML Upload',
+    to: '/upload',
+    onSelect: closeCategoryMenu,
+  },
 ]
 </script>
 
