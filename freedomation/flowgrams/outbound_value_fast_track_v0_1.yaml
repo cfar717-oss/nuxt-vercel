@@ -18,6 +18,18 @@ modes:
   - trial_surface
   - full_deep
 
+artifacts:
+  - artifact.project_brief.v0_1
+  - artifact.prospect_list.v0_1
+  - artifact.prospect_snapshot.v0_1
+  - artifact.persona_map.v0_1
+  - artifact.value_offer.v0_1
+  - artifact.asset_choice.v0_1
+  - artifact.outreach_sequence.v0_1
+  - artifact.invitation_script.v0_1
+  - artifact.resonance_dashboard.v0_1
+  - artifact.qa_report.v0_1
+
 initial_artifacts:
   required:
     - artifact.project_brief.v0_1
