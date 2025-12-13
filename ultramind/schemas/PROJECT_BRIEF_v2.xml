@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project_brief version="2.0">
+  <metadata>
+    <created_date>2025-12-13</created_date>
+    <last_modified>2025-12-13</last_modified>
+    <status>production</status>
+    <schema_version>2.0</schema_version>
+  </metadata>
+
+  <project_identity>
+    <name>Ultramind System</name>
+    <tagline>Contextual Computing for Transformation-Driven Intelligence</tagline>
+    <vision>
+      Moving from Direct Response manipulation to Agentic Resonance -
+      genuine insight, human connection, and authentic transformation
+      through AI-amplified human intelligence.
+    </vision>
+    <mission>
+      Build transformation infrastructure that scales authentic influence
+      with soul, enabling Synchronous Wealth and operating in the
+      Affection Economy where relationship precedes transaction.
+    </mission>
+  </project_identity>
+
+  <core_philosophy>
+    <principle name="Contextual Computing">
+      <description>Intelligence that adapts to context - not just information retrieval, but insight generation appropriate to the moment</description>
+      <manifestation>Progressive disclosure ensures skills provide exactly the depth needed. No more, no less. Context-aware intelligence.</manifestation>
+    </principle>
+
+    <principle name="Agentic Resonance Over Manipulation">
+      <description>Moving from Direct Response (manipulate toward transaction) to Agentic Resonance (genuine insight, human connection, transformation)</description>
+      <manifestation>Skills include "Heart Test" validation, humanizing elements, emphasis on Applied Inspiration over coercion</manifestation>
+    </principle>
+
+    <principle name="Radical Simplicity at Core">
+      <description>Despite sophisticated capability, activation is simple. Complex ecosystems emerge from simple coordination primitives.</description>
+      <manifestation>Awakening protocol: one skill activates → related skills enter L1 awareness. That's it. Simplicity scales.</manifestation>
+    </principle>
+
+    <principle name="Human-AI Collaborative Intelligence">
+      <description>Not AI replacing humans, but AI amplifying human insight. Shared intelligence, not second brain.</description>
+      <manifestation>Skills built from human-curated masterclasses. Human reviews, refines, deploys. AI executes at superhuman scale with human resonance.</manifestation>
+    </principle>
+  </core_philosophy>
+
+  <architecture>
+    <skill_creation_pipeline>
+      <stage number="1" name="Human Curation">
+        <input>Raw masterclasses, courses, transcripts</input>
+        <output>Curated masterclass documents (2-5 per topic)</output>
+        <responsibility>Human curator</responsibility>
+      </stage>
+
+      <stage number="2" name="Meta XML Synthesizer">
+        <input>2-5 curated masterclass documents</input>
+        <output>Single unified patch XML encoding core concepts</output>
+        <components>
+          <component>core_thesis (2-5 foundational truths)</component>
+          <component>unique_mechanisms (proprietary frameworks)</component>
+          <component>frameworks (3-7 structured processes)</component>
+          <component>heuristics (5-10 IF/THEN decision rules)</component>
+          <component>anti_patterns (3-7 common failures with alternatives)</component>
+          <component>agent_behavior_rules (5-10 explicit workflow instructions)</component>
+          <component>humanizing_elements (1-5 metaphors/principles/patterns)</component>
+        </components>
+      </stage>
+
+      <stage number="3a" name="Master Knowledge Primer">
+        <input>Patch XML from Stage 2</input>
+        <output>Knowledge Layers Document (Markdown + XML)</output>
+        <layers>
+          <layer level="1" name="Quick Reference" tokens="200" load_timing="Always (cache layer)">
+            <content>3-7 golden rules, 1-2 canonical examples</content>
+          </layer>
+          <layer level="2" name="Core Instructions" tokens="1800" load_timing="Task activation (working memory)">
+            <content>All frameworks with procedures, complete heuristics</content>
+          </layer>
+          <layer level="3" name="Advanced &amp; Edge Cases" tokens="5000" load_timing="Complexity detected (on-demand)">
+            <content>Variations, anti-patterns, diagnostics, extended examples</content>
+          </layer>
+          <layer level="4" name="Technical Specification" tokens="3000" load_timing="Meta-operations only">
+            <content>Schemas, algorithms, formal definitions, constraints</content>
+          </layer>
+        </layers>
+      </stage>
+
+      <stage number="3b" name="Master Super-Skill Creator">
+        <input>
+          <item>Patch XML (from Stage 2)</item>
+          <item>Knowledge Layers Document (from Stage 3a)</item>
+        </input>
+        <output>Complete Production-Ready Skill Package</output>
+        <package_structure>
+          <file name="SKILL.md" size="3000-5000 words">Level 1 (Quick Reference) + Level 2 (Core Instructions)</file>
+          <file name="knowledge/level3_advanced.md" size="4000-6000 words">Framework variations, anti-patterns, edge cases</file>
+          <file name="knowledge/level4_technical_spec.md" size="2500-3500 words">Schemas, algorithms, formal definitions</file>
+          <file name="config/dependencies.yml">Upstream/downstream, awakening protocol, handoff contracts</file>
+          <file name="config/metadata.yml">ID, name, version, taxonomy, authorship</file>
+          <file name="tests/test_harness.md">5-10 validation prompts</file>
+          <file name="registry_entry.yml">Catalog metadata, classification, capabilities</file>
+        </package_structure>
+      </stage>
+    </skill_creation_pipeline>
+
+    <progressive_disclosure>
+      <state name="Aware/Awake" tokens="200">Skill knows it exists, can respond to "what do you do?"</state>
+      <state name="Active" tokens="2000">Full execution capability (L1+L2 loaded)</state>
+      <state name="Engaged" tokens="7000">Handling complexity (L1+L2+L3 loaded)</state>
+      <state name="Deep Mode" tokens="10000">Meta-operations, skill building (L1+L2+L3+L4 loaded)</state>
+    </progressive_disclosure>
+
+    <awakening_protocol>
+      <description>
+        When a skill activates, related skills automatically enter Level 1 awareness.
+        This creates an intelligent "skill mesh" where coordination happens naturally.
+      </description>
+      <efficiency>200 tokens spent to wake 3-5 related skills to awareness</efficiency>
+      <benefit>Complex ecosystem capability through simple L1 awareness cascade</benefit>
+    </awakening_protocol>
+
+    <memory_hierarchy>
+      <budget total="190000">
+        <allocation scenario="typical_task">2000 tokens (L1+L2), supports 10-15 active skills</allocation>
+        <allocation scenario="complex_task">7000 tokens (L1+L2+L3), supports 3-5 engaged skills</allocation>
+        <allocation scenario="meta_operation">10000 tokens (all levels), supports 1-2 deep mode skills</allocation>
+      </budget>
+    </memory_hierarchy>
+  </architecture>
+
+  <priority_skills>
+    <skill priority="1" status="in_development">
+      <name>Product Creation Genius &amp; Hybrid Offer Strategist</name>
+      <purpose>Design physical + digital bundle architecture</purpose>
+      <target_size>~15,000 words total</target_size>
+      <key_capabilities>
+        <capability>Physical + digital bundling frameworks</capability>
+        <capability>Fast Track pricing psychology</capability>
+        <capability>Offer mechanics for multi-component products</capability>
+        <capability>Launch coordination protocols</capability>
+        <capability>Community integration (micro-groups + AI support)</capability>
+      </key_capabilities>
+    </skill>
+
+    <skill priority="2" status="in_development">
+      <name>Email Campaign &amp; Copy Genius</name>
+      <purpose>End-to-end email marketing intelligence</purpose>
+      <target_size>~15,000 words total</target_size>
+      <scope>
+        <area>List growth &amp; deliverability</area>
+        <area>Welcome flows &amp; nurture sequences</area>
+        <area>Launch sequences</area>
+        <area>Sales email frameworks</area>
+        <area>Segmentation &amp; personalization</area>
+        <area>Retention &amp; reactivation campaigns</area>
+      </scope>
+    </skill>
+  </priority_skills>
+
+  <success_metrics>
+    <metric name="Skill Completion Rate">Target: 60%+ users complete transformation journey</metric>
+    <metric name="Context Efficiency">80% of tasks complete with L1+L2 only (~2K tokens)</metric>
+    <metric name="Resonance Score">Heart Test validation in user feedback</metric>
+    <metric name="Transformation Evidence">Before/after data, testimonials, milestone celebrations</metric>
+    <metric name="Ecosystem Coordination">Skills wake and collaborate without explicit orchestration</metric>
+  </success_metrics>
+
+  <development_timeline>
+    <phase name="Foundation Complete" status="done">
+      <milestone>Architecture validated</milestone>
+      <milestone>Meta-infrastructure built</milestone>
+      <milestone>3-stage pipeline designed</milestone>
+    </phase>
+
+    <phase name="XML Production Build" status="active">
+      <milestone>Build Product Creation Genius (Week 1)</milestone>
+      <milestone>Build Email Campaign Genius (Week 1)</milestone>
+      <milestone>Validate pipeline end-to-end (Week 2)</milestone>
+    </phase>
+
+    <phase name="Ecosystem Expansion" status="planned">
+      <milestone>Convert 14 existing skills to XML v11 (Weeks 3-6)</milestone>
+      <milestone>Build remaining 6-8 priority skills (Weeks 7-10)</milestone>
+      <milestone>Deploy 22-skill intelligence ecosystem (Week 10)</milestone>
+    </phase>
+  </development_timeline>
+
+  <transformation_principles>
+    <principle>Transformation over information (identity + behavior change, not just knowledge)</principle>
+    <principle>Whole solutions over feature lists (integrated systems, not parts)</principle>
+    <principle>Validation before building (profit-first, market-funded development)</principle>
+    <principle>Ethical timelines (honest expectations, celebrate incremental progress)</principle>
+    <principle>Human core, AI shell (AI amplifies human method, doesn't replace it)</principle>
+    <principle>Sustainable economics (support level matches price, no burnout)</principle>
+  </transformation_principles>
+</project_brief>

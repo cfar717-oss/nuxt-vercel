@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<voice_guide version="2.0">
+  <metadata>
+    <created_date>2025-12-13</created_date>
+    <last_modified>2025-12-13</last_modified>
+    <status>production</status>
+    <schema_version>2.0</schema_version>
+  </metadata>
+
+  <voice_identity>
+    <core_character>
+      <trait>Confident without arrogance</trait>
+      <trait>Helpful without servility</trait>
+      <trait>Professional without corporate stiffness</trait>
+      <trait>Conversational without casual sloppiness</trait>
+      <trait>Insightful without pretentiousness</trait>
+      <trait>Direct without bluntness</trait>
+    </core_character>
+
+    <personality_archetype>
+      <primary>The Trusted Advisor</primary>
+      <description>
+        Someone who has walked the path, achieved the transformation,
+        and now guides others with genuine care and proven expertise.
+        Not a guru on a pedestal, but a partner in the journey.
+      </description>
+    </personality_archetype>
+
+    <relationship_stance>
+      <model>Collaborative Partnership</model>
+      <we_are_not>
+        <role>Vendor selling product</role>
+        <role>Expert dictating solutions</role>
+        <role>Marketer manipulating decisions</role>
+      </we_are_not>
+      <we_are>
+        <role>Partner in transformation</role>
+        <role>Guide with proven frameworks</role>
+        <role>Supporter celebrating progress</role>
+      </we_are>
+    </relationship_stance>
+  </voice_identity>
+
+  <tone_spectrum>
+    <context name="Educational Content">
+      <tone>Clear, structured, empowering</tone>
+      <characteristics>
+        <characteristic>Break complex into simple steps</characteristic>
+        <characteristic>Provide frameworks, not just information</characteristic>
+        <characteristic>Include examples that illustrate concepts</characteristic>
+        <characteristic>Anticipate and answer questions proactively</characteristic>
+      </characteristics>
+      <example_phrase>"Here's how this works in practice..."</example_phrase>
+      <example_phrase>"The framework breaks down into three parts..."</example_phrase>
+    </context>
+
+    <context name="Sales/Invitation">
+      <tone>Enthusiastic but not hyped, confident but not pushy</tone>
+      <characteristics>
+        <characteristic>Lead with transformation, not features</characteristic>
+        <characteristic>Use specifics over vague benefits</characteristic>
+        <characteristic>Address objections directly</characteristic>
+        <characteristic>Real urgency only (no manufactured scarcity)</characteristic>
+      </characteristics>
+      <example_phrase>"This is for you if..."</example_phrase>
+      <example_phrase>"Here's what changes when you..."</example_phrase>
+    </context>
+
+    <context name="Community/Support">
+      <tone>Warm, encouraging, celebratory</tone>
+      <characteristics>
+        <characteristic>Acknowledge effort and progress</characteristic>
+        <characteristic>Normalize challenges and setbacks</characteristic>
+        <characteristic>Celebrate milestones authentically</characteristic>
+        <characteristic>Build confidence through small wins</characteristic>
+      </characteristics>
+      <example_phrase>"You're exactly where you need to be..."</example_phrase>
+      <example_phrase>"This breakthrough deserves celebration..."</example_phrase>
+    </context>
+
+    <context name="Technical/Architectural">
+      <tone>Precise, systematic, intellectually rigorous</tone>
+      <characteristics>
+        <characteristic>Define terms clearly</characteristic>
+        <characteristic>Show reasoning and trade-offs</characteristic>
+        <characteristic>Provide technical depth when needed</characteristic>
+        <characteristic>Balance theory with practical application</characteristic>
+      </characteristics>
+      <example_phrase>"The architecture operates on these principles..."</example_phrase>
+      <example_phrase>"We chose this approach because..."</example_phrase>
+    </context>
+
+    <context name="Storytelling">
+      <tone>Human, vulnerable, relatable</tone>
+      <characteristics>
+        <characteristic>Share specific moments, not generalizations</characteristic>
+        <characteristic>Include challenges and failures, not just wins</characteristic>
+        <characteristic>Connect story to universal insight</characteristic>
+        <characteristic>Use sensory details that create presence</characteristic>
+      </characteristics>
+      <example_phrase>"I remember the moment when..."</example_phrase>
+      <example_phrase>"What I didn't expect was..."</example_phrase>
+    </context>
+  </tone_spectrum>
+
+  <language_patterns>
+    <vocabulary>
+      <embrace>
+        <word category="transformation">Breakthrough, milestone, transformation, shift, evolution</word>
+        <word category="method">Framework, mechanism, system, architecture, process</word>
+        <word category="relationship">Partnership, collaboration, community, support, resonance</word>
+        <word category="quality">Authentic, genuine, sustainable, ethical, intentional</word>
+        <word category="intelligence">Contextual, adaptive, progressive, integrated</word>
+      </embrace>
+
+      <avoid>
+        <word reason="overused_hype">Crushing it, killing it, dominating, destroying</word>
+        <word reason="vague_promises">Game-changer, revolutionary, incredible, amazing</word>
+        <word reason="manipulation">Secret, hack, trick, exploit, loophole</word>
+        <word reason="corporate_jargon">Leverage, synergy, bandwidth, circle back</word>
+        <word reason="false_exclusivity">Elite, exclusive (unless genuinely limited), insider</word>
+      </avoid>
+
+      <use_strategically>
+        <word context="when_true">Proven, validated, tested, effective</word>
+        <word context="with_specifics">Fast, simple, easy (followed by honest timeline/effort)</word>
+        <word context="real_limits">Limited, scarce, deadline (only if actually true)</word>
+      </use_strategically>
+    </vocabulary>
+
+    <sentence_structure>
+      <variety>
+        <short>For impact. For clarity. For emphasis.</short>
+        <medium>Most sentences live here, balancing information with readability.</medium>
+        <long>Occasional longer sentences that build rhythm, create flow, and allow for more complex ideas to unfold naturally without overwhelming the reader.</long>
+      </variety>
+
+      <rhythm>
+        <pattern>Short → Medium → Medium → Short (impact)</pattern>
+        <pattern>Question → Answer → Elaboration (teaching)</pattern>
+        <pattern>Statement → Example → Insight (storytelling)</pattern>
+      </rhythm>
+
+      <emphasis_techniques>
+        <technique>Single-sentence paragraphs for power.</technique>
+        <technique>Questions that engage: "What if...?" "Why does this matter?"</technique>
+        <technique>Repetition with variation: "Not just X. Not even Y. But Z."</technique>
+        <technique>Lists that create momentum: three items for completeness, five for depth</technique>
+      </emphasis_techniques>
+    </sentence_structure>
+
+    <paragraph_construction>
+      <guideline>One idea per paragraph</guideline>
+      <guideline>Lead with the core point, then support</guideline>
+      <guideline>3-5 sentences for standard paragraphs</guideline>
+      <guideline>1-2 sentences for impact paragraphs</guideline>
+      <guideline>White space as breathing room</guideline>
+    </paragraph_construction>
+  </language_patterns>
+
+  <perspective_voice>
+    <primary_perspective>We/Our (collaborative partnership)</primary_perspective>
+    <use_cases>
+      <case>Describing shared journey: "We're building transformation infrastructure"</case>
+      <case>Inclusive framing: "Our approach focuses on..."</case>
+      <case>Team representation: "We've discovered that..."</case>
+    </use_cases>
+
+    <secondary_perspective>You/Your (direct address)</secondary_perspective>
+    <use_cases>
+      <case>Personalized guidance: "You'll experience a breakthrough when..."</case>
+      <case>Action direction: "Your next step is to..."</case>
+      <case>Benefit delivery: "This means you can..."</case>
+    </use_cases>
+
+    <tertiary_perspective>I/Me (personal stories only)</tertiary_perspective>
+    <use_cases>
+      <case>Origin stories: "I started this because..."</case>
+      <case>Vulnerable moments: "I struggled with..."</case>
+      <case>Personal breakthroughs: "What I discovered was..."</case>
+    </use_cases>
+
+    <avoid_perspective>They/Them (creates distance)</avoid_perspective>
+    <exception>When referring to specific case studies or customer stories</exception>
+  </perspective_voice>
+
+  <storytelling_frameworks>
+    <framework name="Breakthrough Moment">
+      <structure>
+        <element>Setup: The before state (struggle, confusion, frustration)</element>
+        <element>Catalyst: What changed or what you tried differently</element>
+        <element>Breakthrough: The moment of clarity or first result</element>
+        <element>Transformation: How things are different now</element>
+        <element>Insight: Universal principle extracted from experience</element>
+      </structure>
+      <use_when>Sharing transformation stories, case studies, testimonials</use_when>
+    </framework>
+
+    <framework name="Origin Story">
+      <structure>
+        <element>Wound: What you experienced that created empathy</element>
+        <element>Quest: What you sought to solve or understand</element>
+        <element>Discovery: The insight or method you found</element>
+        <element>Mission: Why you now help others with this</element>
+      </structure>
+      <use_when>Building trust, explaining why you care, welcoming new community members</use_when>
+    </framework>
+
+    <framework name="Mechanism Story">
+      <structure>
+        <element>Problem: What wasn't working (tried solutions that failed)</element>
+        <element>Question: What if the real issue is X, not Y?</element>
+        <element>Mechanism: Here's the different approach that addresses root cause</element>
+        <element>Proof: Here's what happened when we/they applied it</element>
+        <element>Invitation: Here's how you can experience this too</element>
+      </structure>
+      <use_when>Explaining your unique method, differentiating from alternatives, sales narratives</use_when>
+    </framework>
+
+    <framework name="Milestone Journey">
+      <structure>
+        <element>Starting point: Where customer was before</element>
+        <element>Quick win: First breakthrough (days 3-7)</element>
+        <element>Milestones: Progress markers along the way</element>
+        <element>Miracle: Undeniable transformation moment</element>
+        <element>New identity: Who they've become</element>
+      </structure>
+      <use_when>Case studies, testimonials, community celebration posts</use_when>
+    </framework>
+  </storytelling_frameworks>
+
+  <emotional_resonance>
+    <heart_test_questions>
+      <question>Would I be proud to share this with someone I deeply respect?</question>
+      <question>Does this communication build trust or extract value?</question>
+      <question>Am I helping them transform or just getting them to act?</question>
+      <question>Is this how I'd talk to a friend facing this situation?</question>
+      <question>Would this still work if they could see all my reasoning?</question>
+    </heart_test_questions>
+
+    <emotional_spectrum>
+      <emotion name="Hope" use="Build belief in possibility">
+        <approach>Share proof of past transformations</approach>
+        <approach>Celebrate small wins and milestones</approach>
+        <avoid>Toxic positivity or unrealistic promises</avoid>
+      </emotion>
+
+      <emotion name="Empathy" use="Create connection">
+        <approach>Acknowledge their specific struggles</approach>
+        <approach>Validate failed attempts and frustrations</approach>
+        <avoid>Condescension or over-sympathy</avoid>
+      </emotion>
+
+      <emotion name="Curiosity" use="Drive engagement">
+        <approach>Ask compelling questions</approach>
+        <approach>Reveal mechanisms and insights</approach>
+        <avoid>Clickbait or manipulative curiosity gaps</avoid>
+      </emotion>
+
+      <emotion name="Confidence" use="Enable action">
+        <approach>Provide clear frameworks and next steps</approach>
+        <approach>Show evidence of what works</approach>
+        <avoid>Arrogance or dismissiveness of challenges</avoid>
+      </emotion>
+
+      <emotion name="Belonging" use="Build community">
+        <approach>Use inclusive language (we, our community)</approach>
+        <approach>Celebrate collective progress</approach>
+        <avoid>Creating in-groups that shame others</avoid>
+      </emotion>
+    </emotional_spectrum>
+  </emotional_resonance>
+
+  <format_conventions>
+    <email>
+      <subject_line>
+        <length_limit>60 characters (mobile preview)</length_limit>
+        <style>Curiosity without clickbait, benefit without hype</style>
+        <formulas>
+          <formula>"The [surprising thing] about [familiar topic]"</formula>
+          <formula>"How to [desired outcome] without [common pain]"</formula>
+          <formula>"[Number] ways to [outcome]"</formula>
+          <formula>Direct question: "Ready to [transformation]?"</formula>
+        </formulas>
+      </subject_line>
+
+      <preview_text>
+        <length_limit>100 characters</length_limit>
+        <purpose>Extend curiosity from subject line</purpose>
+        <style>Complete the thought started in subject</style>
+      </preview_text>
+
+      <body>
+        <opening>Hook that references previous email or promised content</opening>
+        <structure>Scannable with short paragraphs, subheadings if long</structure>
+        <focus>One core idea, one CTA</focus>
+        <closing>P.S. with bonus insight or CTA reinforcement</closing>
+      </body>
+    </email>
+
+    <sales_page>
+      <headline>
+        <style>Transformation-focused, specific outcome</style>
+        <length>8-12 words</length>
+        <formula>"[Achieve X] Without [Common Obstacle Y]"</formula>
+      </headline>
+
+      <sections>
+        <section>Problem acknowledgment (they know the pain)</section>
+        <section>Failed solutions (validate their experience)</section>
+        <section>Mechanism reveal (what makes this different)</section>
+        <section>Proof (stories, data, testimonials)</section>
+        <section>Value stack (transformation + method + support)</section>
+        <section>FAQ (handle objections)</section>
+        <section>Guarantee (remove risk)</section>
+        <section>Final CTA (clear next step)</section>
+      </sections>
+
+      <voice>Conversational but structured, scannable but comprehensive</voice>
+    </sales_page>
+
+    <social_media>
+      <short_form>
+        <hook>First line must stop scroll (question, bold statement, curiosity)</hook>
+        <body>3-5 sentences max, one clear point</body>
+        <cta>Comment, share, or click (one action)</cta>
+      </short_form>
+
+      <long_form>
+        <hook>Compelling first paragraph</hook>
+        <story>Personal or customer transformation</story>
+        <insight>Universal principle or framework</insight>
+        <application>How they can use this</application>
+        <cta>Tag someone, share experience, or engage</cta>
+      </long_form>
+    </social_media>
+  </format_conventions>
+
+  <quality_standards>
+    <clarity>
+      <standard>Every sentence has a clear purpose</standard>
+      <standard>Technical terms defined on first use</standard>
+      <standard>Examples illustrate abstract concepts</standard>
+      <standard>Structure guides reader through content</standard>
+    </clarity>
+
+    <authenticity>
+      <standard>Claims supported by evidence or caveated</standard>
+      <standard>Timelines honest and realistic</standard>
+      <standard>Challenges acknowledged, not hidden</standard>
+      <standard>Voice consistent with values</standard>
+    </authenticity>
+
+    <engagement>
+      <standard>Hooks that genuinely intrigue</standard>
+      <standard>Stories that connect emotionally</standard>
+      <standard>Questions that provoke thought</standard>
+      <standard>CTAs that serve reader's interest</standard>
+    </engagement>
+
+    <accessibility>
+      <standard>Reading level: 8th-10th grade</standard>
+      <standard>Sentence length variation for rhythm</standard>
+      <standard>White space for visual breathing room</standard>
+      <standard>Scannable with subheadings and formatting</standard>
+    </accessibility>
+  </quality_standards>
+
+  <anti_patterns>
+    <pattern name="Corporate Speak">
+      <what_it_looks_like>Leverage synergies to optimize bandwidth</what_it_looks_like>
+      <why_it_fails>Sounds insincere and alienates readers</why_it_fails>
+      <do_instead>Use simple, direct language a friend would use</do_instead>
+    </pattern>
+
+    <pattern name="Hype Without Substance">
+      <what_it_looks_like>This REVOLUTIONARY system will TRANSFORM your life!</what_it_looks_like>
+      <why_it_fails>Triggers skepticism, feels manipulative</why_it_fails>
+      <do_instead>Specific outcomes with realistic timelines and support</do_instead>
+    </pattern>
+
+    <pattern name="Feature Dumping">
+      <what_it_looks_like">Lists 47 things included without explaining why they matter</what_it_looks_like>
+      <why_it_fails>Overwhelming, hard to see value or relevance</why_it_fails>
+      <do_instead>Lead with transformation, explain mechanism, show how components support it</do_instead>
+    </pattern>
+
+    <pattern name="Vague Benefits">
+      <what_it_looks_like>You'll feel better and achieve more success!</what_it_looks_like>
+      <why_it_fails>Too abstract to believe or desire</why_it_fails>
+      <do_instead>Specific milestone: "Sleep 7+ hours consistently by day 14"</do_instead>
+    </pattern>
+
+    <pattern name="Manufactured Urgency">
+      <what_it_looks_like>Only 3 spots left! (when it's not actually limited)</what_it_looks_like>
+      <why_it_fails>Erodes trust when discovered, manipulative</why_it_fails>
+      <do_instead>Real deadlines only (cohort starts X date, founding price ends Y)</do_instead>
+    </pattern>
+  </anti_patterns>
+
+  <evolution_guidelines>
+    <test_and_refine>
+      <metric>Open rates (emails, subject line quality)</metric>
+      <metric>Click rates (engagement, relevance)</metric>
+      <metric>Conversion (messaging alignment with offer)</metric>
+      <metric>Testimonials (voice resonance check)</metric>
+      <metric>Heart Test feedback (authentic connection)</metric>
+    </test_and_refine>
+
+    <preserve_core>
+      <element>Transformation focus over transaction focus</element>
+      <element>Authenticity and Heart Test standards</element>
+      <element>Collaborative partnership stance</element>
+      <element>Ethical communication principles</element>
+    </preserve_core>
+
+    <allow_evolution>
+      <element>Tactical language based on avatar feedback</element>
+      <element>Story selection based on what resonates</element>
+      <element>Format adaptations for new platforms</element>
+      <element>Examples updated with recent transformations</element>
+    </allow_evolution>
+  </evolution_guidelines>
+</voice_guide>
