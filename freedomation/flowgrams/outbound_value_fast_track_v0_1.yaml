@@ -1,0 +1,187 @@
+# Outbound Value Fast Track — Flowgram v0.1
+# Constitutional: Authentic Inspiration for outbound business development
+# Status: draft
+
+fg_id: "outbound_value_fast_track"
+version: "0.1.0"
+human_title: "Outbound Value Fast Track"
+constitutional_title: "Authentic Inspiration Outbound System (Resonance-First)"
+
+description: |
+  A complete outbound workflow that maps prospects to resonant personas,
+  crafts value-first offers, selects appropriate digital assets, sequences
+  outreach touchpoints, invites to community, and tracks resonance metrics.
+  Built on Agentic Resonance doctrine: truth-only personalization,
+  permission-based CTAs, no manipulation.
+
+modes:
+  - trial_surface
+  - full_deep
+
+initial_artifacts:
+  required:
+    - artifact.project_brief.v0_1
+  optional:
+    - artifact.prospect_list.v0_1
+
+nodes:
+  - node_id: "n1_prospect_research"
+    kb_ref: "KB-002"
+    human_title: "Prospect Research & Persona Mapping"
+    inputs_required:
+      - artifact.project_brief.v0_1
+      - artifact.prospect_list.v0_1
+    inputs_optional: []
+    outputs_primary:
+      - artifact.persona_map.v0_1
+    outputs_secondary:
+      - artifact.prospect_snapshot.v0_1
+    mode_behavior:
+      trial_surface:
+        depth: "quick_scan"
+        max_prospects: 5
+      full_deep:
+        depth: "comprehensive"
+        max_prospects: 50
+
+  - node_id: "n2_value_offer_design"
+    kb_ref: "KB-006"
+    human_title: "Strengths-to-Value Offer Mapping"
+    inputs_required:
+      - artifact.persona_map.v0_1
+      - artifact.project_brief.v0_1
+    inputs_optional: []
+    outputs_primary:
+      - artifact.value_offer.v0_1
+    outputs_secondary: []
+    mode_behavior:
+      trial_surface:
+        offers_count: 1
+      full_deep:
+        offers_count: 3
+
+  - node_id: "n3_asset_selection"
+    kb_ref: "KB-005"
+    human_title: "Digital Asset Menu Selection"
+    inputs_required:
+      - artifact.value_offer.v0_1
+      - artifact.persona_map.v0_1
+    inputs_optional: []
+    outputs_primary:
+      - artifact.asset_choice.v0_1
+    outputs_secondary: []
+
+  - node_id: "n4_outreach_sequence"
+    kb_ref: "KB-004"
+    human_title: "Value-First Outreach Sequence Design"
+    inputs_required:
+      - artifact.value_offer.v0_1
+      - artifact.asset_choice.v0_1
+      - artifact.persona_map.v0_1
+    inputs_optional:
+      - artifact.prospect_snapshot.v0_1
+    outputs_primary:
+      - artifact.outreach_sequence.v0_1
+    outputs_secondary: []
+    mode_behavior:
+      trial_surface:
+        touchpoints: 3
+      full_deep:
+        touchpoints: 7
+
+  - node_id: "n5_community_invitation"
+    kb_ref: "KB-009"
+    human_title: "Conversation-to-Community Playbook"
+    inputs_required:
+      - artifact.outreach_sequence.v0_1
+      - artifact.persona_map.v0_1
+    inputs_optional: []
+    outputs_primary:
+      - artifact.invitation_script.v0_1
+    outputs_secondary: []
+
+  - node_id: "n6_resonance_dashboard"
+    kb_ref: "KB-010"
+    human_title: "Resonance Metrics Dashboard"
+    inputs_required:
+      - artifact.outreach_sequence.v0_1
+      - artifact.invitation_script.v0_1
+    inputs_optional: []
+    outputs_primary:
+      - artifact.resonance_dashboard.v0_1
+    outputs_secondary: []
+
+edges:
+  - from: "n1_prospect_research"
+    to: "n2_value_offer_design"
+    artifact_type: "artifact.persona_map.v0_1"
+
+  - from: "n2_value_offer_design"
+    to: "n3_asset_selection"
+    artifact_type: "artifact.value_offer.v0_1"
+
+  - from: "n3_asset_selection"
+    to: "n4_outreach_sequence"
+    artifact_type: "artifact.asset_choice.v0_1"
+
+  - from: "n1_prospect_research"
+    to: "n4_outreach_sequence"
+    artifact_type: "artifact.persona_map.v0_1"
+
+  - from: "n2_value_offer_design"
+    to: "n4_outreach_sequence"
+    artifact_type: "artifact.value_offer.v0_1"
+
+  - from: "n4_outreach_sequence"
+    to: "n5_community_invitation"
+    artifact_type: "artifact.outreach_sequence.v0_1"
+
+  - from: "n1_prospect_research"
+    to: "n5_community_invitation"
+    artifact_type: "artifact.persona_map.v0_1"
+
+  - from: "n4_outreach_sequence"
+    to: "n6_resonance_dashboard"
+    artifact_type: "artifact.outreach_sequence.v0_1"
+
+  - from: "n5_community_invitation"
+    to: "n6_resonance_dashboard"
+    artifact_type: "artifact.invitation_script.v0_1"
+
+gates:
+  - gate_id: "ethics_gate_pre_delivery"
+    position: "before_delivery"
+    gate_ref: "gate.ethics_integrity.v0_1"
+    applies_to:
+      - "artifact.outreach_sequence.v0_1"
+      - "artifact.invitation_script.v0_1"
+    fail_action: "FIX"
+    retry_limit: 3
+
+  - gate_id: "deliverability_gate"
+    position: "before_delivery"
+    gate_ref: "gate.deliverability.v0_1"
+    applies_to:
+      - "artifact.outreach_sequence.v0_1"
+    fail_action: "FIX"
+    retry_limit: 2
+
+outputs:
+  - artifact.outreach_sequence.v0_1
+  - artifact.invitation_script.v0_1
+  - artifact.resonance_dashboard.v0_1
+
+acceptance_criteria:
+  - "All gates pass (ethics_integrity, deliverability)"
+  - "Output artifacts validate against schemas"
+  - "No manipulation tactics detected (shame, pressure, fake urgency)"
+  - "All personalization based on explicit inputs only"
+  - "CTAs are permission-based invitations"
+  - "Metrics dashboard includes resonance indicators (not just opens/clicks)"
+
+metadata:
+  author: "Freedomation Core Team"
+  created: "2025-12-13"
+  trust_tier: "draft"
+  risk_level: "medium"
+  doctrine_compliance: "agentic_resonance_v0_1"

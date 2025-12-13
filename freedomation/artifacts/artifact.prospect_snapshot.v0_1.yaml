@@ -1,0 +1,63 @@
+# Prospect Snapshot Artifact v0.1
+# Detailed snapshot of individual prospect based on research
+
+artifact_id: "artifact.prospect_snapshot.v0_1"
+version: "0.1.0"
+schema_type: "yaml"
+name: "Prospect Snapshot"
+description: |
+  Enriched profile of a single prospect with observable facts
+  gathered from public sources. Truth-only - no invented details.
+
+required_fields:
+  - field: "prospect_id"
+    type: "string"
+    description: "Unique identifier for this prospect"
+
+  - field: "name"
+    type: "string"
+    description: "Prospect name"
+
+  - field: "company"
+    type: "string"
+    description: "Current company"
+
+  - field: "role"
+    type: "string"
+    description: "Current role/title"
+
+  - field: "observable_facts"
+    type: "array"
+    description: "Verifiable facts from public sources only"
+    example:
+      - "Recently promoted to VP of Eng (LinkedIn update 2 weeks ago)"
+      - "Company announced Series B funding ($15M, TechCrunch)"
+      - "Posted on Twitter about scaling challenges"
+
+optional_fields:
+  - field: "recent_activity"
+    type: "array"
+    description: "Recent posts, articles, or public activity"
+
+  - field: "likely_pain_points"
+    type: "array"
+    description: "Inferred challenges (must be based on observable signals)"
+    example: ["Scaling team rapidly", "Building AI features"]
+
+  - field: "shared_connections"
+    type: "array"
+    description: "Mutual connections or shared communities"
+
+  - field: "engagement_signals"
+    type: "object"
+    description: "Signals of potential interest"
+    properties:
+      - "engaged_with_content": "boolean"
+      - "follows_on_social": "boolean"
+      - "attended_webinar": "boolean"
+
+metadata:
+  layer: "L2"
+  risk_level: "medium"
+  truth_only: "Must contain only verifiable facts from public sources"
+  no_invention: "Do not assume or fabricate personal details"

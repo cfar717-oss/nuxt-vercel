@@ -1,0 +1,62 @@
+# Persona Map Artifact v0.1
+# Resonant persona mapping (Personagram Lite) for outbound targeting
+
+artifact_id: "artifact.persona_map.v0_1"
+version: "0.1.0"
+schema_type: "yaml"
+name: "Persona Map"
+description: |
+  Maps prospects to resonant persona archetypes based on observable
+  patterns. Used to guide value offer creation and messaging tone.
+
+required_fields:
+  - field: "persona_archetype"
+    type: "string"
+    description: "Primary persona category"
+    example: "The Ambitious Builder, The Careful Optimizer, The Visionary Explorer"
+
+  - field: "core_motivation"
+    type: "string"
+    description: "Primary motivator based on observable behavior"
+    example: "Growth and impact, Efficiency and control, Innovation and discovery"
+
+  - field: "communication_preference"
+    type: "string"
+    description: "Preferred communication style"
+    example: "Direct and data-driven, Warm and collaborative, Big-picture and inspirational"
+
+  - field: "likely_challenges"
+    type: "array"
+    description: "Common challenges for this persona (based on patterns, not individuals)"
+    example:
+      - "Scaling team while maintaining culture"
+      - "Balancing speed with quality"
+      - "Finding technical talent"
+
+optional_fields:
+  - field: "resonant_themes"
+    type: "array"
+    description: "Themes likely to resonate with this persona"
+    example: ["autonomy", "impact", "efficiency", "innovation"]
+
+  - field: "engagement_style"
+    type: "string"
+    description: "How this persona typically engages with outbound"
+    example: "Responds to specific value, Needs social proof first, Values thought leadership"
+
+  - field: "anti_patterns"
+    type: "array"
+    description: "What to avoid with this persona"
+    example: ["Generic pitches", "Heavy sales language", "Vague promises"]
+
+  - field: "sample_value_angles"
+    type: "array"
+    description: "Value angles that typically work for this persona"
+    example:
+      - "Save 10 hours/week on [specific task]"
+      - "Scale your team without scaling headcount"
+
+metadata:
+  layer: "L2"
+  risk_level: "low"
+  note: "Persona maps are pattern-based, not individual predictions"

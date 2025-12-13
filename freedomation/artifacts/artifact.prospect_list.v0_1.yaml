@@ -1,0 +1,57 @@
+# Prospect List Artifact v0.1
+# List of prospects to research and potentially contact
+
+artifact_id: "artifact.prospect_list.v0_1"
+version: "0.1.0"
+schema_type: "yaml"
+name: "Prospect List"
+description: |
+  A list of prospects with basic identifying information.
+  Can be provided by user or generated from prospect research.
+
+required_fields:
+  - field: "prospects"
+    type: "array"
+    description: "List of prospect objects"
+    items:
+      - field: "name"
+        type: "string"
+        description: "Prospect name"
+        example: "Sarah Chen"
+
+      - field: "company"
+        type: "string"
+        description: "Company name"
+        example: "TechFlow Inc"
+
+      - field: "role"
+        type: "string"
+        description: "Job title/role"
+        example: "VP of Engineering"
+
+optional_fields:
+  - field: "linkedin_url"
+    type: "string"
+    description: "LinkedIn profile URL"
+
+  - field: "email"
+    type: "string"
+    description: "Email address (if known)"
+
+  - field: "twitter_handle"
+    type: "string"
+    description: "Twitter/X handle"
+
+  - field: "notes"
+    type: "string"
+    description: "Any additional context or notes"
+
+  - field: "source"
+    type: "string"
+    description: "Where this prospect came from"
+    example: "LinkedIn search, referral, conference, website scrape"
+
+metadata:
+  layer: "L2"
+  risk_level: "low"
+  pii_warning: "May contain personal information - handle according to GDPR/privacy laws"

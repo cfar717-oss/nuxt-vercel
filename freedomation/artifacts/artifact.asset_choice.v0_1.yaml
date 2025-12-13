@@ -1,0 +1,61 @@
+# Asset Choice Artifact v0.1
+# Selection of digital asset(s) to include in outreach
+
+artifact_id: "artifact.asset_choice.v0_1"
+version: "0.1.0"
+schema_type: "yaml"
+name: "Asset Choice"
+description: |
+  Specifies which digital asset(s) to offer in the outreach sequence.
+  Assets are value-first resources (guides, primers, templates, etc.)
+  given freely to build trust and demonstrate expertise.
+
+required_fields:
+  - field: "asset_type"
+    type: "string"
+    description: "Category of asset"
+    enum: ["guide", "primer", "blueprint", "template", "checklist", "framework", "case_study"]
+    example: "guide"
+
+  - field: "asset_title"
+    type: "string"
+    description: "Title of the asset"
+    max_length: 80
+    example: "The 30-Day AI Implementation Roadmap for SaaS Teams"
+
+  - field: "asset_description"
+    type: "string"
+    description: "Brief description of what's inside (2-3 sentences)"
+    example: "A step-by-step guide to planning, building, and shipping your first AI feature. Includes decision trees, vendor comparisons, and risk mitigation strategies."
+
+  - field: "delivery_mechanism"
+    type: "string"
+    description: "How the asset is delivered"
+    enum: ["pdf_download", "notion_page", "google_doc", "video", "interactive_tool"]
+    example: "pdf_download"
+
+optional_fields:
+  - field: "asset_url"
+    type: "string"
+    description: "URL to access the asset (if ready)"
+
+  - field: "gating"
+    type: "string"
+    description: "Access requirement"
+    enum: ["no_gate", "email_only", "email_plus_company"]
+    default: "email_only"
+
+  - field: "value_summary"
+    type: "string"
+    description: "Quick value proposition for this specific asset"
+    example: "Save 40 hours of research and avoid 3 common pitfalls"
+
+  - field: "cta_language"
+    type: "string"
+    description: "Suggested CTA for offering this asset"
+    example: "I'd love to send you a copy—would that be helpful?"
+
+metadata:
+  layer: "L2"
+  risk_level: "low"
+  note: "Assets must be genuinely valuable, not just lead magnets"

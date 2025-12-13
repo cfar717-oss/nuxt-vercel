@@ -1,0 +1,152 @@
+# Ethics & Integrity Gate v0.1
+# Enforces Agentic Resonance doctrine: Authentic Inspiration (no manipulation)
+
+gate_id: "gate.ethics_integrity.v0_1"
+version: "0.1.0"
+name: "Ethics & Integrity Gate"
+description: |
+  Validates all outbound content against Agentic Resonance principles.
+  Blocks manipulation tactics (shame, pressure, fake urgency/scarcity),
+  ensures truth-only personalization, and enforces permission-based CTAs.
+
+validation_rules:
+  - rule_id: "no_fake_urgency"
+    category: "manipulation"
+    severity: "high"
+    description: "Detect artificial urgency (limited time, expiring offers)"
+    trigger_patterns:
+      - "(?i)(only|just)\\s+\\d+\\s+(spots?|seats?|slots?)\\s+(left|remaining|available)"
+      - "(?i)(expires?|ending)\\s+(soon|today|tonight|in\\s+\\d+\\s+hours)"
+      - "(?i)don't\\s+miss\\s+(out|this)"
+      - "(?i)act\\s+now\\s+(or|before)"
+      - "(?i)limited\\s+time\\s+offer"
+      - "(?i)this\\s+won't\\s+last"
+    remediation: |
+      Remove time-pressure language. Replace with:
+      - "When you're ready, here's the next step..."
+      - "This is available when it makes sense for you."
+      - "No rush—explore at your own pace."
+
+  - rule_id: "no_fake_scarcity"
+    category: "manipulation"
+    severity: "high"
+    description: "Detect artificial scarcity tactics"
+    trigger_patterns:
+      - "(?i)only\\s+accepting\\s+\\d+\\s+(clients?|people)"
+      - "(?i)(exclusive|private)\\s+group\\s+of\\s+\\d+"
+      - "(?i)I\\s+can\\s+only\\s+(take|work\\s+with)\\s+\\d+"
+      - "(?i)spots?\\s+filling\\s+(up|fast|quickly)"
+    remediation: |
+      Remove scarcity claims unless verifiably true and necessary.
+      If true capacity limits exist, state them neutrally without pressure.
+
+  - rule_id: "no_shame_tactics"
+    category: "manipulation"
+    severity: "critical"
+    description: "Detect shame-based or fear-based hooks"
+    trigger_patterns:
+      - "(?i)if\\s+you're\\s+still\\s+(struggling|failing)"
+      - "(?i)stop\\s+(making|doing)\\s+these\\s+mistakes"
+      - "(?i)you're\\s+(doing\\s+it\\s+wrong|missing\\s+out)"
+      - "(?i)(winners|successful\\s+people)\\s+do\\s+X.*losers"
+      - "(?i)don't\\s+be\\s+the\\s+person\\s+who"
+      - "(?i)are\\s+you\\s+tired\\s+of\\s+(failing|struggling)"
+    remediation: |
+      Reframe without shame or fear. Use supportive language:
+      - "Many people find [challenge] difficult. Here's an approach..."
+      - "If [challenge] resonates with you, this might help."
+      - "This is designed for people navigating [challenge]."
+
+  - rule_id: "no_pressure_cta"
+    category: "manipulation"
+    severity: "high"
+    description: "Ensure CTAs are permission-based invitations"
+    trigger_patterns:
+      - "(?i)(claim|grab|secure)\\s+your\\s+(spot|seat|place)"
+      - "(?i)you\\s+(need|must|should)\\s+(to\\s+)?(act|sign\\s+up|register)"
+      - "(?i)you'll\\s+regret\\s+(not|missing)"
+      - "(?i)(reserve|lock\\s+in)\\s+your"
+    remediation: |
+      Rewrite as permission-based invitation:
+      - "If this resonates, you're welcome to explore..."
+      - "When you're ready, here's how to connect..."
+      - "I'd love to share more if you're interested."
+
+  - rule_id: "truth_only_personalization"
+    category: "integrity"
+    severity: "critical"
+    description: "No invented personal details about prospect"
+    trigger_patterns:
+      - "(?i)as\\s+a\\s+(busy|struggling|successful)\\s+[^,]{1,30},\\s+you"
+      - "(?i)I\\s+know\\s+you're\\s+(probably|likely)"
+      - "(?i)you're\\s+probably\\s+(wondering|thinking|feeling)"
+    remediation: |
+      Only personalize based on explicit prospect inputs or observable facts.
+      Replace assumed details with:
+      - "Based on what you shared about [specific detail]..."
+      - "If [challenge] is relevant to you..."
+      - Generic framing when no specific input exists
+
+  - rule_id: "no_fabricated_proof"
+    category: "integrity"
+    severity: "critical"
+    description: "No invented testimonials, results, or case studies"
+    trigger_patterns:
+      - "(?i)[A-Z][a-z]+,\\s+a\\s+[^,]+,\\s+(increased|grew|achieved)"
+      - "(?i)(our\\s+clients|clients\\s+consistently|most\\s+clients)\\s+(see|get|achieve)\\s+\\d+[x%]"
+      - "(?i)(real\\s+results|proven\\s+system|guaranteed\\s+outcome)"
+    remediation: |
+      Remove fabricated claims. If you have real testimonials/results:
+      - Use only with explicit permission
+      - Include actual names (with consent) or "anonymous"
+      - Be specific about context and caveats
+      If no real proof exists, focus on process/approach instead of outcomes.
+
+  - rule_id: "no_therapy_claims"
+    category: "integrity"
+    severity: "medium"
+    description: "Avoid clinical/therapeutic framing"
+    trigger_patterns:
+      - "(?i)(heal|healing)\\s+your\\s+(trauma|wounds|past)"
+      - "(?i)(release|let\\s+go\\s+of)\\s+your\\s+(limiting\\s+beliefs|blocks)"
+      - "(?i)(transform|transformational)\\s+(healing|breakthrough|awakening)"
+      - "(?i)deep-seated\\s+(beliefs|patterns|issues)"
+    remediation: |
+      Use supportive language without therapy framing:
+      - "Navigate challenges" instead of "heal trauma"
+      - "Shift perspective" instead of "release limiting beliefs"
+      - "Practical approach" instead of "transformational healing"
+
+validation_process:
+  - step: "extract_text"
+    description: "Extract all text content from artifact (subject, body, CTA)"
+  - step: "apply_pattern_matching"
+    description: "Run regex patterns against extracted text"
+  - step: "flag_violations"
+    description: "Collect all rule violations with locations"
+  - step: "generate_report"
+    description: "Produce artifact.qa_report.v0_1 with specific failures and remediations"
+
+fail_action: "FIX"
+fail_behavior:
+  - "Generate artifact.qa_report.v0_1 with detailed violation list"
+  - "Include specific line/paragraph references for each violation"
+  - "Provide deterministic remediation instructions"
+  - "Re-invoke originating node with QA report as additional input"
+  - "Retry validation after fixes applied"
+  - "Escalate to manual review after retry_limit exceeded"
+
+pass_criteria:
+  - "No critical violations detected"
+  - "No more than 1 high-severity violation (with explicit acknowledgment)"
+  - "All medium/low violations reviewed and accepted"
+
+metadata:
+  author: "Freedomation Core Team"
+  created: "2025-12-13"
+  trust_tier: "draft"
+  doctrine_version: "agentic_resonance_v0_1"
+  applicable_artifacts:
+    - "artifact.outreach_sequence.v0_1"
+    - "artifact.invitation_script.v0_1"
+    - "artifact.value_offer.v0_1"

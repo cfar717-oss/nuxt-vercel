@@ -1,0 +1,86 @@
+# Resonance Dashboard Artifact v0.1
+# Metrics that measure authentic engagement (not just vanity metrics)
+
+artifact_id: "artifact.resonance_dashboard.v0_1"
+version: "0.1.0"
+schema_type: "yaml"
+name: "Resonance Dashboard"
+description: |
+  A dashboard spec for tracking resonance metrics: meaningful engagement,
+  conversation quality, and relationship progression. Goes beyond open rates.
+
+required_fields:
+  - field: "campaign_id"
+    type: "string"
+    description: "Identifier for this outbound campaign"
+
+  - field: "tracking_period"
+    type: "string"
+    description: "Date range for metrics"
+    example: "2025-12-01 to 2025-12-31"
+
+  - field: "metrics"
+    type: "object"
+    description: "Core metrics to track"
+    properties:
+      - field: "outreach_volume"
+        type: "object"
+        properties:
+          - "total_sent": "integer"
+          - "total_delivered": "integer"
+          - "total_bounced": "integer"
+
+      - field: "engagement_metrics"
+        type: "object"
+        properties:
+          - "opened": "integer"
+          - "clicked": "integer"
+          - "replied": "integer"
+          - "positive_sentiment_replies": "integer"
+
+      - field: "resonance_indicators"
+        type: "object"
+        description: "Deeper engagement signals"
+        properties:
+          - "asked_clarifying_question": "integer"
+          - "shared_own_challenge": "integer"
+          - "requested_asset": "integer"
+          - "introduced_to_colleague": "integer"
+          - "booked_call": "integer"
+
+      - field: "conversation_quality"
+        type: "object"
+        properties:
+          - "avg_reply_length": "integer"
+          - "multi_message_threads": "integer"
+          - "conversations_lasting_7plus_days": "integer"
+
+      - field: "conversion_metrics"
+        type: "object"
+        properties:
+          - "calls_booked": "integer"
+          - "calls_completed": "integer"
+          - "community_joins": "integer"
+          - "deals_initiated": "integer"
+
+optional_fields:
+  - field: "insights"
+    type: "array"
+    description: "Key insights or patterns observed"
+    example:
+      - "Touchpoint 3 (asset offer) has 3x higher reply rate than touchpoint 1"
+      - "VPs respond better than Directors (60% vs 35% reply rate)"
+
+  - field: "ethics_compliance"
+    type: "object"
+    description: "Ethics gate pass rate"
+    properties:
+      - "total_messages_gated": "integer"
+      - "passed_first_try": "integer"
+      - "passed_after_fix": "integer"
+      - "failed_all_retries": "integer"
+
+metadata:
+  layer: "L2"
+  risk_level: "low"
+  note: "Focus on resonance (quality) over vanity metrics (quantity)"

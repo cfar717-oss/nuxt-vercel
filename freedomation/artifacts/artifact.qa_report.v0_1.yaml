@@ -1,0 +1,78 @@
+# QA Report Artifact v0.1
+# Gate failure report with specific violations and remediation steps
+
+artifact_id: "artifact.qa_report.v0_1"
+version: "0.1.0"
+schema_type: "yaml"
+name: "QA Report"
+description: |
+  Generated when an artifact fails a gate. Contains specific violations,
+  locations, and deterministic remediation instructions.
+
+required_fields:
+  - field: "report_id"
+    type: "string"
+    description: "Unique identifier for this QA report"
+
+  - field: "gate_id"
+    type: "string"
+    description: "Which gate generated this report"
+    example: "gate.ethics_integrity.v0_1"
+
+  - field: "artifact_tested"
+    type: "string"
+    description: "Which artifact was tested"
+    example: "artifact.outreach_sequence.v0_1"
+
+  - field: "overall_status"
+    type: "string"
+    enum: ["PASS", "FAIL"]
+    description: "Did the artifact pass or fail"
+
+  - field: "violations"
+    type: "array"
+    description: "List of specific violations found"
+    items:
+      - field: "rule_id"
+        type: "string"
+        description: "Which rule was violated"
+        example: "no_fake_urgency"
+
+      - field: "severity"
+        type: "string"
+        enum: ["critical", "high", "medium", "low"]
+        description: "How severe is this violation"
+
+      - field: "location"
+        type: "string"
+        description: "Where in the artifact (touchpoint 2, paragraph 1, etc.)"
+
+      - field: "violating_text"
+        type: "string"
+        description: "Exact text that triggered the violation"
+        example: "Only 3 spots left!"
+
+      - field: "remediation"
+        type: "string"
+        description: "Specific instructions to fix"
+        example: "Remove artificial scarcity. Replace with: 'When you're ready, here's how to get started.'"
+
+optional_fields:
+  - field: "suggested_replacement"
+    type: "string"
+    description: "Specific replacement text (if available)"
+
+  - field: "retry_count"
+    type: "integer"
+    description: "How many times this has been attempted"
+
+  - field: "next_action"
+    type: "string"
+    description: "What should happen next"
+    example: "Re-run node n4_outreach_sequence with this QA report as additional input"
+
+metadata:
+  layer: "L4"
+  risk_level: "low"
+  generated_by: "gates"
+  consumed_by: "FIX loop, originating node"

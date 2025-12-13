@@ -1,0 +1,52 @@
+# Value Offer Artifact v0.1
+# Structured value proposition mapped to prospect persona
+
+artifact_id: "artifact.value_offer.v0_1"
+version: "0.1.0"
+schema_type: "yaml"
+name: "Value Offer"
+description: |
+  A clear, resonant value proposition that connects your strengths
+  to prospect needs. Grounded in truth, free of hype.
+
+required_fields:
+  - field: "headline"
+    type: "string"
+    description: "One-sentence value proposition"
+    max_length: 120
+    example: "Help Series A SaaS teams implement AI features without hiring a full ML team"
+
+  - field: "target_outcome"
+    type: "string"
+    description: "Specific outcome or result"
+    example: "Ship your first AI feature in 30 days instead of 6 months"
+
+  - field: "how_it_works"
+    type: "string"
+    description: "Brief explanation of approach/method (2-3 sentences)"
+    example: "We provide pre-trained models, integration templates, and hands-on guidance. Your team stays in control, we fill the knowledge gaps."
+
+  - field: "why_you"
+    type: "string"
+    description: "Why you're uniquely positioned to deliver this (based on real strengths)"
+    example: "10 years building ML systems at Google + 50+ SaaS implementations"
+
+optional_fields:
+  - field: "specific_deliverable"
+    type: "string"
+    description: "Tangible deliverable or next step"
+    example: "30-minute AI implementation roadmap session"
+
+  - field: "social_proof"
+    type: "string"
+    description: "Real testimonial or result (with permission) or leave blank"
+
+  - field: "risk_reversal"
+    type: "string"
+    description: "How you reduce risk for prospect"
+    example: "No-commitment first session, full refund if not valuable"
+
+metadata:
+  layer: "L2"
+  risk_level: "medium"
+  truth_requirement: "All claims must be verifiable and backed by real capability"

@@ -1,0 +1,57 @@
+# Project Brief Artifact v0.1
+# Initial context and objectives for the outbound campaign
+
+artifact_id: "artifact.project_brief.v0_1"
+version: "0.1.0"
+schema_type: "yaml"
+name: "Project Brief"
+description: |
+  Captures the core context for an outbound campaign: who you are,
+  what you offer, who you're targeting, and what success looks like.
+
+required_fields:
+  - field: "campaign_owner"
+    type: "string"
+    description: "Name of person/company running the campaign"
+    example: "Jane Smith / Acme Consulting"
+
+  - field: "core_offer_category"
+    type: "string"
+    description: "High-level category of offering"
+    example: "AI implementation consulting, Content strategy, Developer tools"
+
+  - field: "target_persona_hint"
+    type: "string"
+    description: "Brief description of ideal prospect"
+    example: "Series A SaaS founders struggling with user retention"
+
+  - field: "campaign_goal"
+    type: "string"
+    description: "Primary objective of outbound effort"
+    example: "Book 10 discovery calls in 30 days"
+
+optional_fields:
+  - field: "unique_strengths"
+    type: "array"
+    description: "3-5 unique strengths or differentiators"
+    example: ["10 years in fintech AI", "Published author", "Former head of growth at X"]
+
+  - field: "brand_voice"
+    type: "string"
+    description: "Tone/voice preference"
+    example: "warm, technical, no-nonsense"
+
+  - field: "channels"
+    type: "array"
+    description: "Preferred outreach channels"
+    example: ["email", "linkedin_dm"]
+
+  - field: "constraints"
+    type: "string"
+    description: "Any hard constraints or requirements"
+    example: "No cold calling, US prospects only, B2B SaaS only"
+
+metadata:
+  layer: "L2"
+  risk_level: "low"
+  typical_source: "manual_user_input"

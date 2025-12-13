@@ -1,0 +1,75 @@
+# Outreach Sequence Artifact v0.1
+# Multi-touchpoint outreach campaign designed for a specific persona
+
+artifact_id: "artifact.outreach_sequence.v0_1"
+version: "0.1.0"
+schema_type: "yaml"
+name: "Outreach Sequence"
+description: |
+  A sequence of outreach touchpoints (emails, DMs, etc.) designed to
+  build trust, demonstrate value, and invite conversation. Ethics-first.
+
+required_fields:
+  - field: "sequence_name"
+    type: "string"
+    description: "Internal name for this sequence"
+    example: "Series A SaaS AI Implementation - Cold"
+
+  - field: "touchpoints"
+    type: "array"
+    description: "List of individual outreach messages"
+    items:
+      - field: "touchpoint_number"
+        type: "integer"
+        description: "Sequence position (1, 2, 3...)"
+
+      - field: "channel"
+        type: "string"
+        enum: ["email", "linkedin_dm", "twitter_dm"]
+        description: "Delivery channel"
+
+      - field: "timing"
+        type: "string"
+        description: "When to send (relative to previous touchpoint)"
+        example: "Day 0 (immediate)", "Day 3", "Day 7"
+
+      - field: "subject_line"
+        type: "string"
+        description: "Subject line (email) or opening line (DM)"
+        max_length: 60
+
+      - field: "body"
+        type: "string"
+        description: "Message body"
+        max_length: 1000
+
+      - field: "cta"
+        type: "string"
+        description: "Call-to-action (permission-based)"
+        example: "If this resonates, I'd love to share the roadmap guide."
+
+      - field: "intent"
+        type: "string"
+        description: "Purpose of this touchpoint"
+        example: "Intro + value demo", "Follow-up + asset offer", "Gentle reminder + question"
+
+optional_fields:
+  - field: "personalization_tokens"
+    type: "array"
+    description: "Dynamic fields to be populated"
+    example: ["{{first_name}}", "{{company}}", "{{recent_activity}}"]
+
+  - field: "stop_conditions"
+    type: "array"
+    description: "When to stop this sequence"
+    example: ["Prospect replies", "Prospect books call", "Explicit unsubscribe", "14 days no engagement"]
+
+  - field: "ethics_notes"
+    type: "string"
+    description: "Specific ethics considerations for this sequence"
+
+metadata:
+  layer: "L2"
+  risk_level: "high"
+  gate_required: "ethics_integrity, deliverability"
+  note: "Must pass both gates before delivery"

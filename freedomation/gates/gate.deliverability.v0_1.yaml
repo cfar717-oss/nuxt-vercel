@@ -1,0 +1,152 @@
+# Deliverability Gate v0.1
+# Ensures outbound content follows best practices for email/message delivery
+
+gate_id: "gate.deliverability.v0_1"
+version: "0.1.0"
+name: "Deliverability Gate"
+description: |
+  Validates outbound content for technical deliverability.
+  Checks formatting, spam triggers, character limits, and channel-specific rules.
+
+validation_rules:
+  - rule_id: "subject_line_length"
+    category: "formatting"
+    severity: "high"
+    description: "Subject line must be <= 60 characters for email"
+    applies_to_channels: ["email"]
+    check_logic: "length(subject_line) <= 60"
+    remediation: |
+      Shorten subject line to 60 characters or less.
+      Focus on the core value proposition.
+      Remove filler words (like "just", "really", "very").
+
+  - rule_id: "short_paragraphs"
+    category: "formatting"
+    severity: "medium"
+    description: "Paragraphs should be 2-3 lines max"
+    check_logic: "max(lines_per_paragraph) <= 3"
+    remediation: |
+      Break long paragraphs into shorter chunks.
+      Use single line breaks between ideas.
+      Aim for 1-3 sentences per paragraph.
+
+  - rule_id: "single_cta"
+    category: "formatting"
+    severity: "medium"
+    description: "Each message should have exactly one primary CTA"
+    check_logic: "count(ctas) == 1"
+    remediation: |
+      Remove secondary CTAs.
+      Focus on one clear next step.
+      If multiple options needed, use a landing page instead.
+
+  - rule_id: "plain_text_safe"
+    category: "formatting"
+    severity: "high"
+    description: "Avoid spammy formatting (all caps, excessive punctuation)"
+    trigger_patterns:
+      - "[A-Z]{10,}"  # 10+ consecutive caps
+      - "[!?]{3,}"     # 3+ exclamation/question marks
+      - "\\${1,}\\d+[KkMm]?"  # Dollar amounts (can trigger spam)
+      - "(?i)(free|buy|click\\s+here|act\\s+now)\\s*!!+"
+    remediation: |
+      Use sentence case, not ALL CAPS.
+      Limit exclamation marks to 1 per message.
+      Avoid spammy punctuation (!!!, ???).
+      Replace "FREE" with "complimentary" or "no-cost".
+
+  - rule_id: "no_spam_triggers"
+    category: "deliverability"
+    severity: "critical"
+    description: "Avoid common spam trigger words/phrases"
+    trigger_patterns:
+      - "(?i)\\$\\$\\$+"
+      - "(?i)(100%|absolutely)\\s+(free|guaranteed)"
+      - "(?i)double\\s+your\\s+(income|money)"
+      - "(?i)make\\s+\\$\\d+\\s+(fast|quickly|overnight)"
+      - "(?i)click\\s+(here|below)\\s+now"
+      - "(?i)no\\s+(credit\\s+check|obligation|risk)"
+      - "(?i)(congratulations|you've\\s+been\\s+selected)"
+    remediation: |
+      Remove spam trigger language.
+      Use conversational, natural phrasing.
+      Avoid over-the-top promises or hype.
+
+  - rule_id: "no_excessive_links"
+    category: "deliverability"
+    severity: "medium"
+    description: "Limit links to 1-2 per message"
+    check_logic: "count(links) <= 2"
+    remediation: |
+      Reduce number of links.
+      Use a single landing page if multiple destinations needed.
+      Avoid link shorteners (bit.ly, etc.) in cold outreach.
+
+  - rule_id: "personalization_token_safety"
+    category: "formatting"
+    severity: "high"
+    description: "Ensure personalization tokens are properly formatted"
+    check_logic: "no_broken_tokens()"
+    trigger_patterns:
+      - "\\{\\{[^}]*$"  # Unclosed token
+      - "\\[\\[FIRSTNAME\\]\\]"  # Old-style placeholder not replaced
+    remediation: |
+      Fix broken personalization tokens.
+      Ensure all {{tokens}} are properly closed.
+      Verify tokens are replaced before sending (not left as placeholders).
+
+  - rule_id: "mobile_friendly_length"
+    category: "formatting"
+    severity: "low"
+    description: "Message body should be scannable on mobile (< 200 words for email)"
+    applies_to_channels: ["email"]
+    check_logic: "word_count(body) <= 200"
+    remediation: |
+      Shorten message for mobile readability.
+      Aim for 100-200 words max for cold outreach.
+      Use bullet points for scannability.
+
+validation_process:
+  - step: "identify_channel"
+    description: "Determine channel (email, LinkedIn DM, Twitter DM, etc.)"
+  - step: "extract_components"
+    description: "Extract subject, body, CTA, links, tokens"
+  - step: "apply_rules"
+    description: "Run channel-specific and universal validation rules"
+  - step: "flag_violations"
+    description: "Collect violations with severity levels"
+  - step: "generate_report"
+    description: "Produce artifact.qa_report.v0_1 if any high/critical violations"
+
+fail_action: "FIX"
+fail_behavior:
+  - "Generate artifact.qa_report.v0_1 with specific formatting fixes"
+  - "Provide before/after examples where possible"
+  - "Re-invoke originating node with QA report"
+  - "Retry validation after fixes"
+  - "Escalate after retry_limit"
+
+pass_criteria:
+  - "No critical violations"
+  - "No more than 2 high-severity violations"
+  - "All medium/low violations acknowledged"
+
+channel_specific_rules:
+  email:
+    - "subject_line_length"
+    - "mobile_friendly_length"
+    - "no_spam_triggers"
+  linkedin_dm:
+    - "short_paragraphs"
+    - "single_cta"
+  twitter_dm:
+    - "character_limit: 10000"
+    - "short_paragraphs"
+
+metadata:
+  author: "Freedomation Core Team"
+  created: "2025-12-13"
+  trust_tier: "draft"
+  applicable_artifacts:
+    - "artifact.outreach_sequence.v0_1"
+    - "artifact.invitation_script.v0_1"

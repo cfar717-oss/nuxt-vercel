@@ -1,0 +1,54 @@
+# Invitation Script Artifact v0.1
+# Permission-based invitation to community or next-step conversation
+
+artifact_id: "artifact.invitation_script.v0_1"
+version: "0.1.0"
+schema_type: "yaml"
+name: "Invitation Script"
+description: |
+  A warm, permission-based invitation to join a community, book a call,
+  or take the next step in the relationship. Never pushy or coercive.
+
+required_fields:
+  - field: "invitation_type"
+    type: "string"
+    enum: ["community_join", "discovery_call", "workshop_attend", "resource_access"]
+    description: "What you're inviting them to"
+
+  - field: "invitation_message"
+    type: "string"
+    description: "The invitation itself (2-4 sentences)"
+    max_length: 500
+    example: "I run a small community of SaaS founders navigating AI implementation. We share wins, challenges, and resources. If that sounds valuable, you're welcome to join—no pressure, just an open invite."
+
+  - field: "value_proposition"
+    type: "string"
+    description: "Why this is valuable to them (specific, not hype)"
+    example: "Get direct answers from people 6 months ahead of you + access to our vendor comparison spreadsheet"
+
+  - field: "opt_in_mechanism"
+    type: "string"
+    description: "How they say yes (low-friction)"
+    example: "Just reply 'interested' and I'll send the link", "Book a time here: [calendar_link]"
+
+optional_fields:
+  - field: "permission_language"
+    type: "string"
+    description: "Explicit permission framing"
+    example: "No obligation, you can leave anytime", "Only if this genuinely resonates"
+
+  - field: "what_happens_next"
+    type: "string"
+    description: "Clear next steps after they opt in"
+    example: "I'll send you the Slack invite within 24 hours"
+
+  - field: "social_proof"
+    type: "string"
+    description: "Real testimonial or current member count (if available)"
+    example: "Currently 47 founders, mostly Series A-B"
+
+metadata:
+  layer: "L2"
+  risk_level: "medium"
+  gate_required: "ethics_integrity"
+  permission_based: "Must be genuine invitation, never coercive"
