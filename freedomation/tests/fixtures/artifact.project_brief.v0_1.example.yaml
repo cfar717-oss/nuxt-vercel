@@ -1,0 +1,24 @@
+# Project Brief Example Fixture
+# This is a realistic example for testing the Outbound Value Fast Track workflow
+
+campaign_owner: "Jane Smith / Acme AI Consulting"
+
+core_offer_category: "AI implementation consulting for Series A SaaS companies"
+
+target_persona_hint: "VPs of Engineering at Series A-B SaaS companies (20-100 engineers) who want to ship AI features without hiring a full ML team"
+
+campaign_goal: "Book 15 discovery calls in 45 days"
+
+unique_strengths:
+  - "10 years building ML systems at Google Cloud AI"
+  - "Led 50+ SaaS AI implementations with avg 60-day time to first feature"
+  - "Created the 'AI Readiness Ladder' framework used by 200+ companies"
+  - "Active in YC and SaaStr communities with warm intro network"
+
+brand_voice: "Direct and technical, but warm. No-nonsense expert who's been in the trenches. Avoid hype and buzzwords."
+
+channels:
+  - "email"
+  - "linkedin_dm"
+
+constraints: "B2B SaaS only, US/Canada/UK prospects, no cold calling, avoid overly sales-y language"

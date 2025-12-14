@@ -1,0 +1,36 @@
+# Prospect Snapshot Example Fixture
+# Example of enriched prospect research data (truth-only, observable facts)
+
+prospect_id: "prospect_001"
+
+name: "Sarah Chen"
+
+company: "TechFlow Inc"
+
+role: "VP of Engineering"
+
+observable_facts:
+  - "Recently promoted to VP of Engineering (LinkedIn update 2 weeks ago)"
+  - "Company announced Series B funding ($15M, reported in TechCrunch on 2025-11-28)"
+  - "Posted on LinkedIn about challenges scaling eng team from 30 to 60 in 6 months"
+  - "Company website shows 3 open ML engineer positions"
+  - "Attended 'AI in Production' conference (speaker list, October 2025)"
+
+recent_activity:
+  - "LinkedIn post: 'The hardest part of hypergrowth isn't hiring, it's maintaining culture and velocity' (3 days ago, 47 likes)"
+  - "Commented on article about AI implementation challenges in SaaS"
+  - "Shared blog post from company CTO about technical debt management"
+
+likely_pain_points:
+  - "Scaling engineering team rapidly (based on funding announcement + hiring posts)"
+  - "Maintaining code quality during hypergrowth (based on LinkedIn post)"
+  - "Building AI features with limited ML expertise (based on open ML positions + conference attendance)"
+
+shared_connections:
+  - "Alex Rivera (mutual connection on LinkedIn, former Google colleague)"
+  - "Member of 'SaaS CTOs' Slack community (500+ members)"
+
+engagement_signals:
+  engaged_with_content: false
+  follows_on_social: false
+  attended_webinar: false
