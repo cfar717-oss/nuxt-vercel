@@ -1,0 +1,184 @@
+# ULTRAMIND TASK REQUEST EXAMPLES
+# These show how users/MOD invoke skills via structured requests
+
+---
+# EXAMPLE 1: Sales Page Creation (Full Pipeline)
+task_request:
+  id: "TR-2025-001"
+  type: "sales_page_creation"
+  objective: "Create long-form sales page for new supplement launch"
+
+  audience:
+    primary_avatar: "Health-conscious men 45-65"
+    awareness_level: 3  # Problem-aware, solution-aware
+    sophistication: 4   # Seen many supplement pitches
+
+  output_format: "long-form sales page (2000-3000 words)"
+
+  constraints:
+    - "FDA-compliant supplement language only"
+    - "No income claims"
+    - "Must use evidence from EvidencePack only"
+    - "60-day money-back guarantee must be prominent"
+
+  ssot_references:
+    project_brief: "ssot/instances/PB_Supplement_Launch_v2.xml"
+    message_spine: "ssot/instances/MS_Supplement_Core_v1.xml"
+    voice_guide: "ssot/instances/VG_Health_Authority_v1.xml"
+    evidence_pack: "ssot/instances/EP_Supplement_Claims_v3.xml"
+
+  deadline: "2025-12-20"
+
+  expected_routing:
+    # MOD would route this as:
+    chain:
+      - skill: "sales_page_copywriter"  # Primary execution
+      - skill: "testimonial_library_agent"  # Add social proof
+      - skill: "human_persuasion_editor"  # Polish flow
+      - skill: "MMA"  # Validate + score
+
+---
+# EXAMPLE 2: Email Sequence (Nurture Series)
+task_request:
+  id: "TR-2025-002"
+  type: "email_sequence_creation"
+  objective: "Create 5-email nurture sequence for supplement lead magnet subscribers"
+
+  sequence_details:
+    type: "nurture"
+    email_count: 5
+    send_cadence: "Every 2 days"
+    goal: "Warm leads toward sales page, address objections"
+
+  output_format: "5 emails (subject + body copy)"
+
+  constraints:
+    - "Each email max 400 words"
+    - "Second-person voice (VoiceGuide)"
+    - "No hard pitch until email 5"
+    - "Include story/education in emails 1-4"
+
+  ssot_references:
+    message_spine: "ssot/instances/MS_Supplement_Core_v1.xml"
+    voice_guide: "ssot/instances/VG_Health_Authority_v1.xml"
+    evidence_pack: "ssot/instances/EP_Supplement_Claims_v3.xml"
+
+  deadline: "2025-12-18"
+
+  expected_routing:
+    chain:
+      - skill: "email_copy_genius"
+      - skill: "MMA"
+
+---
+# EXAMPLE 3: Offer Development (Strategy First)
+task_request:
+  id: "TR-2025-003"
+  type: "offer_development"
+  objective: "Design offer positioning for new coaching program"
+
+  product_details:
+    format: "12-week group coaching + online course"
+    target_market: "Agency owners scaling to 7-figures"
+    price_range: "$3000-$5000"
+
+  output_format: "PROJECT_BRIEF + offer positioning document"
+
+  inputs_provided:
+    - "Market research on agency coaching space"
+    - "Competitor analysis (3 major programs)"
+    - "Customer interview transcripts (10 interviews)"
+
+  ssot_to_create:
+    - "PROJECT_BRIEF (new)"
+    - "MESSAGE_SPINE (draft)"
+
+  deadline: "2025-12-22"
+
+  expected_routing:
+    chain:
+      - skill: "market_intel_synth"  # Analyze research
+      - skill: "offer_architect"  # Create PB + positioning
+      - skill: "MMA"  # Validate completeness
+
+---
+# EXAMPLE 4: Copy Audit (Validation Only)
+task_request:
+  id: "TR-2025-004"
+  type: "copy_audit"
+  objective: "Audit existing sales page for compliance and voice adherence"
+
+  input_copy:
+    source: "examples/existing_sales_page_draft.txt"
+    format: "long-form sales page (2500 words)"
+
+  audit_focus:
+    - "Compliance (FDA/FTC)"
+    - "Voice adherence (VoiceGuide)"
+    - "Evidence grounding (EvidencePack)"
+    - "MESSAGE_SPINE alignment"
+
+  output_format: "MMA_SCORECARD + DELTA_LOG with prioritized fixes"
+
+  ssot_references:
+    message_spine: "ssot/instances/MS_Supplement_Core_v1.xml"
+    voice_guide: "ssot/instances/VG_Health_Authority_v1.xml"
+    evidence_pack: "ssot/instances/EP_Supplement_Claims_v3.xml"
+
+  expected_routing:
+    chain:
+      - skill: "MMA"  # Direct to validator
+
+---
+# EXAMPLE 5: Strategic Review (High-Level)
+task_request:
+  id: "TR-2025-005"
+  type: "strategic_review"
+  objective: "Review and refine MESSAGE_SPINE for coherence and market fit"
+
+  review_focus:
+    - "Promise/mechanism alignment"
+    - "Objection completeness (are we missing key objections?)"
+    - "Proof pillar strength (is authority weak?)"
+
+  inputs_provided:
+    - "Current MESSAGE_SPINE v1.0"
+    - "Customer feedback from beta launch"
+    - "Sales call objections log"
+
+  output_format: "MESSAGE_SPINE v2.0 + change log"
+
+  deadline: "2025-12-19"
+
+  expected_routing:
+    chain:
+      - skill: "strategic_copy_director"
+      - skill: "MMA"
+
+---
+# TASK REQUEST STRUCTURE (Template)
+task_request_template:
+  id: "[TR-YYYY-###]"
+  type: "[sales_page_creation | email_sequence_creation | offer_development | copy_audit | strategic_review]"
+  objective: "[Clear one-sentence goal]"
+
+  # Context (vary by task type)
+  audience: "[If relevant]"
+  output_format: "[What deliverable format]"
+  constraints: "[Any restrictions/requirements]"
+
+  # SSOT References
+  ssot_references:
+    project_brief: "[PB_ID or 'to be created']"
+    message_spine: "[MS_ID or 'to be created']"
+    voice_guide: "[VG_ID]"
+    evidence_pack: "[EP_ID]"
+
+  # Timing
+  deadline: "[ISO_DATE]"
+
+  # Optional: Expected routing (for testing)
+  expected_routing:
+    chain:
+      - skill: "[skill_id]"
+        condition: "[if relevant]"

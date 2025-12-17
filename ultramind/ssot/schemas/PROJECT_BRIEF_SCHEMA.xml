@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- PROJECT BRIEF SCHEMA v2.0 -->
+<!-- Single Source of Truth: Strategy Lock -->
+
+<ProjectBrief version="2.0" id="PB_[PROJECT_NAME]_v[VERSION]">
+
+  <Metadata>
+    <Created>[ISO_TIMESTAMP]</Created>
+    <LastModified>[ISO_TIMESTAMP]</LastModified>
+    <Author>[NAME]</Author>
+    <Status>draft | active | archived</Status>
+  </Metadata>
+
+  <Audience>
+    <PrimaryAvatar>
+      <Demographics>
+        <Age>[RANGE]</Age>
+        <Gender>[M/F/All]</Gender>
+        <Income>[RANGE]</Income>
+        <Location>[GEO]</Location>
+      </Demographics>
+      <Psychographics>
+        <CurrentState>[Where they are now]</CurrentState>
+        <DesiredState>[Where they want to be]</DesiredState>
+        <PrimaryFrustration>[Main pain point]</PrimaryFrustration>
+        <CoreDesire>[What they really want]</CoreDesire>
+        <Beliefs>
+          <Current>[What they believe now that holds them back]</Current>
+          <Required>[What they need to believe to buy]</Required>
+        </Beliefs>
+      </Psychographics>
+      <AwarenessLevel>1-5 (Schwartz scale)</AwarenessLevel>
+      <SophisticationLevel>1-5 (market maturity)</SophisticationLevel>
+    </PrimaryAvatar>
+  </Audience>
+
+  <Offer>
+    <CoreProduct>
+      <Name>[Product name]</Name>
+      <Format>[Physical/Digital/Service]</Format>
+      <DeliveryMethod>[How it's delivered]</DeliveryMethod>
+    </CoreProduct>
+    <Promise>
+      <Headline>[What transformation/result]</Headline>
+      <Timeframe>[How fast]</Timeframe>
+      <Specificity>[Specific measurable outcome if possible]</Specificity>
+    </Promise>
+    <Mechanism>
+      <Name>[The "how" - proprietary system/ingredient/method]</Name>
+      <UniqueAngle>[Why this is different/better than alternatives]</UniqueAngle>
+      <Believability>[Why it's credible - science/authority/proof]</Believability>
+    </Mechanism>
+    <Pricing>
+      <BasePrice>[Amount]</BasePrice>
+      <Comparison>[Market context - cheaper/premium]</Comparison>
+      <Justification>[Why this price is fair]</Justification>
+    </Pricing>
+    <Guarantee>
+      <Type>[Money-back/Results/Satisfaction]</Type>
+      <Duration>[Days]</Duration>
+      <Terms>[Conditions]</Terms>
+    </Guarantee>
+    <Bonuses>
+      <Bonus id="B1">
+        <Name>[Bonus name]</Name>
+        <Value>[Perceived value]</Value>
+        <Relevance>[How it enhances core offer]</Relevance>
+      </Bonus>
+      <!-- Add more as needed -->
+    </Bonuses>
+  </Offer>
+
+  <Constraints>
+    <Legal>
+      <Industry>[Supplement/Finance/Health/etc]</Industry>
+      <Regulations>
+        <Item>[FDA compliance, FTC guidelines, etc]</Item>
+      </Regulations>
+      <ForbiddenClaims>
+        <Claim>[Income claims, disease cure claims, etc]</Claim>
+      </ForbiddenClaims>
+      <RequiredDisclaimers>
+        <Disclaimer>[Required legal language]</Disclaimer>
+      </RequiredDisclaimers>
+    </Legal>
+    <Brand>
+      <VoiceRestrictions>[Refer to VoiceGuide ID]</VoiceRestrictions>
+      <VisualGuidelines>[Color/font if relevant]</VisualGuidelines>
+    </Brand>
+    <Budget>
+      <CopywritingHours>[Estimated]</CopywritingHours>
+      <Timeline>[Deadline]</Timeline>
+    </Budget>
+  </Constraints>
+
+  <Strategy>
+    <PrimaryAngle>[Main persuasion angle - mechanism/authority/urgency/etc]</PrimaryAngle>
+    <SecondaryAngles>
+      <Angle>[Backup angle]</Angle>
+    </SecondaryAngles>
+    <EmotionalDrivers>
+      <Driver>[Fear/Desire/Identity/etc]</Driver>
+    </EmotionalDrivers>
+    <ProofStrategy>[Social/Authority/Results/Logic - which is strongest]</ProofStrategy>
+  </Strategy>
+
+  <Assets>
+    <DeliverableType>[Sales page/Email sequence/VSL/etc]</DeliverableType>
+    <Format>[Long-form/Short-form/Video/etc]</Format>
+    <Length>[Word count/duration target]</Length>
+    <Sections>
+      <Section>[Headline/Lead/Mechanism/Proof/Close]</Section>
+    </Sections>
+  </Assets>
+
+  <References>
+    <MessageSpine>[MS_ID]</MessageSpine>
+    <VoiceGuide>[VG_ID]</VoiceGuide>
+    <EvidencePack>[EP_ID]</EvidencePack>
+  </References>
+
+</ProjectBrief>

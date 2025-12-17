@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ULTRAMIND SKILL TEMPLATE v1.0 -->
+<!-- Use this structure for converting Markdown skills to XML -->
+
+<Skill version="1.0" id="[SKILL_ID]">
+
+  <!-- METADATA -->
+  <Metadata>
+    <SkillID>[skill_id - lowercase_with_underscores]</SkillID>
+    <Name>[Human-readable skill name]</Name>
+    <Version>1.0</Version>
+    <Category>[strategy | copywriting | editing | research | proof_placement | validation]</Category>
+    <Created>[ISO_TIMESTAMP]</Created>
+    <LastModified>[ISO_TIMESTAMP]</LastModified>
+    <Author>[NAME]</Author>
+    <Status>draft | active | deprecated</Status>
+  </Metadata>
+
+  <!-- DESCRIPTION -->
+  <Description>
+    <Summary>[One-sentence description of what this skill does]</Summary>
+    <Purpose>
+      [2-3 sentences explaining the skill's role in the Ultramind system.
+      Why does this skill exist? What problem does it solve?]
+    </Purpose>
+    <WhenToUse>
+      [When should MOD activate this skill? What triggers it?]
+    </WhenToUse>
+  </Description>
+
+  <!-- INPUT/OUTPUT CONTRACT -->
+  <Contract>
+    <InputsRequired>
+      <Input id="I1" priority="critical">
+        <Name>[Input name]</Name>
+        <Type>[SSOT object | user data | previous skill output]</Type>
+        <Description>[What this input provides]</Description>
+        <SourceExample>PROJECT_BRIEF, MESSAGE_SPINE, user request, etc.</SourceExample>
+      </Input>
+      <Input id="I2" priority="optional">
+        <Name>[Optional input]</Name>
+        <Type>[Type]</Type>
+        <Description>[What this provides if available]</Description>
+      </Input>
+    </InputsRequired>
+
+    <Outputs>
+      <Output id="O1">
+        <Name>[Output name]</Name>
+        <Format>[Structured doc | Copy draft | SSOT object | Analysis]</Format>
+        <Description>[What this output contains]</Description>
+        <NextSkill>[Which skill typically consumes this output, if any]</NextSkill>
+      </Output>
+    </Outputs>
+
+    <Dependencies>
+      <Dependency type="skill" optional="false">[skill_id if this skill requires another to run first]</Dependency>
+      <Dependency type="SSOT" optional="false">[PB/MS/VG/EP if required]</Dependency>
+    </Dependencies>
+  </Contract>
+
+  <!-- LAYER 1: CORE EXECUTION (Always loaded when skill activates) -->
+  <Layer1_Core>
+    <Objective>
+      [What this skill must accomplish in one sentence]
+    </Objective>
+
+    <Procedure>
+      <Step id="S1">
+        <Action>[What to do first]</Action>
+        <Reference>[Which SSOT/input to use]</Reference>
+        <Validation>[How to verify this step succeeded]</Validation>
+      </Step>
+      <Step id="S2">
+        <Action>[Next action]</Action>
+        <Reference>[Input/SSOT reference]</Reference>
+        <Validation>[Checkpoint]</Validation>
+      </Step>
+      <Step id="S3">
+        <Action>[Continue steps...]</Action>
+      </Step>
+      <!-- Add as many steps as needed for core workflow -->
+      <FinalStep id="SN">
+        <Action>Route output to MMA for validation</Action>
+      </FinalStep>
+    </Procedure>
+
+    <ConstitutionAlignment>
+      <Rule id="R1">[Which Constitution rule this skill enforces]</Rule>
+      <Rule id="R4">SSOT Overrides Creative Drift - always reference [PB/MS/VG/EP]</Rule>
+      <Rule id="R3">Claims Must Be Grounded - cite EvidencePack IDs</Rule>
+      <!-- List relevant Constitution rules -->
+    </ConstitutionAlignment>
+
+    <QualityChecklist>
+      <Check>[Output must meet X requirement]</Check>
+      <Check>[Must reference Y SSOT object]</Check>
+      <Check>[Must include Z element]</Check>
+    </QualityChecklist>
+  </Layer1_Core>
+
+  <!-- LAYER 2: DETAILED PROCEDURE (Loaded by default, unloaded after completion) -->
+  <Layer2_DetailedProcedure>
+    <ExpandedSteps>
+      <!-- Expand each L1 step with tactical details -->
+      <Step id="S1_expanded">
+        <Parent>S1</Parent>
+        <DetailedInstructions>
+          [Specific how-to for this step. Include:
+          - Exactly what to extract from SSOT
+          - How to structure the output
+          - Common patterns to follow
+          - What to avoid]
+        </DetailedInstructions>
+        <Examples>
+          <Example context="[scenario]">
+            <Input>[Sample input]</Input>
+            <CorrectOutput>[Expected output]</CorrectOutput>
+            <Reasoning>[Why this is correct]</Reasoning>
+          </Example>
+        </Examples>
+      </Step>
+
+      <Step id="S2_expanded">
+        <Parent>S2</Parent>
+        <DetailedInstructions>
+          [Expanded instructions for step 2...]
+        </DetailedInstructions>
+      </Step>
+
+      <!-- Expand all critical steps -->
+    </ExpandedSteps>
+
+    <CommonPatterns>
+      <Pattern name="[Pattern name]">
+        <WhenToUse>[Condition]</WhenToUse>
+        <HowTo>[Implementation]</HowTo>
+        <Example>[Concrete example]</Example>
+      </Pattern>
+    </CommonPatterns>
+
+    <Guardrails>
+      <Forbidden>
+        <Pattern>[What never to do]</Pattern>
+        <Reason>[Why this is forbidden]</Reason>
+      </Forbidden>
+      <Required>
+        <Pattern>[What must always be done]</Pattern>
+        <Reason>[Why this is required]</Reason>
+      </Required>
+    </Guardrails>
+  </Layer2_DetailedProcedure>
+
+  <!-- LAYER 3: EDGE CASES (Only loaded when error/special condition detected) -->
+  <Layer3_EdgeCases>
+    <EdgeCase id="EC1" trigger="[When this case occurs]">
+      <Scenario>[Description of the edge case]</Scenario>
+      <Detection>[How to detect this case]</Detection>
+      <Resolution>
+        <Step>[How to handle it]</Step>
+        <Fallback>[If resolution fails, what next?]</Fallback>
+      </Resolution>
+      <Example>[Concrete example of this edge case]</Example>
+    </EdgeCase>
+
+    <EdgeCase id="EC2" trigger="SSOT_incomplete">
+      <Scenario>Required SSOT object missing fields (has [PLACEHOLDER])</Scenario>
+      <Detection>Parse SSOT XML for [PLACEHOLDER] or [TK] markers</Detection>
+      <Resolution>
+        <Step>HALT execution</Step>
+        <Step>Return list of missing fields to user/MOD</Step>
+        <Step>Request completion before proceeding</Step>
+      </Resolution>
+    </EdgeCase>
+
+    <EdgeCase id="EC3" trigger="evidence_gap">
+      <Scenario>Output requires claim not found in EvidencePack</Scenario>
+      <Detection>Claim scan against EP IDs returns no match</Detection>
+      <Resolution>
+        <Step>Soften claim language ("may help" instead of "proven to")</Step>
+        <Step>Flag in output: [CLAIM NEEDS EVIDENCE: {claim text}]</Step>
+        <Step>Continue execution with softened language</Step>
+      </Resolution>
+    </EdgeCase>
+
+    <!-- Add more edge cases as discovered -->
+  </Layer3_EdgeCases>
+
+  <!-- EXAMPLES LIBRARY (Loaded selectively based on task context) -->
+  <Examples>
+    <ExampleSet context="[Use case category]">
+      <Example id="EX1">
+        <TaskRequest>[Sample task request]</TaskRequest>
+        <InputSnapshot>
+          <SSOT>[Relevant SSOT excerpts]</SSOT>
+          <UserData>[Any user-provided data]</UserData>
+        </InputSnapshot>
+        <ExpectedOutput>[What the skill should produce]</ExpectedOutput>
+        <QualityAnnotations>
+          [Why this is a good output - what makes it compliant/effective]
+        </QualityAnnotations>
+      </Example>
+
+      <Example id="EX2_bad">
+        <TaskRequest>[Same task]</TaskRequest>
+        <InputSnapshot>[Same inputs]</InputSnapshot>
+        <BadOutput>[Example of poor execution]</BadOutput>
+        <Problems>
+          <Problem>[Why this fails - voice drift]</Problem>
+          <Problem>[Ungrounded claim]</Problem>
+          <Problem>[Violates Constitution Rule X]</Problem>
+        </Problems>
+        <Correction>[How to fix it]</Correction>
+      </Example>
+    </ExampleSet>
+
+    <!-- Multiple example sets for different contexts -->
+  </Examples>
+
+  <!-- MMA VALIDATION CRITERIA (What MMA looks for in this skill's output) -->
+  <ValidationCriteria>
+    <Dimension name="voice_adherence">
+      <Threshold>75</Threshold>
+      <CheckList>
+        <Check>Second-person POV used consistently</Check>
+        <Check>No forbidden words from VoiceGuide</Check>
+        <Check>Tone dials within ±1 of target</Check>
+      </CheckList>
+    </Dimension>
+
+    <Dimension name="compliance">
+      <Threshold>80</Threshold>
+      <CheckList>
+        <Check>All claims map to EvidencePack IDs</Check>
+        <Check>No fabricated data</Check>
+        <Check>Required disclaimers included</Check>
+      </CheckList>
+    </Dimension>
+
+    <Dimension name="coherence">
+      <Threshold>75</Threshold>
+      <CheckList>
+        <Check>Logical flow (lead → mechanism → proof → close)</Check>
+        <Check>Promise/mechanism alignment with MESSAGE_SPINE</Check>
+        <Check>Objections addressed before CTA</Check>
+      </CheckList>
+    </Dimension>
+
+    <Dimension name="clarity">
+      <Threshold>75</Threshold>
+      <CheckList>
+        <Check>Sentences average 15-20 words</Check>
+        <Check>No unexplained jargon</Check>
+        <Check>Active voice >80%</Check>
+      </CheckList>
+    </Dimension>
+  </ValidationCriteria>
+
+  <!-- VERSIONING & CHANGELOG -->
+  <VersionHistory>
+    <Version number="1.0" date="2025-12-17">
+      <Changes>Initial skill creation from Markdown conversion</Changes>
+      <Author>[NAME]</Author>
+    </Version>
+  </VersionHistory>
+
+</Skill>

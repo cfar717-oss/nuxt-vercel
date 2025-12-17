@@ -1,0 +1,278 @@
+# ULTRAMIND SKILL REGISTRY v1.0
+# Central index of all available skills, their contracts, and routing rules
+
+metadata:
+  version: "1.0"
+  last_updated: "2025-12-17"
+  total_skills: 7  # Will grow to 30+
+
+# CORE ORCHESTRATION SKILLS (Always available)
+orchestration:
+  - skill_id: "MOD"
+    name: "Master Orchestration Director"
+    version: "1.0"
+    type: "router"
+    description: "Routes tasks, manages context budget, validates SSOT readiness"
+    always_loaded: true
+    spec_location: "governance/MOD_SPEC.md"
+
+  - skill_id: "MMA"
+    name: "Master Monitoring Agent"
+    version: "1.0"
+    type: "validator"
+    description: "Validates output quality, scores compliance, generates Delta Logs"
+    always_loaded: true
+    spec_location: "governance/MMA_SPEC.md"
+
+# EXECUTION SKILLS (Load on-demand)
+skills:
+  # STRATEGY LAYER (Run first if SSOT incomplete)
+  - skill_id: "offer_architect"
+    name: "Offer Architect"
+    version: "1.0"
+    category: "strategy"
+    description: "Designs offer structure, positioning, pricing, guarantee"
+    triggers:
+      - "create offer"
+      - "design product"
+      - "build bundle"
+      - "PROJECT_BRIEF incomplete"
+    inputs_required:
+      - "audience_research"
+      - "product_details"
+      - "market_context"
+    outputs:
+      - "PROJECT_BRIEF (draft)"
+      - "Offer positioning doc"
+    dependencies: []
+    load_priority: "high"
+    layer_default: "L1+L2"
+    file_location: "skills/xml/offer_architect_v1.xml"
+
+  - skill_id: "market_intel_synth"
+    name: "Market Intelligence Synthesizer"
+    version: "1.0"
+    category: "research"
+    description: "Analyzes market, competitors, audience psychographics"
+    triggers:
+      - "market research"
+      - "competitor analysis"
+      - "audience insights"
+    inputs_required:
+      - "industry/niche"
+      - "target_audience"
+      - "raw_research_data (optional)"
+    outputs:
+      - "Market analysis report"
+      - "Audience psychographic profile"
+      - "Competitive positioning"
+    dependencies: []
+    load_priority: "high"
+    layer_default: "L1+L2"
+    file_location: "skills/xml/market_intel_synth_v1.xml"
+
+  # COPYWRITING LAYER (Primary execution)
+  - skill_id: "sales_page_copywriter"
+    name: "Sales Page Copywriter"
+    version: "2.0"
+    category: "copywriting"
+    description: "Drafts long-form sales pages using MESSAGE_SPINE + VOICE_GUIDE + EVIDENCE_PACK"
+    triggers:
+      - "write sales page"
+      - "draft sales letter"
+      - "create landing page copy"
+    inputs_required:
+      - "PROJECT_BRIEF"
+      - "MESSAGE_SPINE"
+      - "VOICE_GUIDE"
+      - "EVIDENCE_PACK"
+    outputs:
+      - "Sales page draft (structured sections)"
+    dependencies:
+      - "offer_architect (if PB incomplete)"
+    load_priority: "critical"
+    layer_default: "L1+L2"
+    layer_L3_triggers:
+      - "compliance_error"
+      - "voice_drift_detected"
+    file_location: "skills/xml/sales_page_copywriter_v2.xml"
+
+  - skill_id: "email_copy_genius"
+    name: "Email Copy Genius"
+    version: "1.0"
+    category: "copywriting"
+    description: "Creates email sequences (nurture, launch, promo) aligned with MESSAGE_SPINE"
+    triggers:
+      - "write email sequence"
+      - "create email campaign"
+      - "draft nurture series"
+    inputs_required:
+      - "MESSAGE_SPINE"
+      - "VOICE_GUIDE"
+      - "EVIDENCE_PACK"
+      - "sequence_type (nurture/launch/promo)"
+      - "email_count"
+    outputs:
+      - "Email sequence (subject + body for each)"
+    dependencies: []
+    load_priority: "high"
+    layer_default: "L1+L2"
+    file_location: "skills/xml/email_copy_genius_v1.xml"
+
+  # REFINEMENT LAYER (Polish + compliance)
+  - skill_id: "human_persuasion_editor"
+    name: "Human Persuasion Editor"
+    version: "1.0"
+    category: "editing"
+    description: "Refines copy for flow, emotional arc, persuasion architecture"
+    triggers:
+      - "edit copy"
+      - "improve flow"
+      - "enhance persuasion"
+    inputs_required:
+      - "draft_copy"
+      - "VOICE_GUIDE"
+      - "MESSAGE_SPINE"
+    outputs:
+      - "Refined copy with tracked changes"
+    dependencies:
+      - "sales_page_copywriter (or any copywriting skill)"
+    load_priority: "medium"
+    layer_default: "L1+L2"
+    file_location: "skills/xml/human_persuasion_editor_v1.xml"
+
+  - skill_id: "testimonial_library_agent"
+    name: "Testimonial Library Agent"
+    version: "1.0"
+    category: "proof-placement"
+    description: "Tags testimonials by objection, places proof strategically in copy"
+    triggers:
+      - "add testimonials"
+      - "place social proof"
+      - "address objections with proof"
+    inputs_required:
+      - "EVIDENCE_PACK (testimonials)"
+      - "MESSAGE_SPINE (objections)"
+      - "draft_copy (where to insert proof)"
+    outputs:
+      - "Copy with testimonials placed by objection ladder"
+    dependencies:
+      - "sales_page_copywriter"
+    load_priority: "medium"
+    layer_default: "L1+L2"
+    file_location: "skills/xml/testimonial_library_agent_v1.xml"
+
+  - skill_id: "strategic_copy_director"
+    name: "Strategic Copy Director"
+    version: "1.0"
+    category: "strategy"
+    description: "High-level strategy coordination, ensures MESSAGE_SPINE coherence"
+    triggers:
+      - "strategic review"
+      - "align copy to strategy"
+      - "MESSAGE_SPINE validation"
+    inputs_required:
+      - "PROJECT_BRIEF"
+      - "MESSAGE_SPINE"
+      - "draft_copy (if reviewing)"
+    outputs:
+      - "Strategic recommendations"
+      - "MESSAGE_SPINE refinements"
+    dependencies: []
+    load_priority: "medium"
+    layer_default: "L1+L2"
+    file_location: "skills/xml/strategic_copy_director_v1.xml"
+
+# ROUTING RULES
+routing:
+  # Task type → Skill chain
+  sales_page_creation:
+    task_patterns:
+      - "write sales page"
+      - "create landing page"
+      - "draft sales letter"
+    chain:
+      - skill: "offer_architect"
+        condition: "if PROJECT_BRIEF incomplete"
+      - skill: "sales_page_copywriter"
+        required: true
+      - skill: "testimonial_library_agent"
+        condition: "if EVIDENCE_PACK has testimonials"
+      - skill: "human_persuasion_editor"
+        optional: true
+      - skill: "MMA"
+        required: true
+
+  email_sequence_creation:
+    task_patterns:
+      - "write email sequence"
+      - "create email campaign"
+    chain:
+      - skill: "email_copy_genius"
+        required: true
+      - skill: "MMA"
+        required: true
+
+  offer_development:
+    task_patterns:
+      - "create offer"
+      - "design product positioning"
+    chain:
+      - skill: "market_intel_synth"
+        optional: true
+      - skill: "offer_architect"
+        required: true
+      - skill: "MMA"
+        required: true
+
+# CONTEXT BUDGET RULES
+context_management:
+  max_concurrent_skills: 3
+  kernel_always_loaded:
+    - "Constitution summary (10 rules)"
+    - "MOD + MMA specs (short)"
+    - "SSOT objects (PB/MS/VG/EP instances)"
+    - "Skill registry (this file)"
+
+  skill_loading:
+    default_layers: "L1+L2"
+    L3_load_condition: "error or edge case detected"
+    examples_load_condition: "task_type match"
+
+  skill_unloading:
+    rule: "After skill completes, unload L2+L3, keep L1 summary in kernel"
+
+# SKILL CONTRACT TEMPLATE (for reference)
+skill_contract_structure:
+  metadata:
+    - skill_id
+    - name
+    - version
+    - category
+    - description
+  contracts:
+    - inputs_required
+    - outputs
+    - dependencies
+  loading:
+    - layer_default
+    - triggers
+    - load_priority
+  location:
+    - file_location
+
+# SKILL CATEGORIES
+categories:
+  strategy: ["offer_architect", "strategic_copy_director", "market_intel_synth"]
+  copywriting: ["sales_page_copywriter", "email_copy_genius"]
+  editing: ["human_persuasion_editor"]
+  proof_placement: ["testimonial_library_agent"]
+  validation: ["MMA"]
+  orchestration: ["MOD"]
+
+# VERSIONING
+version_history:
+  - version: "1.0"
+    date: "2025-12-17"
+    changes: "Initial registry with 7 core skills"
+    skills_count: 7
