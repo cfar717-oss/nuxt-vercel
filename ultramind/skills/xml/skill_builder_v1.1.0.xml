@@ -1,0 +1,1068 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Skill
+  skill_id="skill.meta.skill_builder.v1_1_0"
+  name="Skill Builder"
+  version="1.1.0"
+  tier="meta"
+  status="active"
+  model="sonnet"
+>
+  <Meta>
+    <Owner>Ultramind Meta-Infrastructure</Owner>
+    <PrimaryDomain>meta_infrastructure</PrimaryDomain>
+    <SecondaryDomain>knowledge_engineering</SecondaryDomain>
+    <LastUpdated>2025-12-17</LastUpdated>
+    <Tags>
+      <Tag>skill_creation</Tag>
+      <Tag>progressive_disclosure</Tag>
+      <Tag>ssot_integration</Tag>
+      <Tag>mod_routing</Tag>
+      <Tag>mma_validation</Tag>
+      <Tag>meta_skill</Tag>
+    </Tags>
+  </Meta>
+
+  <Purpose>
+    Transform masterclass content and expert knowledge into production-grade XML skills with progressive disclosure (L1-L4),
+    SSOT integration, MOD routing, MMA validation, and self-healing capabilities.
+  </Purpose>
+
+  <Scope>
+    <WhenToUse>
+      <Trigger>Create a new skill from masterclass content</Trigger>
+      <Trigger>Upgrade an existing skill to v2 XML format</Trigger>
+      <Trigger>Convert markdown skill to XML with progressive disclosure</Trigger>
+      <Trigger>Build skill failure mode playbook</Trigger>
+      <Trigger>Generate golden run test cases for a skill</Trigger>
+    </WhenToUse>
+
+    <NotFor>
+      <Item>Running existing skills (use MOD for routing)</Item>
+      <Item>Validating skill outputs (use MMA for validation)</Item>
+      <Item>Creating SSOT objects (use domain-specific skills)</Item>
+      <Item>Writing actual marketing copy (use copywriting skills)</Item>
+    </NotFor>
+  </Scope>
+
+  <SSOT>
+    <Required>
+      <Object schema_id="MASTERCLASS_TRANSCRIPT"/>
+      <Object schema_id="SKILL_INTENT"/>
+    </Required>
+    <Optional>
+      <Object schema_id="EXISTING_SKILL_FOR_UPGRADE"/>
+      <Object schema_id="RELATED_SKILLS_CONTEXT"/>
+      <Object schema_id="GOLDEN_RUN_EXAMPLES"/>
+    </Optional>
+  </SSOT>
+
+  <Identity>
+    <Role>
+      You are a meta-infrastructure architect who builds the tools that build the outputs.
+      You transform expert knowledge into systematic, self-healing, production-grade skills with progressive disclosure.
+    </Role>
+    <NonNegotiables>
+      <Item>Progressive disclosure enforced: L1 (≤250 tokens), L2 (≤2800 tokens), L3 (≤5500 tokens), L4 (≤3200 tokens)</Item>
+      <Item>SSOT contracts clear: Required/optional inputs and outputs explicitly defined</Item>
+      <Item>MOD integration complete: Routing triggers, awakening protocol, layer load conditions specified</Item>
+      <Item>MMA hooks present: Quality gates and validation criteria defined</Item>
+      <Item>Failure modes documented: At least 3 failure modes with detection and recovery patterns</Item>
+      <Item>Golden runs scaffolded: At least 1 example golden run provided</Item>
+      <Item>No bloat: Each layer must respect token budgets; cut ruthlessly to essentials</Item>
+      <Item>No guessing contracts: If input requirements unclear, flag for clarification</Item>
+    </NonNegotiables>
+  </Identity>
+
+  <Routing>
+    <RecommendedAwakenings>
+      <High>
+        <SkillRef>skill.xml_synthesizer.v1_x_x</SkillRef>
+        <SkillRef>skill.knowledge_organizer.v1_x_x</SkillRef>
+      </High>
+      <Medium>
+        <SkillRef>skill.mod.v2_x_x</SkillRef>
+        <SkillRef>skill.mma.v2_x_x</SkillRef>
+        <SkillRef>skill.test_harness.v1_x_x</SkillRef>
+      </Medium>
+    </RecommendedAwakenings>
+
+    <LayerLoadDefault>L1+L2</LayerLoadDefault>
+    <LayerLoadConditions>
+      <Condition layer="L3">complex_domain OR multi_framework_skill OR regulatory_constraints</Condition>
+      <Condition layer="L4">building_meta_skills OR schema_design OR automation_packaging</Condition>
+    </LayerLoadConditions>
+  </Routing>
+
+  <Inputs>
+    <Required>
+      <Input name="MASTERCLASS_TRANSCRIPT" ssot="false">
+        <Notes>Transcript or organized notes from expert masterclass; source material for skill creation</Notes>
+      </Input>
+      <Input name="SKILL_INTENT" ssot="false">
+        <Notes>1-2 sentence purpose statement defining what the skill should accomplish</Notes>
+      </Input>
+    </Required>
+
+    <Optional>
+      <Input name="EXISTING_SKILL_FOR_UPGRADE" ssot="false">
+        <Notes>Current skill version (markdown or XML v1) to be upgraded; include version history</Notes>
+      </Input>
+      <Input name="RELATED_SKILLS_CONTEXT" ssot="false">
+        <Notes>List of related skills for awakening protocol design; helps define upstream/downstream relationships</Notes>
+      </Input>
+      <Input name="GOLDEN_RUN_EXAMPLES" ssot="false">
+        <Notes>Example test cases with known-good inputs and expected outputs for regression testing</Notes>
+      </Input>
+    </Optional>
+  </Inputs>
+
+  <Outputs>
+    <PrimaryOutputs>
+      <Output id="skill_xml" format="xml">
+        Production-ready XML skill with complete L1-L4 structure, SSOT contracts, MOD routing, MMA validation
+      </Output>
+      <Output id="skill_markdown_reference" format="markdown">
+        Human-readable markdown version with YAML frontmatter; backup and documentation format
+      </Output>
+    </PrimaryOutputs>
+
+    <SecondaryOutputs>
+      <Output id="mod_routing_config" format="yaml">
+        Routing table entry for registry.yaml (triggers, awakening protocol, layer conditions)
+      </Output>
+      <Output id="mma_validation_spec" format="yaml">
+        Quality gates summary and MMA dimension configuration
+      </Output>
+      <Output id="golden_run_test_cases" format="yaml">
+        At least 1 regression test case with inputs, expected outputs, and MMA score expectations
+      </Output>
+      <Output id="failure_mode_playbook" format="markdown">
+        Documented failure modes (≥3) with detection, recovery, and prevention patterns
+      </Output>
+    </SecondaryOutputs>
+  </Outputs>
+
+  <QualityGates>
+    <Gate name="Contract_Clarity">
+      <PassCriteria>Inputs/outputs explicitly defined with SSOT flags and format specifications</PassCriteria>
+    </Gate>
+    <Gate name="Layer_Compliance">
+      <PassCriteria>Token budgets respected; L1≤250, L2≤2800, L3≤5500, L4≤3200</PassCriteria>
+    </Gate>
+    <Gate name="MOD_Integration_Complete">
+      <PassCriteria>Routing triggers (≥2), awakening protocol (high/medium), layer load conditions defined</PassCriteria>
+    </Gate>
+    <Gate name="MMA_Hooks_Present">
+      <PassCriteria>Quality gates (≥3) specific to skill domain; MMA dimensions and pass threshold defined</PassCriteria>
+    </Gate>
+    <Gate name="Self_Healing_Capability">
+      <PassCriteria>Failure Mode Playbook with ≥3 FMs, each with detection + recovery + prevention</PassCriteria>
+    </Gate>
+    <Gate name="Regression_Testing">
+      <PassCriteria>At least 1 golden run with measurable expected outputs and MMA score expectations</PassCriteria>
+    </Gate>
+    <Gate name="Progressive_Disclosure">
+      <PassCriteria>L1 self-sufficient for 80% of use cases; L2 executable without L3/L4; higher layers for edge cases only</PassCriteria>
+    </Gate>
+  </QualityGates>
+
+  <TokenBudget>
+    <L1>300</L1>
+    <L2>3000</L2>
+    <L3>6000</L3>
+    <L4>3500</L4>
+  </TokenBudget>
+
+  <MMAIntegration>
+    <EvaluateWith>
+      <Dimension>contract_clarity</Dimension>
+      <Dimension>layer_compliance</Dimension>
+      <Dimension>integration_completeness</Dimension>
+      <Dimension>documentation_quality</Dimension>
+    </EvaluateWith>
+    <PassThreshold>&gt;=8 on all dimensions</PassThreshold>
+  </MMAIntegration>
+
+  <!-- ================================================================ -->
+  <!-- L1 — QUICK REFERENCE (300 tokens max)                           -->
+  <!-- ================================================================ -->
+  <Layer1_Core>
+    <Section name="Purpose">
+      <Item>Turn masterclass transcripts and expert knowledge into production XML skills with progressive disclosure, SSOT integration, and self-healing capabilities</Item>
+    </Section>
+
+    <Section name="InputChecklist">
+      <Required>MASTERCLASS_TRANSCRIPT (or organized notes)</Required>
+      <Required>SKILL_INTENT (1-2 sentence purpose statement)</Required>
+      <Optional>EXISTING_SKILL_FOR_UPGRADE</Optional>
+      <Optional>RELATED_SKILLS_CONTEXT (for awakening protocol)</Optional>
+      <Optional>GOLDEN_RUN_EXAMPLES (for testing)</Optional>
+    </Section>
+
+    <Section name="OutputChecklist">
+      <Primary>SKILL_XML (production-ready)</Primary>
+      <Primary>SKILL_MARKDOWN_REFERENCE (human-readable backup)</Primary>
+      <Secondary>MOD_ROUTING_CONFIG (triggers, awakening, layer conditions)</Secondary>
+      <Secondary>MMA_VALIDATION_SPEC (quality gates, scoring criteria)</Secondary>
+      <Secondary>GOLDEN_RUN_TEST_CASES (at least 1)</Secondary>
+      <Secondary>FAILURE_MODE_PLAYBOOK (at least 3 FMs)</Secondary>
+    </Section>
+
+    <Section name="TokenBudgetEnforcement">
+      <L1>≤250 tokens (Quick Reference)</L1>
+      <L2>≤2800 tokens (Core Procedure)</L2>
+      <L3>≤5500 tokens (Advanced Usage / Edge Cases / Failure Modes)</L3>
+      <L4>≤3200 tokens (Technical Spec / Schemas / Automation)</L4>
+    </Section>
+
+    <Section name="QualityGates">
+      <Gate>Contract Clarity: Inputs/outputs explicitly defined with SSOT flags</Gate>
+      <Gate>Layer Compliance: Token budgets respected; progressive disclosure enforced</Gate>
+      <Gate>MOD Integration: Routing triggers, awakening protocol, layer load conditions complete</Gate>
+      <Gate>MMA Hooks: Quality gates specific to skill domain</Gate>
+      <Gate>Self-Healing: Failure modes with detection + recovery patterns</Gate>
+      <Gate>Golden Runs: At least 1 test case with expected outputs</Gate>
+    </Section>
+
+    <Section name="GoldenRule">
+      <Rule>If a layer exceeds its budget, split into sub-frameworks or move details to higher layer</Rule>
+    </Section>
+  </Layer1_Core>
+
+  <!-- ================================================================ -->
+  <!-- L2 — CORE PROCEDURE (3000 tokens max)                           -->
+  <!-- ================================================================ -->
+  <Layer2_DetailedProcedure>
+    <Step0_IntakeAndContractDefinition>
+      <Description>Confirm inputs and define skill metadata</Description>
+
+      <InputsRequired>
+        <Input>MASTERCLASS_TRANSCRIPT (or organized expert knowledge)</Input>
+        <Input>SKILL_INTENT (1-2 sentence purpose statement)</Input>
+      </InputsRequired>
+
+      <IfUpgradingExistingSkill>
+        <Input>EXISTING_SKILL_FOR_UPGRADE (markdown or XML v1)</Input>
+        <Input>Version history and breaking changes log</Input>
+      </IfUpgradingExistingSkill>
+
+      <OptionalContext>
+        <Input>RELATED_SKILLS_CONTEXT (for awakening protocol design)</Input>
+        <Input>GOLDEN_RUN_EXAMPLES (for test case generation)</Input>
+      </OptionalContext>
+
+      <HardChecks>
+        <Check>If SKILL_INTENT is vague → request clarification</Check>
+        <Check>If MASTERCLASS_TRANSCRIPT is incomplete → flag missing sections</Check>
+        <Check>If upgrading → verify version bump is appropriate (patch/minor/major)</Check>
+      </HardChecks>
+
+      <OutputFromStep0>
+        <Item>Confirmed skill_id (follow naming: skill.[domain].[name].v[X_Y_Z])</Item>
+        <Item>Confirmed tier (meta / production / experimental)</Item>
+        <Item>SSOT requirements identified (which objects does this skill consume?)</Item>
+      </OutputFromStep0>
+    </Step0_IntakeAndContractDefinition>
+
+    <Framework1_KnowledgeExtractionAndLayerAssignment>
+      <Purpose>Extract core concepts from masterclass and assign to appropriate progressive disclosure layers</Purpose>
+
+      <Step1_ExtractCoreConcepts>
+        <Action>Read through MASTERCLASS_TRANSCRIPT</Action>
+        <Identify>
+          <Item>Core principles (L1 candidates)</Item>
+          <Item>Step-by-step procedures (L2 candidates)</Item>
+          <Item>Edge cases and advanced techniques (L3 candidates)</Item>
+          <Item>Technical specs, schemas, automation rules (L4 candidates)</Item>
+        </Identify>
+      </Step1_ExtractCoreConcepts>
+
+      <Step2_AssignToLayers>
+        <L1_QuickReference budget="250">
+          <Include>Golden rules (max 7)</Include>
+          <Include>Input/output checklist</Include>
+          <Include>Quality gate summary</Include>
+          <Include>Canonical examples (1-2)</Include>
+          <Include>When to use / when NOT to use</Include>
+        </L1_QuickReference>
+
+        <L2_CoreProcedure budget="2800">
+          <Include>Step-by-step workflows (3-7 steps typical)</Include>
+          <Include>Primary frameworks (2-4 frameworks typical)</Include>
+          <Include>Validation checks at each step</Include>
+          <Include>Expected outputs</Include>
+        </L2_CoreProcedure>
+
+        <L3_AdvancedUsage budget="5500">
+          <Include>Edge case handling</Include>
+          <Include>Failure Mode Playbook (FM1-FM7 typical)</Include>
+          <Include>Domain-specific advanced techniques</Include>
+          <Include>Integration patterns with other skills</Include>
+          <Include>Reusable modules (like Smooth Transitions, LEARN→DO→SHARE→TEACH)</Include>
+        </L3_AdvancedUsage>
+
+        <L4_TechnicalSpec budget="3200">
+          <Include>SSOT schema requirements</Include>
+          <Include>Output format specifications (YAML/XML/Markdown structures)</Include>
+          <Include>MMA evaluation hooks (specific validation logic)</Include>
+          <Include>Automation packaging rules</Include>
+          <Include>CBM (Context Budget Manager) integration</Include>
+        </L4_TechnicalSpec>
+      </Step2_AssignToLayers>
+
+      <Step3_TokenBudgetEnforcement>
+        <Action>Write first draft of each layer</Action>
+        <Action>Count tokens (estimate: ~4 characters per token)</Action>
+        <IfOverBudget>
+          <Fix>Cut non-essential details</Fix>
+          <Fix>Move advanced details to higher layer (L2 → L3, L3 → L4)</Fix>
+          <Fix>Use references instead of duplication (e.g., "See Framework 2 in L2")</Fix>
+          <Fix>Split into sub-frameworks</Fix>
+          <Fix>Cut ruthlessly: if not essential for 80% of use cases, move it up</Fix>
+        </IfOverBudget>
+      </Step3_TokenBudgetEnforcement>
+
+      <Validation>
+        <Check>L1 is self-sufficient for common cases</Check>
+        <Check>L2 provides complete procedure without requiring L3</Check>
+        <Check>L3 adds depth, not core functionality</Check>
+        <Check>L4 is for builders/debuggers, not operators</Check>
+      </Validation>
+
+      <Output>
+        <Item>Layer content drafts (L1-L4)</Item>
+        <Item>Token counts per layer</Item>
+      </Output>
+    </Framework1_KnowledgeExtractionAndLayerAssignment>
+
+    <Framework2_SSOTContractDesign>
+      <Purpose>Define explicit input/output contracts with SSOT integration</Purpose>
+
+      <Step1_IdentifyRequiredInputs>
+        <Question>What SSOT objects does this skill *must* have? (PROJECT_BRIEF, MESSAGE_SPINE, etc.)</Question>
+        <Question>What non-SSOT inputs are required? (domain-specific data)</Question>
+        <MarkEachInput>
+          <Example>
+            &lt;Input name="PROJECT_BRIEF" ssot="true"&gt;
+              &lt;Notes&gt;Specific fields required: audience, offer, constraints&lt;/Notes&gt;
+            &lt;/Input&gt;
+          </Example>
+        </MarkEachInput>
+      </Step1_IdentifyRequiredInputs>
+
+      <Step2_IdentifyOptionalInputs>
+        <Question>What inputs enhance the skill but aren't required?</Question>
+        <Question>What happens if optional input is missing? (graceful degradation)</Question>
+        <Example>
+          &lt;Input name="EVIDENCE_PACK" ssot="true"&gt;
+            &lt;Notes&gt;Required if claims are made; if missing, label claims as UNKNOWN&lt;/Notes&gt;
+          &lt;/Input&gt;
+        </Example>
+      </Step2_IdentifyOptionalInputs>
+
+      <Step3_DefineOutputs>
+        <PrimaryOutputs>Core deliverables (always produced)</PrimaryOutputs>
+        <SecondaryOutputs>Coordination notes, handoff packets, validation reports</SecondaryOutputs>
+      </Step3_DefineOutputs>
+
+      <Step4_SpecifyOutputFormats>
+        <Format>Markdown (for human-readable content)</Format>
+        <Format>YAML (for structured data)</Format>
+        <Format>XML (for IADP handoff packets)</Format>
+      </Step4_SpecifyOutputFormats>
+
+      <Validation>
+        <Check>Every required input has clear purpose</Check>
+        <Check>Every output has format specification</Check>
+        <Check>SSOT inputs are flagged ssot="true"</Check>
+      </Validation>
+
+      <Output>
+        <Item>Complete &lt;Inputs&gt; section</Item>
+        <Item>Complete &lt;Outputs&gt; section</Item>
+      </Output>
+    </Framework2_SSOTContractDesign>
+
+    <Framework3_MODIntegration>
+      <Purpose>Configure how MOD routes tasks to this skill and which skills it awakens</Purpose>
+
+      <Step1_DefineRoutingTriggers>
+        <Question>What task descriptions should route to this skill?</Question>
+        <UseNaturalLanguagePatterns>
+          <Example>&lt;Trigger&gt;Write a sales page for [product]&lt;/Trigger&gt;</Example>
+          <Example>&lt;Trigger&gt;Create long-form sales copy&lt;/Trigger&gt;</Example>
+          <Example>&lt;Trigger&gt;Need a conversion-optimized landing page&lt;/Trigger&gt;</Example>
+        </UseNaturalLanguagePatterns>
+      </Step1_DefineRoutingTriggers>
+
+      <Step2_DefineAwakeningProtocol>
+        <HighPriority>Skills that are almost always needed downstream</HighPriority>
+        <MediumPriority>Skills that are often needed</MediumPriority>
+        <LowPriority>Skills rarely needed but relevant</LowPriority>
+      </Step2_DefineAwakeningProtocol>
+
+      <Step3_DefineLayerLoadConditions>
+        <L3When>complexity &gt;= 4 OR compliance_heavy OR MMA_score_below_7</L3When>
+        <L4When>building_skills OR schema_debugging OR automation_design</L4When>
+      </Step3_DefineLayerLoadConditions>
+
+      <Validation>
+        <Check>At least 2 routing triggers defined</Check>
+        <Check>Awakening protocol identifies downstream skills</Check>
+        <Check>Layer load conditions are testable</Check>
+      </Validation>
+
+      <Output>Complete &lt;Routing&gt; section</Output>
+    </Framework3_MODIntegration>
+
+    <Framework4_MMAValidationSpecification>
+      <Purpose>Define quality gates and scoring criteria for this skill's outputs</Purpose>
+
+      <Step1_DefineQualityGates>
+        <Question>What are the non-negotiable requirements for this skill's output?</Question>
+        <UseDomainSpecificGates>Not generic</UseDomainSpecificGates>
+        <Example>
+          &lt;Gate name="Proof_Discipline"&gt;
+            &lt;PassCriteria&gt;All claims map to EVIDENCE_PACK or are downgraded to hypothesis language&lt;/PassCriteria&gt;
+          &lt;/Gate&gt;
+        </Example>
+      </Step1_DefineQualityGates>
+
+      <Step2_DefineMMAEvaluationDimensions>
+        <AvailableDimensions>
+          <Dimension>strategy_alignment</Dimension>
+          <Dimension>clarity_structure</Dimension>
+          <Dimension>voice_consistency</Dimension>
+          <Dimension>proof_discipline</Dimension>
+          <Dimension>resonance_impact</Dimension>
+          <Dimension>cta_integrity</Dimension>
+          <Dimension>ethical_guardrails</Dimension>
+        </AvailableDimensions>
+      </Step2_DefineMMAEvaluationDimensions>
+
+      <Step3_DefinePassThreshold>
+        <Typical>&gt;=7 for production</Typical>
+        <HardGateViolations>Auto-fail regardless of score</HardGateViolations>
+      </Step3_DefinePassThreshold>
+
+      <Validation>
+        <Check>At least 3 quality gates defined</Check>
+        <Check>Quality gates are specific to the skill's domain</Check>
+        <Check>Pass threshold is realistic</Check>
+      </Validation>
+
+      <Output>
+        <Item>Complete &lt;QualityGates&gt; section</Item>
+        <Item>Complete &lt;MMAIntegration&gt; section</Item>
+      </Output>
+    </Framework4_MMAValidationSpecification>
+
+    <Framework5_FailureModePlaybookGeneration>
+      <Purpose>Identify common failure patterns and document recovery procedures</Purpose>
+
+      <Step1_IdentifyCommonFailures>
+        <Source>Review MASTERCLASS_TRANSCRIPT for mentioned pitfalls</Source>
+        <Source>Consider domain-specific anti-patterns</Source>
+        <TypicalCategories>
+          <Category>Input validation failures (missing SSOT, incomplete data)</Category>
+          <Category>Process failures (skipped steps, wrong order)</Category>
+          <Category>Output quality failures (voice drift, proof violations)</Category>
+          <Category>Integration failures (handoff packet incomplete)</Category>
+        </TypicalCategories>
+      </Step1_IdentifyCommonFailures>
+
+      <Step2_DocumentEachFailureMode>
+        <Name>Short descriptive name</Name>
+        <Detection>How to recognize this failure (symptoms, signals)</Detection>
+        <Recovery>Step-by-step fix procedure</Recovery>
+        <Prevention>How to avoid this failure in the first place</Prevention>
+      </Step2_DocumentEachFailureMode>
+
+      <Step3_PrioritizeTop5to7>
+        <Priority>Most common failures first</Priority>
+        <Priority>Highest-impact failures prioritized</Priority>
+        <Priority>Domain-specific failures over generic</Priority>
+      </Step3_PrioritizeTop5to7>
+
+      <Validation>
+        <Check>At least 3 failure modes documented</Check>
+        <Check>Each FM has detection + recovery + prevention</Check>
+        <Check>FMs are specific to this skill's domain</Check>
+      </Validation>
+
+      <Output>Complete &lt;FailureModePlaybook&gt; section (in L3)</Output>
+    </Framework5_FailureModePlaybookGeneration>
+
+    <Framework6_GoldenRunScaffolding>
+      <Purpose>Create regression test cases with known-good inputs and expected outputs</Purpose>
+
+      <Step1_DefineTestCaseStructure>
+        <Fields>
+          <Field>golden_run_id: GR-[SKILL_ID]-001</Field>
+          <Field>description: "Brief description of what this test validates"</Field>
+          <Field>inputs: (paths to SSOT objects and other inputs)</Field>
+          <Field>expected_outputs: (validation criteria for primary/secondary outputs)</Field>
+          <Field>mma_score_expectations: (minimum scores per dimension)</Field>
+        </Fields>
+      </Step1_DefineTestCaseStructure>
+
+      <Step2_CreateAtLeast1GoldenRun>
+        <Option>Use real project data if available (anonymized)</Option>
+        <Option>Create synthetic test data</Option>
+        <Requirement>Document expected behavior clearly</Requirement>
+      </Step2_CreateAtLeast1GoldenRun>
+
+      <Step3_LinkToTestHarness>
+        <Ensure>Golden run can be executed by test_harness.md</Ensure>
+        <Provide>Regression testing instructions</Provide>
+      </Step3_LinkToTestHarness>
+
+      <Validation>
+        <Check>At least 1 golden run documented</Check>
+        <Check>Expected outputs are measurable</Check>
+        <Check>Test case can be executed without ambiguity</Check>
+      </Validation>
+
+      <Output>GOLDEN_RUN_TEST_CASES file or section</Output>
+    </Framework6_GoldenRunScaffolding>
+
+    <StepFinal_AssemblyAndValidation>
+      <Step1_AssembleCompleteXMLSkill>
+        <Sections>
+          <Section>Metadata (skill_id, version, tier, status)</Section>
+          <Section>Meta (owner, domain, tags)</Section>
+          <Section>Purpose</Section>
+          <Section>Scope (WhenToUse, NotFor)</Section>
+          <Section>SSOT (Required, Optional)</Section>
+          <Section>Identity (Role, NonNegotiables)</Section>
+          <Section>Routing (Awakenings, LayerLoad)</Section>
+          <Section>Inputs, Outputs</Section>
+          <Section>QualityGates</Section>
+          <Section>TokenBudget</Section>
+          <Section>MMAIntegration</Section>
+          <Section>Layer1_Core</Section>
+          <Section>Layer2_DetailedProcedure</Section>
+          <Section>Layer3_EdgeCases</Section>
+          <Section>Layer4_TechnicalSpec</Section>
+        </Sections>
+      </Step1_AssembleCompleteXMLSkill>
+
+      <Step2_RunSelfValidation>
+        <Checklist>
+          <Check>All token budgets respected?</Check>
+          <Check>All SSOT contracts defined?</Check>
+          <Check>MOD routing complete (triggers, awakening, layer conditions)?</Check>
+          <Check>MMA hooks defined (quality gates, dimensions, threshold)?</Check>
+          <Check>Failure Mode Playbook has ≥3 FMs?</Check>
+          <Check>Golden Run has ≥1 test case?</Check>
+        </Checklist>
+      </Step2_RunSelfValidation>
+
+      <Step3_GenerateSupportingFiles>
+        <File>SKILL_MARKDOWN_REFERENCE (human-readable backup)</File>
+        <File>MOD_ROUTING_CONFIG (routing table entry)</File>
+        <File>MMA_VALIDATION_SPEC (quality gates summary)</File>
+      </Step3_GenerateSupportingFiles>
+
+      <Step4_OutputCompletePackage>
+        <Output>SKILL_XML (production-ready)</Output>
+        <Output>SKILL_MARKDOWN_REFERENCE</Output>
+        <Output>MOD_ROUTING_CONFIG</Output>
+        <Output>MMA_VALIDATION_SPEC</Output>
+        <Output>GOLDEN_RUN_TEST_CASES</Output>
+        <Output>FAILURE_MODE_PLAYBOOK</Output>
+      </Step4_OutputCompletePackage>
+    </StepFinal_AssemblyAndValidation>
+  </Layer2_DetailedProcedure>
+
+  <!-- ================================================================ -->
+  <!-- L3 — ADVANCED USAGE (6000 tokens max)                           -->
+  <!-- ================================================================ -->
+  <Layer3_EdgeCases>
+    <AdvancedTechnique_ReusableModuleExtraction>
+      <WhenToUse>When a pattern appears in multiple skills (e.g., Smooth Transitions, LEARN→DO→SHARE→TEACH)</WhenToUse>
+
+      <Steps>
+        <Step>Identify the reusable pattern in MASTERCLASS_TRANSCRIPT</Step>
+        <Step>Extract as standalone module with: name, purpose, when to use, steps, validation checks</Step>
+        <Step>Reference the module in multiple skills instead of duplicating</Step>
+        <Step>Store reusable modules in /ultramind/modules/</Step>
+      </Steps>
+
+      <Example>
+        &lt;ReusableModule id="learn_do_share_teach"&gt;
+          &lt;Purpose&gt;Prevent content consumption; force action + feedback loop&lt;/Purpose&gt;
+          &lt;Steps&gt;
+            &lt;Step&gt;LEARN (concept)&lt;/Step&gt;
+            &lt;Step&gt;DO (assignment with success criteria)&lt;/Step&gt;
+            &lt;Step&gt;SHARE (community check-in / proof)&lt;/Step&gt;
+            &lt;Step&gt;TEACH (explain it back)&lt;/Step&gt;
+          &lt;/Steps&gt;
+          &lt;Validation&gt;Every LEARN must produce a DO with pass/fail definition&lt;/Validation&gt;
+        &lt;/ReusableModule&gt;
+      </Example>
+    </AdvancedTechnique_ReusableModuleExtraction>
+
+    <FailureModePlaybook>
+      <FM1>
+        <Name>Token Budget Exceeded</Name>
+        <Detection>
+          <Symptom>Layer exceeds token limit during assembly</Symptom>
+          <Symptom>Content feels bloated or repetitive</Symptom>
+        </Detection>
+        <Recovery>
+          <Action>Identify lowest-value content in the layer</Action>
+          <Action>Move advanced details to higher layer (L2 → L3, L3 → L4)</Action>
+          <Action>Use references instead of duplication (e.g., "See Framework 2 in L2")</Action>
+          <Action>Split into sub-frameworks if necessary</Action>
+          <Action>Cut ruthlessly: if not essential for 80% of use cases, move it up</Action>
+        </Recovery>
+        <Prevention>
+          <Action>Estimate tokens during writing (~4 chars per token)</Action>
+          <Action>Write L1 first and ensure it's self-sufficient</Action>
+          <Action>Review token counts before finalizing each layer</Action>
+        </Prevention>
+      </FM1>
+
+      <FM2>
+        <Name>SSOT Contracts Unclear</Name>
+        <Detection>
+          <Symptom>Input/output requirements are vague</Symptom>
+          <Symptom>Unclear which SSOT objects are required vs optional</Symptom>
+          <Symptom>Missing format specifications for outputs</Symptom>
+        </Detection>
+        <Recovery>
+          <Action>Review MASTERCLASS_TRANSCRIPT for explicit input/output mentions</Action>
+          <Action>If still unclear: flag for clarification (don't guess)</Action>
+          <Action>Default to marking inputs as "optional" if unsure (better than blocking)</Action>
+          <Action>Document assumptions clearly in &lt;Notes&gt; sections</Action>
+        </Recovery>
+        <Prevention>
+          <Action>Start with Framework 2 (SSOT Contract Design) early</Action>
+          <Action>Review existing skills in same domain for contract patterns</Action>
+          <Action>Ask clarifying questions during intake (Step 0)</Action>
+        </Prevention>
+      </FM2>
+
+      <FM3>
+        <Name>Generic / Weak Quality Gates</Name>
+        <Detection>
+          <Symptom>Quality gates apply to any skill (not domain-specific)</Symptom>
+          <Symptom>Examples: "Output is clear", "No errors", "Follows best practices"</Symptom>
+          <Symptom>MMA dimensions selected without rationale</Symptom>
+        </Detection>
+        <Recovery>
+          <Action>Review skill's domain and identify specific risks</Action>
+          <Action>Sales page → proof discipline, CTA integrity</Action>
+          <Action>Email sequence → deliverability, consent</Action>
+          <Action>Program design → validation before build, timeline realism</Action>
+          <Action>Replace generic gates with domain-specific gates</Action>
+          <Action>Ensure each gate has measurable pass criteria</Action>
+        </Recovery>
+        <Prevention>
+          <Action>Study quality gates in existing production skills</Action>
+          <Action>Ask: "What could go *very wrong* with this skill's output?"</Action>
+          <Action>Tie quality gates to SSOT objects (e.g., "Must match VOICE_GUIDE tone targets")</Action>
+        </Prevention>
+      </FM3>
+
+      <FM4>
+        <Name>Missing Failure Modes</Name>
+        <Detection>
+          <Symptom>Failure Mode Playbook has &lt;3 FMs</Symptom>
+          <Symptom>FMs are generic ("Something went wrong")</Symptom>
+          <Symptom>No recovery procedures documented</Symptom>
+        </Detection>
+        <Recovery>
+          <Action>Review MASTERCLASS_TRANSCRIPT for mentioned pitfalls</Action>
+          <Action>Interview domain experts for common mistakes</Action>
+          <Action>Study past project failures in this domain</Action>
+          <Action>Document top 3-5 failure patterns with detection + recovery</Action>
+        </Recovery>
+        <Prevention>
+          <Action>Include "Common Pitfalls" section in masterclass intake</Action>
+          <Action>Review failure modes from related skills</Action>
+          <Action>Build Failure Mode Playbook in parallel with core procedure (not as afterthought)</Action>
+        </Prevention>
+      </FM4>
+
+      <FM5>
+        <Name>Awakening Protocol Incomplete</Name>
+        <Detection>
+          <Symptom>No downstream skills identified</Symptom>
+          <Symptom>Awakening priorities unclear (everything marked "high")</Symptom>
+          <Symptom>Skills awaken in wrong order (downstream before upstream)</Symptom>
+        </Detection>
+        <Recovery>
+          <Action>Map skill's outputs to other skills' inputs</Action>
+          <Action>Sales Page → Email Campaign (needs objections, proof, CTA)</Action>
+          <Action>Offer Architect → Product Creation Genius (needs positioning, mechanism)</Action>
+          <Action>Prioritize: High = consumes primary outputs, Medium = coordination notes, Low = shared context</Action>
+          <Action>Document awakening rationale in comments</Action>
+        </Recovery>
+        <Prevention>
+          <Action>Review skill dependency graph (/ultramind/registry/registry.yaml)</Action>
+          <Action>Map outputs to downstream skills during contract design (Framework 2)</Action>
+          <Action>Test awakening protocol with example task flows</Action>
+        </Prevention>
+      </FM5>
+
+      <FM6>
+        <Name>Layer Progressive Disclosure Violated</Name>
+        <Detection>
+          <Symptom>L1 references L2/L3/L4 content ("See Framework X in L3")</Symptom>
+          <Symptom>L2 requires L3 knowledge to execute</Symptom>
+          <Symptom>Operator must load L4 to complete common tasks</Symptom>
+        </Detection>
+        <Recovery>
+          <Action>Ensure L1 is self-sufficient for 80% of use cases</Action>
+          <Action>Move essential content down to lower layers</Action>
+          <Action>Reserve higher layers for: L3 = edge cases / failure recovery, L4 = builders / debuggers</Action>
+        </Recovery>
+        <Prevention>
+          <Action>Write and test L1 first in isolation</Action>
+          <Action>Validate L2 can be executed without referencing L3/L4</Action>
+          <Action>Progressive disclosure is about *loading* order, not *reading* order</Action>
+        </Prevention>
+      </FM6>
+
+      <FM7>
+        <Name>Version Upgrade Breaking Changes Undocumented</Name>
+        <Detection>
+          <Symptom>Upgrading from v1 to v2, but changes not clearly documented</Symptom>
+          <Symptom>Downstream skills break after upgrade</Symptom>
+          <Symptom>Golden runs fail without clear reason</Symptom>
+        </Detection>
+        <Recovery>
+          <Action>Document all breaking changes in changelog</Action>
+          <Action>Update affected golden runs</Action>
+          <Action>Notify downstream skill maintainers</Action>
+          <Action>Consider deprecation period for major changes</Action>
+        </Recovery>
+        <Prevention>
+          <Action>Use semantic versioning: MAJOR (breaking), MINOR (new features), PATCH (bug fixes)</Action>
+          <Action>Maintain CHANGELOG.md for each skill</Action>
+          <Action>Run regression tests before version bump</Action>
+        </Prevention>
+      </FM7>
+    </FailureModePlaybook>
+  </Layer3_EdgeCases>
+
+  <!-- ================================================================ -->
+  <!-- L4 — TECHNICAL SPEC (3500 tokens max)                           -->
+  <!-- ================================================================ -->
+  <Layer4_TechnicalSpec>
+    <SSOTSchemaRequirements>
+      <Description>Complete XML schema template for Skill Builder output</Description>
+
+      <SkillXMLSchema>
+        &lt;Skill
+          skill_id="skill.[domain].[name].v[MAJOR_MINOR_PATCH]"
+          name="Human-Readable Skill Name"
+          version="MAJOR.MINOR.PATCH"
+          tier="production|meta|experimental"
+          status="active|draft|deprecated"
+          model="sonnet|opus|haiku"
+        &gt;
+          &lt;Meta&gt;
+            &lt;Owner&gt;[owner_agent_or_team]&lt;/Owner&gt;
+            &lt;PrimaryDomain&gt;[domain]&lt;/PrimaryDomain&gt;
+            &lt;SecondaryDomain&gt;[optional_secondary_domain]&lt;/SecondaryDomain&gt;
+            &lt;LastUpdated&gt;[YYYY-MM-DD]&lt;/LastUpdated&gt;
+            &lt;Tags&gt;
+              &lt;Tag&gt;[tag1]&lt;/Tag&gt;
+              &lt;Tag&gt;[tag2]&lt;/Tag&gt;
+            &lt;/Tags&gt;
+          &lt;/Meta&gt;
+
+          &lt;Purpose&gt;[1-2 sentence purpose statement]&lt;/Purpose&gt;
+
+          &lt;Scope&gt;
+            &lt;WhenToUse&gt;
+              &lt;Trigger&gt;[natural language trigger 1]&lt;/Trigger&gt;
+            &lt;/WhenToUse&gt;
+            &lt;NotFor&gt;
+              &lt;Item&gt;[explicit exclusion 1]&lt;/Item&gt;
+            &lt;/NotFor&gt;
+          &lt;/Scope&gt;
+
+          &lt;SSOT&gt;
+            &lt;Required&gt;
+              &lt;Object schema_id="[SSOT_OBJECT_ID]"/&gt;
+            &lt;/Required&gt;
+            &lt;Optional&gt;
+              &lt;Object schema_id="[OPTIONAL_SSOT_OBJECT_ID]"/&gt;
+            &lt;/Optional&gt;
+          &lt;/SSOT&gt;
+
+          &lt;Identity&gt;
+            &lt;Role&gt;[persona/role statement]&lt;/Role&gt;
+            &lt;NonNegotiables&gt;
+              &lt;Item&gt;[hard constraint 1]&lt;/Item&gt;
+            &lt;/NonNegotiables&gt;
+          &lt;/Identity&gt;
+
+          &lt;Routing&gt;
+            &lt;RecommendedAwakenings&gt;
+              &lt;High&gt;
+                &lt;SkillRef&gt;skill.[downstream_skill].v[X_x_x]&lt;/SkillRef&gt;
+              &lt;/High&gt;
+            &lt;/RecommendedAwakenings&gt;
+            &lt;LayerLoadDefault&gt;L1+L2&lt;/LayerLoadDefault&gt;
+            &lt;LayerLoadConditions&gt;
+              &lt;Condition layer="L3"&gt;[condition_expression]&lt;/Condition&gt;
+              &lt;Condition layer="L4"&gt;[condition_expression]&lt;/Condition&gt;
+            &lt;/LayerLoadConditions&gt;
+          &lt;/Routing&gt;
+
+          &lt;Inputs&gt;
+            &lt;Required&gt;
+              &lt;Input name="[INPUT_NAME]" ssot="true|false"&gt;
+                &lt;Notes&gt;[description]&lt;/Notes&gt;
+              &lt;/Input&gt;
+            &lt;/Required&gt;
+            &lt;Optional&gt;
+              &lt;Input name="[INPUT_NAME]" ssot="true|false"&gt;
+                &lt;Notes&gt;[description]&lt;/Notes&gt;
+              &lt;/Input&gt;
+            &lt;/Optional&gt;
+          &lt;/Inputs&gt;
+
+          &lt;Outputs&gt;
+            &lt;PrimaryOutputs&gt;
+              &lt;Output id="[output_id]" format="markdown|yaml|xml"&gt;
+                [description]
+              &lt;/Output&gt;
+            &lt;/PrimaryOutputs&gt;
+            &lt;SecondaryOutputs&gt;
+              &lt;Output id="[output_id]" format="markdown|yaml|xml"&gt;
+                [description]
+              &lt;/Output&gt;
+            &lt;/SecondaryOutputs&gt;
+          &lt;/Outputs&gt;
+
+          &lt;QualityGates&gt;
+            &lt;Gate name="[GATE_NAME]"&gt;
+              &lt;PassCriteria&gt;[measurable criteria]&lt;/PassCriteria&gt;
+            &lt;/Gate&gt;
+          &lt;/QualityGates&gt;
+
+          &lt;TokenBudget&gt;
+            &lt;L1&gt;[max_tokens]&lt;/L1&gt;
+            &lt;L2&gt;[max_tokens]&lt;/L2&gt;
+            &lt;L3&gt;[max_tokens]&lt;/L3&gt;
+            &lt;L4&gt;[max_tokens]&lt;/L4&gt;
+          &lt;/TokenBudget&gt;
+
+          &lt;MMAIntegration&gt;
+            &lt;EvaluateWith&gt;
+              &lt;Dimension&gt;[dimension_name]&lt;/Dimension&gt;
+            &lt;/EvaluateWith&gt;
+            &lt;PassThreshold&gt;[threshold_expression]&lt;/PassThreshold&gt;
+          &lt;/MMAIntegration&gt;
+
+          &lt;Layer1_Core&gt;[L1 content]&lt;/Layer1_Core&gt;
+          &lt;Layer2_DetailedProcedure&gt;[L2 content]&lt;/Layer2_DetailedProcedure&gt;
+          &lt;Layer3_EdgeCases&gt;[L3 content]&lt;/Layer3_EdgeCases&gt;
+          &lt;Layer4_TechnicalSpec&gt;[L4 content]&lt;/Layer4_TechnicalSpec&gt;
+
+        &lt;/Skill&gt;
+      </SkillXMLSchema>
+    </SSOTSchemaRequirements>
+
+    <OutputFormatSpecifications>
+      <SKILL_XML>
+        <Format>XML (UTF-8 encoding)</Format>
+        <Schema>As defined in SSOTSchemaRequirements</Schema>
+        <FileNaming>[skill_id]_v[version].xml</FileNaming>
+        <Location>/ultramind/skills/xml/</Location>
+      </SKILL_XML>
+
+      <SKILL_MARKDOWN_REFERENCE>
+        <Format>Markdown with YAML frontmatter</Format>
+        <Frontmatter>skill_id, version, owner, tier, last_updated, inputs, outputs, dependencies, quality_gates, guardrails, token_budget, mod_integration, mma_integration</Frontmatter>
+        <BodyStructure>L1 → L2 → L3 → L4 with clear headings</BodyStructure>
+        <FileNaming>[skill_id]_v[version].md</FileNaming>
+        <Location>/ultramind/skills/markdown/</Location>
+      </SKILL_MARKDOWN_REFERENCE>
+
+      <MOD_ROUTING_CONFIG>
+        <Format>YAML</Format>
+        <AddEntryTo>/ultramind/registry/registry.yaml</AddEntryTo>
+        <Include>skill_id, triggers, awakens (high/medium/low), layer_load_conditions</Include>
+      </MOD_ROUTING_CONFIG>
+
+      <MMA_VALIDATION_SPEC>
+        <Format>YAML</Format>
+        <Include>quality_gates, mma_dimensions, pass_threshold</Include>
+        <CanBeEmbedded>In skill XML or separate file for test harness</CanBeEmbedded>
+      </MMA_VALIDATION_SPEC>
+
+      <GOLDEN_RUN_TEST_CASES>
+        <Format>YAML</Format>
+        <Location>/ultramind/tests/golden_runs/[skill_id]/</Location>
+        <Include>inputs (file paths or inline data), expected_outputs (validation criteria), mma_score_expectations</Include>
+      </GOLDEN_RUN_TEST_CASES>
+
+      <FAILURE_MODE_PLAYBOOK>
+        <EmbeddedIn>L3 of skill XML</EmbeddedIn>
+        <AlsoExtractableAs>Standalone markdown for training/debugging</AlsoExtractableAs>
+      </FAILURE_MODE_PLAYBOOK>
+    </OutputFormatSpecifications>
+
+    <ContextBudgetManagerIntegration>
+      <CBMPolicyForSkillBuilder>
+        <Note>Skill Builder is a meta-skill; can load up to L4 when building skills</Note>
+        <WhenGeneratingSkills>
+          <Assume>MOD will enforce "Rule of 3" (max 3 active skills)</Assume>
+          <DesignFor>Skills to be self-sufficient at L1+L2 (don't require L3/L4 for common cases)</DesignFor>
+          <Ensure>Token budgets ensure skills fit within CBM constraints</Ensure>
+        </WhenGeneratingSkills>
+      </CBMPolicyForSkillBuilder>
+
+      <TokenAllocationExample>
+        Total Context Budget: 100k tokens (typical Claude sonnet limit)
+        Allocated:
+          - SSOT objects (PB + MS + VG + EP): ~15k tokens
+          - MOD orchestration: ~5k tokens
+          - MMA validation: ~5k tokens
+          - Active Skill 1 (L1+L2): ~3k tokens
+          - Active Skill 2 (L1+L2): ~3k tokens
+          - Working memory (output generation): ~40k tokens
+          - Buffer: ~29k tokens
+      </TokenAllocationExample>
+    </ContextBudgetManagerIntegration>
+
+    <ConflictResolutionProtocolIntegration>
+      <PriorityHierarchy>
+        <Priority level="1">SSOT objects (PB, MS, VG, EP) override all creative decisions</Priority>
+        <Priority level="2">Skill Intent (from user) overrides Skill Builder's interpretation</Priority>
+        <Priority level="3">Domain best practices (from masterclass) override generic patterns</Priority>
+        <Priority level="4">Token budget constraints override completeness desires (cut ruthlessly)</Priority>
+      </PriorityHierarchy>
+
+      <ExampleConflict>
+        <Conflict>Masterclass describes 12 frameworks, but L2 budget only fits 4</Conflict>
+        <Resolution>
+          <Step>Prioritize frameworks by frequency of use (per masterclass)</Step>
+          <Step>Move less-common frameworks to L3</Step>
+          <Step>Reference advanced frameworks in L2 without full detail</Step>
+          <Step>Document decision in L4 (why these 4 were chosen)</Step>
+        </Resolution>
+      </ExampleConflict>
+    </ConflictResolutionProtocolIntegration>
+
+    <VersioningAndUpgradePath>
+      <SemanticVersioning>
+        <Format>MAJOR.MINOR.PATCH (e.g., 2.1.0)</Format>
+        <MAJOR>Breaking changes (input/output contracts change, SSOT requirements change)</MAJOR>
+        <MINOR>New features (new frameworks, new failure modes, backward compatible)</MINOR>
+        <PATCH>Bug fixes, clarifications, typo corrections</PATCH>
+      </SemanticVersioning>
+
+      <UpgradeChecklist>
+        <Step>Document all changes in CHANGELOG.md</Step>
+        <Step>Update version in skill_id and version attributes</Step>
+        <Step>Run golden runs (regression tests)</Step>
+        <Step>Update affected downstream skills</Step>
+        <Step>Notify MOD (update routing table if triggers changed)</Step>
+        <Step>Notify MMA (update quality gates if validation changed)</Step>
+      </UpgradeChecklist>
+
+      <DeprecationPolicy>
+        <Action>Mark old version as status="deprecated"</Action>
+        <Action>Provide migration guide in CHANGELOG</Action>
+        <Action>Maintain old version for 1 minor version cycle (e.g., v2.0.x supported through v2.1.x lifetime)</Action>
+      </DeprecationPolicy>
+    </VersioningAndUpgradePath>
+
+    <AutomationPackaging>
+      <Vision>Skill Builder can be invoked autonomously by MOD when masterclass content is detected</Vision>
+
+      <AutomationHooks>
+        <Triggers>
+          <Trigger>file_created: "/ultramind/masterclasses/*.md"</Trigger>
+          <Trigger>file_created: "/ultramind/masterclasses/*.txt"</Trigger>
+          <Trigger>manual_invoke: "/create-skill [masterclass_path]"</Trigger>
+        </Triggers>
+
+        <Workflow>
+          <Step>Extract SKILL_INTENT from masterclass (first paragraph or user prompt)</Step>
+          <Step>Run Skill Builder L1+L2 (generate draft)</Step>
+          <Step>Request human review (before finalizing)</Step>
+          <Step>If approved: generate XML, update registry, create golden run</Step>
+          <Step>If rejected: capture feedback, iterate</Step>
+        </Workflow>
+
+        <HumanInLoop>
+          <RequiredFor>version bump MAJOR</RequiredFor>
+          <OptionalFor>version bump MINOR, PATCH</OptionalFor>
+          <ReviewPoints>SSOT contracts, MMA quality gates, token budgets</ReviewPoints>
+        </HumanInLoop>
+      </AutomationHooks>
+    </AutomationPackaging>
+
+    <GoldenRunTemplate>
+      <Example>
+        golden_run_id: GR-SKILL-BUILDER-001
+        description: "Generate Sales Page Copywriter skill from masterclass"
+
+        inputs:
+          MASTERCLASS_TRANSCRIPT: "/ultramind/masterclasses/sales_page_masterclass.md"
+          SKILL_INTENT: "Create long-form sales pages with proof-driven copy and SSOT alignment"
+          RELATED_SKILLS_CONTEXT:
+            - skill.email_campaign_genius.v2_0_0
+            - skill.offer_architect.v2_0_0
+            - skill.human_persuasion_editor.v2_0_0
+
+        expected_outputs:
+          SKILL_XML:
+            format: "xml"
+            validation_criteria:
+              - "skill_id matches pattern: skill.sales_page_copywriter.v[X_Y_Z]"
+              - "L1 token count &lt;= 250"
+              - "L2 token count &lt;= 2800"
+              - "L3 token count &lt;= 5500"
+              - "L4 token count &lt;= 3200"
+              - "At least 3 quality gates defined"
+              - "At least 2 routing triggers defined"
+              - "Awakening protocol includes email_campaign_genius (high priority)"
+              - "At least 3 failure modes documented"
+
+          GOLDEN_RUN_TEST_CASES:
+            format: "yaml"
+            validation_criteria:
+              - "At least 1 golden run created"
+              - "Golden run includes expected MMA scores"
+
+          mma_score_expectations:
+            contract_clarity: "&gt;= 8"
+            layer_compliance: "&gt;= 9"
+            integration_completeness: "&gt;= 8"
+            documentation_quality: "&gt;= 7"
+
+        test_execution:
+          command: "pytest ultramind/tests/test_skill_builder.py::test_golden_run_001"
+          expected_result: "PASS"
+      </Example>
+    </GoldenRunTemplate>
+
+    <NextStepsAfterUsingThisSkill>
+      <Step>Save generated SKILL_XML to /ultramind/skills/xml/</Step>
+      <Step>Save SKILL_MARKDOWN_REFERENCE to /ultramind/skills/markdown/</Step>
+      <Step>Update /ultramind/registry/registry.yaml with MOD routing config</Step>
+      <Step>Create golden run in /ultramind/tests/golden_runs/[skill_id]/</Step>
+      <Step>Run test harness to validate skill</Step>
+      <Step>If tests pass: mark skill as status="active"</Step>
+      <Step>If tests fail: review Failure Mode Playbook, iterate</Step>
+    </NextStepsAfterUsingThisSkill>
+
+    <Maintenance>
+      <Action>Review skill quarterly for updates</Action>
+      <Action>Collect user feedback (what's unclear? what's missing?)</Action>
+      <Action>Increment version when improvements are made</Action>
+      <Action>Maintain backward compatibility when possible</Action>
+    </Maintenance>
+  </Layer4_TechnicalSpec>
+
+</Skill>
