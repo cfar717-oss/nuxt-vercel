@@ -147,4 +147,263 @@
     <Rule>Objections must be addressed before final CTA</Rule>
   </CrossAssetAlignment>
 
+  <!-- ========================================== -->
+  <!-- PATCH BLOCK v2.1+ (2025-12-17)            -->
+  <!-- Neuro-Resonance Integration                -->
+  <!-- Reference: RESONANCE_CONSTITUTION.xml      -->
+  <!-- ========================================== -->
+
+  <NeuroTargeting version="2.1">
+    <ConstitutionReference>RESONANCE_CONSTITUTION.xml</ConstitutionReference>
+
+    <AudienceTemperature>
+      <!-- cold | warm | hot -->
+      <!-- cold: Never heard of you (BOTTOM/GABA foundation required) -->
+      <!-- warm: Know/like you (can lead with TOP/Serotonin or LEFT/Dopamine) -->
+      <!-- hot: Ready to buy (FRONT/Adrenaline + BACK/Oxytocin priority) -->
+      <Temperature>[cold | warm | hot]</Temperature>
+      <Justification>[Why this classification? First-time buyers? Existing customers? Retargeting?]</Justification>
+    </AudienceTemperature>
+
+    <AxisActivationStrategy>
+      <!-- Define which of the 6 neurochemical axes to prioritize -->
+      <!-- BOTTOM=GABA, TOP=Serotonin, LEFT=Dopamine, RIGHT=Acetylcholine, FRONT=Adrenaline, BACK=Oxytocin -->
+
+      <PrimaryAxes>
+        <!-- List 2-3 axes that are mission-critical for this message -->
+        <Axis id="BOTTOM" priority="1">
+          <Neurochemical>GABA</Neurochemical>
+          <Drive>Safety, Security, Trust</Drive>
+          <TargetScore>8.0</TargetScore>
+          <StrategyNote>
+            [How this message builds safety: guarantees, social proof, transparency, third-party validation]
+            Example: "60-day guarantee + 10,000 customer testimonials + clinical research = multi-layered safety"
+          </StrategyNote>
+        </Axis>
+        <Axis id="LEFT" priority="2">
+          <Neurochemical>Dopamine</Neurochemical>
+          <Drive>Emotion, Excitement, Desire</Drive>
+          <TargetScore>7.5</TargetScore>
+          <StrategyNote>
+            [How this message creates desire: vivid before/after, emotional pain points, future pacing]
+            Example: "Paint frustration of low energy → contrast with vibrant vitality outcome"
+          </StrategyNote>
+        </Axis>
+        <Axis id="RIGHT" priority="3">
+          <Neurochemical>Acetylcholine</Neurochemical>
+          <Drive>Logic, Reason, Evidence</Drive>
+          <TargetScore>7.0</TargetScore>
+          <StrategyNote>
+            [How this message builds logic: mechanism explanation (UMP/UMS), scientific backing, expert authority]
+            Example: "Mitochondrial mechanism + peer-reviewed studies + credentialed formulator = logical proof"
+          </StrategyNote>
+        </Axis>
+      </PrimaryAxes>
+
+      <SecondaryAxes>
+        <!-- List axes that support but aren't primary focus -->
+        <Axis id="TOP">
+          <TargetScore>6.5</TargetScore>
+          <StrategyNote>Moderate status elevation (feel better, perform better) without overpromising</StrategyNote>
+        </Axis>
+        <Axis id="FRONT">
+          <TargetScore>6.0</TargetScore>
+          <StrategyNote>Soft urgency only (limited supply mentioned but not aggressive countdown)</StrategyNote>
+        </Axis>
+        <Axis id="BACK">
+          <TargetScore>6.5</TargetScore>
+          <StrategyNote>Moderate community/tribe ("join 10,000+ customers who've experienced...")</StrategyNote>
+        </Axis>
+      </SecondaryAxes>
+    </AxisActivationStrategy>
+
+    <BalanceRules>
+      <!-- Define specific balance rules for this message (from RESONANCE_CONSTITUTION.xml) -->
+      <Rule pair="BOTTOM_TOP">
+        <Constraint>TOP score cannot exceed BOTTOM by 3+ points</Constraint>
+        <Rationale>Promising elevation without safety foundation = manipulation</Rationale>
+        <TargetDifferential>BOTTOM 8.0, TOP 6.5 (differential: 1.5 ✓)</TargetDifferential>
+      </Rule>
+      <Rule pair="LEFT_RIGHT">
+        <Constraint>Must balance within 2-3 points</Constraint>
+        <Rationale>Pure emotion = hype; pure logic = boring</Rationale>
+        <TargetDifferential>LEFT 7.5, RIGHT 7.0 (differential: 0.5 ✓ optimal)</TargetDifferential>
+      </Rule>
+      <Rule pair="FRONT_BACK">
+        <Constraint>FRONT cannot exceed BACK by 3+ points (urgency needs identity alignment)</Constraint>
+        <Rationale>Pressure without belonging = manipulation red flag</Rationale>
+        <TargetDifferential>FRONT 6.0, BACK 6.5 (differential: -0.5 ✓)</TargetDifferential>
+      </Rule>
+    </BalanceRules>
+
+    <ProhibitedPatterns>
+      <!-- Manipulation tactics explicitly forbidden for this message -->
+      <Pattern penalty="-3.0">
+        <Name>Fake Countdown Timers</Name>
+        <Enforcement>No countdown unless tied to real deadline (webinar start, promo end, inventory limit)</Enforcement>
+      </Pattern>
+      <Pattern penalty="-3.0">
+        <Name>Manufactured Scarcity</Name>
+        <Enforcement>Only claim "limited supply" if backend inventory tracking confirms</Enforcement>
+      </Pattern>
+      <Pattern penalty="-2.0">
+        <Name>Fear-Mongering</Name>
+        <Enforcement>Problem awareness balanced with solution confidence (never catastrophize without hope)</Enforcement>
+      </Pattern>
+      <Pattern penalty="-3.0">
+        <Name>Hidden Costs</Name>
+        <Enforcement>Full price transparency upfront (shipping, taxes, upsells disclosed)</Enforcement>
+      </Pattern>
+      <Pattern penalty="-3.0">
+        <Name>Bait-and-Switch</Name>
+        <Enforcement>Promise in headline must match actual offer (no misleading hooks)</Enforcement>
+      </Pattern>
+    </ProhibitedPatterns>
+
+    <RadicalSimplicityRequirements>
+      <!-- The 4-question test (from RESONANCE_CONSTITUTION.xml) -->
+      <Question number="1">
+        <Ask>THE PROMISE: Can I state transformation in ONE sentence?</Ask>
+        <Answer>[Insert the canonical promise from Promise/CanonicalStatement above]</Answer>
+        <PassCriteria>Single, clear transformation (not compound claims)</PassCriteria>
+      </Question>
+      <Question number="2">
+        <Ask>THE PROOF: Can I explain WHY it works + show WHO it worked for?</Ask>
+        <Answer>
+          WHY: [Mechanism/CanonicalParagraph - mitochondrial support explanation]
+          WHO: [ProofPillars P2/P4 - testimonials + 10,000 customers]
+        </Answer>
+        <PassCriteria>Clear mechanism (UMP/UMS) + specific testimonials/data</PassCriteria>
+      </Question>
+      <Question number="3">
+        <Ask>THE TRUST: Have I made them feel SAFE (GABA ≥7/10)?</Ask>
+        <Answer>
+          BOTTOM axis target: 8.0/10 via guarantee (60-day) + social proof (10,000 customers) + clinical research + transparency
+        </Answer>
+        <PassCriteria>BOTTOM axis score ≥7/10</PassCriteria>
+      </Question>
+      <Question number="4">
+        <Ask>THE DEAL: Is urgency genuine (not manufactured)?</Ask>
+        <Answer>
+          FRONT axis target: 6.0/10 (soft urgency only, limited supply if true)
+          FRONT ≤ BACK+3 (6.0 vs 6.5 = balanced, no manipulation flag)
+        </Answer>
+        <PassCriteria>Urgency tied to real deadline/scarcity + FRONT ≤ BACK+3</PassCriteria>
+      </Question>
+    </RadicalSimplicityRequirements>
+
+    <TransformationPath>
+      <!-- Map the geometric journey through the 6-axis Neuro-Box -->
+      <!-- This is a 3D SPIRAL (not linear checklist) -->
+      <Stage order="1" name="PULLED_UP">
+        <Movement>BOTTOM → TOP</Movement>
+        <AxisActivation>BOTTOM (foundation establishes) → TOP (elevation beckons)</AxisActivation>
+        <CopyMapping>
+          Opening: Establish safety (guarantee, transparency) → Then introduce elevation opportunity (restore youthful energy)
+        </CopyMapping>
+      </Stage>
+      <Stage order="2" name="PRODDED_FORWARD">
+        <Movement>LEFT → RIGHT</Movement>
+        <AxisActivation>LEFT (emotion engages) → RIGHT (logic validates)</AxisActivation>
+        <CopyMapping>
+          Paint emotional frustration (low energy struggle) → Then provide logical mechanism (mitochondrial science)
+        </CopyMapping>
+      </Stage>
+      <Stage order="3" name="VALUE_REINFORCED">
+        <Movement>Proof Pillars</Movement>
+        <AxisActivation>RIGHT + BOTTOM (logic + safety reinforced)</AxisActivation>
+        <CopyMapping>
+          Layer proof: Science (RIGHT) → Testimonials (BOTTOM social proof) → Authority (RIGHT credibility) → Results (BOTTOM safety in numbers)
+        </CopyMapping>
+      </Stage>
+      <Stage order="4" name="ENCOURAGED">
+        <Movement>TOP + BACK</Movement>
+        <AxisActivation>TOP (status vision) + BACK (identity alignment)</AxisActivation>
+        <CopyMapping>
+          Paint aspirational identity (vibrant, energized version of yourself) + tribal belonging (join others who transformed)
+        </CopyMapping>
+      </Stage>
+      <Stage order="5" name="SAFETY_ASSURED">
+        <Movement>BOTTOM reinforced</Movement>
+        <AxisActivation>BOTTOM (objections = safety concerns addressed)</AxisActivation>
+        <CopyMapping>
+          Address objections (safety concerns, skepticism from past failures, guarantee reinforcement)
+        </CopyMapping>
+      </Stage>
+      <Stage order="6" name="ALIGNED">
+        <Movement>BACK strengthened</Movement>
+        <AxisActivation>BACK (this fits who I am, my values)</AxisActivation>
+        <CopyMapping>
+          Reinforce values alignment (natural not synthetic, science-backed not gimmicky, sustainable not crash-based)
+        </CopyMapping>
+      </Stage>
+      <Stage order="7" name="MOVED_FORWARD">
+        <Movement>FRONT activated</Movement>
+        <AxisActivation>FRONT (clear action, genuine urgency if applicable)</AxisActivation>
+        <CopyMapping>
+          Clear CTA (claim your supply) + soft urgency if genuine (limited inventory) + BACK still present (join the community)
+        </CopyMapping>
+      </Stage>
+      <PathCharacteristics>
+        <Item>SPIRAL not linear (BOTTOM touched multiple times: opening + social proof + objections)</Item>
+        <Item>3-DIMENSIONAL (moves through space, not just down the page)</Item>
+        <Item>GEOMETRIC (pyramidal faces create container forces pulling toward transformation)</Item>
+      </PathCharacteristics>
+    </TransformationPath>
+
+    <FastTrackArchitecture>
+      <!-- Fast Tracks (acceleration) vs Funnels (subtraction/filtering) -->
+      <Paradigm>Fast Track</Paradigm>
+      <Principle>Every touchpoint accelerates movement forward (removes confusion, builds momentum)</Principle>
+      <AccelerationMechanisms>
+        <Mechanism>CLARITY: Simple promise (one sentence), clear mechanism (mitochondrial support), obvious CTA</Mechanism>
+        <Mechanism>SAFETY: Multi-layered GABA foundation removes fear of taking action</Mechanism>
+        <Mechanism>MOMENTUM: Each section builds velocity (empathy → hope → proof → confidence)</Mechanism>
+        <Mechanism>IDENTITY: Oxytocin alignment makes action feel natural ("this is for people like me")</Mechanism>
+      </AccelerationMechanisms>
+      <AntiFunnelRules>
+        <Rule>Never filter people OUT ("this isn't for you if...") - instead show them IN ("this is for you because...")</Rule>
+        <Rule>Never create artificial hurdles (complex quiz, application) unless genuinely necessary for fit</Rule>
+        <Rule>Never make them "qualify" - make them feel WELCOMED</Rule>
+      </AntiFunnelRules>
+    </FastTrackArchitecture>
+
+    <ValidationRequirements>
+      <!-- How MMA should validate this message against neuro-requirements -->
+      <MinimumAxisScores>
+        <Threshold axis="BOTTOM" minimum="7.0">Cold audience requires strong safety foundation</Threshold>
+        <Threshold axis="LEFT" minimum="6.0">Emotional resonance required for engagement</Threshold>
+        <Threshold axis="RIGHT" minimum="6.0">Logical mechanism required for credibility</Threshold>
+      </MinimumAxisScores>
+      <BalanceViolationTolerance>Zero tolerance for balance violations (opposing pairs must harmonize within defined constraints)</BalanceViolationTolerance>
+      <ManipulationTolerance>Zero tolerance (any prohibited pattern detected = automatic fail)</ManipulationTolerance>
+      <RadicalSimplicityEnforcement>All 4 questions must PASS (single fail = message not ready)</RadicalSimplicityEnforcement>
+      <OverallResonanceTarget>7.0+</OverallResonanceTarget>
+    </ValidationRequirements>
+
+    <IntegrationNotes>
+      <Note priority="critical">
+        The NeuroTargeting section enhances but does not replace the traditional MESSAGE_SPINE elements.
+        Promise, Mechanism, ProofPillars, Objections, and CTA remain authoritative.
+        Neuro-targeting provides the strategic layer that guides HOW these elements activate neurochemical responses.
+      </Note>
+      <Note priority="high">
+        Skills should reference BOTH traditional elements AND neuro-targeting:
+        - Offer Architect: Uses neuro-targeting to define angle + UMP/UMS positioning
+        - Sales Page Copywriter: Uses neuro-targeting to structure copy flow (transformation path)
+        - Human Persuasion Editor: Uses neuro-targeting for final balance check
+        - Neuro-Resonance Auditor: Validates against axis targets + balance rules
+        - MMA: Enforces validation requirements defined here
+      </Note>
+      <Note priority="medium">
+        Backward compatibility: MESSAGE_SPINE v2.0 instances (without NeuroTargeting) remain valid.
+        MOD will infer basic neuro-requirements from audience + context if NeuroTargeting section omitted.
+        However, v2.1+ with explicit neuro-targeting is STRONGLY RECOMMENDED for all new projects.
+      </Note>
+    </IntegrationNotes>
+
+  </NeuroTargeting>
+
+  <!-- END PATCH BLOCK v2.1+ -->
+
 </MessageSpine>

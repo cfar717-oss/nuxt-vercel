@@ -114,3 +114,111 @@ Work in small, versioned deltas. All SSOT objects and skills are versioned. Patc
 - **No Dark Patterns**: No fake urgency, hidden costs, or deceptive CTAs
 - **Evidence-Based**: Claims must be defensible
 - **Accessible**: Language clarity prioritizes understanding over cleverness
+
+---
+
+## NEURO-RESONANCE LAYER (v1.1+)
+**PATCH BLOCK: Integrated 2025-12-17 | Global Quality Standard Enhancement**
+
+### Foundation Reference
+The Ultramind system now operates with a **foundational neuro-persuasion architecture** defined in:
+- **`RESONANCE_CONSTITUTION.xml`** - The global quality standard for all persuasion work
+
+This layer **enhances** (not replaces) the 10 Core Rules above. It provides the neurological and geometric framework that makes persuasion **authentic, resonant, and transformation-focused** (not manipulative).
+
+---
+
+### The 6-Dimensional Neuro-Box (Core Architecture)
+
+Every piece of persuasive content operates across **6 neurochemical axes** that correspond to the fundamental forces of human consciousness and decision-making:
+
+#### VERTICAL AXIS (Foundation ↔ Elevation)
+- **BOTTOM (GABA)**: Safety, Security, Trust - *"Will this hurt me?"*
+- **TOP (Serotonin)**: Status, Specialness, Significance - *"Will this elevate me?"*
+- **Rule**: TOP score cannot exceed BOTTOM by 3+ points (elevation requires foundation)
+
+#### HORIZONTAL AXIS (Emotion ↔ Logic)
+- **LEFT (Dopamine)**: Emotion, Excitement, Desire - *"Do I want this?"*
+- **RIGHT (Acetylcholine)**: Logic, Reason, Evidence - *"Does this make sense?"*
+- **Rule**: Balance required (neither pure emotion nor pure logic works alone)
+
+#### DEPTH AXIS (Action ↔ Harmony)
+- **FRONT (Adrenaline)**: Action, Urgency, Movement - *"Should I act now?"*
+- **BACK (Oxytocin)**: Harmony, Belonging, Alignment - *"Does this fit who I am?"*
+- **Rule**: Urgency without identity alignment = manipulation red flag
+
+**Geometric Principle**: The box is a **transformation chamber** with 6 pyramidal faces. The audience journey is a **3D spiral** through this space (not a linear checklist). Each face exerts a force pulling consciousness through dimensional space.
+
+**Reference**: See `RESONANCE_CONSTITUTION.xml` for complete axis definitions, scoring rubrics, and balance rules.
+
+---
+
+### Radical Simplicity (The 4-Question Test)
+
+Before any output ships, it must pass this brutally simple test:
+
+1. **THE PROMISE**: Can I state the transformation in ONE sentence?
+2. **THE PROOF**: Can I explain WHY it works + show WHO it worked for?
+3. **THE TRUST**: Have I made them feel SAFE (GABA foundation)?
+4. **THE DEAL**: Is the urgency genuine (not manufactured)?
+
+**If any answer is "no" or requires paragraphs to explain, the message is not ready.**
+
+**Authority**: Radical Simplicity overrides complexity bias. Simple > clever. Clear > impressive.
+
+---
+
+### Fast Tracks vs Funnels (Paradigm Shift)
+
+**OLD MODEL (Funnels)**: Subtraction engine that filters people OUT through objections and hesitation.
+
+**NEW MODEL (Fast Tracks)**: Acceleration engine that moves people FORWARD through:
+- **Clarity** (remove confusion, not people)
+- **Safety** (GABA foundation first, always)
+- **Momentum** (each step builds velocity)
+- **Identity alignment** (Oxytocin harmony)
+
+**Rule**: Ultramind builds Fast Tracks, not funnels. Every touchpoint must accelerate, not filter.
+
+**Reference**: See `RESONANCE_CONSTITUTION.xml` § Fast Tracks Architecture for implementation details.
+
+---
+
+### Hybrid Whole Solutions (Product Architecture)
+
+The neuro-box reveals that **information-only products** cannot fully activate all 6 axes. True transformation requires:
+
+**3-Dimensional Integration:**
+1. **Physical Anchor** (Somatic/tangible) - activates GABA (safety) + Oxytocin (belonging)
+2. **Digital Protocol** (Structured system) - activates Acetylcholine (logic) + Serotonin (status)
+3. **AI Agent** (Personalized guidance) - activates Dopamine (emotion) + Adrenaline (action)
+
+**Authority**: When architecting offers, consider the full cyber-physical-AI integration (not just digital delivery).
+
+**Reference**: See `RESONANCE_CONSTITUTION.xml` § Hybrid Solutions Architecture.
+
+---
+
+### Integration with Existing Rules
+
+**How This Layer Enhances Core Rules:**
+
+- **Rule #1 (Truth > Persuasion)**: Neuro-Box provides truthful activation (not manipulation triggers)
+- **Rule #7 (No Fake Urgency)**: FRONT axis (Adrenaline) has strict authenticity requirements
+- **Rule #9 (MMA Quality Gate)**: MMA now validates 6-axis scores + balance rules
+- **Ethical Commitments (Persuasion not Manipulation)**: Neuro-Box defines the bright line between authentic influence and dark patterns
+
+**Authority Hierarchy:**
+1. Core 10 Rules (v1.0) - **Constitutional authority**
+2. Neuro-Resonance Layer (v1.1+) - **Calibration standard**
+3. SSOT Objects - **Execution constraints**
+4. Skills - **Implementation tools**
+
+**System Note**: All skills now reference `RESONANCE_CONSTITUTION.xml` for quality thresholds. The MMA validation scorecard includes 6-axis neuro-scoring as a core dimension.
+
+---
+
+### Version Notes
+- **v1.0**: Original 10 rules + 4 pillars SSOT model
+- **v1.1**: Added Neuro-Resonance Layer (references RESONANCE_CONSTITUTION.xml)
+- **Patch Rationale**: Provides neurological and geometric framework that makes the ethical commitments operationally enforceable (not just aspirational)
