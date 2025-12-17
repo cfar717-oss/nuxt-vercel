@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ULTRAMIND SKILL v2.0
+  Skill ID: strategic_copy_director_full
+  Version: 1.0.0
+  Created: 2025-12-16
+  Last Updated: 2025-12-16
+-->
+
+<Skill skill_id="strategic_copy_director_full" version="1.0.0" status="draft">
+
+  <!-- ========================================
+       METADATA & PROVENANCE
+       ======================================== -->
+  <Meta>
+    <Name>Strategic Copy Director — Full Mode (Master Orchestrator)</Name>
+    <Description>
+      Orchestrates full-funnel copy ecosystems end-to-end: architecture, delegation, QA/compliance, cross-asset alignment, testing strategy, and performance-driven skill upgrades.
+    </Description>
+    <CreatedBy agent_or_human="agent" agent_id="skill_builder_skill"/>
+    <DateCreated>2025-12-16</DateCreated>
+    <LastUpdated>2025-12-16</LastUpdated>
+    <Tier>production</Tier>
+    <Status>draft</Status>
+    <Model>sonnet</Model>
+    <UpdateHistory>
+      <Update date="2025-12-16" by="skill_builder" change="initial_creation_from_user_spec"/>
+    </UpdateHistory>
+  </Meta>
+
+  <!-- ========================================
+       SKILL CONTRACT (I/O)
+       ======================================== -->
+  <Contract>
+    <InputsRequired>
+      <Input>PROJECT_BRIEF</Input>
+    </InputsRequired>
+
+    <InputsOptional>
+      <Input>OFFER_ARCHITECT_OUTPUT (UMP/UMS, angles, hooks)</Input>
+      <Input>MESSAGE_SPINE (canonical promise/mechanism language)</Input>
+      <Input>VOICE_GUIDE</Input>
+      <Input>EVIDENCE_PACK</Input>
+      <Input>TRAFFIC_CONTEXT (channels, temps, budgets)</Input>
+      <Input>EXISTING_ASSETS (links or drafts)</Input>
+      <Input>PLATFORM_CONSTRAINTS (Meta/Google/YouTube/TikTok etc.)</Input>
+      <Input>PERFORMANCE_DATA (CTR, CVR, AOV, hook-rate, opens/clicks)</Input>
+    </InputsOptional>
+
+    <OutputsPrimary>
+      <Output format="markdown">copy_ecosystem_plan</Output>
+      <Output format="markdown">asset_map_and_briefs</Output>
+      <Output format="markdown">director_review_report</Output>
+      <Output format="markdown">testing_plan</Output>
+      <Output format="markdown">launch_readiness_packet</Output>
+    </OutputsPrimary>
+
+    <OutputsSecondary>
+      <Output format="markdown">cross_asset_alignment_spec</Output>
+      <Output format="markdown">revision_protocol_actions</Output>
+      <Output format="yaml">skill_upgrade_patch_notes</Output>
+    </OutputsSecondary>
+  </Contract>
+
+  <!-- ========================================
+       DEPENDENCIES & INTEGRATION
+       ======================================== -->
+  <Dependencies>
+    <UpstreamDependencies>
+      <Skill priority="high">offer_architect</Skill>
+      <Skill priority="medium">market_intelligence_synthesizer</Skill>
+      <Skill priority="medium">strategic_copy_director_light</Skill>
+    </UpstreamDependencies>
+
+    <DownstreamConsumers>
+      <Skill>advertorial_copy_master</Skill>
+      <Skill>vsl_long_form_mechanism_storyteller</Skill>
+      <Skill>vsl_short_form</Skill>
+      <Skill>sales_page_copywriter_synchronous_seller</Skill>
+      <Skill>email_copy_genius</Skill>
+      <Skill>human_persuasion_editor</Skill>
+      <Skill>master_writing_partner</Skill>
+      <Skill>page_analyst_deconstructor</Skill>
+    </DownstreamConsumers>
+
+    <RequiresTools>
+      <Tool>Read</Tool>
+    </RequiresTools>
+  </Dependencies>
+
+  <!-- ========================================
+       SYSTEM WORKFLOW (Top-Level Orchestration)
+       ======================================== -->
+  <SystemWorkflow>
+    <Flow name="Complete Copy Ecosystem Workflow">
+      <Step order="1">USER_REQUEST</Step>
+      <Step order="2">STRATEGIC_COPY_DIRECTOR (Light or Full)</Step>
+      <Step order="3">SPECIALIST_SKILLS_ACTIVATED</Step>
+      <Step order="4">DRAFTS_CREATED</Step>
+      <Step order="5">STRATEGIC_COPY_DIRECTOR_REVIEW</Step>
+      <Step order="6">HUMAN_PERSUASION_EDITOR_POLISH</Step>
+      <Step order="7">LAUNCH_READY_ASSETS</Step>
+      <Step order="8">PERFORMANCE_DATA</Step>
+      <Step order="9">DIRECTORS_MONITOR_AND_UPGRADE_SKILLS</Step>
+    </Flow>
+
+    <WhatMakesUnique>
+      <Item>Auto-coordinating directors with escalation protocol (Light ⇄ Full)</Item>
+      <Item>Logic-driven format selection: Traffic + Price → Format</Item>
+      <Item>Mechanism consistency enforcement across assets</Item>
+      <Item>Compliance guardian pre-check + scrub + safer rewrites</Item>
+      <Item>Specialist orchestration (director briefs; specialists draft)</Item>
+      <Item>Self-improving: performance → patch upgrades</Item>
+      <Item>Revision protocol: diagnosis → prescription → assignment → QA → testing</Item>
+      <Item>Complete funnel thinking: Ad → Advertorial → VSL → Page → Cart</Item>
+    </WhatMakesUnique>
+  </SystemWorkflow>
+
+  <!-- ========================================
+       MOD INTEGRATION (Orchestration)
+       ======================================== -->
+  <MODIntegration>
+    <RoutingTriggers>
+      <Trigger>task_type in ["funnel_design","campaign_orchestration","multi_asset_copy","launch_plan"]</Trigger>
+      <Trigger>user_requests contains "full funnel" OR user_requests contains "campaign"</Trigger>
+      <Trigger>assets_requested_count &gt;= 3</Trigger>
+      <Trigger>user_requests contains "testing plan" OR user_requests contains "A/B"</Trigger>
+      <Trigger>user_requests contains "cross-asset alignment" OR user_requests contains "mechanism consistency"</Trigger>
+    </RoutingTriggers>
+
+    <LayerLoadDefault>L1+L2</LayerLoadDefault>
+
+    <LayerLoadConditions>
+      <Condition layer="L3">edge_case_detected OR multi_platform_compliance OR complexity &gt;= 4</Condition>
+      <Condition layer="L4">skill_upgrade_work OR patching OR debugging OR schema_work</Condition>
+    </LayerLoadConditions>
+
+    <ContextBudget>
+      <Estimated>3500</Estimated>
+      <Maximum>6000</Maximum>
+    </ContextBudget>
+  </MODIntegration>
+
+  <!-- ========================================
+       MMA INTEGRATION (Quality Validation)
+       ======================================== -->
+  <MMAIntegration>
+    <QualityDimensions>
+      <Dimension name="ecosystem_coherence" weight="critical">
+        <Threshold>9.0</Threshold>
+        <Validation>All assets share promise, mechanism naming, proof hierarchy, and CTA logic</Validation>
+      </Dimension>
+
+      <Dimension name="structural_integrity" weight="high">
+        <Threshold>8.0</Threshold>
+        <Validation>Each asset passes Hook→Problem→Mechanism→Proof→Offer→Risk→CTA</Validation>
+      </Dimension>
+
+      <Dimension name="compliance_safety" weight="critical">
+        <Threshold>9.0</Threshold>
+        <Validation>Red flags removed; urgency/scarcity verifiable; claims bounded to evidence</Validation>
+      </Dimension>
+
+      <Dimension name="testability" weight="high">
+        <Threshold>8.0</Threshold>
+        <Validation>Clear control, prioritized tests, hypotheses, metrics, and duration</Validation>
+      </Dimension>
+    </QualityDimensions>
+
+    <HardGates>
+      <Gate severity="critical">no_fake_urgency</Gate>
+      <Gate severity="critical">no_unverifiable_claims</Gate>
+      <Gate severity="critical">mechanism_named_identically_everywhere</Gate>
+      <Gate severity="high">no_cross_asset_contradictions</Gate>
+    </HardGates>
+  </MMAIntegration>
+
+  <!-- ========================================
+       GUARDRAILS (Hard Constraints)
+       ======================================== -->
+  <Guardrails>
+    <Guardrail priority="critical">
+      <Rule>traffic_determines_format</Rule>
+      <Description>Cold → pre-sell (advertorial). Warm → direct (VSL/page). High-ticket → hybrid.</Description>
+    </Guardrail>
+
+    <Guardrail priority="critical">
+      <Rule>mechanism_consistency</Rule>
+      <Description>Mechanism must be named identically across advertorial/VSL/page/emails/checkout.</Description>
+    </Guardrail>
+
+    <Guardrail priority="critical">
+      <Rule>compliance_first</Rule>
+      <Description>If copy risks bans/legal issues, stop and rewrite before launch.</Description>
+    </Guardrail>
+
+    <Guardrail priority="high">
+      <Rule>orchestrate_dont_micromanage</Rule>
+      <Description>Director briefs and coordinates; specialists draft; director reviews/aligns.</Description>
+    </Guardrail>
+  </Guardrails>
+
+  <!-- ========================================
+       L1 LAYER: QUICK REFERENCE (Always Loaded)
+       ======================================== -->
+  <Layer level="1" name="Quick Reference">
+    <LoadPriority>always</LoadPriority>
+    <Purpose>Fast funnel architecture decisions + delegation + QA standards</Purpose>
+    <TokenBudget>300-450</TokenBudget>
+
+    <CorePurpose>
+      Decide what to build, ensure every asset works together, enforce mechanism/promise consistency, keep compliance safe, and ship a testable launch-ready funnel.
+    </CorePurpose>
+
+    <DefaultAssetFlows>
+      <Flow name="Cold DTC">
+        <Map>Ad → Advertorial → VSL → Sales Page → Cart</Map>
+      </Flow>
+      <Flow name="Warm DTC">
+        <Map>Email/Retarget → VSL or Sales Page → Cart</Map>
+      </Flow>
+      <Flow name="High-Ticket">
+        <Map>Ad/Retarget → Short VSL → Long Page → Application/Call</Map>
+      </Flow>
+      <Flow name="B2B/SaaS">
+        <Map>LinkedIn/Google → Short VSL or Page → Demo/App</Map>
+      </Flow>
+    </DefaultAssetFlows>
+
+    <EscalationWithLightMode>
+      <LightHandles>quick format decisions, brief generation, fast compliance scans, minor tweaks</LightHandles>
+      <FullHandles>multi-asset orchestration, deep structure reviews, testing strategy, performance-driven upgrades</FullHandles>
+      <HandOffExample>
+        Full→Light: Quick compliance scan + 2 safer headline alternatives.
+      </HandOffExample>
+      <EscalationExample>
+        Light→Full: Multi-asset coordination + sophisticated mechanism + multi-platform constraints.
+      </EscalationExample>
+    </EscalationWithLightMode>
+  </Layer>
+
+  <!-- ========================================
+       L2 LAYER: CORE PROCEDURE (Standard Execution)
+       ======================================== -->
+  <Layer level="2" name="Core Procedure">
+    <LoadPriority>when_executing</LoadPriority>
+    <Purpose>End-to-end orchestration: scan → blueprint → delegate → review → unify → test → package</Purpose>
+    <TokenBudget>2000-3000</TokenBudget>
+
+    <Procedure>
+
+      <Step order="1" name="Quick Situation Scan">
+        <Purpose>Extract offer, audience, traffic, objective, constraints; state assumptions if missing</Purpose>
+        <Outputs>
+          <Output>OfferSnapshot</Output>
+          <Output>AudienceSnapshot</Output>
+          <Output>TrafficMapping</Output>
+          <Output>ConstraintsList</Output>
+        </Outputs>
+      </Step>
+
+      <Step order="2" name="Messaging & Format Blueprint">
+        <Purpose>Define Big Idea, mechanism, angles, proof hierarchy, and required assets</Purpose>
+        <BlueprintOutputs>
+          <Item>MessagingHierarchy (BigIdea, UMP/UMS, primary angles)</Item>
+          <Item>AssetMap (what to build + why + where it sits)</Item>
+          <Item>NarrativeSpine (Problem→Mechanism→Proof→Offer→Risk→CTA)</Item>
+          <Item>UserJourney (first touch → middle → decision → post-purchase)</Item>
+        </BlueprintOutputs>
+      </Step>
+
+      <Step order="3" name="Delegation to Specialist Skills">
+        <Purpose>Create crystal-clear briefs per asset; assign to the right specialist</Purpose>
+
+        <BriefTemplate format="markdown"><![CDATA[
+ASSET: [Format]
+ASSIGNED TO: [Specialist Skill]
+
+SPECS:
+- Length: [Words/Minutes]
+- Traffic: [Cold/Warm/Hot + channel]
+- Audience: [Avatar 1-liner]
+- Awareness: [Stage 1-5]
+- Sophistication: [Low/Med/High]
+
+STRATEGY:
+- Angle: [Primary hook/theme]
+- Mechanism: [UMP] → [UMS] (named identically)
+- Story Arc / Framework: [PAS/PASTOR/Discovery/Case-study/etc.]
+- Proof Elements: [Testimonials/Studies/Authority]
+
+TONE:
+- Voice: [3-5 descriptors]
+- Reading Level: [6th-8th / Professional]
+
+OBJECTIVE:
+- Primary Goal: [Click/Opt-in/Purchase/Demo/App]
+- CTA: [Single next step]
+
+COMPLIANCE NOTES:
+- Claims to avoid
+- Required disclaimers
+- Platform constraints
+KEY MESSAGES (Must include):
+- [3-7 bullets]
+]]></BriefTemplate>
+
+        <Assignments>
+          <ColdTraffic>
+            <Default>advertorial_copy_master</Default>
+            <AlsoOften>vsl_long_form_mechanism_storyteller</AlsoOften>
+          </ColdTraffic>
+          <WarmTraffic>
+            <Default>vsl_long_form_mechanism_storyteller OR sales_page_copywriter_synchronous_seller</Default>
+          </WarmTraffic>
+          <HighTicket>
+            <Default>vsl_short_form + sales_page_copywriter_synchronous_seller</Default>
+          </HighTicket>
+          <Sequences>
+            <Default>email_copy_genius</Default>
+          </Sequences>
+        </Assignments>
+      </Step>
+
+      <Step order="4" name="Director Review (QA + Alignment)">
+        <Purpose>Review drafts for structure, persuasion, voice, compliance, and cross-asset coherence</Purpose>
+
+        <ReviewChecklist>
+          <StructuralIntegrity>
+            <Item>Hook/Lead clarity (first 50–100 words)</Item>
+            <Item>Problem dimensionalized + stakes + "not your fault" validation</Item>
+            <Item>Mechanism named + explained simply</Item>
+            <Item>Proof specific and credible</Item>
+            <Item>Offer clarity + value stack + guarantee</Item>
+            <Item>CTA clear + urgency real + risk reversal</Item>
+          </StructuralIntegrity>
+
+          <PersuasionEffectiveness>
+            <Item>Benefits concrete + tied to deep desires</Item>
+            <Item>Top 5 objections answered naturally</Item>
+            <Item>Emotional arc: fear→hope→belief→action</Item>
+          </PersuasionEffectiveness>
+
+          <VoiceConsistency>
+            <Item>Promise consistent across assets</Item>
+            <Item>Mechanism named identically</Item>
+            <Item>Positioning consistent (us vs them)</Item>
+            <Item>VOC language; jargon explained</Item>
+          </VoiceConsistency>
+
+          <ComplianceScrub>
+            <Item>Remove disease treatment/cure claims</Item>
+            <Item>Remove absolutes ("works for everyone", "100%")</Item>
+            <Item>Remove fake urgency/scarcity</Item>
+            <Item>Add disclaimers as required</Item>
+          </ComplianceScrub>
+        </ReviewChecklist>
+
+        <ReviewOutputFormat format="markdown"><![CDATA[
+DIRECTOR REVIEW REPORT:
+- Structural Issues:
+  1) ...
+- Mechanism Consistency:
+  - Canonical term: ...
+  - Mismatches to fix: ...
+- Compliance Flags:
+  1) "..." → rewrite as "..."
+- Cross-Asset Alignment:
+  - Promise parity: ...
+  - Proof parity: ...
+- Prescriptions:
+  - Assign revisions to: [skill]
+  - Exact fix instructions: ...
+]]></ReviewOutputFormat>
+      </Step>
+
+      <Step order="5" name="Refinement & Unification">
+        <Purpose>Ensure assets read like chapters of the same story; tighten, reorder, unify language</Purpose>
+        <AuthorizedEdits>
+          <Item>Rewrite sections for clarity/flow</Item>
+          <Item>Reorder blocks for impact</Item>
+          <Item>Merge redundant proof</Item>
+          <Item>Tighten CTA logic</Item>
+          <Item>Standardize canonical promise/mechanism phrases</Item>
+        </AuthorizedEdits>
+      </Step>
+
+      <Step order="6" name="Testing Strategy">
+        <Purpose>Propose prioritized A/B tests with hypotheses, metrics, and duration</Purpose>
+
+        <TestPriorityFramework>
+          <Tier1>Headlines/Hooks, Opening 200 words, Offer framing, Guarantee</Tier1>
+          <Tier2>Mechanism naming, Testimonial selection/placement, CTA phrasing, urgency logic</Tier2>
+          <Tier3>Bullets order, images, subheads, FAQ placement</Tier3>
+        </TestPriorityFramework>
+
+        <TestTemplate format="markdown"><![CDATA[
+TEST: [Name]
+- Element:
+- Variant A:
+- Variant B:
+- Hypothesis:
+- Metric(s):
+- Sample Size / Duration:
+- Notes:
+]]></TestTemplate>
+      </Step>
+
+      <Step order="7" name="Human Persuasion Editor Handoff">
+        <Purpose>Final polish for readability, rhythm, flow; manipulation check</Purpose>
+        <HandoffNotes>
+          <Item>Enforce short paragraphs + scannability</Item>
+          <Item>Improve transitions and cadence</Item>
+          <Item>Remove awkward repetition</Item>
+          <Item>Preserve mechanism/promise canon</Item>
+        </HandoffNotes>
+      </Step>
+
+      <Step order="8" name="Launch Packaging">
+        <Purpose>Ship a clean packet: assets + alignment spec + compliance notes + tests + checklist</Purpose>
+
+        <LaunchReadinessChecklist>
+          <Item>All compliance flags resolved</Item>
+          <Item>Mechanism named identically across all assets</Item>
+          <Item>Links/UTMs/tracking confirmed</Item>
+          <Item>Disclaimers present</Item>
+          <Item>Control + variants prepared</Item>
+          <Item>Post-purchase/onboarding messaging aligned</Item>
+        </LaunchReadinessChecklist>
+
+        <NarrativeJustificationPrompt>
+          If we shipped this funnel today, what would happen and why does this structure make sense?
+        </NarrativeJustificationPrompt>
+      </Step>
+
+    </Procedure>
+  </Layer>
+
+  <!-- ========================================
+       L3 LAYER: ADVANCED USAGE (Edge Cases)
+       ======================================== -->
+  <Layer level="3" name="Advanced Usage">
+    <LoadPriority>when_complexity_high_OR_edge_case</LoadPriority>
+    <Purpose>Handle complex revisions, multi-platform constraints, performance troubleshooting</Purpose>
+    <TokenBudget>2200-3200</TokenBudget>
+
+    <RevisionProtocol>
+      <Stage name="Diagnosis">
+        <Item>Identify failure metric (CTR/CVR/bounce/hook/open/click)</Item>
+        <Item>Determine likely root cause (hook, offer clarity, proof, flow, targeting, compliance)</Item>
+      </Stage>
+      <Stage name="Prescription">
+        <Item>Minor fix (headline/CTA/proof placement)</Item>
+        <Item>Medium revision (rewrite lead, restructure sections)</Item>
+        <Item>Major overhaul (new angle/new format)</Item>
+      </Stage>
+      <Stage name="Assignment">
+        <Item>Hook/headlines → offer_architect</Item>
+        <Item>Mechanism clarity → vsl_long_form OR sales_page_copywriter</Item>
+        <Item>Story/VOClanguage → advertorial_copy_master</Item>
+        <Item>Readability/rhythm → human_persuasion_editor</Item>
+        <Item>Email performance → email_copy_genius</Item>
+      </Stage>
+      <Stage name="QualityControl">
+        <Item>Does fix solve the diagnosed issue?</Item>
+        <Item>Any new compliance risk introduced?</Item>
+        <Item>Mechanism/promise still canonical?</Item>
+      </Stage>
+      <Stage name="Testing">
+        <Item>Always test against control; document learnings</Item>
+      </Stage>
+    </RevisionProtocol>
+
+    <MultiPlatformNotes>
+      <MetaAds>
+        <Item>Avoid disease targeting; avoid "you" direct condition targeting when risky</Item>
+        <Item>Urgency/scarcity must be verifiable</Item>
+      </MetaAds>
+      <GoogleAds>
+        <Item>Stricter health claims; landing page disclaimers matter</Item>
+      </GoogleAds>
+      <TikTok>
+        <Item>Personality-forward; keep claims conservative; focus on story and "supports" language</Item>
+      </TikTok>
+      <YouTube>
+        <Item>More room for explanation; disclaimers recommended in description</Item>
+      </YouTube>
+    </MultiPlatformNotes>
+  </Layer>
+
+  <!-- ========================================
+       L4 LAYER: TECHNICAL SPECIFICATION
+       ======================================== -->
+  <Layer level="4" name="Technical Specification">
+    <LoadPriority>meta_work_only</LoadPriority>
+    <Purpose>Output schemas + alignment spec + patch logging for skill upgrades</Purpose>
+    <TokenBudget>1000-1600</TokenBudget>
+
+    <CanonicalLanguageLock>
+      <Rule>Promise phrasing must be semantically equivalent across assets</Rule>
+      <Rule>Mechanism name must be identical (string match preferred)</Rule>
+      <Rule>Approved synonyms list must be explicit if allowed</Rule>
+    </CanonicalLanguageLock>
+
+    <CrossAssetAlignmentSpec format="markdown"><![CDATA[
+CROSS-ASSET ALIGNMENT SPEC (CANON):
+- Promise (1-liner):
+- Mechanism Name:
+- Mechanism 1-paragraph explanation:
+- Proof Pillars (Top 3):
+- Primary CTA:
+- Why Now (real):
+- Disclaimers required:
+- Vocabulary lock (must-use terms / forbidden terms):
+]]></CrossAssetAlignmentSpec>
+
+    <SkillUpgradePatchNotes format="yaml"><![CDATA[
+patch_version: 1.0
+scope: specialist_skill_upgrade
+trigger: performance_data_learning
+wins:
+  - pattern: ""
+    where_used: ""
+    impact: ""
+fails:
+  - pattern: ""
+    where_used: ""
+    lesson: ""
+actions:
+  - update_skill: ""
+    change: ""
+    example_added: ""
+]]></SkillUpgradePatchNotes>
+  </Layer>
+
+  <!-- ========================================
+       VERSION HISTORY & CHANGELOG
+       ======================================== -->
+  <VersionHistory>
+    <Version number="1.0.0" date="2025-12-16">
+      <Changes>
+        <Change>Encoded full "Master Orchestrator" spec into ULTRAMIND XML</Change>
+        <Change>Added system-level workflow + uniqueness factors</Change>
+        <Change>Formalized L2 orchestration steps + director QA checklist + testing framework</Change>
+        <Change>Added revision protocol + performance-driven skill upgrade patch notes</Change>
+      </Changes>
+      <Status>draft</Status>
+    </Version>
+  </VersionHistory>
+
+</Skill>
