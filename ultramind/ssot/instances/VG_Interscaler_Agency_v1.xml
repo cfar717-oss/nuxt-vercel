@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VoiceGuide vg_id="VG-2025-12-16-INTERSCALER-VOICE" version="2.0.1" status="locked" ssot="true">
+  <Meta>
+    <ProjectBriefId>PB-2025-12-16-INTERSCALER-AGENCY-ASCEND</ProjectBriefId>
+    <CreatedBy agent_or_human="human" agent_id="chris"/>
+    <DateCreated>2025-12-16</DateCreated>
+    <LastUpdated>2025-12-16</LastUpdated>
+  </Meta>
+
+  <Validation>
+    <Status>complete</Status>
+  </Validation>
+
+  <ToneTarget warmth="7" authority="8" directness="9" playfulness="2" urgency="3" mystique="1"/>
+
+  <ForbiddenWords>
+    <Word>miracle</Word>
+    <Word>secret</Word>
+    <Word>overnight</Word>
+    <Word>guaranteed</Word>
+    <Word>six figures in</Word>
+  </ForbiddenWords>
+
+  <Rules>
+    <Rule>Default to direct second-person ("you/your"), pragmatic operator tone.</Rule>
+    <Rule>Show the system: steps, milestones, owners, artifacts. Avoid vague inspiration.</Rule>
+    <Rule>No income claims unless backed by EvidencePack + typical results disclosure.</Rule>
+    <Rule>Keep paragraphs short (2–4 sentences). Prefer clarity over cleverness.</Rule>
+  </Rules>
+
+  <SignaturePhrases>
+    <Phrase>Scale smarter, not harder—with systems that actually get used.</Phrase>
+    <Phrase>We build the infrastructure so execution stops depending on willpower.</Phrase>
+    <Phrase>Less chaos. More throughput.</Phrase>
+  </SignaturePhrases>
+
+  <TabooTone>
+    <Item>sales_bro_pressure</Item>
+    <Item>ai_hype_theater</Item>
+    <Item>vanity_metrics</Item>
+    <Item>condescension</Item>
+  </TabooTone>
+
+  <LockProtocol>
+    <LockStatus>locked</LockStatus>
+    <LockedBy>human</LockedBy>
+    <LockDate>2025-12-16</LockDate>
+  </LockProtocol>
+</VoiceGuide>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProjectBrief pb_id="PB-2025-12-16-INTERSCALER-AGENCY-ASCEND" version="2.0.1" status="draft" ssot="true">
+  <Meta>
+    <CreatedBy agent_or_human="human" agent_id="chris"/>
+    <DateCreated>2025-12-16</DateCreated>
+    <LastUpdated>2025-12-16</LastUpdated>
+    <UpdateHistory>
+      <Update date="2025-12-16" by="chris" change="initial_instance_created"/>
+    </UpdateHistory>
+  </Meta>
+
+  <Validation>
+    <Status>incomplete</Status>
+    <ValidationWarnings>
+      <Warning>Pricing, case studies, and guarantee terms are placeholders or UNKNOWN. Fill before final.</Warning>
+    </ValidationWarnings>
+  </Validation>
+
+  <ObjectiveScope>
+    <PrimaryGoal>book_calls</PrimaryGoal>
+    <DeliverablesRequested>
+      <Deliverable>sales_page</Deliverable>
+      <Deliverable>booking_funnel_copy</Deliverable>
+      <Deliverable>launch_emails</Deliverable>
+    </DeliverablesRequested>
+    <FunnelStage>cold</FunnelStage>
+    <LaunchDate>2025-12-20</LaunchDate>
+    <PrimaryCTA>Book a Strategy Call</PrimaryCTA>
+    <CTASecondaryOptional>See How It Works</CTASecondaryOptional>
+  </ObjectiveScope>
+
+  <OfferSnapshot>
+    <OfferName>Interscaler — AI Growth Infrastructure & Marketing Automations</OfferName>
+    <OfferType>service_with_systems</OfferType>
+
+    <PricingTiers currency="USD">
+      <Tier name="Starter" price="UNKNOWN"/>
+      <Tier name="Growth" price="UNKNOWN"/>
+      <Tier name="Scale" price="UNKNOWN"/>
+    </PricingTiers>
+
+    <CorePromise>Install an AI-enabled growth infrastructure that reduces manual marketing ops and increases pipeline consistency within 30–60 days (timeline varies).</CorePromise>
+    <UniqueMechanism>Innovation → Automation → Integration → Acceleration (a staged build that prevents "automation chaos").</UniqueMechanism>
+
+    <Differentiators>
+      <Point>Systems-first: strategy + implementation (not "random automations")</Point>
+      <Point>Offer + funnel + follow-up tied together (Traffic → Offers, Lead Gen → Sales)</Point>
+      <Point>Operator-friendly delivery (documentation, handoff, training)</Point>
+    </Differentiators>
+
+    <RiskReversal>
+      <Type>milestone_based</Type>
+      <Terms>UNKNOWN (recommend: milestone-based "Build Plan + First Automations" deliverable guarantee)</Terms>
+      <VisibilityTarget>above_fold</VisibilityTarget>
+    </RiskReversal>
+
+    <Inclusions>
+      <Item>Growth Systems Audit (current funnel + ops map)</Item>
+      <Item>Offer + messaging alignment (MessageSpine-driven)</Item>
+      <Item>Funnel build or rebuild (landing, booking, follow-up)</Item>
+      <Item>Automation install (CRM/workflows/content ops)</Item>
+      <Item>Reporting + iteration loop (weekly cadence)</Item>
+    </Inclusions>
+  </OfferSnapshot>
+
+  <AudienceMarket>
+    <PrimaryAvatar>6–7 figure founders, coaches, agencies, and professional firms who are time-starved, growth-stalled, and tired of "tools that don't get used."</PrimaryAvatar>
+    <AwarenessLevel scale="1-5">3</AwarenessLevel>
+    <MarketSophistication scale="1-5">4</MarketSophistication>
+
+    <Pains>
+      <Pain rank="1">Leads are inconsistent; follow-up is manual and messy</Pain>
+      <Pain rank="2">Too many disconnected tools; team adoption is low</Pain>
+      <Pain rank="3">Agencies/vendors overpromise; unclear accountability</Pain>
+    </Pains>
+
+    <Desires>
+      <Desire rank="1">Predictable pipeline without living in the inbox/DMs</Desire>
+      <Desire rank="2">Systems that free up time while improving execution quality</Desire>
+      <Desire rank="3">A partner who installs + trains + documents, not just advises</Desire>
+    </Desires>
+
+    <Objections>
+      <Objection rank="1">"We've been burned before—how do I trust this?"</Objection>
+      <Objection rank="2">"AI sounds hypey—will this actually work for us?"</Objection>
+      <Objection rank="3">"Implementation will be a nightmare / my team won't adopt it."</Objection>
+      <Objection rank="4">"How fast until we see measurable movement?"</Objection>
+      <Objection rank="5">"Is it worth the cost vs hiring internally?"</Objection>
+    </Objections>
+
+    <TriedBefore>
+      <Item>CRMs/templates that never got adopted</Item>
+      <Item>Automation tools with no strategy or integration plan</Item>
+      <Item>Agencies that reported vanity metrics instead of pipeline impact</Item>
+    </TriedBefore>
+
+    <TriggerEvents>
+      <Event>Founder hits capacity ceiling; missed leads and inconsistent follow-up become painful</Event>
+      <Event>Team turnover reveals process fragility</Event>
+    </TriggerEvents>
+  </AudienceMarket>
+
+  <VoiceResonance>
+    <VoiceArchetype>Informed guide + operator (calm, direct, systems-minded)</VoiceArchetype>
+    <ToneDials warmth="7" authority="8" directness="9" playfulness="2" urgency="3" mystique="1"/>
+    <LanguageStyle>Short paragraphs, practical, no hype, "show the system"</LanguageStyle>
+    <TabooTone>
+      <Item>no_hype</Item>
+      <Item>no_fake_urgency</Item>
+      <Item>no_unverified_revenue_claims</Item>
+      <Item>no_condescension</Item>
+    </TabooTone>
+    <SignaturePhrases>
+      <Phrase>Scale smarter, not harder—with systems that actually get used.</Phrase>
+      <Phrase>We build the infrastructure so execution stops depending on willpower.</Phrase>
+    </SignaturePhrases>
+    <WordsToAvoid>
+      <Word>miracle</Word>
+      <Word>secret</Word>
+      <Word>overnight</Word>
+      <Word>guaranteed</Word>
+    </WordsToAvoid>
+  </VoiceResonance>
+
+  <EvidenceClaims>
+    <ClaimBoundary>moderate</ClaimBoundary>
+    <HardConstraints>
+      <Constraint>no_fake_urgency</Constraint>
+      <Constraint>no_guarantees</Constraint>
+      <Constraint>no_unverified_income_claims</Constraint>
+      <Constraint>no_fake_case_studies</Constraint>
+    </HardConstraints>
+    <EvidencePackId>EP-2025-12-16-INTERSCALER-PROOF</EvidencePackId>
+  </EvidenceClaims>
+
+  <RelatedArtifacts>
+    <MessageSpineId>MS-2025-12-16-INTERSCALER-AGENCY-ASCEND</MessageSpineId>
+    <VoiceGuideId>VG-2025-12-16-INTERSCALER-VOICE</VoiceGuideId>
+  </RelatedArtifacts>
+</ProjectBrief>

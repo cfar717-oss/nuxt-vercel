@@ -1,0 +1,23 @@
+request_id: REQ-2025-12-16-AGENCY-001
+task_description: >
+  Build a cold-traffic sales page + discovery call booking funnel + 7-email launch/nurture sequence
+  for Interscaler's AI Growth Infrastructure & Marketing Automation offer.
+
+requested_outputs:
+  - sales_page
+  - booking_funnel_copy
+  - launch_emails
+
+allow_minimal_brief: true
+
+ssot_refs:
+  project_brief: PB-2025-12-16-INTERSCALER-AGENCY-ASCEND
+  message_spine: MS-2025-12-16-INTERSCALER-AGENCY-ASCEND
+  voice_guide: VG-2025-12-16-INTERSCALER-VOICE
+  evidence_pack: EP-2025-12-16-INTERSCALER-PROOF
+
+constraints:
+  claim_boundary: moderate
+  no_fake_urgency: true
+  no_guarantees: true
+  no_unverified_income_claims: true

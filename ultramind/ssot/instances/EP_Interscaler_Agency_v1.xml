@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EvidencePack ep_id="EP-2025-12-16-INTERSCALER-PROOF" version="1.0.0" status="draft">
+  <ClaimPolicy claim_boundary="moderate">
+    <HardRules>
+      <Rule>no_fake_case_studies</Rule>
+      <Rule>no_unverified_income_claims</Rule>
+      <Rule>testimonials_not_universal_proof</Rule>
+      <Rule>no_fabrication_ever</Rule>
+    </HardRules>
+  </ClaimPolicy>
+
+  <ApprovedClaims>
+    <Claim id="C01" confidence="medium">
+      <Text>Systems-first delivery improves execution consistency compared to disconnected tools and templates.</Text>
+      <EvidenceRefs><Ref>E02</Ref><Ref>E03</Ref></EvidenceRefs>
+      <UsageGuidance>Say "often" / "tends to" / "in many teams" (not universal).</UsageGuidance>
+    </Claim>
+
+    <Claim id="C02" confidence="light">
+      <Text>Clients report reduced manual follow-up and clearer pipeline visibility after implementation.</Text>
+      <EvidenceRefs><Ref>E20</Ref><Ref>E21</Ref><Ref>E22</Ref></EvidenceRefs>
+      <UsageGuidance>Frame as testimonials / client-reported outcomes.</UsageGuidance>
+    </Claim>
+
+    <Claim id="C03" confidence="strong">
+      <Text>We provide documented milestones, weekly deliverables, and handoff documentation as part of delivery.</Text>
+      <EvidenceRefs><Ref>E03</Ref></EvidenceRefs>
+      <UsageGuidance>This is a process claim—safe if true operationally.</UsageGuidance>
+    </Claim>
+  </ApprovedClaims>
+
+  <DisallowedClaims>
+    <Claim id="D01"><Text>Guaranteed revenue outcomes or timelines</Text><Reason>unverifiable_universal_claim</Reason></Claim>
+    <Claim id="D02"><Text>"We'll 10x your business"</Text><Reason>overpromise</Reason></Claim>
+  </DisallowedClaims>
+
+  <EvidenceLibrary>
+    <Evidence id="E01" type="founder_story" confidence="medium">
+      <Title>Operator-first origin</Title>
+      <Summary>
+        <Bullet>We built this to escape tool chaos and manual ops dependency.</Bullet>
+        <Bullet>Framework evolved into staged installs and repeatable playbooks.</Bullet>
+      </Summary>
+      <Caveats>Story is credibility, not proof.</Caveats>
+    </Evidence>
+
+    <Evidence id="E02" type="process" confidence="strong">
+      <Title>Innovation → Automation → Integration → Acceleration (delivery framework)</Title>
+      <Summary>
+        <Bullet>Stage gates, owners, milestones, and documentation built-in.</Bullet>
+      </Summary>
+      <Caveats>Must match actual delivery.</Caveats>
+    </Evidence>
+
+    <Evidence id="E03" type="deliverable_policy" confidence="strong">
+      <Title>Milestones + documentation policy</Title>
+      <Summary>
+        <Bullet>Weekly deliverables, implementation log, handoff docs, training.</Bullet>
+      </Summary>
+      <Caveats>Operational truth required.</Caveats>
+    </Evidence>
+
+    <Evidence id="E10" type="case_study" confidence="medium">
+      <Title>Case study placeholder</Title>
+      <Summary>
+        <Bullet>Baseline: UNKNOWN</Bullet>
+        <Bullet>Intervention: funnel + follow-up system install</Bullet>
+        <Bullet>Outcome: UNKNOWN (fill with real metrics later)</Bullet>
+      </Summary>
+      <Caveats>Do not publish as results until filled and verified.</Caveats>
+    </Evidence>
+
+    <Evidence id="E20" type="testimonial" confidence="light">
+      <Title>Trust / burned-before testimonial placeholder</Title>
+      <Summary><Bullet>UNKNOWN — replace with real client words.</Bullet></Summary>
+      <Caveats>Client-reported, not universal proof.</Caveats>
+    </Evidence>
+
+    <Evidence id="E21" type="testimonial" confidence="light">
+      <Title>Transparency / reporting testimonial placeholder</Title>
+      <Summary><Bullet>UNKNOWN — replace with real client words.</Bullet></Summary>
+      <Caveats>Client-reported, not universal proof.</Caveats>
+    </Evidence>
+
+    <Evidence id="E22" type="testimonial" confidence="light">
+      <Title>Adoption / team actually uses it testimonial placeholder</Title>
+      <Summary><Bullet>UNKNOWN — replace with real client words.</Bullet></Summary>
+      <Caveats>Client-reported, not universal proof.</Caveats>
+    </Evidence>
+  </EvidenceLibrary>
+
+  <SafeLanguageSnippets>
+    <Medium confidence="medium">
+      <Snippet>In many teams, this reduces manual follow-up and makes execution more consistent.</Snippet>
+      <Snippet>Most clients tell us the biggest win is clarity: what happens next, who owns it, and why it matters.</Snippet>
+    </Medium>
+    <Testimonial>
+      <Snippet>Here's what one client reported: "[quote]" (individual results vary).</Snippet>
+    </Testimonial>
+    <Disclaimer>
+      <Snippet>Client experiences vary based on starting point, offer, traffic, and team adoption.</Snippet>
+      <Snippet>No earnings claims are being made; results depend on multiple factors.</Snippet>
+    </Disclaimer>
+  </SafeLanguageSnippets>
+
+  <ProofPillarMapping>
+    <Pillar index="1" type="story"><Label>Operator credibility</Label><PillarEvidenceRefs><Ref>E01</Ref></PillarEvidenceRefs></Pillar>
+    <Pillar index="2" type="process"><Label>Documented system</Label><PillarEvidenceRefs><Ref>E02</Ref><Ref>E03</Ref></PillarEvidenceRefs></Pillar>
+    <Pillar index="3" type="results"><Label>Client-reported outcomes</Label><PillarEvidenceRefs><Ref>E10</Ref><Ref>E20</Ref><Ref>E21</Ref><Ref>E22</Ref></PillarEvidenceRefs></Pillar>
+  </ProofPillarMapping>
+</EvidencePack>
