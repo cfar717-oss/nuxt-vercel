@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ULTRAMIND SKILL v2.0
+  Skill ID: sales_page_copywriter_synchronous_seller
+  Version: 1.0.0
+  Created: 2025-12-16
+  Last Updated: 2025-12-16
+-->
+
+<Skill skill_id="sales_page_copywriter_synchronous_seller" version="1.0.0" status="draft">
+
+  <!-- ========================================
+       METADATA & PROVENANCE
+       ======================================== -->
+  <Meta>
+    <Name>Sales Page Copywriter — The Synchronous Seller</Name>
+    <Description>
+      Produces high-converting, trust-first sales pages (B2B/SaaS, high-ticket, consumer) using the 7P Deliverance of Beliefs architecture, UMP/UMS clarity, proof discipline, and CAM whole-solution positioning.
+    </Description>
+    <CreatedBy agent_or_human="agent" agent_id="skill_builder_skill"/>
+    <DateCreated>2025-12-16</DateCreated>
+    <LastUpdated>2025-12-16</LastUpdated>
+    <Tier>production</Tier>
+    <Status>draft</Status>
+    <Model>sonnet</Model>
+    <UpdateHistory>
+      <Update date="2025-12-16" by="skill_builder" change="initial_creation"/>
+    </UpdateHistory>
+  </Meta>
+
+  <!-- ========================================
+       SKILL CONTRACT (I/O)
+       ======================================== -->
+  <Contract>
+    <InputsRequired>
+      <Input>PROJECT_BRIEF</Input>
+      <Input>MESSAGE_SPINE</Input>
+    </InputsRequired>
+
+    <InputsOptional>
+      <Input>EVIDENCE_PACK</Input>
+      <Input>VOICE_GUIDE</Input>
+      <Input>OFFER_STACK</Input>
+      <Input>COMPETITOR_NOTES</Input>
+      <Input>prior_drafts</Input>
+      <Input>DESIGN_CONSTRAINTS</Input>
+    </InputsOptional>
+
+    <OutputsPrimary>
+      <Output format="markdown">sales_page_draft</Output>
+    </OutputsPrimary>
+
+    <OutputsSecondary>
+      <Output format="yaml">strategic_rationale</Output>
+      <Output format="markdown">headline_variations</Output>
+      <Output format="markdown">fascination_bullets_bank</Output>
+      <Output format="markdown">design_notes_and_breakpoints</Output>
+      <Output format="yaml">compliance_notes</Output>
+      <Output format="yaml">testing_variations</Output>
+    </OutputsSecondary>
+  </Contract>
+
+  <!-- ========================================
+       DEPENDENCIES & INTEGRATION
+       ======================================== -->
+  <Dependencies>
+    <UpstreamDependencies>
+      <Skill priority="high">offer_architect</Skill>
+      <Skill priority="high">market_intelligence_synthesizer</Skill>
+      <Skill priority="medium">strategic_copy_director</Skill>
+      <Skill priority="medium">sales_copy_consistency_contract</Skill>
+    </UpstreamDependencies>
+
+    <DownstreamConsumers>
+      <Skill>human_persuasion_editor</Skill>
+      <Skill>sales_page_image_planner</Skill>
+      <Skill>sales_page_deconstructor_revisioner</Skill>
+      <Skill>email_copy_genius</Skill>
+    </DownstreamConsumers>
+
+    <RequiresTools>
+      <Tool>Read</Tool>
+    </RequiresTools>
+  </Dependencies>
+
+  <!-- ========================================
+       MOD INTEGRATION (Orchestration)
+       ======================================== -->
+  <MODIntegration>
+    <RoutingTriggers>
+      <Trigger>task_type == "sales_page"</Trigger>
+      <Trigger>deliverable == "landing_page_copy"</Trigger>
+      <Trigger>user_requests == "sales page"</Trigger>
+      <Trigger>funnel_stage in ["middle", "bottom"]</Trigger>
+    </RoutingTriggers>
+
+    <LayerLoadDefault>L1+L2</LayerLoadDefault>
+
+    <LayerLoadConditions>
+      <Condition layer="L3">complexity &gt;= 4 OR edge_case_detected</Condition>
+      <Condition layer="L4">skill_building OR debugging OR schema_work</Condition>
+    </LayerLoadConditions>
+
+    <AwakenRecommendations>
+      <High>
+        <Skill>offer_architect</Skill>
+        <Skill>sales_copy_consistency_contract</Skill>
+        <Skill>human_persuasion_editor</Skill>
+      </High>
+      <Medium>
+        <Skill>strategic_copy_director</Skill>
+        <Skill>sales_page_image_planner</Skill>
+      </Medium>
+      <Low>
+        <Skill>vsl_short_form</Skill>
+      </Low>
+    </AwakenRecommendations>
+
+    <ContextBudget>
+      <Estimated>4200</Estimated>
+      <Maximum>6500</Maximum>
+    </ContextBudget>
+  </MODIntegration>
+
+  <!-- ========================================
+       MMA INTEGRATION (Quality Validation)
+       ======================================== -->
+  <MMAIntegration>
+    <QualityDimensions>
+      <Dimension name="strategy_alignment" weight="critical">
+        <Threshold>8.5</Threshold>
+        <Validation>Matches MESSAGE_SPINE Promise + Mechanism + Audience reality</Validation>
+      </Dimension>
+
+      <Dimension name="proof_discipline" weight="critical">
+        <Threshold>9.0</Threshold>
+        <Validation>All specific claims grounded in EVIDENCE_PACK or appropriately qualified</Validation>
+      </Dimension>
+
+      <Dimension name="scanability" weight="high">
+        <Threshold>8.0</Threshold>
+        <Validation>Subheads tell the story; skimmable flow; whitespace; tight paragraphs</Validation>
+      </Dimension>
+
+      <Dimension name="voice_consistency" weight="high">
+        <Threshold>8.0</Threshold>
+        <Validation>ToneDials within ±1 of VOICE_GUIDE/PROJECT_BRIEF</Validation>
+      </Dimension>
+
+      <Dimension name="conversion_clarity" weight="high">
+        <Threshold>8.0</Threshold>
+        <Validation>Single dominant CTA, repeated appropriately; friction minimized; offer comprehension high</Validation>
+      </Dimension>
+    </QualityDimensions>
+
+    <HardGates>
+      <Gate severity="critical">no_fake_urgency</Gate>
+      <Gate severity="critical">no_unverifiable_claims</Gate>
+      <Gate severity="high">no_voice_drift</Gate>
+      <Gate severity="high">no_medical_disease_claims_without_compliance</Gate>
+    </HardGates>
+
+    <FixRouting>
+      <If condition="voice_consistency &lt; 7">
+        <Route>master_writing_partner</Route>
+      </If>
+      <If condition="strategy_alignment &lt; 7">
+        <Route>strategic_copy_director</Route>
+      </If>
+      <If condition="scanability &lt; 7">
+        <Route>human_persuasion_editor</Route>
+      </If>
+      <If condition="proof_discipline &lt; 8">
+        <Route>market_intelligence_synthesizer</Route>
+      </If>
+    </FixRouting>
+  </MMAIntegration>
+
+  <!-- ========================================
+       CONSTITUTIONAL COMPLIANCE
+       ======================================== -->
+  <ConstitutionalCompliance>
+    <Principle name="human_first">
+      <Declaration>This skill augments human operators; humans own final truth, claims, and approvals</Declaration>
+      <HumanRole>Final review, offer truthfulness, compliance sign-off, brand authenticity</HumanRole>
+    </Principle>
+
+    <Principle name="evidence_honesty">
+      <Declaration>No fabricated proof; qualify uncertainty; reference evidence IDs when provided</Declaration>
+      <Enforcement>All claims validated against EVIDENCE_PACK or softened to probabilistic language</Enforcement>
+    </Principle>
+
+    <Principle name="consent_intent">
+      <Declaration>Persuasion respects autonomy; no deceptive or coercive patterns</Declaration>
+      <Guardrails>
+        <Item>No fake urgency/scarcity</Item>
+        <Item>No fear-mongering beyond reality-stating</Item>
+        <Item>Transparency allowed (breaking 4th wall)</Item>
+      </Guardrails>
+    </Principle>
+
+    <Principle name="radical_clarity">
+      <Declaration>Audience, promise, mechanism, proof, and CTA must be explicit and consistent</Declaration>
+    </Principle>
+  </ConstitutionalCompliance>
+
+  <!-- ========================================
+       GUARDRAILS (Hard Constraints)
+       ======================================== -->
+  <Guardrails>
+    <Guardrail priority="critical">
+      <Rule>no_fake_urgency</Rule>
+      <Description>Never create artificial time pressure unless objectively true and verifiable</Description>
+      <Examples>
+        <Disallowed>"Only 7 left!"</Disallowed>
+        <Disallowed>"Price doubles tonight!"</Disallowed>
+        <Allowed>"Founders pricing ends Friday (launch calendar confirmed)"</Allowed>
+      </Examples>
+    </Guardrail>
+
+    <Guardrail priority="critical">
+      <Rule>no_unverifiable_claims</Rule>
+      <Description>Specific numbers, studies, institutions, and results must be in EVIDENCE_PACK or removed/qualified</Description>
+      <Examples>
+        <Disallowed>"Harvard proved this cures X"</Disallowed>
+        <Disallowed>"Works for everyone"</Disallowed>
+        <Allowed>"Designed to support X; many users report Y (EP-###)"</Allowed>
+      </Examples>
+    </Guardrail>
+
+    <Guardrail priority="high">
+      <Rule>singular_cta_focus</Rule>
+      <Description>One primary CTA; secondary CTAs must support the primary (no competing actions)</Description>
+    </Guardrail>
+
+    <Guardrail priority="high">
+      <Rule>scanability_first</Rule>
+      <Description>Subheads, bullets, and callouts must allow comprehension in under 60 seconds of skimming</Description>
+    </Guardrail>
+  </Guardrails>
+
+  <!-- ========================================
+       L1 LAYER: QUICK REFERENCE (Always Loaded)
+       ======================================== -->
+  <Layer level="1" name="Quick Reference">
+    <LoadPriority>always</LoadPriority>
+    <Purpose>Fast decisions, structure selection, success patterns</Purpose>
+    <TokenBudget>250-350</TokenBudget>
+
+    <CorePurpose>
+      Write trust-first, high-converting sales pages using 7P structure, UMP/UMS, proof stacking, and CAM value engineering—adapted by market (B2B/SaaS, high-ticket, consumer).
+    </CorePurpose>
+
+    <WhenToUse>
+      <Trigger>Warm-to-hot traffic needs a direct conversion page</Trigger>
+      <Trigger>High-awareness market requires polish, clarity, and proof</Trigger>
+      <Trigger>Offer requires "whole solution" positioning (CAM)</Trigger>
+      <Trigger>Need scannable narrative via headline/subhead architecture</Trigger>
+    </WhenToUse>
+
+    <FastDecisionTree>
+      <Decision>
+        <If>market == "B2B_SaaS" AND awareness &gt;= 4</If>
+        <Then>Short (500-1500) with ROI + case proof + crisp CTA</Then>
+      </Decision>
+      <Decision>
+        <If>market == "High_Ticket" AND differentiation_required</If>
+        <Then>Medium (1500-3000) with contrarian positioning + proof + application CTA</Then>
+      </Decision>
+      <Decision>
+        <If>market == "Consumer_Health" AND awareness &lt;= 3</If>
+        <Then>Long (3000-5000) with UMP/UMS education + proof + guarantee</Then>
+      </Decision>
+    </FastDecisionTree>
+
+    <SuccessMetrics>
+      <Metric>Message spine consistency ≥ 9/10</Metric>
+      <Metric>Proof discipline: zero unsupported specifics</Metric>
+      <Metric>Scanability score ≥ 8/10 (subheads tell story)</Metric>
+      <Metric>CTA clarity ≥ 8/10 (single dominant action)</Metric>
+    </SuccessMetrics>
+  </Layer>
+
+  <!-- ========================================
+       L2 LAYER: CORE PROCEDURE (Standard Execution)
+       ======================================== -->
+  <Layer level="2" name="Core Procedure">
+    <LoadPriority>when_executing</LoadPriority>
+    <Purpose>Step-by-step workflow to produce a sales page deliverable</Purpose>
+    <TokenBudget>1700-2300</TokenBudget>
+
+    <Procedure>
+      <Step order="1" name="Context Loading + Locks">
+        <Purpose>Load inputs; lock canonical promise, mechanism, audience, and claim boundaries</Purpose>
+        <Actions>
+          <Action>Read PROJECT_BRIEF and MESSAGE_SPINE fully</Action>
+          <Action>Extract Canonical Promise1Liner + Mechanism terms (do not paraphrase)</Action>
+          <Action>Extract Avatar: pains, desires, objections, sophistication level</Action>
+          <Action>Read EVIDENCE_PACK (if present) and mark claim boundaries</Action>
+          <Action>Apply VOICE_GUIDE ToneDials (if present)</Action>
+          <Action>Run Sales Copy Consistency Contract if available (lock file)</Action>
+        </Actions>
+        <Validation>
+          <Check>MESSAGE_SPINE.Promise1Liner exists</Check>
+          <Check>MESSAGE_SPINE.Mechanism exists</Check>
+          <Check>Primary CTA defined</Check>
+          <Check>At least 3 proof pillars OR explicit "proof-lite" constraints</Check>
+        </Validation>
+        <Output>context_locked: true</Output>
+      </Step>
+
+      <Step order="2" name="Choose Structure + Length">
+        <Purpose>Select market approach and page length based on awareness/skepticism/complexity</Purpose>
+        <Actions>
+          <Action>Select one: Short / Medium / Long</Action>
+          <Action>Select one: B2B_SaaS / High_Ticket / Consumer_Health</Action>
+          <Action>Choose primary architecture: 7P (default) or RMBC hybrid</Action>
+          <Action>Define section list + subhead map (scanability blueprint)</Action>
+        </Actions>
+        <Output>page_blueprint: defined</Output>
+      </Step>
+
+      <Step order="3" name="Write the Page (7P Delivery)">
+        <Purpose>Draft page using 7P and proof discipline</Purpose>
+        <Actions>
+          <Action>Write 10-20 headline options; pick top 3 for testing</Action>
+          <Action>Draft lead with immediate relevance + pattern interrupt (non-hype)</Action>
+          <Action>Execute 7P: Problem → Promise → Proof → Pain → Paradigm → Paradox → Present</Action>
+          <Action>Insert fascination bullets at key scroll depths</Action>
+          <Action>Build proof stack: explicit + implied (only if allowed) + logic proof</Action>
+          <Action>Present CAM if "whole solution" (product + guide + support + guarantee)</Action>
+          <Action>Place CTA blocks at natural decision points</Action>
+          <Action>Add "design notes": callout boxes, visuals, bolding strategy</Action>
+        </Actions>
+        <Output>draft_complete: true</Output>
+      </Step>
+
+      <Step order="4" name="Self-Validation (MMA Preflight)">
+        <Purpose>Catch violations before handoff</Purpose>
+        <SelfChecks>
+          <Check>No fake urgency/scarcity language</Check>
+          <Check>No unverifiable specifics (numbers, institutions, study claims)</Check>
+          <Check>Promise + mechanism terms consistent with MESSAGE_SPINE</Check>
+          <Check>Single dominant CTA; no competing CTAs</Check>
+          <Check>Subheads tell story (skim test)</Check>
+          <Check>Objections addressed without defensiveness</Check>
+          <Check>Compliance-safe phrasing where required</Check>
+        </SelfChecks>
+        <Output>self_validation: passed_or_revised</Output>
+      </Step>
+
+      <Step order="5" name="Delivery Package">
+        <Purpose>Provide production-ready assets and testing variants</Purpose>
+        <PackageContents>
+          <Item>Sales page draft (markdown)</Item>
+          <Item>Headline variations + bullet bank</Item>
+          <Item>Design notes and breakpoints</Item>
+          <Item>Compliance notes + disclaimers</Item>
+          <Item>Testing variants (headline/CTA/offer stack)</Item>
+        </PackageContents>
+        <Output>delivery_package: ready</Output>
+      </Step>
+    </Procedure>
+  </Layer>
+
+  <!-- ========================================
+       L3 LAYER: ADVANCED USAGE (Edge Cases)
+       ======================================== -->
+  <Layer level="3" name="Advanced Usage">
+    <LoadPriority>when_complexity_high_OR_edge_case</LoadPriority>
+    <Purpose>Handle difficult markets, rewriting, and positioning battles</Purpose>
+    <TokenBudget>2200-3200</TokenBudget>
+
+    <EdgeCases>
+      <Case name="Proof-Light or Regulated Claims">
+        <Trigger>EVIDENCE_PACK missing OR strict compliance constraints</Trigger>
+        <Approach>Use logic proof, process proof, transparency, and qualified language; focus on "supports" and "designed to"</Approach>
+        <Modification>Remove hard numbers/institution name-drops; replace with verifiable internal proof pillars</Modification>
+      </Case>
+
+      <Case name="High Skepticism / Scammy Category">
+        <Trigger>Market distrust high; "seen it all" audience</Trigger>
+        <Approach>Lead with damaging admission + breaking 4th wall + constraints + real proof</Approach>
+        <Modification>Frontload: what this is NOT; who it's NOT for; what to expect realistically</Modification>
+      </Case>
+
+      <Case name="Competitor Clone + Ethical Differentiation">
+        <Trigger>Need to model a winning page without copying it</Trigger>
+        <Approach>Deconstruct structure + psychological sequence; rewrite fresh with message spine; preserve only universal moves</Approach>
+        <Modification>Produce "structure map" and then new copy; no phrase-level reuse</Modification>
+      </Case>
+
+      <Case name="Us vs Them (Challenger) Without Defamation">
+        <Trigger>Need contrarian positioning and alternatives contrast</Trigger>
+        <Approach>Compare categories, not named competitors; critique methods, not people</Approach>
+        <Modification>Use "Most programs…" / "Typical approach…" with evidence or clearly framed opinion</Modification>
+      </Case>
+    </EdgeCases>
+
+    <OptimizationPatterns>
+      <Pattern name="Subhead Spine">
+        <Description>Write subheads as a standalone story so skimmers convert</Description>
+        <Implementation>Draft subhead-only pass; ensure it conveys Problem→Promise→Proof→Present</Implementation>
+      </Pattern>
+
+      <Pattern name="Fascination Compression">
+        <Description>Keep fascination while staying honest and modern</Description>
+        <Implementation>Tease mechanism outcomes without absolute guarantees; use specificity without fabrication</Implementation>
+      </Pattern>
+
+      <Pattern name="CTA Ladder (Single Action, Multiple Depths)">
+        <Description>Repeat CTA without introducing new asks</Description>
+        <Implementation>Same CTA phrased by context: "See how it works" → "Start the system" → "Get started now" (same link)</Implementation>
+      </Pattern>
+    </OptimizationPatterns>
+  </Layer>
+
+  <!-- ========================================
+       L4 LAYER: TECHNICAL SPECIFICATION
+       ======================================== -->
+  <Layer level="4" name="Technical Specification">
+    <LoadPriority>meta_work_only</LoadPriority>
+    <Purpose>Schema mapping, automation hooks, validation rules</Purpose>
+    <TokenBudget>1100-1600</TokenBudget>
+
+    <InputSchema>
+      <Required>
+        <Field name="PROJECT_BRIEF">
+          <Fields>
+            <Field>ObjectiveScope.PrimaryGoal</Field>
+            <Field>OfferSnapshot.CorePromise</Field>
+            <Field>OfferSnapshot.UniqueMechanism</Field>
+            <Field>AudienceMarket.PrimaryAvatar</Field>
+            <Field>AudienceMarket.Objections</Field>
+            <Field>VoiceResonance.ToneDials</Field>
+            <Field>EvidenceClaims.ClaimBoundary</Field>
+          </Fields>
+          <Validation>Missing critical fields triggers "request missing inputs" behavior</Validation>
+        </Field>
+
+        <Field name="MESSAGE_SPINE">
+          <Fields>
+            <Field>Promise.Promise1Liner</Field>
+            <Field>Mechanism.CanonicalParagraph</Field>
+            <Field>ProofPillars</Field>
+            <Field>Objections</Field>
+            <Field>CTA.PrimaryCTA</Field>
+            <Field>CTA.WhyNowReal</Field>
+          </Fields>
+          <Validation>Must exist for multi-asset consistency</Validation>
+        </Field>
+      </Required>
+
+      <Optional>
+        <Field name="EVIDENCE_PACK">
+          <Purpose>Grounds claims and proof statements</Purpose>
+          <Usage>Reference by evidence_id in draft + compliance notes</Usage>
+        </Field>
+        <Field name="DESIGN_CONSTRAINTS">
+          <Purpose>Controls layout density and page modules</Purpose>
+          <Usage>Breakpoints, callout box placement, section count</Usage>
+        </Field>
+      </Optional>
+    </InputSchema>
+
+    <OutputSchema>
+      <Primary format="markdown">
+        <Structure>
+          <Section name="Meta Header">
+            <Item>Product/Offer</Item>
+            <Item>Market</Item>
+            <Item>Audience</Item>
+            <Item>Length</Item>
+            <Item>Awareness</Item>
+            <Item>Angle</Item>
+          </Section>
+          <Section name="Sales Page Copy">
+            <Item>Headline + Subhead</Item>
+            <Item>Lead</Item>
+            <Item>Sections per blueprint</Item>
+            <Item>CTA blocks</Item>
+            <Item>FAQ / Objections</Item>
+            <Item>Guarantee / Risk reversal</Item>
+          </Section>
+          <Section name="Design Notes"/>
+          <Section name="Compliance Notes"/>
+          <Section name="Testing Variations"/>
+        </Structure>
+      </Primary>
+
+      <Secondary format="yaml">
+        <Structure>
+          <Field name="strategic_rationale">
+            <SequenceGoal/>
+            <ArchitectureUsed/>
+            <ProofPlan/>
+            <ObjectionPlan/>
+            <CTAPlan/>
+          </Field>
+          <Field name="compliance_notes">
+            <ClaimBoundaries/>
+            <Disclaimers/>
+            <PlatformRisks/>
+          </Field>
+        </Structure>
+      </Secondary>
+    </OutputSchema>
+
+    <QualityGates>
+      <Gate name="message_spine_consistency" severity="critical">
+        <Rule>Promise language semantically equivalent to MESSAGE_SPINE.Promise1Liner</Rule>
+        <Rule>Mechanism terminology present and consistent</Rule>
+      </Gate>
+
+      <Gate name="proof_discipline" severity="critical">
+        <Rule>No unsupported specifics; all hard claims trace to EVIDENCE_PACK</Rule>
+      </Gate>
+
+      <Gate name="scanability" severity="high">
+        <Rule>Subheads-only skim yields coherent argument and CTA</Rule>
+      </Gate>
+    </QualityGates>
+
+    <FailureModes>
+      <FailureMode name="overclaiming_by_inference">
+        <Symptom>Implied institutional or statistical proof not provided</Symptom>
+        <RootCause>Copy defaults to classic direct response "authority borrowing"</RootCause>
+        <Recovery>Remove/qualify; replace with verifiable proof pillars</Recovery>
+        <Prevention>Strict "no named authority without EP" rule</Prevention>
+      </FailureMode>
+
+      <FailureMode name="structure_sprawl">
+        <Symptom>Too many sections; CTA diluted</Symptom>
+        <RootCause>Trying to include every tactic</RootCause>
+        <Recovery>Rebuild page blueprint; enforce singular CTA ladder</Recovery>
+        <Prevention>Blueprint before drafting; skim test mid-way</Prevention>
+      </FailureMode>
+    </FailureModes>
+  </Layer>
+
+  <!-- ========================================
+       VERSION HISTORY & CHANGELOG
+       ======================================== -->
+  <VersionHistory>
+    <Version number="1.0.0" date="2025-12-16">
+      <Changes>
+        <Change>Initial creation using ULTRAMIND schema v2.0</Change>
+        <Change>7P architecture + UMP/UMS + CAM + scanability + proof discipline</Change>
+        <Change>MOD/MMA integration and hard gates defined</Change>
+      </Changes>
+      <Status>draft</Status>
+    </Version>
+  </VersionHistory>
+
+</Skill>

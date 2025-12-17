@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ULTRAMIND SKILL v2.0
+  Skill ID: sales_copy_consistency_contract
+  Version: 1.0.0
+  Created: 2025-12-16
+  Last Updated: 2025-12-16
+-->
+
+<Skill skill_id="sales_copy_consistency_contract" version="1.0.0" status="draft">
+
+  <!-- ========================================
+       METADATA & PROVENANCE
+       ======================================== -->
+  <Meta>
+    <Name>Sales Copy Consistency Contract (Spine Lock File)</Name>
+    <Description>
+      Creates and validates a canonical "lock file" so all funnel assets (advertorial, VSL, sales page, emails) share the same promise, mechanism language, proof posture, and claim boundaries without drift.
+    </Description>
+    <CreatedBy agent_or_human="agent" agent_id="skill_builder_skill"/>
+    <DateCreated>2025-12-16</DateCreated>
+    <LastUpdated>2025-12-16</LastUpdated>
+    <Tier>meta</Tier>
+    <Status>draft</Status>
+    <Model>sonnet</Model>
+    <UpdateHistory>
+      <Update date="2025-12-16" by="skill_builder" change="initial_creation"/>
+    </UpdateHistory>
+  </Meta>
+
+  <!-- ========================================
+       SKILL CONTRACT (I/O)
+       ======================================== -->
+  <Contract>
+    <InputsRequired>
+      <Input>MESSAGE_SPINE</Input>
+      <Input>PROJECT_BRIEF</Input>
+    </InputsRequired>
+
+    <InputsOptional>
+      <Input>EVIDENCE_PACK</Input>
+      <Input>VOICE_GUIDE</Input>
+      <Input>ASSET_DRAFTS</Input>
+    </InputsOptional>
+
+    <OutputsPrimary>
+      <Output format="yaml">spine_lock_file</Output>
+    </OutputsPrimary>
+
+    <OutputsSecondary>
+      <Output format="yaml">claim_boundary_matrix</Output>
+      <Output format="markdown">canonical_language_snippets</Output>
+      <Output format="yaml">drift_report</Output>
+      <Output format="yaml">repair_instructions</Output>
+    </OutputsSecondary>
+  </Contract>
+
+  <!-- ========================================
+       DEPENDENCIES & INTEGRATION
+       ======================================== -->
+  <Dependencies>
+    <UpstreamDependencies>
+      <Skill priority="high">offer_architect</Skill>
+      <Skill priority="high">market_intelligence_synthesizer</Skill>
+      <Skill priority="medium">strategic_copy_director</Skill>
+    </UpstreamDependencies>
+
+    <DownstreamConsumers>
+      <Skill>advertorial_copy_master</Skill>
+      <Skill>vsl_long_form_mechanism_storyteller</Skill>
+      <Skill>vsl_short_form</Skill>
+      <Skill>sales_page_copywriter_synchronous_seller</Skill>
+      <Skill>email_copy_genius</Skill>
+    </DownstreamConsumers>
+
+    <RequiresTools>
+      <Tool>Read</Tool>
+    </RequiresTools>
+  </Dependencies>
+
+  <!-- ========================================
+       MOD INTEGRATION
+       ======================================== -->
+  <MODIntegration>
+    <RoutingTriggers>
+      <Trigger>task_type == "multi_asset_funnel"</Trigger>
+      <Trigger>deliverable in ["advertorial","vsl","sales_page","email_sequence"]</Trigger>
+      <Trigger>user_requests contains "consistency" OR "message spine"</Trigger>
+    </RoutingTriggers>
+
+    <LayerLoadDefault>L1+L2</LayerLoadDefault>
+
+    <LayerLoadConditions>
+      <Condition layer="L3">multiple_assets_present OR drift_detected</Condition>
+      <Condition layer="L4">schema_work OR debugging</Condition>
+    </LayerLoadConditions>
+
+    <AwakenRecommendations>
+      <High>
+        <Skill>strategic_copy_director</Skill>
+        <Skill>human_persuasion_editor</Skill>
+      </High>
+      <Medium>
+        <Skill>offer_architect</Skill>
+      </Medium>
+      <Low>
+        <Skill>master_writing_partner</Skill>
+      </Low>
+    </AwakenRecommendations>
+
+    <ContextBudget>
+      <Estimated>2600</Estimated>
+      <Maximum>4200</Maximum>
+    </ContextBudget>
+  </MODIntegration>
+
+  <!-- ========================================
+       MMA INTEGRATION
+       ======================================== -->
+  <MMAIntegration>
+    <QualityDimensions>
+      <Dimension name="spine_fidelity" weight="critical">
+        <Threshold>9.0</Threshold>
+        <Validation>Promise/mechanism terms are canonical and reusable across assets</Validation>
+      </Dimension>
+
+      <Dimension name="claim_boundary_integrity" weight="critical">
+        <Threshold>9.0</Threshold>
+        <Validation>Explicitly lists what can/can't be claimed and how to qualify</Validation>
+      </Dimension>
+
+      <Dimension name="repair_utility" weight="high">
+        <Threshold>8.0</Threshold>
+        <Validation>Repair instructions are actionable and asset-specific</Validation>
+      </Dimension>
+    </QualityDimensions>
+
+    <HardGates>
+      <Gate severity="critical">no_unverifiable_claims</Gate>
+      <Gate severity="critical">no_fake_urgency</Gate>
+    </HardGates>
+  </MMAIntegration>
+
+  <!-- ========================================
+       CONSTITUTIONAL COMPLIANCE
+       ======================================== -->
+  <ConstitutionalCompliance>
+    <Principle name="human_first">
+      <Declaration>Humans own truth + compliance; this contract standardizes language to reduce risk</Declaration>
+      <HumanRole>Approve lock file; approve claim boundaries; sign off on drift fixes</HumanRole>
+    </Principle>
+
+    <Principle name="evidence_honesty">
+      <Declaration>Canonical proof posture must align with EVIDENCE_PACK reality</Declaration>
+      <Enforcement>Claim boundary matrix must mark "requires evidence_id" items</Enforcement>
+    </Principle>
+
+    <Principle name="radical_clarity">
+      <Declaration>One canonical promise, one canonical mechanism vocabulary, one CTA intent</Declaration>
+    </Principle>
+  </ConstitutionalCompliance>
+
+  <!-- ========================================
+       GUARDRAILS
+       ======================================== -->
+  <Guardrails>
+    <Guardrail priority="critical">
+      <Rule>no_unverifiable_claims</Rule>
+      <Description>Lock file forbids institution/stat/clinical claims unless EP-backed</Description>
+    </Guardrail>
+
+    <Guardrail priority="critical">
+      <Rule>no_fake_urgency</Rule>
+      <Description>Lock file forbids scarcity unless dates/inventory/capacity are verifiable</Description>
+    </Guardrail>
+
+    <Guardrail priority="high">
+      <Rule>single_mechanism_vocabulary</Rule>
+      <Description>All assets must use the same mechanism terms (synonyms only if approved)</Description>
+    </Guardrail>
+  </Guardrails>
+
+  <!-- ========================================
+       L1: QUICK REFERENCE
+       ======================================== -->
+  <Layer level="1" name="Quick Reference">
+    <LoadPriority>always</LoadPriority>
+    <Purpose>Create a canonical lock so assets don't contradict each other</Purpose>
+    <TokenBudget>200-300</TokenBudget>
+
+    <CorePurpose>
+      Build a Spine Lock File: canonical promise, mechanism vocabulary, proof pillars, claim boundaries, CTA intent, tone dials—then validate drafts for drift and produce repair steps.
+    </CorePurpose>
+
+    <WhenToUse>
+      <Trigger>More than 1 asset is being produced for the same offer</Trigger>
+      <Trigger>Ads/VSL/sales page feel like "different products"</Trigger>
+      <Trigger>Compliance risk needs centralized boundaries</Trigger>
+    </WhenToUse>
+
+    <SuccessMetrics>
+      <Metric>Zero promise/mechanism contradictions across assets</Metric>
+      <Metric>Claim boundary matrix complete and enforced</Metric>
+      <Metric>Drift report identifies &gt; 90% mismatches</Metric>
+    </SuccessMetrics>
+  </Layer>
+
+  <!-- ========================================
+       L2: CORE PROCEDURE
+       ======================================== -->
+  <Layer level="2" name="Core Procedure">
+    <LoadPriority>when_executing</LoadPriority>
+    <Purpose>Generate lock file + drift analysis + repair steps</Purpose>
+    <TokenBudget>1400-2000</TokenBudget>
+
+    <Procedure>
+      <Step order="1" name="Extract Canonicals">
+        <Actions>
+          <Action>Extract Promise1Liner (canonical)</Action>
+          <Action>Extract Mechanism Canonical Paragraph + required vocabulary list</Action>
+          <Action>Extract Proof Pillars (3–6) and allowed proof posture</Action>
+          <Action>Extract CTA intent (what action + why now real)</Action>
+          <Action>Extract ToneDials / WordsToAvoid (if VOICE_GUIDE provided)</Action>
+        </Actions>
+        <Output>canonicals_extracted: true</Output>
+      </Step>
+
+      <Step order="2" name="Build Spine Lock File (YAML)">
+        <Actions>
+          <Action>Create spine_lock_file with: promise, mechanism_terms, proof_pillars, cta, tone, banned_phrases, allowed_qualifiers</Action>
+          <Action>Create claim_boundary_matrix from EP/brief: allowed / requires evidence_id / forbidden</Action>
+        </Actions>
+        <Output>lock_file_built: true</Output>
+      </Step>
+
+      <Step order="3" name="Drift Scan (Optional)">
+        <Trigger>ASSET_DRAFTS provided</Trigger>
+        <Actions>
+          <Action>Compare each asset against lock file: promise, mechanism terms, proof posture, CTA, urgency, claims</Action>
+          <Action>Generate drift_report with severity and exact repair notes</Action>
+        </Actions>
+        <Output>drift_report: produced_or_skipped</Output>
+      </Step>
+
+      <Step order="4" name="Repair Instructions">
+        <Actions>
+          <Action>Provide asset-specific repair_instructions (what to replace, what to remove, what to rephrase)</Action>
+          <Action>Provide canonical_language_snippets for copy/paste consistency</Action>
+        </Actions>
+        <Output>repair_pack: ready</Output>
+      </Step>
+    </Procedure>
+  </Layer>
+
+  <!-- ========================================
+       L3: ADVANCED USAGE
+       ======================================== -->
+  <Layer level="3" name="Advanced Usage">
+    <LoadPriority>when_complexity_high_OR_edge_case</LoadPriority>
+    <Purpose>Multi-avatar and multi-mechanism conflicts</Purpose>
+    <TokenBudget>1800-2600</TokenBudget>
+
+    <EdgeCases>
+      <Case name="Two Mechanisms Competing">
+        <Trigger>Offer has multiple "main explanations"</Trigger>
+        <Approach>Choose ONE primary mechanism; demote others to supporting mechanisms</Approach>
+        <Modification>Lock vocabulary to primary; allow secondary only in appendix sections</Modification>
+      </Case>
+
+      <Case name="Two Audiences, One Funnel">
+        <Trigger>B2B buyer + end user both addressed</Trigger>
+        <Approach>Single promise; two "symptom doors" + same mechanism</Approach>
+        <Modification>Create approved synonym list per audience (locked)</Modification>
+      </Case>
+    </EdgeCases>
+  </Layer>
+
+  <!-- ========================================
+       L4: TECHNICAL SPEC
+       ======================================== -->
+  <Layer level="4" name="Technical Specification">
+    <LoadPriority>meta_work_only</LoadPriority>
+    <Purpose>YAML schema for lock files and drift reports</Purpose>
+    <TokenBudget>900-1300</TokenBudget>
+
+    <OutputSchema>
+      <Primary format="yaml">
+        <Structure>
+          <Field name="spine_lock_file">
+            <promise canonical="true"/>
+            <mechanism_terms required="true"/>
+            <proof_pillars/>
+            <cta/>
+            <tone_dials/>
+            <allowed_qualifiers/>
+            <banned_phrases/>
+          </Field>
+        </Structure>
+      </Primary>
+      <Secondary format="yaml">
+        <Structure>
+          <Field name="drift_report">
+            <asset/>
+            <violations/>
+            <severity/>
+            <repairs/>
+          </Field>
+        </Structure>
+      </Secondary>
+    </OutputSchema>
+  </Layer>
+
+  <VersionHistory>
+    <Version number="1.0.0" date="2025-12-16">
+      <Changes>
+        <Change>Initial creation; spine lock file + claim boundary matrix + drift repair flow</Change>
+      </Changes>
+      <Status>draft</Status>
+    </Version>
+  </VersionHistory>
+
+</Skill>

@@ -1,0 +1,19 @@
+task_id: EX-SFVSL-001
+skill_id: skill.short_form_vsl_script_writer.v2_0_0
+task_type: script_creation
+inputs:
+  market: B2B
+  length_minutes: 7
+  platform: YouTube
+  audience: "Agency owners stuck at $5k-$20k/mo"
+  offer: "Acquisition OS (application-based)"
+  mechanism_name: "4-System Engine"
+  cta_type: "Apply / Book Call"
+constraints:
+  must_frontload_proof: true
+  real_urgency_only: true
+  no_deep_mechanism: true
+deliverable:
+  include_timing_markers: true
+  include_visual_notes: true
+  include_text_overlays_list: true
