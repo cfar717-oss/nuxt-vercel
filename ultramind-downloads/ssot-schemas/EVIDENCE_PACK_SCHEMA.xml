@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- EVIDENCE PACK SCHEMA v1.0 -->
+<!-- Single Source of Truth: Proof Lock -->
+<!-- All factual claims must map to entries here -->
+
+<EvidencePack version="1.0" id="EP_[PROJECT_NAME]_v[VERSION]">
+
+  <Metadata>
+    <Created>[ISO_TIMESTAMP]</Created>
+    <LastModified>[ISO_TIMESTAMP]</LastModified>
+    <Author>[NAME]</Author>
+    <ProjectBriefRef>[PB_ID]</ProjectBriefRef>
+    <Status>draft | verified | archived</Status>
+  </Metadata>
+
+  <Studies>
+    <Study id="E01">
+      <Title>[Full study title]</Title>
+      <Authors>[Lead author et al.]</Authors>
+      <Publication>[Journal name, Year]</Publication>
+      <DOI>[DOI or URL if available]</DOI>
+      <FindingSummary>
+        [One-sentence summary of relevant finding]
+        Example: "Supplementation with [COMPOUND] increased ATP production by 23% in aged subjects"
+      </FindingSummary>
+      <AllowedClaimLanguage>
+        <Claim strength="strong">"Research shows [COMPOUND] supports cellular energy production"</Claim>
+        <Claim strength="moderate">"Studies suggest [COMPOUND] may help restore mitochondrial function"</Claim>
+      </AllowedClaimLanguage>
+      <ForbiddenClaimLanguage>
+        <Claim>"[COMPOUND] increases ATP by 23%" (too specific without full context)</Claim>
+        <Claim>"Proven to cure fatigue" (disease claim)</Claim>
+      </ForbiddenClaimLanguage>
+      <Limitations>[Small sample size, in vitro only, etc.]</Limitations>
+      <VerificationStatus>verified | pending | unverified</VerificationStatus>
+    </Study>
+
+    <Study id="E02">
+      <!-- Repeat structure for each study -->
+    </Study>
+  </Studies>
+
+  <Testimonials>
+    <Testimonial id="T01">
+      <Source>
+        <Name>[First name + Last initial, or Anonymous]</Name>
+        <Location>[City, State]</Location>
+        <VerificationMethod>email | survey | video | written</VerificationMethod>
+        <DateReceived>[ISO_DATE]</DateReceived>
+        <ConsentObtained>true | false</ConsentObtained>
+      </Source>
+      <OriginalText>
+        "[Full original testimonial text exactly as received]"
+      </OriginalText>
+      <EditedVersion>
+        "[Cleaned for grammar/length but preserving meaning]"
+      </EditedVersion>
+      <Tags>
+        <Tag>energy</Tag>
+        <Tag>mental-clarity</Tag>
+        <Tag>skeptic-converted</Tag>
+        <Tag>objection-O1</Tag> <!-- Maps to MessageSpine Objection ID -->
+      </Tags>
+      <ResultClaimed>[Specific outcome mentioned]</ResultClaimed>
+      <Timeframe>[How long they used product]</Timeframe>
+      <DisclaimerRequired>true</DisclaimerRequired>
+      <ApprovedForUse>true | false</ApprovedForUse>
+    </Testimonial>
+
+    <Testimonial id="T02">
+      <!-- Repeat structure for each testimonial -->
+    </Testimonial>
+
+    <!-- Testimonial Library: aim for 15-30 varied testimonials -->
+  </Testimonials>
+
+  <AuthorityCredentials>
+    <Expert id="A01">
+      <Name>[Dr./Expert name]</Name>
+      <Credentials>
+        <Degree>[MD, PhD, etc.]</Degree>
+        <BoardCertification>[Specialty]</BoardCertification>
+        <YearsExperience>[Number]</YearsExperience>
+        <Affiliation>[University, clinic, etc.]</Affiliation>
+      </Credentials>
+      <Relevance>[How their expertise relates to product]</Relevance>
+      <Role>[Formulator, advisor, endorser]</Role>
+      <AllowedClaimLanguage>
+        "Formulated by Dr. [NAME], board-certified [SPECIALTY] with [X] years of experience"
+      </AllowedClaimLanguage>
+      <VerificationStatus>verified | pending</VerificationStatus>
+    </Expert>
+  </AuthorityCredentials>
+
+  <ResultsData>
+    <Metric id="R01">
+      <Type>customer-satisfaction | clinical-outcome | sales-data</Type>
+      <Claim>[The claim you want to make]</Claim>
+      <DataSource>[Where this comes from - survey, study, sales records]</DataSource>
+      <SampleSize>[N=X]</SampleSize>
+      <Timeframe>[When data collected]</Timeframe>
+      <Verification>[How you verified this]</Verification>
+      <AllowedClaimLanguage>
+        "Over 10,000 customers have tried [PRODUCT]"
+        "In our customer survey, 87% reported noticeable improvement"
+      </AllowedClaimLanguage>
+      <ForbiddenClaimLanguage>
+        "10,000 customers cured their fatigue" (outcome claim)
+        "87% success rate" (too definitive)
+      </ForbiddenClaimLanguage>
+      <DisclaimerRequired>true</DisclaimerRequired>
+    </Metric>
+  </ResultsData>
+
+  <Ingredients>
+    <Ingredient id="I01">
+      <Name>[Common name]</Name>
+      <ScientificName>[Latin name if applicable]</ScientificName>
+      <Dosage>[Amount per serving]</Dosage>
+      <Function>[What it does in formula]</Function>
+      <SafetyProfile>
+        <GRAS>true | false</GRAS>
+        <CommonSideEffects>[None known, or list]</CommonSideEffects>
+        <Contraindications>[Any known interactions/warnings]</Contraindications>
+      </SafetyProfile>
+      <ResearchSupport>
+        <StudyRef>E01, E02</StudyRef>
+      </ResearchSupport>
+      <AllowedClaimLanguage>
+        "[INGREDIENT] is a naturally-sourced compound that supports [FUNCTION]"
+      </AllowedClaimLanguage>
+    </Ingredient>
+  </Ingredients>
+
+  <VisualAssets>
+    <Asset id="V01">
+      <Type>graph | chart | before-after | diagram</Type>
+      <Description>[What it shows]</Description>
+      <DataSource>[Where data comes from]</DataSource>
+      <Verification>[How accuracy was confirmed]</Verification>
+      <AllowedUse>[Where/how this can be used]</AllowedUse>
+      <DisclaimerRequired>true | false</DisclaimerRequired>
+    </Asset>
+  </VisualAssets>
+
+  <ComplianceNotes>
+    <Industry>[Supplement/Health/Finance/etc.]</Industry>
+    <RegulatoryBody>[FDA/FTC/etc.]</RegulatoryBody>
+    <KeyRestrictions>
+      <Restriction>No disease claims (diagnose, treat, cure, prevent)</Restriction>
+      <Restriction>Structure/function claims only ("supports", "helps maintain")</Restriction>
+      <Restriction>Testimonials require "results may vary" disclaimer</Restriction>
+      <Restriction>Income claims prohibited (if applicable)</Restriction>
+    </KeyRestrictions>
+    <RequiredDisclaimers>
+      <Disclaimer context="health-claims">
+        "These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease."
+      </Disclaimer>
+      <Disclaimer context="testimonials">
+        "Individual results may vary. Testimonials are not claimed to represent typical results."
+      </Disclaimer>
+    </RequiredDisclaimers>
+  </ComplianceNotes>
+
+  <ClaimLibrary>
+    <!-- Pre-approved claim phrasings organized by strength -->
+    <ClaimSet strength="strong" evidence="E01,E02">
+      <Claim>"Clinical research supports the use of [COMPOUND] for cellular energy production"</Claim>
+      <Claim>"Studies show [COMPOUND] helps maintain healthy mitochondrial function"</Claim>
+    </ClaimSet>
+    <ClaimSet strength="moderate" evidence="T01-T15">
+      <Claim>"Many customers report noticeable improvement in energy levels"</Claim>
+      <Claim>"Users frequently mention feeling more alert and focused"</Claim>
+    </ClaimSet>
+    <ClaimSet strength="soft" evidence="I01">
+      <Claim>"[INGREDIENT] is a naturally-sourced compound"</Claim>
+      <Claim>"Formulated to support healthy energy metabolism"</Claim>
+    </ClaimSet>
+  </ClaimLibrary>
+
+  <UsageRules>
+    <Rule>Every factual claim in copy must map to a specific Evidence ID (E##, T##, A##, R##, I##)</Rule>
+    <Rule>If no evidence exists, use probabilistic language ("may help", "designed to") or omit claim</Rule>
+    <Rule>Testimonials must be used with T## ID and include disclaimer</Rule>
+    <Rule>Studies can be referenced generically ("clinical research shows") without naming journal unless asked</Rule>
+    <Rule>Authority credentials (A##) can be used for credibility but not for outcome claims</Rule>
+  </UsageRules>
+
+</EvidencePack>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- MESSAGE SPINE SCHEMA v2.0 -->
+<!-- Single Source of Truth: Messaging Lock -->
+<!-- Ensures consistency across all assets -->
+
+<MessageSpine version="2.0" id="MS_[PROJECT_NAME]_v[VERSION]">
+
+  <Metadata>
+    <Created>[ISO_TIMESTAMP]</Created>
+    <LastModified>[ISO_TIMESTAMP]</LastModified>
+    <Author>[NAME]</Author>
+    <ProjectBriefRef>[PB_ID]</ProjectBriefRef>
+    <Status>draft | locked | archived</Status>
+  </Metadata>
+
+  <Promise>
+    <CanonicalStatement>
+      [The ONE sentence that captures the transformation promise]
+      Example: "Restore youthful energy and mental clarity in 30 days without stimulants or side effects"
+    </CanonicalStatement>
+    <VariationsAllowed>
+      <Variation context="headline">[Headline version]</Variation>
+      <Variation context="body">[Body copy version]</Variation>
+      <Variation context="email">[Email subject version]</Variation>
+    </VariationsAllowed>
+    <ForbiddenAlterations>
+      <Rule>Never change timeframe (30 days is locked)</Rule>
+      <Rule>Never add absolute guarantees ("guaranteed" → "designed to")</Rule>
+      <Rule>Never imply medical diagnosis/cure</Rule>
+    </ForbiddenAlterations>
+  </Promise>
+
+  <Mechanism>
+    <Name>[The proprietary "how" - system/ingredient/method name]</Name>
+    <CanonicalParagraph>
+      [The ONE paragraph that explains the mechanism consistently]
+      Example: "Unlike stimulants that burn out your adrenals, [MECHANISM_NAME] works by supporting your mitochondria—the cellular 'power plants' that produce 90% of your body's energy. Clinical research shows this natural compound helps restore mitochondrial function that declines with age, giving you sustained energy without the crash."
+    </CanonicalParagraph>
+    <KeyPoints>
+      <Point id="M1">Targets root cause (mitochondrial decline), not symptoms</Point>
+      <Point id="M2">Natural, non-stimulant approach</Point>
+      <Point id="M3">Clinically researched compound</Point>
+      <Point id="M4">Sustained energy, no crash</Point>
+    </KeyPoints>
+    <VisualsAllowed>
+      <Visual>Before/After energy diagram (mitochondria)</Visual>
+      <Visual>Comparison chart (stimulants vs. mitochondrial support)</Visual>
+    </VisualsAllowed>
+  </Mechanism>
+
+  <ProofPillars>
+    <Pillar id="P1" type="science">
+      <Claim>Clinical research supports mitochondrial restoration</Claim>
+      <EvidenceRef>EP:E01, EP:E02</EvidenceRef>
+      <CanonicalLanguage>
+        "Multiple peer-reviewed studies show [COMPOUND] supports healthy mitochondrial function"
+      </CanonicalLanguage>
+    </Pillar>
+    <Pillar id="P2" type="testimonials">
+      <Theme>Real users reporting sustained energy</Theme>
+      <EvidenceRef>EP:T01-T15</EvidenceRef>
+      <Placement>After mechanism explanation, before objections</Placement>
+    </Pillar>
+    <Pillar id="P3" type="authority">
+      <Claim>Formulated by credentialed expert</Claim>
+      <EvidenceRef>EP:A01</EvidenceRef>
+      <CanonicalLanguage>
+        "Developed by Dr. [NAME], board-certified [SPECIALTY] with 20+ years researching cellular energy"
+      </CanonicalLanguage>
+    </Pillar>
+    <Pillar id="P4" type="results">
+      <Claim>Thousands of satisfied customers</Claim>
+      <EvidenceRef>EP:R01</EvidenceRef>
+      <CanonicalLanguage>
+        "Over 10,000 customers have experienced the benefits of [PRODUCT]"
+      </CanonicalLanguage>
+    </Pillar>
+  </ProofPillars>
+
+  <Objections>
+    <Objection id="O1" priority="critical">
+      <Statement>"I've tried other energy supplements and they didn't work"</Statement>
+      <Rebuttal>
+        <Approach>Acknowledge + differentiate mechanism</Approach>
+        <CanonicalLanguage>
+          "Most energy supplements rely on stimulants (caffeine, guarana) that mask the problem. [PRODUCT] is different—it addresses the root cause by supporting your mitochondria, the actual energy producers in your cells."
+        </CanonicalLanguage>
+      </Rebuttal>
+      <ProofReference>P1, P2</ProofReference>
+      <Placement>Before CTA, after mechanism</Placement>
+    </Objection>
+    <Objection id="O2" priority="high">
+      <Statement>"How do I know this will work for me?"</Statement>
+      <Rebuttal>
+        <Approach>Guarantee + social proof</Approach>
+        <CanonicalLanguage>
+          "We offer a 60-day money-back guarantee. If you don't experience noticeable improvement in energy and clarity, return it for a full refund. And you're not alone—over 10,000 customers have already experienced the benefits."
+        </CanonicalLanguage>
+      </Rebuttal>
+      <ProofReference>P4, Guarantee</ProofReference>
+      <Placement>Just before CTA</Placement>
+    </Objection>
+    <Objection id="O3" priority="medium">
+      <Statement>"Is it safe? Will there be side effects?"</Statement>
+      <Rebuttal>
+        <Approach>Natural + research-backed</Approach>
+        <CanonicalLanguage>
+          "[PRODUCT] contains naturally-sourced ingredients that have been studied in clinical trials. It's non-stimulant, so there's no jittery feeling or crash. As always, consult your doctor if you have specific health concerns."
+        </CanonicalLanguage>
+      </Rebuttal>
+      <ProofReference>P1</ProofReference>
+      <Placement>FAQ or after mechanism</Placement>
+    </Objection>
+    <!-- Add more objections as needed -->
+  </Objections>
+
+  <CallToAction>
+    <PrimaryAction>Order now</PrimaryAction>
+    <CanonicalPhrasing>
+      [The ONE CTA phrasing that's proven/tested]
+      Example: "Click below to try [PRODUCT] risk-free today"
+    </CanonicalPhrasing>
+    <Variations>
+      <Variation context="above-fold">"Get your risk-free supply now"</Variation>
+      <Variation context="close">"Claim your 60-day risk-free trial"</Variation>
+    </Variations>
+    <Urgency>
+      <Type>soft | hard | none</Type>
+      <IfUsed>[Only if real - limited inventory, promo end date]</IfUsed>
+      <Language>"Limited supply available" (only if true)</Language>
+    </Urgency>
+  </CallToAction>
+
+  <ToneConsistency>
+    <EmotionalArc>
+      <Opening>Empathy (acknowledge frustration)</Opening>
+      <Middle>Hope (mechanism + proof)</Middle>
+      <Close>Confidence (guarantee + social proof)</Close>
+    </EmotionalArc>
+    <VoiceGuideRef>[VG_ID]</VoiceGuideRef>
+  </ToneConsistency>
+
+  <CrossAssetAlignment>
+    <Rule>All assets (sales page, emails, ads) must use CanonicalStatement verbatim at least once</Rule>
+    <Rule>Mechanism CanonicalParagraph can be shortened but core logic cannot change</Rule>
+    <Rule>ProofPillars must appear in same order (Science → Testimonials → Authority → Results)</Rule>
+    <Rule>Objections must be addressed before final CTA</Rule>
+  </CrossAssetAlignment>
+
+</MessageSpine>

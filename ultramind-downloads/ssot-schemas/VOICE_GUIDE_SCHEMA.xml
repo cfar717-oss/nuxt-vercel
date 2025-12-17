@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- VOICE GUIDE SCHEMA v2.0 -->
+<!-- Single Source of Truth: Voice Lock -->
+<!-- Ensures consistent tone, style, and voice across all assets -->
+
+<VoiceGuide version="2.0" id="VG_[PROJECT_NAME]_v[VERSION]">
+
+  <Metadata>
+    <Created>[ISO_TIMESTAMP]</Created>
+    <LastModified>[ISO_TIMESTAMP]</LastModified>
+    <Author>[NAME]</Author>
+    <ProjectBriefRef>[PB_ID]</ProjectBriefRef>
+    <Status>draft | active | archived</Status>
+  </Metadata>
+
+  <ToneDials>
+    <!-- Each dial: 1-5 scale -->
+    <Sophistication level="1-5">
+      <!-- 1=Elementary, 3=Conversational, 5=Academic -->
+      <Target>[3]</Target>
+      <Description>Conversational intelligence - smart but accessible</Description>
+      <Example>
+        Level 1: "This makes you feel good"
+        Level 3: "This helps restore your natural energy levels"
+        Level 5: "This facilitates mitochondrial biogenesis via PGC-1α upregulation"
+      </Example>
+    </Sophistication>
+
+    <Urgency level="1-5">
+      <!-- 1=Relaxed, 3=Gentle prompt, 5=Emergency -->
+      <Target>[2]</Target>
+      <Description>Gentle encouragement without pressure</Description>
+      <Example>
+        Level 1: "Take your time deciding"
+        Level 2: "Limited supply available - secure yours today"
+        Level 5: "LAST CHANCE! Offer expires in 3 hours!"
+      </Example>
+    </Urgency>
+
+    <Empathy level="1-5">
+      <!-- 1=Clinical, 3=Warm, 5=Deeply emotional -->
+      <Target>[4]</Target>
+      <Description>Warm and understanding of reader's struggle</Description>
+      <Example>
+        Level 1: "Many people experience fatigue"
+        Level 4: "If you've felt that crushing afternoon slump that makes even simple tasks feel impossible, you're not alone"
+        Level 5: "I know the pain of watching life pass by while you're too exhausted to enjoy it"
+      </Example>
+    </Empathy>
+
+    <Authority level="1-5">
+      <!-- 1=Peer, 3=Expert, 5=Guru -->
+      <Target>[3]</Target>
+      <Description>Credible expert without arrogance</Description>
+      <Example>
+        Level 1: "I found this works well"
+        Level 3: "Clinical research shows this approach supports healthy energy levels"
+        Level 5: "I've discovered the ultimate secret that doctors don't want you to know"
+      </Example>
+    </Authority>
+
+    <Formality level="1-5">
+      <!-- 1=Casual, 3=Professional-friendly, 5=Corporate -->
+      <Target>[2]</Target>
+      <Description>Approachable and conversational</Description>
+      <Example>
+        Level 1: "Hey, check this out!"
+        Level 2: "Here's what makes this different"
+        Level 5: "We cordially invite you to consider our solution"
+      </Example>
+    </Formality>
+  </ToneDials>
+
+  <POVRules>
+    <Primary>Second-person ("you")</Primary>
+    <Forbidden>
+      <Pattern>First-person plural ("we" for reader)</Pattern>
+      <Example>❌ "We all know how frustrating this is" → ✅ "You know how frustrating this is"</Example>
+    </Forbidden>
+    <Allowed>
+      <Pattern>First-person for brand ("we offer", "our formula")</Pattern>
+      <Pattern>Second-person for reader ("you feel", "your energy")</Pattern>
+    </Allowed>
+  </POVRules>
+
+  <ForbiddenWords>
+    <Category name="Hype">
+      <Word>revolutionary</Word>
+      <Word>miracle</Word>
+      <Word>breakthrough</Word>
+      <Word>secret</Word>
+      <Word>shocking</Word>
+      <Word>stunning</Word>
+      <Replacement>Use "effective", "research-backed", "proven approach"</Replacement>
+    </Category>
+    <Category name="Guru-isms">
+      <Word>discover</Word>
+      <Word>unlock</Word>
+      <Word>hidden</Word>
+      <Word>ancient wisdom</Word>
+      <Replacement>Use "learn", "access", "time-tested"</Replacement>
+    </Category>
+    <Category name="Vague Claims">
+      <Word>results may vary (as weasel phrase)</Word>
+      <Word>up to [X]% (without context)</Word>
+      <Replacement>Use specific, grounded language from EvidencePack</Replacement>
+    </Category>
+  </ForbiddenWords>
+
+  <RequiredPatterns>
+    <Pattern name="Direct Address">
+      <Rule>Speak directly to reader using "you" consistently</Rule>
+      <Example>✅ "When you wake up feeling refreshed..."</Example>
+    </Pattern>
+    <Pattern name="Active Voice">
+      <Rule>Prefer active constructions (>80% of sentences)</Rule>
+      <Example>
+        ❌ "Energy levels are restored by the formula"
+        ✅ "The formula restores your energy levels"
+      </Example>
+    </Pattern>
+    <Pattern name="Concrete Language">
+      <Rule>Use specific, sensory details over abstractions</Rule>
+      <Example>
+        ❌ "Improved wellness"
+        ✅ "Wake up refreshed, power through your afternoon without a slump"
+      </Example>
+    </Pattern>
+  </RequiredPatterns>
+
+  <SentenceStructure>
+    <AverageLength>15-20 words</AverageLength>
+    <MaxLength>30 words (flag for review if exceeded)</MaxLength>
+    <VarietyRule>Mix short (5-10) and medium (15-20) sentences for rhythm</VarietyRule>
+    <OpeningRule>Start paragraphs with clear topic sentence</OpeningRule>
+  </SentenceStructure>
+
+  <ParagraphStructure>
+    <Length>3-5 sentences typical, 2 sentences minimum</Length>
+    <Transition>Use transitional phrases between paragraphs</Transition>
+    <WhitespaceRule>Frequent paragraph breaks for readability (web copy)</WhitespaceRule>
+  </ParagraphStructure>
+
+  <Examples>
+    <OnVoice>
+      <Title>Example: Mechanism Explanation (On-Voice)</Title>
+      <Text>
+        "Here's what makes this different. Instead of relying on caffeine or stimulants that give you a temporary jolt—and then crash—[PRODUCT] works at the cellular level. It supports your mitochondria, the tiny power plants inside your cells that produce 90% of your body's energy. As you age, mitochondrial function naturally declines. That's why you feel exhausted even after a full night's sleep. [PRODUCT] helps restore that function, so you get sustained energy throughout the day. No jitters. No crash. Just steady, natural vitality."
+      </Text>
+      <Analysis>
+        ✅ Second-person ("your cells", "you feel")
+        ✅ Conversational but intelligent (sophistication: 3)
+        ✅ Concrete language ("tiny power plants", "jolt and crash")
+        ✅ Active voice
+        ✅ Sentence variety (short + medium)
+      </Analysis>
+    </OnVoice>
+
+    <OffVoice>
+      <Title>Example: Mechanism Explanation (Off-Voice - Too Hype)</Title>
+      <Text>
+        "Discover the revolutionary breakthrough that's SHOCKING the health industry! This miracle formula unlocks your hidden energy potential using ancient wisdom combined with cutting-edge science. You'll experience stunning transformations as your body's secret energy centers are activated!"
+      </Text>
+      <Analysis>
+        ❌ Hype words (revolutionary, shocking, miracle, unlock, stunning)
+        ❌ Vague claims ("hidden energy potential", "secret energy centers")
+        ❌ Excessive urgency/excitement (all caps, exclamation marks)
+        ❌ Guru tone ("ancient wisdom", "discover")
+      </Analysis>
+    </OffVoice>
+
+    <OffVoice>
+      <Title>Example: Mechanism Explanation (Off-Voice - Too Clinical)</Title>
+      <Text>
+        "The formulation facilitates enhanced mitochondrial biogenesis through the upregulation of PGC-1α pathways, thereby optimizing oxidative phosphorylation and ATP synthesis. Subjects in clinical trials demonstrated statistically significant improvements in subjective energy assessments."
+      </Text>
+      <Analysis>
+        ❌ Too sophisticated (level 5, target is 3)
+        ❌ Jargon without explanation (PGC-1α, oxidative phosphorylation)
+        ❌ Passive constructions ("is facilitated", "were demonstrated")
+        ❌ No direct address (missing "you")
+      </Analysis>
+    </OffVoice>
+  </Examples>
+
+  <ComplianceNotes>
+    <LegalLanguage>When required disclaimers must be included, use smallest compliant font/placement</LegalLanguage>
+    <HealthClaims>Always use "supports", "helps", "designed to" - never "cures", "treats", "prevents"</HealthClaims>
+    <Testimonials>Must include "results may vary" disclaimer per FTC guidelines</Testimonials>
+  </ComplianceNotes>
+
+  <QualityChecklist>
+    <Item>Second-person POV used consistently (✓/✗)</Item>
+    <Item>No forbidden words detected (✓/✗)</Item>
+    <Item>Tone dials within ±1 of target (✓/✗)</Item>
+    <Item>Average sentence length 15-20 words (✓/✗)</Item>
+    <Item>Active voice >80% (✓/✗)</Item>
+    <Item>Concrete language (specific sensory details) used (✓/✗)</Item>
+  </QualityChecklist>
+
+</VoiceGuide>
