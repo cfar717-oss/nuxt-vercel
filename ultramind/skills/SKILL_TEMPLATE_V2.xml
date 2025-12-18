@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ULTRAMIND SKILL TEMPLATE v2.0
+
+  Use this template to create production skills with:
+  - SSOT integration (PROJECT_BRIEF, MESSAGE_SPINE, EVIDENCE_PACK)
+  - MOD routing hooks (deterministic skill selection)
+  - MMA quality gates (7-dimension scoring)
+  - Progressive disclosure (L1-L4 layers)
+  - Constitutional compliance
+  - Neuro-resonance integration
+
+  Replace ALL [BRACKETED_VALUES] with actual content.
+  Delete sections marked (optional) if not needed.
+-->
+
+<Skill
+  skill_id="[skill_id]"
+  name="[Skill Name]"
+  version="[version]"
+  status="[draft|beta|active|deprecated]"
+>
+
+  <!-- ===================================================================== -->
+  <!-- META INFORMATION                                                      -->
+  <!-- ===================================================================== -->
+
+  <Meta>
+    <Name>[Skill Name]</Name>
+    <Codename>[The Nickname]</Codename>
+    <Description>[One sentence: what this skill does]</Description>
+
+    <CreatedBy agent_or_human="[agent|human]" agent_id="[skill_builder|human_name]"/>
+    <DateCreated>[YYYY-MM-DD]</DateCreated>
+    <LastModified>[YYYY-MM-DD]</LastModified>
+
+    <Tier>[system|meta|production|experimental]</Tier>
+    <Status>[draft|beta|active|deprecated]</Status>
+    <Model>[sonnet|opus|haiku]</Model>
+
+    <PrimaryOutcome>[What this skill produces as its main deliverable]</PrimaryOutcome>
+
+    <!-- Sister Skills (optional): Skills that coordinate synchronously -->
+    <SisterSkills>
+      <Skill priority="always_wake">[sister_skill_id]</Skill>
+    </SisterSkills>
+  </Meta>
+
+  <!-- ===================================================================== -->
+  <!-- CONTRACT (I/O SPECIFICATION)                                          -->
+  <!-- ===================================================================== -->
+
+  <Contract>
+    <InputsRequired>
+      <Input type="[ssot|artifact|parameter]" format="[yaml|json|markdown|text]">
+        <Name>[input_name]</Name>
+        <Description>[What this input provides]</Description>
+        <Schema>[schema_reference if SSOT]</Schema>
+      </Input>
+      <!-- Add more required inputs -->
+    </InputsRequired>
+
+    <InputsOptional>
+      <Input type="[ssot|artifact|parameter]" format="[yaml|json|markdown|text]">
+        <Name>[input_name]</Name>
+        <Description>[What this input provides]</Description>
+      </Input>
+      <!-- Add more optional inputs -->
+    </InputsOptional>
+
+    <OutputsPrimary>
+      <Output format="[markdown|yaml|json|xml]">
+        <Name>[output_name]</Name>
+        <Description>[What this output contains]</Description>
+        <Structure>[Brief structure description]</Structure>
+      </Output>
+    </OutputsPrimary>
+
+    <OutputsSecondary>
+      <Output format="[markdown|yaml|json]">
+        <Name>[secondary_output_name]</Name>
+        <Description>[Supporting output]</Description>
+      </Output>
+    </OutputsSecondary>
+
+    <NonGoals>
+      <NotFor>[This skill is NOT for...]</NotFor>
+      <NotFor>[This skill does NOT...]</NotFor>
+    </NonGoals>
+  </Contract>
+
+  <!-- ===================================================================== -->
+  <!-- DEPENDENCIES & INTEGRATION                                            -->
+  <!-- ===================================================================== -->
+
+  <Dependencies>
+    <UpstreamDependencies>
+      <Skill priority="[critical|high|medium]">[upstream_skill_id]</Skill>
+      <!-- Skills this skill receives inputs from -->
+    </UpstreamDependencies>
+
+    <DownstreamConsumers>
+      <Skill>[downstream_skill_id]</Skill>
+      <!-- Skills that consume this skill's outputs -->
+    </DownstreamConsumers>
+
+    <Tags>
+      <Tag>[category_tag]</Tag>
+      <!-- e.g., copywriting, strategy, refinement, analysis -->
+    </Tags>
+  </Dependencies>
+
+  <!-- ===================================================================== -->
+  <!-- MOD INTEGRATION (ROUTING)                                             -->
+  <!-- ===================================================================== -->
+
+  <MODIntegration>
+    <RoutingTriggers>
+      <Trigger type="task_type">[task_type_value]</Trigger>
+      <Trigger type="deliverable">[deliverable_format]</Trigger>
+      <Trigger type="natural_language">[user_phrase_trigger]</Trigger>
+      <!-- Add more triggers -->
+    </RoutingTriggers>
+
+    <LayerLoadDefault>[L1+L2|L1+L2+L3|ALL]</LayerLoadDefault>
+
+    <LayerLoadConditions>
+      <L3>
+        <Condition>[complexity >= 4]</Condition>
+        <Condition>[edge_case_detected]</Condition>
+        <Condition>[optimization_requested]</Condition>
+      </L3>
+      <L4>
+        <Condition>[skill_building]</Condition>
+        <Condition>[debugging]</Condition>
+        <Condition>[meta_operation]</Condition>
+      </L4>
+    </LayerLoadConditions>
+
+    <AwakenRecommendations>
+      <High>
+        <Skill>[skill_id]</Skill>
+        <!-- Always wake these skills (sister skills, critical dependencies) -->
+      </High>
+      <Medium>
+        <Skill>[skill_id]</Skill>
+        <!-- Often coordinate with these skills -->
+      </Medium>
+      <Low>
+        <Skill>[skill_id]</Skill>
+        <!-- Rarely needed but good to have aware -->
+      </Low>
+    </AwakenRecommendations>
+
+    <ContextBudget>
+      <Estimated>[typical_token_count]</Estimated>
+      <Maximum>[max_allowable_tokens]</Maximum>
+      <UnloadTriggers>
+        <Trigger>[task_completed]</Trigger>
+        <Trigger>[context_pressure]</Trigger>
+        <Trigger>[not_used_within_2_turns]</Trigger>
+      </UnloadTriggers>
+    </ContextBudget>
+
+    <SSOTRequirements>
+      <AlwaysRequire>PROJECT_BRIEF</AlwaysRequire>
+      <!-- Add MESSAGE_SPINE, EVIDENCE_PACK, VOICE_GUIDE if needed -->
+      <RequireIfClaims>EVIDENCE_PACK</RequireIfClaims>
+      <RequireIfMultiAsset>MESSAGE_SPINE</RequireIfMultiAsset>
+      <RequireIfMultiAsset>VOICE_GUIDE</RequireIfMultiAsset>
+    </SSOTRequirements>
+
+    <NeuroResonanceIntegration>
+      <ReferencesConstitution>true</ReferencesConstitution>
+      <PrimaryAxes>
+        <Axis>[BOTTOM|TOP|LEFT|RIGHT|FRONT|BACK]</Axis>
+        <!-- Which neuro-axes this skill typically activates -->
+      </PrimaryAxes>
+      <AudienceAdaptation>
+        <Cold>[Strategy for cold audiences]</Cold>
+        <Warm>[Strategy for warm audiences]</Warm>
+        <Hot>[Strategy for hot audiences]</Hot>
+      </AudienceAdaptation>
+    </NeuroResonanceIntegration>
+  </MODIntegration>
+
+  <!-- ===================================================================== -->
+  <!-- MMA INTEGRATION (QUALITY GATES)                                       -->
+  <!-- ===================================================================== -->
+
+  <MMAIntegration>
+    <QualityDimensions>
+      <Dimension name="strategy_alignment" weight="critical">
+        <Threshold>7.0</Threshold>
+        <Validation>[Does output serve the core objective from PROJECT_BRIEF?]</Validation>
+      </Dimension>
+
+      <Dimension name="clarity_structure" weight="high">
+        <Threshold>7.0</Threshold>
+        <Validation>[Is output clear, scannable, well-organized?]</Validation>
+      </Dimension>
+
+      <Dimension name="voice_consistency" weight="high">
+        <Threshold>7.0</Threshold>
+        <Validation>[Does output match VOICE_GUIDE tone/style?]</Validation>
+      </Dimension>
+
+      <Dimension name="proof_discipline" weight="critical">
+        <Threshold>8.0</Threshold>
+        <Validation>[Are all claims backed by EVIDENCE_PACK or properly framed?]</Validation>
+      </Dimension>
+
+      <Dimension name="neuro_resonance" weight="high">
+        <Threshold>7.0</Threshold>
+        <Validation>[Does output activate target neuro-axes with proper balance?]</Validation>
+      </Dimension>
+
+      <Dimension name="cta_integrity" weight="medium">
+        <Threshold>7.0</Threshold>
+        <Validation>[Is call-to-action clear, singular, appropriately urgent?]</Validation>
+      </Dimension>
+
+      <Dimension name="ethical_guardrails" weight="critical">
+        <Threshold>9.0</Threshold>
+        <Validation>[Is output honest, respectful, manipulation-free?]</Validation>
+      </Dimension>
+    </QualityDimensions>
+
+    <HardGates>
+      <Gate severity="critical">
+        <Name>no_fabrication</Name>
+        <Description>No invented proof, testimonials, or claims</Description>
+        <OnViolation>HALT + ESCALATE_HUMAN</OnViolation>
+      </Gate>
+
+      <Gate severity="critical">
+        <Name>no_disease_claims</Name>
+        <Description>No medical treatment claims without approval</Description>
+        <OnViolation>HALT + ESCALATE_HUMAN</OnViolation>
+      </Gate>
+
+      <Gate severity="high">
+        <Name>evidence_backed_or_qualified</Name>
+        <Description>All claims must reference EVIDENCE_PACK or use attribution language</Description>
+        <OnViolation>FIX + rerun_mma</OnViolation>
+      </Gate>
+
+      <!-- Add more hard gates as needed -->
+    </HardGates>
+
+    <FixRouting>
+      <Route condition="proof_discipline < 6">
+        <Action>ADD_EVIDENCE_PACK_REFERENCES</Action>
+        <Or>DOWNGRADE_LANGUAGE</Or>
+      </Route>
+
+      <Route condition="voice_consistency < 6">
+        <Action>ROUTE_TO_master_writing_partner</Action>
+      </Route>
+
+      <Route condition="overall_avg < 6">
+        <Action>ESCALATE_TO_human_persuasion_editor</Action>
+      </Route>
+
+      <Route condition="overall_avg < 4">
+        <Action>ESCALATE_TO_strategic_copy_director</Action>
+      </Route>
+
+      <!-- Add more fix routing rules -->
+    </FixRouting>
+  </MMAIntegration>
+
+  <!-- ===================================================================== -->
+  <!-- CONSTITUTIONAL COMPLIANCE                                             -->
+  <!-- ===================================================================== -->
+
+  <ConstitutionalCompliance>
+    <Principle name="human_first">
+      <Declaration>This skill augments human operators; humans own final truth</Declaration>
+      <HumanRole>[What humans must review/approve]</HumanRole>
+    </Principle>
+
+    <Principle name="evidence_honesty">
+      <Declaration>No fabricated proof; qualify uncertainty</Declaration>
+      <Enforcement>All claims validated against EVIDENCE_PACK or softened</Enforcement>
+    </Principle>
+
+    <Principle name="consent_intent">
+      <Declaration>Persuasion respects autonomy; no deceptive patterns</Declaration>
+      <Guardrails>
+        <Item>No fake urgency/scarcity</Item>
+        <Item>No fear-mongering beyond reality-stating</Item>
+        <Item>Transparency allowed (breaking 4th wall)</Item>
+      </Guardrails>
+    </Principle>
+
+    <Principle name="radical_clarity">
+      <Declaration>Audience, promise, mechanism, proof, and CTA explicit</Declaration>
+      <Enforcement>4-question test: Promise? Proof? Trust? Deal?</Enforcement>
+    </Principle>
+  </ConstitutionalCompliance>
+
+  <!-- ===================================================================== -->
+  <!-- GUARDRAILS                                                            -->
+  <!-- ===================================================================== -->
+
+  <Guardrails>
+    <Guardrail priority="critical">
+      <Rule>no_fabrication</Rule>
+      <Description>Never invent proof, testimonials, claims, numbers, outcomes</Description>
+      <Enforcement>If proof missing, generate EVIDENCE_REQUEST or downgrade certainty</Enforcement>
+    </Guardrail>
+
+    <Guardrail priority="critical">
+      <Rule>ssot_discipline</Rule>
+      <Description>Never invent values for missing SSOT fields</Description>
+      <Enforcement>Flag missing fields, request completion before proceeding</Enforcement>
+    </Guardrail>
+
+    <Guardrail priority="high">
+      <Rule>clarity_over_clever</Rule>
+      <Description>Prioritize understanding over creativity</Description>
+      <Enforcement>If clever obscures clarity, choose clarity</Enforcement>
+    </Guardrail>
+
+    <Guardrail priority="high">
+      <Rule>trust_over_tricks</Rule>
+      <Description>Build long-term trust, not short-term conversions</Description>
+      <Enforcement>No fake urgency, manufactured scarcity, fear manipulation</Enforcement>
+    </Guardrail>
+
+    <Guardrail priority="medium">
+      <Rule>lean_context</Rule>
+      <Description>Minimize token usage without sacrificing quality</Description>
+      <Enforcement>Progressive disclosure, efficient language, no redundancy</Enforcement>
+    </Guardrail>
+
+    <!-- Add skill-specific guardrails -->
+  </Guardrails>
+
+  <!-- ===================================================================== -->
+  <!-- LAYER 1: QUICK REFERENCE (Always Loaded)                              -->
+  <!-- ===================================================================== -->
+
+  <Layer level="1" name="Quick Reference">
+    <LoadPriority>always</LoadPriority>
+    <Purpose>Instant access for 80% of tasks</Purpose>
+    <TokenBudget>200-250</TokenBudget>
+
+    <Content>
+      <CorePurpose>[One sentence: what this skill does]</CorePurpose>
+
+      <WhenToUse>
+        <Trigger>[Scenario 1]</Trigger>
+        <Trigger>[Scenario 2]</Trigger>
+        <Trigger>[Scenario 3]</Trigger>
+      </WhenToUse>
+
+      <FastDecisionTree>
+        <Decision>
+          <If>[condition]</If>
+          <Then>[action]</Then>
+        </Decision>
+        <!-- Add 3-5 key decisions -->
+      </FastDecisionTree>
+
+      <RequiredOutputs>
+        <Output>[output_1]</Output>
+        <Output>[output_2]</Output>
+      </RequiredOutputs>
+
+      <SuccessMetrics>
+        <Metric>[measurable_outcome_1]</Metric>
+        <Metric>[measurable_outcome_2]</Metric>
+        <Metric>[measurable_outcome_3]</Metric>
+      </SuccessMetrics>
+    </Content>
+  </Layer>
+
+  <!-- ===================================================================== -->
+  <!-- LAYER 2: CORE PROCEDURE (Executing Only)                              -->
+  <!-- ===================================================================== -->
+
+  <Layer level="2" name="Core Procedure">
+    <LoadPriority>when_executing</LoadPriority>
+    <Purpose>Complete step-by-step operating instructions</Purpose>
+    <TokenBudget>1800-2500</TokenBudget>
+
+    <Content>
+      <!-- STEP 0: INPUT PARSING -->
+      <Step number="0" name="Parse Inputs">
+        <Purpose>[Why this step exists]</Purpose>
+
+        <Actions>
+          <Action>1. [First action]</Action>
+          <Action>2. [Second action]</Action>
+          <!-- Add more actions -->
+        </Actions>
+
+        <Validation>
+          <Check>[Validation rule 1]</Check>
+          <Check>[Validation rule 2]</Check>
+        </Validation>
+
+        <Output>[What this step produces]</Output>
+      </Step>
+
+      <!-- STEP 1: MAIN PROCEDURE STEP -->
+      <Step number="1" name="[Step Name]">
+        <Purpose>[Why this step exists]</Purpose>
+
+        <Actions>
+          <Action>1. [Action with specific details]</Action>
+          <Action>2. [Action with specific details]</Action>
+        </Actions>
+
+        <Validation>
+          <Check>[Required condition]</Check>
+          <Check>[Quality threshold]</Check>
+        </Validation>
+
+        <Output>[Artifact or intermediate result]</Output>
+      </Step>
+
+      <!-- Add Steps 2, 3, 4, etc. (typically 4-8 steps total) -->
+
+      <!-- DECISION HEURISTICS -->
+      <DecisionHeuristics>
+        <Heuristic>
+          <If>[condition]</If>
+          <Then>[action]</Then>
+          <Rationale>[why this rule exists]</Rationale>
+        </Heuristic>
+        <!-- Add 8-10 IF/THEN rules -->
+      </DecisionHeuristics>
+
+      <!-- QUALITY STANDARDS -->
+      <QualityStandards>
+        <Standard>[Quality requirement 1]</Standard>
+        <Standard>[Quality requirement 2]</Standard>
+        <!-- Add 7-10 quality checks -->
+      </QualityStandards>
+
+      <!-- COORDINATION PROTOCOLS -->
+      <CoordinationProtocols>
+        <Protocol>
+          <When>[coordination_trigger]</When>
+          <WakeSkill>[skill_id]</WakeSkill>
+          <Reason>[why coordination needed]</Reason>
+        </Protocol>
+      </CoordinationProtocols>
+
+      <!-- AGENT BEHAVIOR RULES -->
+      <AgentBehaviorRules>
+        <Rule category="[category_name]">
+          <Guideline>[How agent should behave]</Guideline>
+          <Example>[Concrete example]</Example>
+        </Rule>
+        <!-- Add 5-8 behavior rules -->
+      </AgentBehaviorRules>
+    </Content>
+  </Layer>
+
+  <!-- ===================================================================== -->
+  <!-- LAYER 3: ADVANCED USAGE (Conditional Load)                            -->
+  <!-- ===================================================================== -->
+
+  <Layer level="3" name="Advanced Usage">
+    <LoadPriority>when_complexity_high_OR_edge_case</LoadPriority>
+    <Purpose>Edge cases, troubleshooting, optimization patterns</Purpose>
+    <TokenBudget>3500-5000</TokenBudget>
+
+    <Content>
+      <!-- EDGE CASES -->
+      <EdgeCases>
+        <Case name="[Edge Case Name]">
+          <Trigger>[When this happens]</Trigger>
+          <Approach>[How to handle]</Approach>
+          <Modifications>[What changes from standard procedure]</Modifications>
+        </Case>
+        <!-- Add multiple edge cases -->
+      </EdgeCases>
+
+      <!-- ANTI-PATTERNS -->
+      <AntiPatterns>
+        <Pattern name="[Anti-Pattern Name]">
+          <Detection>[How to spot it]</Detection>
+          <RootCause>[Why it happens]</RootCause>
+          <Recovery>[How to fix]</Recovery>
+          <Prevention>[How to avoid]</Prevention>
+        </Pattern>
+        <!-- Add common failure modes -->
+      </AntiPatterns>
+
+      <!-- FAILURE MODE PLAYBOOK -->
+      <FailureModePlaybook>
+        <FailureMode id="FM1" name="[Failure Name]">
+          <Detection>[Symptom description]</Detection>
+          <Recovery>
+            <Step>1. [Recovery action]</Step>
+            <Step>2. [Recovery action]</Step>
+            <Step>3. Rerun MMA</Step>
+          </Recovery>
+        </FailureMode>
+        <!-- Add 5-7 failure modes with recovery steps -->
+      </FailureModePlaybook>
+
+      <!-- OPTIMIZATION PATTERNS -->
+      <OptimizationPatterns>
+        <Pattern name="[Optimization Name]">
+          <Description>[What this optimizes]</Description>
+          <Implementation>[How to apply]</Implementation>
+          <BestFor>[When to use]</BestFor>
+        </Pattern>
+      </OptimizationPatterns>
+
+      <!-- EXTENDED EXAMPLES -->
+      <ExtendedExamples>
+        <Example name="[Complete Walkthrough]">
+          <Scenario>[Detailed scenario description]</Scenario>
+          <Inputs>[Exact inputs provided]</Inputs>
+          <Process>[Step-by-step execution]</Process>
+          <Output>[Final result with annotations]</Output>
+        </Example>
+      </ExtendedExamples>
+
+      <!-- TROUBLESHOOTING GUIDE -->
+      <TroubleshootingGuide>
+        <Issue symptom="[Observable problem]">
+          <Diagnosis>[Likely cause]</Diagnosis>
+          <Solution>[Fix steps]</Solution>
+        </Issue>
+      </TroubleshootingGuide>
+    </Content>
+  </Layer>
+
+  <!-- ===================================================================== -->
+  <!-- LAYER 4: TECHNICAL SPECIFICATION (Meta-Operations Only)               -->
+  <!-- ===================================================================== -->
+
+  <Layer level="4" name="Technical Specification">
+    <LoadPriority>meta_work_only</LoadPriority>
+    <Purpose>Formal schemas, algorithms, testing specs</Purpose>
+    <TokenBudget>2000-3000</TokenBudget>
+
+    <Content>
+      <!-- INPUT SCHEMAS -->
+      <InputSchemas>
+        <Schema name="PROJECT_BRIEF">
+          <Required>
+            <Field name="project_id" type="string"/>
+            <Field name="asset_id" type="string"/>
+            <Field name="version" type="string"/>
+            <Field name="owner_agent" type="string"/>
+            <Field name="objective" type="object"/>
+          </Required>
+          <Validation>[Validation rules]</Validation>
+        </Schema>
+        <!-- Add other input schemas -->
+      </InputSchemas>
+
+      <!-- OUTPUT SCHEMAS -->
+      <OutputSchemas>
+        <Schema name="[primary_output_name]">
+          <Format>[markdown|yaml|json]</Format>
+          <Structure>[Detailed structure specification]</Structure>
+          <RequiredSections>
+            <Section>[section_name]</Section>
+          </RequiredSections>
+        </Schema>
+      </OutputSchemas>
+
+      <!-- ALGORITHMS -->
+      <Algorithms>
+        <Algorithm name="[Algorithm Name]">
+          <Purpose>[What this computes]</Purpose>
+          <Pseudocode><![CDATA[
+function algorithm_name(inputs):
+    # Step 1: [description]
+    result = process(inputs)
+
+    # Step 2: [description]
+    validated = validate(result)
+
+    return validated
+          ]]></Pseudocode>
+        </Algorithm>
+      </Algorithms>
+
+      <!-- PERFORMANCE BENCHMARKS -->
+      <PerformanceBenchmarks>
+        <Benchmark metric="output_quality">
+          <Target>MMA average >= 8.0</Target>
+          <Minimum>MMA average >= 7.0</Minimum>
+        </Benchmark>
+
+        <Benchmark metric="token_efficiency">
+          <Target>&lt; 3000 tokens per execution</Target>
+        </Benchmark>
+
+        <Benchmark metric="execution_time">
+          <Target>&lt; 2 minutes typical case</Target>
+        </Benchmark>
+      </PerformanceBenchmarks>
+
+      <!-- FORMAL CONSTRAINTS -->
+      <FormalConstraints>
+        <Constraint type="[type]">
+          <Rule>[Precise definition]</Rule>
+          <Enforcement>[How enforced]</Enforcement>
+        </Constraint>
+      </FormalConstraints>
+
+      <!-- TESTING SPECIFICATIONS -->
+      <TestingSpecifications>
+        <GoldenRun id="GR-[SKILL]-01">
+          <Name>[Test case name]</Name>
+          <Inputs>[Canonical inputs]</Inputs>
+          <ExpectedOutput>[Expected structure/content]</ExpectedOutput>
+          <PassCriteria>
+            <Criterion>MMA scores all >= 7.0</Criterion>
+            <Criterion>[Specific quality check]</Criterion>
+          </PassCriteria>
+        </GoldenRun>
+      </TestingSpecifications>
+
+      <!-- INTEGRATION PROTOCOLS -->
+      <IntegrationProtocols>
+        <MODProtocol>
+          <RequiredOutputShape>MOD_PLAN</RequiredOutputShape>
+          <ContextBudgetEnforcement>[How enforced]</ContextBudgetEnforcement>
+        </MODProtocol>
+
+        <MMAProtocol>
+          <RequiredOutputShape>MMA_QUALITY_REPORT</RequiredOutputShape>
+          <ScoringAlgorithm>[Reference to algorithm]</ScoringAlgorithm>
+        </MMAProtocol>
+      </IntegrationProtocols>
+    </Content>
+  </Layer>
+
+  <!-- ===================================================================== -->
+  <!-- VERSION HISTORY                                                       -->
+  <!-- ===================================================================== -->
+
+  <VersionHistory>
+    <Version number="[version]" date="[YYYY-MM-DD]">
+      <Status>[draft|beta|active]</Status>
+      <Changes>
+        <Change type="[feature|bugfix|enhancement]">[Description]</Change>
+      </Changes>
+      <BaselineScores>
+        <Dimension name="strategy_alignment">0.0</Dimension>
+        <Dimension name="clarity_structure">0.0</Dimension>
+        <Dimension name="voice_consistency">0.0</Dimension>
+        <Dimension name="proof_discipline">0.0</Dimension>
+        <Dimension name="neuro_resonance">0.0</Dimension>
+        <Dimension name="cta_integrity">0.0</Dimension>
+        <Dimension name="ethical_guardrails">0.0</Dimension>
+        <Average>0.0</Average>
+      </BaselineScores>
+    </Version>
+  </VersionHistory>
+
+</Skill>
