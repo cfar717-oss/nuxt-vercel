@@ -1,0 +1,117 @@
+# VOICE_GUIDE — SSOT Template v1.0
+# Voice & style consistency across all assets
+# Ensures brand personality coherence
+
+VOICE_GUIDE:
+  # === META (Required) ===
+  project_id: ""           # Must match PROJECT_BRIEF
+  brand_name: ""
+  version: "1.0"
+  created: ""              # YYYY-MM-DD
+  last_updated: ""
+
+  # === PRIMARY VOICE (Required) ===
+  primary_voice:
+    tone: ""               # e.g., "empathetic, professional, science-informed"
+    pov: ""                # e.g., "peer-to-peer", "expert-to-student"
+    style: ""              # e.g., "conversational but credible"
+    personality: ""        # Brand character description
+
+  # === DO (Required) ===
+  do:
+    - ""                   # Specific voice behaviors to follow
+    - ""
+    - ""
+  # Examples:
+  # - "Use 'we' language (shared journey)"
+  # - "Lead with empathy before solution"
+  # - "Balance science with humanity"
+  # - "Short paragraphs (2-4 sentences)"
+
+  # === DON'T (Required) ===
+  dont:
+    - ""                   # Specific voice behaviors to avoid
+    - ""
+    - ""
+  # Examples:
+  # - "Hype or exaggerated claims"
+  # - "Fear-based manipulation"
+  # - "Technical jargon without explanation"
+  # - "Talking down to audience"
+
+  # === KEY PHRASES (Brand vocabulary) ===
+  key_phrases:
+    signature_phrases: []  # Phrases that define the brand
+    encouraged_language: [] # Language patterns to use
+    forbidden_language: [] # Words/phrases to never use
+
+  # Examples:
+  # signature_phrases:
+  #   - "From darkness to light"
+  #   - "Deep penetration at cellular level"
+  #   - "Carry healing home"
+  # forbidden_language:
+  #   - "miracle cure"
+  #   - "guaranteed results"
+  #   - "revolutionary breakthrough"
+
+  # === STRUCTURE GUIDELINES (Required) ===
+  structure:
+    reading_level_target: "" # e.g., "5th-7th grade"
+    paragraph_rules: []    # Length and format guidelines
+    sentence_guidelines: [] # Complexity and rhythm
+    formatting_preferences: [] # Bullets, subheads, etc.
+
+  # Examples:
+  # paragraph_rules:
+  #   - "1-3 sentences max"
+  #   - "Abundant white space"
+  #   - "Each paragraph = one idea"
+  # sentence_guidelines:
+  #   - "Mix short (5-8 words) with medium (12-15 words)"
+  #   - "Avoid sentences over 20 words"
+  #   - "Start with power words occasionally"
+
+  # === TRANSITION PHRASES (Optional) ===
+  transition_phrases: []   # Connectors that maintain flow
+
+  # Examples:
+  # - "Here's the thing..."
+  # - "And that's when I realized..."
+  # - "But there's more to the story..."
+  # - "Let me explain..."
+
+  # === AUDIENCE CONSIDERATION (Required) ===
+  audience:
+    sophistication_level: "" # naive | aware | sophisticated | burned
+    vocabulary_notes: ""   # How to match their language
+    cultural_sensitivity: [] # Awareness considerations
+    accessibility_requirements: [] # Inclusive language requirements
+
+  # === VOICE VARIATIONS BY FORMAT (Optional) ===
+  format_variations:
+    email:
+      adjustments: []      # How voice adapts for email
+    sales_page:
+      adjustments: []      # How voice adapts for long-form
+    video_script:
+      adjustments: []      # How voice adapts for video
+    social_media:
+      adjustments: []      # How voice adapts for social
+
+  # === EXAMPLES (Required) ===
+  examples:
+    good_examples: []      # Copy that exemplifies the voice
+    bad_examples: []       # Copy that violates the voice
+
+  # Format:
+  # good_examples:
+  #   - text: "Example copy here..."
+  #     why_it_works: "Demonstrates empathy + clarity"
+  # bad_examples:
+  #   - text: "Example bad copy..."
+  #     why_it_fails: "Too clinical, lacks warmth"
+
+  # === COMPLIANCE INTEGRATION (Link to broader constraints) ===
+  compliance_notes: ""     # How voice guidelines interact with compliance
+  legal_requirements: []   # Required disclaimers, language constraints

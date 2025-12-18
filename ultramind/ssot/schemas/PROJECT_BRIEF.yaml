@@ -1,0 +1,62 @@
+# PROJECT_BRIEF — SSOT Template v1.0
+# Single source of truth for all project context
+# Referenced by: MOD, all production skills, MMA
+
+PROJECT_BRIEF:
+  # === META (Required) ===
+  project_id: ""           # e.g., "QRX_2024_12"
+  asset_id: ""             # e.g., "sales_page_v1"
+  version: "1.0"
+  owner_agent: ""          # Primary skill responsible
+  date: ""                 # YYYY-MM-DD
+
+  # === OBJECTIVE (Required) ===
+  objective:
+    primary_goal: ""       # What this asset/project must achieve
+    success_metric: ""     # How success is measured
+
+  # === AVATAR (Required) ===
+  avatar:
+    primary_segment: ""    # Who is this for?
+    pains: []              # Top 3-5 pain points
+    desires: []            # Top 3-5 aspirations
+    sophistication_level: "" # naive | aware | sophisticated | burned
+    vocabulary: []         # Voice-of-customer phrases
+
+  # === OFFER (Required) ===
+  offer:
+    name: ""
+    price: ""              # or price_range
+    mechanism: ""          # UMP + UMS in one paragraph
+    differentiators: []    # What makes this unique
+    cta_primary: ""        # Main call to action
+    cta_secondary: ""      # Optional fallback CTA
+
+  # === CONSTRAINTS (Required) ===
+  nonnegotiables:
+    claims_limits: []      # What you CANNOT say (compliance)
+    compliance: []         # Regulatory constraints
+    brand_donts: []        # Voice/style prohibitions
+
+  # === TONE CONTROLS (0-10 scales) ===
+  tone_controls:
+    warmth: 7              # 0=clinical, 10=intimate
+    authority: 8           # 0=peer, 10=expert
+    humor: 2               # 0=serious, 10=playful
+    urgency: 4             # 0=evergreen, 10=deadline-driven
+    mystique: 3            # 0=direct, 10=mysterious
+
+  # === EVIDENCE REFERENCES (Link to EVIDENCE_PACK) ===
+  evidence_pack_refs: []   # List of proof IDs from EVIDENCE_PACK.yaml
+
+  # === NEURO-RESONANCE (Optional) ===
+  neuro_targeting:
+    audience_temperature: "" # cold | warm | hot
+    primary_axes: []       # Which neuro-axes to activate (BOTTOM, LEFT, etc.)
+    balance_notes: ""      # Special balance requirements
+
+  # === COORDINATION (Optional) ===
+  coordination:
+    upstream_artifacts: [] # What came before this
+    downstream_handoffs: [] # Where this feeds into
+    sister_skills: []      # Skills that must coordinate

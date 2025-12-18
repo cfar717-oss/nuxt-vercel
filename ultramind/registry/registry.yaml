@@ -1,278 +1,358 @@
-# ULTRAMIND SKILL REGISTRY v1.0
-# Central index of all available skills, their contracts, and routing rules
+# ULTRAMIND SKILL REGISTRY v2.0
+# Master registry for MOD routing + skill discovery
+# Last updated: 2025-12-18
 
-metadata:
-  version: "1.0"
-  last_updated: "2025-12-17"
-  total_skills: 7  # Will grow to 30+
+registry_version: "2.0.0"
+total_skills: 16
+last_updated: "2025-12-18"
 
-# CORE ORCHESTRATION SKILLS (Always available)
-orchestration:
-  - skill_id: "MOD"
-    name: "Master Orchestration Director"
-    version: "1.0"
-    type: "router"
-    description: "Routes tasks, manages context budget, validates SSOT readiness"
-    always_loaded: true
-    spec_location: "governance/MOD_SPEC.md"
+# === SYSTEM SKILLS (Tier: System) ===
+system_skills:
+  - id: master_orchestration_director
+    name: "Master Orchestration Director (MOD)"
+    codename: "The Router"
+    version: "0.9.0"
+    tier: "system"
+    status: "active"
+    primary_outcome: "Route tasks to appropriate skills, manage context budget, enforce SSOT discipline"
+    inputs_required: ["TASK_REQUEST"]
+    inputs_optional: ["PROJECT_BRIEF", "MESSAGE_SPINE", "EVIDENCE_PACK", "VOICE_GUIDE"]
+    outputs: ["MOD_PLAN", "CONTEXT_BUDGET_ALLOCATION", "COORDINATION_NOTES"]
+    dependencies:
+      upstream: []
+      downstream: ["all_production_skills"]
+    tags: ["routing", "orchestration", "context_management"]
 
-  - skill_id: "MMA"
-    name: "Master Monitoring Agent"
-    version: "1.0"
-    type: "validator"
-    description: "Validates output quality, scores compliance, generates Delta Logs"
-    always_loaded: true
-    spec_location: "governance/MMA_SPEC.md"
+  - id: master_monitoring_agent
+    name: "Master Monitoring Agent (MMA)"
+    codename: "The Quality Guardian"
+    version: "0.9.0"
+    tier: "system"
+    status: "active"
+    primary_outcome: "Score output quality across 7 dimensions, enforce gates, route fixes"
+    inputs_required: ["OUTPUT_ARTIFACT", "PROJECT_BRIEF"]
+    inputs_optional: ["MESSAGE_SPINE", "EVIDENCE_PACK", "VOICE_GUIDE", "QUALITY_BENCHMARKS"]
+    outputs: ["MMA_QUALITY_REPORT", "FIX_ROUTING", "ESCALATION_NOTES"]
+    dependencies:
+      upstream: ["all_production_skills"]
+      downstream: ["human_persuasion_editor", "strategic_copy_director"]
+    tags: ["quality_assurance", "validation", "scoring"]
 
-# EXECUTION SKILLS (Load on-demand)
-skills:
-  # STRATEGY LAYER (Run first if SSOT incomplete)
-  - skill_id: "offer_architect"
-    name: "Offer Architect"
-    version: "1.0"
-    category: "strategy"
-    description: "Designs offer structure, positioning, pricing, guarantee"
-    triggers:
-      - "create offer"
-      - "design product"
-      - "build bundle"
-      - "PROJECT_BRIEF incomplete"
-    inputs_required:
-      - "audience_research"
-      - "product_details"
-      - "market_context"
-    outputs:
-      - "PROJECT_BRIEF (draft)"
-      - "Offer positioning doc"
-    dependencies: []
-    load_priority: "high"
-    layer_default: "L1+L2"
-    file_location: "skills/xml/offer_architect_v1.xml"
+# === META SKILLS (Tier: Meta) ===
+meta_skills:
+  - id: skill_builder
+    name: "Skill Builder"
+    codename: "The Architect"
+    version: "1.1.0"
+    tier: "meta"
+    status: "stable"
+    primary_outcome: "Create or upgrade production skills with SSOT + MOD/MMA integration"
+    inputs_required: ["SKILL_SPEC"]
+    inputs_optional: ["EXISTING_SKILL", "SSOT_TEMPLATES", "PATCH_MODULES"]
+    outputs: ["SKILL_PACKAGE", "REGISTRY_ENTRY", "TEST_HARNESS", "CHANGELOG"]
+    dependencies:
+      upstream: []
+      downstream: ["skill_upgrader", "patch_refiner", "xml_package_installer"]
+    tags: ["meta", "skill_creation", "architecture"]
 
-  - skill_id: "market_intel_synth"
+# === STRATEGY SKILLS (Tier: Production) ===
+strategy_skills:
+  - id: market_intelligence_synthesizer
     name: "Market Intelligence Synthesizer"
-    version: "1.0"
-    category: "research"
-    description: "Analyzes market, competitors, audience psychographics"
-    triggers:
-      - "market research"
-      - "competitor analysis"
-      - "audience insights"
-    inputs_required:
-      - "industry/niche"
-      - "target_audience"
-      - "raw_research_data (optional)"
-    outputs:
-      - "Market analysis report"
-      - "Audience psychographic profile"
-      - "Competitive positioning"
-    dependencies: []
-    load_priority: "high"
-    layer_default: "L1+L2"
-    file_location: "skills/xml/market_intel_synth_v1.xml"
-
-  # COPYWRITING LAYER (Primary execution)
-  - skill_id: "sales_page_copywriter"
-    name: "Sales Page Copywriter"
-    version: "2.0"
-    category: "copywriting"
-    description: "Drafts long-form sales pages using MESSAGE_SPINE + VOICE_GUIDE + EVIDENCE_PACK"
-    triggers:
-      - "write sales page"
-      - "draft sales letter"
-      - "create landing page copy"
-    inputs_required:
-      - "PROJECT_BRIEF"
-      - "MESSAGE_SPINE"
-      - "VOICE_GUIDE"
-      - "EVIDENCE_PACK"
-    outputs:
-      - "Sales page draft (structured sections)"
+    codename: "The Researcher"
+    version: "1.0.0"
+    tier: "production"
+    status: "active"
+    primary_outcome: "Synthesize market research into actionable avatar + positioning insights"
+    inputs_required: ["RAW_RESEARCH", "TASK_REQUEST"]
+    inputs_optional: ["COMPETITOR_DATA", "VOC_QUOTES"]
+    outputs: ["RESEARCH_SYNTHESIS", "AVATAR_PROFILE", "POSITIONING_ANGLES"]
     dependencies:
-      - "offer_architect (if PB incomplete)"
-    load_priority: "critical"
-    layer_default: "L1+L2"
-    layer_L3_triggers:
-      - "compliance_error"
-      - "voice_drift_detected"
-    file_location: "skills/xml/sales_page_copywriter_v2.xml"
+      upstream: []
+      downstream: ["offer_architect", "product_creation_genius", "sales_page_copywriter", "email_campaign_genius"]
+    tags: ["research", "strategy", "avatar", "positioning"]
 
-  - skill_id: "email_copy_genius"
-    name: "Email Copy Genius"
-    version: "1.0"
-    category: "copywriting"
-    description: "Creates email sequences (nurture, launch, promo) aligned with MESSAGE_SPINE"
-    triggers:
-      - "write email sequence"
-      - "create email campaign"
-      - "draft nurture series"
-    inputs_required:
-      - "MESSAGE_SPINE"
-      - "VOICE_GUIDE"
-      - "EVIDENCE_PACK"
-      - "sequence_type (nurture/launch/promo)"
-      - "email_count"
-    outputs:
-      - "Email sequence (subject + body for each)"
-    dependencies: []
-    load_priority: "high"
-    layer_default: "L1+L2"
-    file_location: "skills/xml/email_copy_genius_v1.xml"
-
-  # REFINEMENT LAYER (Polish + compliance)
-  - skill_id: "human_persuasion_editor"
-    name: "Human Persuasion Editor"
-    version: "1.0"
-    category: "editing"
-    description: "Refines copy for flow, emotional arc, persuasion architecture"
-    triggers:
-      - "edit copy"
-      - "improve flow"
-      - "enhance persuasion"
-    inputs_required:
-      - "draft_copy"
-      - "VOICE_GUIDE"
-      - "MESSAGE_SPINE"
-    outputs:
-      - "Refined copy with tracked changes"
+  - id: offer_architect
+    name: "Offer Architect"
+    codename: "The Strategist"
+    version: "1.0.0"
+    tier: "production"
+    status: "active"
+    primary_outcome: "Design offer positioning + mechanism + value stack"
+    inputs_required: ["RESEARCH_SYNTHESIS", "OFFER_BRIEF"]
+    inputs_optional: ["COMPETITOR_ANALYSIS", "PRICING_CONSTRAINTS"]
+    outputs: ["OFFER_POSITIONING", "MECHANISM_FRAMEWORK", "VALUE_STACK"]
     dependencies:
-      - "sales_page_copywriter (or any copywriting skill)"
-    load_priority: "medium"
-    layer_default: "L1+L2"
-    file_location: "skills/xml/human_persuasion_editor_v1.xml"
+      upstream: ["market_intelligence_synthesizer"]
+      downstream: ["product_creation_genius", "sales_page_copywriter", "email_campaign_genius", "vsl_long_form"]
+    tags: ["strategy", "offer_design", "positioning", "mechanism"]
 
-  - skill_id: "testimonial_library_agent"
-    name: "Testimonial Library Agent"
-    version: "1.0"
-    category: "proof-placement"
-    description: "Tags testimonials by objection, places proof strategically in copy"
-    triggers:
-      - "add testimonials"
-      - "place social proof"
-      - "address objections with proof"
-    inputs_required:
-      - "EVIDENCE_PACK (testimonials)"
-      - "MESSAGE_SPINE (objections)"
-      - "draft_copy (where to insert proof)"
-    outputs:
-      - "Copy with testimonials placed by objection ladder"
+  - id: product_creation_genius
+    name: "Product Creation Genius"
+    codename: "The Transformation Architect"
+    version: "2.2.0"
+    tier: "production"
+    status: "active"
+    primary_outcome: "Design 90-day transformation ecosystems + validation plans"
+    inputs_required: ["OFFER_POSITIONING", "AVATAR_PROFILE"]
+    inputs_optional: ["RESEARCH_SYNTHESIS", "EXISTING_PROGRAM"]
+    outputs: ["TRANSFORMATION_MAP", "90_DAY_ARCHITECTURE", "TIERED_OFFER", "VALIDATION_PLAN", "ONBOARDING_7_DAY_PLAN"]
     dependencies:
-      - "sales_page_copywriter"
-    load_priority: "medium"
-    layer_default: "L1+L2"
-    file_location: "skills/xml/testimonial_library_agent_v1.xml"
+      upstream: ["offer_architect", "market_intelligence_synthesizer"]
+      downstream: ["transformation_ecosystem_architect", "sales_page_copywriter", "email_campaign_genius"]
+      sister_skills: ["transformation_ecosystem_architect"]
+    tags: ["strategy", "product_design", "transformation", "validation"]
 
-  - skill_id: "strategic_copy_director"
+  - id: transformation_ecosystem_architect
+    name: "Transformation Ecosystem Architect"
+    codename: "The Experience Designer"
+    version: "2.0.0"
+    tier: "production"
+    status: "active"
+    primary_outcome: "Design delivery mechanics + onboarding + community rituals + support operations"
+    inputs_required: ["TRANSFORMATION_MAP", "90_DAY_ARCHITECTURE"]
+    inputs_optional: ["EXISTING_DELIVERY_SYSTEM"]
+    outputs: ["DELIVERY_BLUEPRINT", "ONBOARDING_EXPERIENCE", "COMMUNITY_RITUALS", "SUPPORT_CADENCE"]
+    dependencies:
+      upstream: ["product_creation_genius"]
+      downstream: ["master_writing_partner"]
+      sister_skills: ["product_creation_genius"]
+    tags: ["strategy", "delivery", "onboarding", "support"]
+
+  - id: strategic_copy_director
     name: "Strategic Copy Director"
-    version: "1.0"
-    category: "strategy"
-    description: "High-level strategy coordination, ensures MESSAGE_SPINE coherence"
-    triggers:
-      - "strategic review"
-      - "align copy to strategy"
-      - "MESSAGE_SPINE validation"
-    inputs_required:
-      - "PROJECT_BRIEF"
-      - "MESSAGE_SPINE"
-      - "draft_copy (if reviewing)"
-    outputs:
-      - "Strategic recommendations"
-      - "MESSAGE_SPINE refinements"
-    dependencies: []
-    load_priority: "medium"
-    layer_default: "L1+L2"
-    file_location: "skills/xml/strategic_copy_director_v1.xml"
+    codename: "The Conductor"
+    version: "1.0.0"
+    tier: "production"
+    status: "active"
+    primary_outcome: "Coordinate multi-asset campaigns + ensure message consistency"
+    inputs_required: ["PROJECT_BRIEF", "MESSAGE_SPINE", "ASSET_LIST"]
+    inputs_optional: ["EXISTING_ASSETS"]
+    outputs: ["COORDINATION_PLAN", "MESSAGE_CONSISTENCY_REPORT", "ASSET_SEQUENCE"]
+    dependencies:
+      upstream: ["offer_architect", "market_intelligence_synthesizer"]
+      downstream: ["sales_page_copywriter", "email_campaign_genius", "vsl_long_form", "master_writing_partner"]
+    tags: ["coordination", "strategy", "multi_asset", "consistency"]
 
-# ROUTING RULES
-routing:
-  # Task type → Skill chain
-  sales_page_creation:
-    task_patterns:
-      - "write sales page"
-      - "create landing page"
-      - "draft sales letter"
-    chain:
-      - skill: "offer_architect"
-        condition: "if PROJECT_BRIEF incomplete"
-      - skill: "sales_page_copywriter"
-        required: true
-      - skill: "testimonial_library_agent"
-        condition: "if EVIDENCE_PACK has testimonials"
-      - skill: "human_persuasion_editor"
-        optional: true
-      - skill: "MMA"
-        required: true
+# === COPYWRITING SKILLS (Tier: Production) ===
+copywriting_skills:
+  - id: sales_page_copywriter
+    name: "Sales Page Copywriter"
+    codename: "The Synchronous Seller"
+    version: "1.0.0"
+    tier: "production"
+    status: "active"
+    primary_outcome: "High-converting sales pages using 7P + UMP/UMS + proof discipline"
+    inputs_required: ["PROJECT_BRIEF", "MESSAGE_SPINE"]
+    inputs_optional: ["EVIDENCE_PACK", "VOICE_GUIDE", "OFFER_STACK", "COMPETITOR_NOTES"]
+    outputs: ["sales_page_draft", "headline_variations", "fascination_bullets_bank", "design_notes", "compliance_notes"]
+    dependencies:
+      upstream: ["offer_architect", "market_intelligence_synthesizer", "strategic_copy_director"]
+      downstream: ["human_persuasion_editor", "sales_page_image_planner", "email_campaign_genius"]
+    tags: ["copywriting", "sales_page", "conversion", "long_form"]
 
-  email_sequence_creation:
-    task_patterns:
-      - "write email sequence"
-      - "create email campaign"
-    chain:
-      - skill: "email_copy_genius"
-        required: true
-      - skill: "MMA"
-        required: true
+  - id: email_campaign_genius
+    name: "Email Campaign Genius"
+    codename: "The Sequence Architect"
+    version: "1.0.0"
+    tier: "production"
+    status: "active"
+    primary_outcome: "Email sequences (welcome, launch, nurture) with voice + proof discipline"
+    inputs_required: ["PROJECT_BRIEF", "MESSAGE_SPINE"]
+    inputs_optional: ["EVIDENCE_PACK", "VOICE_GUIDE", "SALES_PAGE_DRAFT"]
+    outputs: ["email_sequence", "subject_line_variations", "segmentation_strategy", "testing_plan"]
+    dependencies:
+      upstream: ["offer_architect", "market_intelligence_synthesizer", "sales_page_copywriter"]
+      downstream: ["human_persuasion_editor", "master_writing_partner"]
+    tags: ["copywriting", "email", "sequences", "nurture"]
 
-  offer_development:
-    task_patterns:
-      - "create offer"
-      - "design product positioning"
-    chain:
-      - skill: "market_intel_synth"
-        optional: true
-      - skill: "offer_architect"
-        required: true
-      - skill: "MMA"
-        required: true
+  - id: vsl_long_form
+    name: "VSL Long-Form"
+    codename: "The Video Storyteller"
+    version: "1.0.0"
+    tier: "production"
+    status: "active"
+    primary_outcome: "10-20 minute video sales letter scripts with visual cues"
+    inputs_required: ["PROJECT_BRIEF", "MESSAGE_SPINE"]
+    inputs_optional: ["EVIDENCE_PACK", "VOICE_GUIDE", "VISUAL_ASSETS"]
+    outputs: ["video_script", "visual_cues", "b_roll_notes", "slide_suggestions"]
+    dependencies:
+      upstream: ["offer_architect", "market_intelligence_synthesizer", "strategic_copy_director"]
+      downstream: ["human_persuasion_editor"]
+    tags: ["copywriting", "video", "vsl", "long_form"]
 
-# CONTEXT BUDGET RULES
-context_management:
-  max_concurrent_skills: 3
-  kernel_always_loaded:
-    - "Constitution summary (10 rules)"
-    - "MOD + MMA specs (short)"
-    - "SSOT objects (PB/MS/VG/EP instances)"
-    - "Skill registry (this file)"
+  - id: vsl_short_form
+    name: "VSL Short-Form"
+    codename: "The Hook Master"
+    version: "1.0.0"
+    tier: "production"
+    status: "active"
+    primary_outcome: "30-90 second video scripts (ads, social, hooks)"
+    inputs_required: ["PROJECT_BRIEF", "MESSAGE_SPINE"]
+    inputs_optional: ["PLATFORM_SPECS", "VISUAL_CONSTRAINTS"]
+    outputs: ["short_video_script", "hook_variations", "visual_notes"]
+    dependencies:
+      upstream: ["offer_architect", "strategic_copy_director"]
+      downstream: ["human_persuasion_editor"]
+    tags: ["copywriting", "video", "short_form", "ads"]
 
-  skill_loading:
-    default_layers: "L1+L2"
-    L3_load_condition: "error or edge case detected"
-    examples_load_condition: "task_type match"
+  - id: advertorial_copy_master
+    name: "Advertorial Copy Master"
+    codename: "The Story-Selling Strategist"
+    version: "1.0.0"
+    tier: "production"
+    status: "active"
+    primary_outcome: "Educational story-selling advertorials for cold traffic"
+    inputs_required: ["PROJECT_BRIEF", "MESSAGE_SPINE", "CTA_DESTINATION"]
+    inputs_optional: ["EVIDENCE_PACK", "VOICE_GUIDE", "PLATFORM_CONSTRAINTS"]
+    outputs: ["advertorial_copy", "compliance_notes", "editor_instructions"]
+    dependencies:
+      upstream: ["market_intelligence_synthesizer", "offer_architect"]
+      downstream: ["human_persuasion_editor"]
+    tags: ["copywriting", "advertorial", "cold_traffic", "native"]
 
-  skill_unloading:
-    rule: "After skill completes, unload L2+L3, keep L1 summary in kernel"
+# === REFINEMENT SKILLS (Tier: Production) ===
+refinement_skills:
+  - id: human_persuasion_editor
+    name: "Human Persuasion Editor"
+    codename: "The Polish Master"
+    version: "1.0.0"
+    tier: "production"
+    status: "active"
+    primary_outcome: "Refine copy for flow, rhythm, emotional resonance, proof integrity"
+    inputs_required: ["DRAFT_COPY", "PROJECT_BRIEF"]
+    inputs_optional: ["MESSAGE_SPINE", "VOICE_GUIDE", "MMA_REPORT"]
+    outputs: ["refined_copy", "edit_notes", "quality_improvements"]
+    dependencies:
+      upstream: ["sales_page_copywriter", "email_campaign_genius", "vsl_long_form", "advertorial_copy_master"]
+      downstream: []
+    tags: ["refinement", "polish", "editing", "quality"]
 
-# SKILL CONTRACT TEMPLATE (for reference)
-skill_contract_structure:
-  metadata:
-    - skill_id
-    - name
-    - version
-    - category
-    - description
-  contracts:
-    - inputs_required
-    - outputs
-    - dependencies
-  loading:
-    - layer_default
-    - triggers
-    - load_priority
-  location:
-    - file_location
+  - id: master_writing_partner
+    name: "Master Writing Partner"
+    codename: "The Voice Guardian"
+    version: "1.0.0"
+    tier: "production"
+    status: "active"
+    primary_outcome: "Ensure voice consistency across multi-asset campaigns"
+    inputs_required: ["ASSET_COLLECTION", "VOICE_GUIDE"]
+    inputs_optional: ["MESSAGE_SPINE", "BRAND_GUIDELINES"]
+    outputs: ["voice_consistency_report", "harmonized_assets", "voice_recommendations"]
+    dependencies:
+      upstream: ["strategic_copy_director", "sales_page_copywriter", "email_campaign_genius"]
+      downstream: []
+    tags: ["refinement", "voice", "consistency", "multi_asset"]
 
-# SKILL CATEGORIES
-categories:
-  strategy: ["offer_architect", "strategic_copy_director", "market_intel_synth"]
-  copywriting: ["sales_page_copywriter", "email_copy_genius"]
-  editing: ["human_persuasion_editor"]
-  proof_placement: ["testimonial_library_agent"]
-  validation: ["MMA"]
-  orchestration: ["MOD"]
+# === ANALYSIS SKILLS (Tier: Production) ===
+analysis_skills:
+  - id: sales_page_deconstructor
+    name: "Sales Page Deconstructor"
+    codename: "The Reverse Engineer"
+    version: "1.0.0"
+    tier: "production"
+    status: "active"
+    primary_outcome: "Analyze sales pages for structure + psychology + proof + conversion elements"
+    inputs_required: ["SALES_PAGE_URL_OR_TEXT"]
+    inputs_optional: ["ANALYSIS_FOCUS"]
+    outputs: ["structure_map", "psychology_analysis", "proof_audit", "conversion_recommendations"]
+    dependencies:
+      upstream: []
+      downstream: ["sales_page_copywriter", "strategic_copy_director"]
+    tags: ["analysis", "deconstruction", "competitive_research"]
 
-# VERSIONING
-version_history:
-  - version: "1.0"
-    date: "2025-12-17"
-    changes: "Initial registry with 7 core skills"
-    skills_count: 7
+# === SKILL COORDINATION MATRIX ===
+coordination_matrix:
+  full_launch:
+    sequence:
+      phase_1_research: ["market_intelligence_synthesizer"]
+      phase_2_strategy: ["offer_architect", "product_creation_genius", "transformation_ecosystem_architect"]
+      phase_3_coordination: ["strategic_copy_director"]
+      phase_4_execution: ["sales_page_copywriter", "email_campaign_genius", "vsl_long_form"]
+      phase_5_refinement: ["human_persuasion_editor", "master_writing_partner"]
+      phase_6_quality: ["master_monitoring_agent"]
+
+  quick_campaign:
+    sequence:
+      phase_1: ["market_intelligence_synthesizer"]
+      phase_2: ["offer_architect"]
+      phase_3: ["sales_page_copywriter", "email_campaign_genius"]
+      phase_4: ["human_persuasion_editor"]
+      phase_5: ["master_monitoring_agent"]
+
+  product_only:
+    sequence:
+      phase_1: ["market_intelligence_synthesizer"]
+      phase_2: ["offer_architect", "product_creation_genius"]
+      phase_3: ["transformation_ecosystem_architect"]
+      phase_4: ["master_monitoring_agent"]
+
+# === ROUTING SHORTCUTS ===
+routing_shortcuts:
+  welcome_sequence:
+    primary: "email_campaign_genius"
+    awaken_high: ["market_intelligence_synthesizer", "offer_architect"]
+    awaken_medium: ["master_writing_partner"]
+
+  sales_page_b2b:
+    primary: "sales_page_copywriter"
+    awaken_high: ["offer_architect", "market_intelligence_synthesizer"]
+    awaken_medium: ["strategic_copy_director", "human_persuasion_editor"]
+
+  transformation_program:
+    primary: "product_creation_genius"
+    awaken_high: ["transformation_ecosystem_architect", "offer_architect"]
+    awaken_medium: ["market_intelligence_synthesizer"]
+
+  launch_coordination:
+    primary: "strategic_copy_director"
+    awaken_high: ["sales_page_copywriter", "email_campaign_genius", "offer_architect"]
+    awaken_medium: ["vsl_long_form", "master_writing_partner", "human_persuasion_editor"]
+
+# === CONFLICT RESOLUTION HIERARCHY ===
+conflict_hierarchy:
+  strategy_tier:
+    authority: "highest"
+    skills: ["strategic_copy_director", "offer_architect", "product_creation_genius"]
+    rule: "Strategy decisions are binding unless compliance/ethics risk"
+
+  execution_tier:
+    authority: "medium"
+    skills: ["sales_page_copywriter", "email_campaign_genius", "vsl_long_form", "vsl_short_form", "advertorial_copy_master"]
+    rule: "Executes within strategy; may raise concerns but cannot override"
+
+  refinement_tier:
+    authority: "low"
+    skills: ["human_persuasion_editor", "master_writing_partner"]
+    rule: "Polish/consistency; cannot override strategy/structure"
+
+# === SSOT REQUIREMENTS BY SKILL ===
+ssot_requirements:
+  always_require_project_brief:
+    - "sales_page_copywriter"
+    - "email_campaign_genius"
+    - "vsl_long_form"
+    - "advertorial_copy_master"
+    - "product_creation_genius"
+    - "master_monitoring_agent"
+
+  always_require_message_spine:
+    - "sales_page_copywriter"
+    - "email_campaign_genius"
+    - "vsl_long_form"
+    - "strategic_copy_director"
+
+  require_evidence_pack_if_claims:
+    - "sales_page_copywriter"
+    - "email_campaign_genius"
+    - "vsl_long_form"
+    - "advertorial_copy_master"
+    - "human_persuasion_editor"
+
+  require_voice_guide_if_multi_asset:
+    - "strategic_copy_director"
+    - "master_writing_partner"
+
+# === VERSION COMPATIBILITY ===
+min_mod_version: "0.9.0"
+min_mma_version: "0.9.0"
+min_ssot_schema_version: "1.0.0"

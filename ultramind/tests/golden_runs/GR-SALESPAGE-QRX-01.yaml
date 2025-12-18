@@ -1,0 +1,298 @@
+# GOLDEN RUN 02 — Sales Page (QRX Quantum Device Launch)
+# Canonical test case for Sales Page Copywriter skill
+# Scenario: Challenging — B2B practitioners, high-ticket, competitive category, compliance-sensitive
+
+GOLDEN_RUN:
+  id: "GR-SALESPAGE-QRX-01"
+  name: "QRX Quantum Device Launch — Practitioner Sales Page"
+
+  # === METADATA ===
+  skill_id: "sales_page_copywriter"
+  baseline_version: "1.0.0"
+  baseline_date: "2025-12-18"
+  scenario_type: "challenging"  # ideal | challenging
+  audience_temp: "cold-to-warm"  # Practitioners aware of category but not this brand
+
+  # === INPUTS (Canonical — Do Not Modify) ===
+  inputs:
+    PROJECT_BRIEF:
+      project_id: "QRX_2024_12"
+      asset_id: "sales_page_v1"
+      version: "1.0"
+      owner_agent: "sales_page_copywriter"
+      date: "2024-12-10"
+
+      objective:
+        primary_goal: "Convert holistic practitioners to QRX 8-week practitioner program + device purchase"
+        success_metric: "20+ applications in 72-hour launch window, $4,997 price point"
+
+      avatar:
+        primary_segment: "Holistic practitioners (40-60, female, wellness-focused) with complex chronic condition patients not responding to standard protocols"
+        pains:
+          - "Patients with 'mystery illnesses' not responding to supplements/lifestyle"
+          - "Limited tools beyond supplements and lifestyle recommendations"
+          - "Feel stuck with difficult cases, losing credibility"
+          - "Competition from conventional medicine + other modalities"
+        desires:
+          - "Breakthrough results for difficult cases"
+          - "Professional-grade technology (not consumer gadgets)"
+          - "Credibility and differentiation in crowded market"
+          - "Structured training (not 'figure it out yourself' device)"
+        sophistication_level: "sophisticated"  # Aware of quantum/bioresonance category
+        vocabulary:
+          - "My patients are stuck in survival mode"
+          - "Nothing's moving the needle"
+          - "I need something that works at a deeper level"
+          - "I want to be seen as cutting-edge"
+
+      offer:
+        name: "QRX Quantum Practitioner Program (8-Week Training + Device)"
+        price: "$4,997"
+        mechanism: "Triple-Action Quantum Healing: Assess (identify energetic imbalances) + Clear (release blockages) + Protect (maintain integrity with Ionic Crystals)"
+        differentiators:
+          - "Structured 8-week practitioner training (not just a device)"
+          - "Personalized Ionic Crystals for each patient (unique deliverable)"
+          - "Professional business model (NOT MLM like AO Scan)"
+          - "Deep penetration at cellular level (not surface symptoms)"
+        cta_primary: "Apply for the 8-Week Practitioner Program"
+        cta_secondary: "Schedule a discovery call"
+
+      nonnegotiables:
+        claims_limits:
+          - "No disease treatment claims (FDA compliance)"
+          - "No guaranteed outcomes (individual results vary)"
+          - "Avoid competing with medical doctors (complementary positioning)"
+        compliance:
+          - "FDA — no medical device claims without clearance"
+          - "FTC — no earnings claims for practitioners"
+          - "Professional positioning (not consumer self-treatment)"
+        brand_donts:
+          - "No 'miracle cure' language"
+          - "No MLM/pyramid scheme associations"
+          - "No fear-based patient manipulation"
+
+      tone_controls:
+        warmth: 7           # Peer-to-peer empathy
+        authority: 8        # Professional credibility
+        humor: 2            # Serious but not stiff
+        urgency: 4          # Application window but not fake scarcity
+        mystique: 5         # Intrigue around mechanism but transparent
+
+    MESSAGE_SPINE:
+      project_id: "QRX_2024_12"
+      version: "1.0"
+      core_promise: "Transform your most challenging cases with professional quantum healing technology—from darkness to light at the cellular level"
+
+      mechanism_paragraph_canonical: |
+        Most practitioners address symptoms with supplements and lifestyle changes, but complex
+        chronic conditions are rooted in energetic imbalances at the cellular level. Your patients
+        are stuck in survival mode—their cells can't access healing frequencies. The QRX Quantum
+        System uses Triple-Action Quantum Healing: Assess (identify specific imbalances), Clear
+        (release energetic blockages), and Protect (maintain integrity long-term with personalized
+        Ionic Crystals). This is the only system that combines professional-grade assessment,
+        clearing protocols, and physical take-home protection—going deeper than surface treatments.
+
+      proof_pillars:
+        - "Practitioners report breakthrough results in 'stuck' cases within 2-4 weeks"
+        - "Personalized Ionic Crystals (unique to QRX, patients carry healing home)"
+        - "Structured 8-week training + professional community (not 'figure it out' device)"
+        - "Professional business model (NOT MLM like AO Scan)"
+
+      objection_counters:
+        - objection: "I've tried bioresonance/quantum devices before"
+          counter: "This is the only system with personalized Ionic Crystals + structured training (not just a scanner)"
+        - objection: "How is this different from AO Scan?"
+          counter: "Professional model (not MLM), 8-week training (not videos-only), Ionic Crystals (unique deliverable)"
+        - objection: "Will my patients actually see results?"
+          counter: "Designed for cases 'stuck' with conventional protocols—deep cellular work, not surface symptoms"
+        - objection: "$4,997 is a lot"
+          counter: "Includes device + 8-week training + Ionic Crystals + community—complete professional system"
+
+      cta_frame:
+        primary: "Apply for the 8-Week Practitioner Program"
+        secondary: "Schedule a discovery call to see if this fits your practice"
+        urgency_if_applicable: "Accepting 20 practitioners for January cohort (application window closes Friday)"
+
+      taboo_claims_forbidden:
+        - "Cures [disease]"
+        - "Treats [medical condition]"
+        - "FDA approved" (unless true)
+        - "Guaranteed results"
+        - "Earnings potential" (MLM language)
+
+    EVIDENCE_PACK:
+      project_id: "QRX_2024_12"
+      version: "1.0"
+      proof_items:
+        - id: "PROOF_01"
+          type: "testimonial"
+          source: "Beta practitioner cohort, verified participants"
+          confidence: "MODERATE"
+          summary: "Practitioners report breakthrough results in previously stuck cases within 2-4 weeks"
+          allowed_claims:
+            - "Designed to support energetic balance"
+            - "Practitioners report improvements in challenging cases"
+            - "Beta cohort saw results quickly"
+          forbidden_claims:
+            - "Cures any disease"
+            - "Guaranteed outcomes"
+            - "Works for all patients"
+
+        - id: "PROOF_02"
+          type: "technical"
+          source: "QRX proprietary methodology"
+          confidence: "STRONG"
+          summary: "Triple-Action Quantum Healing (Assess + Clear + Protect) with personalized Ionic Crystals"
+          allowed_claims:
+            - "Only system with personalized Ionic Crystals"
+            - "Triple-action approach (assess, clear, protect)"
+            - "Patients carry healing home"
+          forbidden_claims:
+            - "Scientifically proven to cure"
+            - "Medical grade"
+
+        - id: "PROOF_03"
+          type: "competitive"
+          source: "Market comparison (AO Scan, QUEX, NES Health)"
+          confidence: "MODERATE"
+          summary: "Professional model (not MLM), structured training (not videos-only), physical deliverable (Ionic Crystals)"
+          allowed_claims:
+            - "Professional business model (not MLM)"
+            - "Structured 8-week training (not videos-only)"
+            - "Unique: personalized Ionic Crystals"
+          forbidden_claims:
+            - "[Competitor] doesn't work"
+            - "[Competitor] is a scam"
+
+    VOICE_GUIDE:
+      project_id: "QRX_2024_12"
+      brand_name: "QRX Quantum Systems"
+      version: "1.0"
+
+      primary_voice:
+        tone: "empathetic, professional, science-informed"
+        pov: "peer-to-peer (practitioner to practitioner)"
+        style: "conversational but credible"
+        personality: "Supportive expert who understands practitioner challenges"
+
+      do:
+        - "Use 'we' language (shared journey with patients)"
+        - "Lead with empathy before solution"
+        - "Balance science with humanity"
+        - "Short paragraphs (2-4 sentences)"
+        - "Acknowledge skepticism without defensiveness"
+
+      dont:
+        - "Hype or exaggerated claims"
+        - "Fear-based manipulation"
+        - "Technical jargon without explanation"
+        - "Talking down to practitioners"
+        - "MLM language (earnings, downlines, etc.)"
+
+      key_phrases:
+        signature_phrases:
+          - "From darkness to light"
+          - "Deep penetration at cellular level"
+          - "Ionic Crystals carry healing home"
+          - "Professional-grade, not MLM"
+        forbidden_language:
+          - "miracle cure"
+          - "guaranteed results"
+          - "revolutionary breakthrough" (unless backed)
+          - "life-changing" (overused)
+
+      structure:
+        reading_level_target: "8th-10th grade"
+        paragraph_rules:
+          - "1-3 sentences max"
+          - "Abundant white space"
+          - "Each paragraph = one idea"
+        sentence_guidelines:
+          - "Mix short (5-8 words) with medium (12-15 words)"
+          - "Avoid sentences over 20 words"
+          - "Start with power words occasionally"
+
+    task: "Create a sales page for QRX Quantum Practitioner Program—targeting holistic practitioners, $4,997 offer, 8-week training + device + Ionic Crystals. Competitive category (AO Scan, QUEX), compliance-sensitive, application-based CTA."
+
+  # === EXPECTED OUTPUT ===
+  expected_output:
+    format: "markdown"
+    length_target: 2500-3500 words
+
+    structure:
+      - "meta_header" # Product, market, audience, length, angle
+      - "headline_subhead"
+      - "lead" # Pattern interrupt + empathy
+      - "problem_agitation" # Complex chronic cases stuck
+      - "mechanism_reveal" # Triple-Action Quantum Healing
+      - "differentiation" # vs AO Scan, QUEX (NOT MLM, structured training, Ionic Crystals)
+      - "proof_stack" # Practitioner testimonials, Ionic Crystals, training structure
+      - "offer_breakdown" # What's included (device + training + crystals + community)
+      - "objections_faq"
+      - "application_cta" # Application-based (not "buy now")
+      - "guarantee_risk_reversal"
+      - "final_cta"
+      - "design_notes"
+      - "compliance_notes"
+
+    quality_benchmarks:
+      message_spine_consistency: 9.0  # Must match core promise + mechanism
+      proof_discipline: 9.0  # All claims backed or qualified
+      scanability: 8.0  # Subheads tell story
+      voice_consistency: 8.0  # Practitioner-to-practitioner tone
+      differentiation_clarity: 8.5  # vs AO Scan, QUEX
+      compliance: 9.5  # No FDA/FTC violations
+
+  # === PASS CRITERIA (Non-Negotiable) ===
+  pass_criteria:
+    - "MMA scores all >= 7.0 (challenging scenario, some dimensions may be 7.0-7.5)"
+    - "Headline + subhead present 'from darkness to light' theme"
+    - "Mechanism paragraph uses Triple-Action language"
+    - "Differentiation clear vs AO Scan (NOT MLM, structured training, Ionic Crystals)"
+    - "No disease treatment claims"
+    - "No guaranteed outcomes"
+    - "Application-based CTA (not 'buy now')"
+    - "Practitioner-to-practitioner tone (peer, not expert-to-student)"
+    - "Ionic Crystals positioned as unique deliverable"
+    - "Compliance notes address FDA/FTC constraints"
+
+  # === BASELINE SCORES (Established 2025-12-18) ===
+  baseline_scores:
+    strategy_alignment: 8.5
+    clarity_structure: 8.0
+    voice_consistency: 8.0
+    proof_discipline: 8.5
+    neuro_resonance: 7.5  # Challenging: cold-to-warm audience
+    cta_integrity: 8.0
+    ethical_guardrails: 9.0
+    average: 8.2
+
+  # === NOTES ===
+  notes: |
+    This golden run represents a "challenging scenario" for Sales Page Copywriter:
+    - B2B practitioners (not consumer)
+    - High-ticket ($4,997) with complex offer
+    - Competitive category (AO Scan, QUEX, NES Health)
+    - Compliance-sensitive (FDA, FTC constraints)
+    - Application-based CTA (not transactional)
+    - Cold-to-warm audience (lower neuro-resonance baseline expected)
+
+    Use this to detect regressions in:
+    - Competitive differentiation (clear vs AO Scan without defamation)
+    - Compliance discipline (no disease claims, no guarantees)
+    - Professional voice (practitioner-to-practitioner, not hype)
+    - Complex offer breakdown (device + training + crystals + community)
+    - Application-based CTA positioning
+
+    Expected baseline scores are slightly lower than "ideal" scenarios due to:
+    - Audience sophistication (skeptical, "seen it all")
+    - Compliance constraints (limits proof language)
+    - Complex positioning (professional vs MLM)
+
+  # === REGRESSION TRACKING ===
+  regression_history:
+    - version: "1.0.0"
+      date: "2025-12-18"
+      average_score: 8.2
+      status: "BASELINE"
+      notes: "Initial golden run established for challenging B2B scenario"

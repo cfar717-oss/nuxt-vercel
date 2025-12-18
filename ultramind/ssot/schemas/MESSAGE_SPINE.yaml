@@ -1,0 +1,101 @@
+# MESSAGE_SPINE — SSOT Template v2.1
+# Canonical messaging lock for all assets
+# Prevents message drift across emails, pages, videos, ads
+
+MESSAGE_SPINE:
+  # === META (Required) ===
+  project_id: ""           # Must match PROJECT_BRIEF
+  version: "1.0"
+  created: ""              # YYYY-MM-DD
+  last_updated: ""
+
+  # === CORE PROMISE (Required) ===
+  core_promise: ""         # The ONE transformation/outcome
+                          # Example: "Move freely without fear of pain in 90 days"
+
+  # === MECHANISM (Required) ===
+  mechanism_paragraph_canonical: |
+    The definitive explanation of HOW your solution works.
+    This paragraph must be used verbatim or adapted (never contradicted).
+
+    Format:
+    - What's really causing the problem (UMP)
+    - Why past solutions failed
+    - How this solution works differently (UMS)
+    - What makes it unique
+
+  # === PROOF PILLARS (Required) ===
+  proof_pillars:
+    - ""                   # Key proof point 1
+    - ""                   # Key proof point 2
+    - ""                   # Key proof point 3
+
+  # === OBJECTION COUNTERS (Required) ===
+  objection_counters:
+    - objection: ""        # "This won't work for me"
+      counter: ""          # Response strategy
+    - objection: ""
+      counter: ""
+    - objection: ""
+      counter: ""
+
+  # === CTA FRAMEWORK (Required) ===
+  cta_frame:
+    primary: ""            # Main call to action language
+    secondary: ""          # Fallback/soft CTA
+    urgency_if_applicable: "" # Real scarcity only (or leave blank)
+
+  # === GUARDRAILS (Required) ===
+  taboo_claims_forbidden: [] # Specific phrases/claims that must never appear
+  required_themes: []        # Themes that must appear in all assets
+
+  # === NEURO-TARGETING (v2.1+) ===
+  neuro_targeting:
+    constitution_reference: "RESONANCE_CONSTITUTION.xml"
+
+    audience_temperature:
+      temperature: ""      # cold | warm | hot
+      justification: ""
+
+    axis_activation_strategy:
+      primary_axes:
+        - axis_id: "BOTTOM"
+          neurochemical: "GABA"
+          drive: "Safety, Security, Trust"
+          target_score: 8.0
+          strategy_note: ""
+        # Add other axes as needed
+
+    balance_rules:
+      - pair: "BOTTOM_TOP"
+        constraint: "TOP score cannot exceed BOTTOM by 3+ points"
+        rationale: "Promising elevation without safety foundation = manipulation"
+
+    prohibited_patterns:
+      - name: "Fake Countdown Timers"
+        penalty: -3.0
+        enforcement: "No countdown unless tied to real deadline"
+      - name: "Manufactured Scarcity"
+        penalty: -3.0
+        enforcement: "Only real inventory/capacity limits"
+
+    radical_simplicity_requirements:
+      - question: "Can I state transformation in ONE sentence?"
+        must_pass: true
+      - question: "Can I explain mechanism in ONE paragraph?"
+        must_pass: true
+      - question: "Is proof concrete and specific?"
+        must_pass: true
+      - question: "Is the deal clear and simple?"
+        must_pass: true
+
+    transformation_path:
+      journey_stages: []   # 7-stage spiral journey mapping
+
+    fast_track_architecture:
+      paradigm: "Fast Track"
+      principle: "Every touchpoint accelerates movement forward"
+      anti_pattern: "Funnel thinking (subtraction/filtering)"
+
+  # === VOICE CONSISTENCY (Optional reference) ===
+  voice_guide_ref: ""      # Link to VOICE_GUIDE if separate

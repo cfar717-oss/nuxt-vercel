@@ -1,0 +1,138 @@
+# EVIDENCE_PACK — SSOT Template v1.0
+# Canonical proof inventory with claim discipline
+# Prevents fabrication, ensures citation integrity
+
+EVIDENCE_PACK:
+  # === META (Required) ===
+  project_id: ""           # Must match PROJECT_BRIEF
+  version: "1.0"
+  created: ""              # YYYY-MM-DD
+  last_updated: ""
+
+  # === PROOF ITEMS (Required) ===
+  proof_items:
+    - id: "PROOF_01"
+      type: "study"        # study | testimonial | case_study | narrative | technical | third_party
+      source: ""           # Citation, link, or attribution
+      confidence: "STRONG" # STRONG | MODERATE | WEAK
+      summary: ""          # What this proof demonstrates
+
+      allowed_claims: []   # Specific claims this evidence supports
+      forbidden_claims: [] # Claims this evidence does NOT support
+
+      context_notes: ""    # When/how to use this proof
+      compliance_notes: "" # Any regulatory constraints
+
+    - id: "PROOF_02"
+      type: "testimonial"
+      source: ""
+      confidence: "MODERATE"
+      summary: ""
+      allowed_claims: []
+      forbidden_claims: []
+      context_notes: ""
+      compliance_notes: ""
+
+    # Add more proof items as needed
+
+  # === CLAIM RULES (Enforcement Framework) ===
+  claim_rules:
+    STRONG:
+      can_state_as_fact: true
+      must_reference_id: true
+      language_guidelines:
+        - "Can use definitive language"
+        - "Must include proof ID in copy notes"
+      examples:
+        - "Clinical study shows..."
+        - "Verified results demonstrate..."
+
+    MODERATE:
+      can_state_as_fact: false
+      must_use_attribution_language: true
+      language_guidelines:
+        - "Use 'designed to', 'intended to', 'may help'"
+        - "Use 'practitioners report', 'users experience'"
+        - "Never imply guarantee or certainty"
+      examples:
+        - "Practitioners report..."
+        - "Designed to support..."
+        - "May help improve..."
+
+    WEAK:
+      can_state_as_fact: false
+      must_frame_as_hypothesis_or_remove: true
+      language_guidelines:
+        - "Frame as hypothesis or theory"
+        - "Use extreme caution"
+        - "Consider removing if not essential"
+      examples:
+        - "Based on emerging research..."
+        - "Preliminary findings suggest..."
+        - "We hypothesize that..."
+
+  # === COMPLIANCE CONSTRAINTS (Required) ===
+  compliance:
+    regulatory_framework: "" # FDA, FTC, ASA, etc.
+    forbidden_claims: []     # Absolute prohibitions
+    required_disclaimers: [] # Must-include language
+
+    claim_categories:
+      medical_claims:
+        allowed: false       # true | false
+        notes: "No disease treatment claims"
+
+      outcome_guarantees:
+        allowed: false
+        notes: "No results guarantees"
+
+      typical_results:
+        allowed: true
+        notes: "Must include 'results vary' disclaimer"
+
+  # === PROOF STRATEGY (Optional) ===
+  proof_strategy:
+    primary_proof_type: ""   # Which proof types lead
+    proof_sequencing: []     # Order to present proof
+    gaps_identified: []      # Missing proof we need
+
+  # === TESTIMONIAL LIBRARY (Optional structured section) ===
+  testimonials:
+    - id: "TEST_01"
+      quote: ""
+      attribution: ""       # Name, title, location
+      context: ""           # What product/program
+      outcome_claimed: ""
+      verification_status: "" # verified | self_reported | anonymous
+      use_restrictions: []  # Where this can/cannot be used
+
+  # === CASE STUDIES (Optional structured section) ===
+  case_studies:
+    - id: "CASE_01"
+      title: ""
+      subject: ""           # Who (anonymized if needed)
+      before_state: ""
+      intervention: ""
+      after_state: ""
+      timeline: ""
+      verification: ""
+      key_metrics: []
+
+  # === STUDIES & RESEARCH (Optional structured section) ===
+  studies:
+    - id: "STUDY_01"
+      title: ""
+      source: ""            # Journal, institution, URL
+      date: ""
+      sample_size: 0
+      methodology: ""
+      findings: ""
+      limitations: ""
+      how_it_supports_offer: ""
+
+  # === VALIDATION LOG (Track usage) ===
+  validation_log:
+    last_audit: ""          # YYYY-MM-DD
+    items_verified: []      # Which proofs have been fact-checked
+    items_flagged: []       # Which need review/update
+    items_deprecated: []    # No longer valid
