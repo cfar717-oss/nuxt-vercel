@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- VOICE_GUIDE v2.0 - Brand Voice Consistency Lock -->
+<VoiceGuide vg_id="VG-YYYYMMDD-BRAND-OFFER-SHORTTAG" version="2.0.0" status="locked">
+
+  <!-- METADATA & PROVENANCE -->
+  <Meta>
+    <ProjectBriefId>PB-YYYYMMDD-BRAND-OFFER-SHORTTAG</ProjectBriefId>
+    <CreatedBy agent_or_human="agent" agent_id="strategic_copy_director"/>
+    <DateCreated>YYYY-MM-DD</DateCreated>
+    <LastUpdated>YYYY-MM-DD</LastUpdated>
+    <ApprovedBy>master_writing_partner</ApprovedBy>
+    <LockStatus>locked</LockStatus>
+    <UpdateHistory>
+      <Update date="YYYY-MM-DD" by="strategic_copy_director" change="initial_creation"/>
+      <Update date="YYYY-MM-DD" by="master_writing_partner" change="voice_examples_added"/>
+      <Update date="YYYY-MM-DD" by="human" change="approved_and_locked"/>
+    </UpdateHistory>
+  </Meta>
+
+  <!-- VOICE ARCHETYPE & PERSONA -->
+  <VoiceArchetype>
+    <Primary>Informed guide who's been there</Primary>
+    <Description>
+      You're a peer who struggled with the same problem, did the deep research, found what works, and now shares it with warmth and authority. Not a guru on a mountaintop—a fellow traveler who's a few steps ahead and genuinely wants to help.
+    </Description>
+    <NotThisArchetype>
+      <Avoid>Guru/expert dispensing wisdom from above</Avoid>
+      <Avoid>Sales bro pushing hard closes</Avoid>
+      <Avoid>Academic researcher (too clinical)</Avoid>
+      <Avoid>Life coach (too woo-woo)</Avoid>
+    </NotThisArchetype>
+  </VoiceArchetype>
+
+  <!-- TONE DIALS (Quantified) -->
+  <ToneDials>
+    <Dial name="warmth" value="8" range="1-10">
+      <Description>Warm, empathetic, understanding</Description>
+    </Dial>
+    <Dial name="authority" value="7" range="1-10">
+      <Description>Confident, credible, experienced</Description>
+    </Dial>
+    <Dial name="directness" value="8" range="1-10">
+      <Description>Clear, specific, no fluff</Description>
+    </Dial>
+    <Dial name="playfulness" value="2" range="1-10">
+      <Description>Serious topic, minimal humor</Description>
+    </Dial>
+    <Dial name="urgency" value="3" range="1-10">
+      <Description>Authentic scarcity only</Description>
+    </Dial>
+    <Dial name="mystique" value="2" range="1-10">
+      <Description>Transparent, no secrets</Description>
+    </Dial>
+  </ToneDials>
+
+  <!-- DO'S (Core Voice Behaviors) -->
+  <VoiceDos count="7">
+    <Do priority="critical">
+      <Rule>Use "you" and "your" (direct address, second person)</Rule>
+      <Example>
+        ✅ "You've probably tried everything to fix your sleep."
+        ❌ "People often try many solutions for their sleep issues."
+      </Example>
+      <Rationale>Creates connection and relevance</Rationale>
+    </Do>
+
+    <Do priority="critical">
+      <Rule>Acknowledge the frustration without dwelling on pain</Rule>
+      <Example>
+        ✅ "I know how exhausting it is to try everything and still wake up tired. Here's what actually works."
+        ❌ "You're probably feeling hopeless, broken, and like nothing will ever work..."
+      </Example>
+      <Rationale>Validate without amplifying despair</Rationale>
+    </Do>
+
+    <Do priority="high">
+      <Rule>Explain science simply (no jargon unless immediately defined)</Rule>
+      <Example>
+        ✅ "Your cortisol-melatonin axis—the hormonal system that controls sleep timing—gets disrupted by stress."
+        ❌ "Circadian phase delay resulting from HPA axis dysregulation..."
+      </Example>
+      <Rationale>Credible without alienating</Rationale>
+    </Do>
+
+    <Do priority="high">
+      <Rule>Share founder story relatably (not heroically)</Rule>
+      <Example>
+        ✅ "I spent 8 years exhausted, trying everything. Eventually I figured out what was actually wrong."
+        ❌ "After my heroic journey through the depths of despair, I emerged victorious..."
+      </Example>
+      <Rationale>Peer who succeeded, not guru</Rationale>
+    </Do>
+
+    <Do priority="medium">
+      <Rule>Use metaphors sparingly and naturally (only when clarifying)</Rule>
+      <Example>
+        ✅ "Think of your circadian rhythm like an orchestra conductor—when the timing is off, nothing plays right."
+        ❌ "Your body is a magnificent symphony of biological processes dancing in harmonious cosmic alignment..."
+      </Example>
+      <Rationale>Clarity, not poetry</Rationale>
+    </Do>
+
+    <Do priority="medium">
+      <Rule>Keep paragraphs short (2-4 sentences max)</Rule>
+      <Example>
+        ✅ "Most sleep problems aren't in your head. They're hormonal.
+
+        When your cortisol stays high at night and your melatonin never peaks, your body can't produce deep sleep. That's fixable."
+      </Example>
+      <Rationale>Readability and rhythm</Rationale>
+    </Do>
+
+    <Do priority="medium">
+      <Rule>Vary sentence length for rhythm (mix short punches with longer explanations)</Rule>
+      <Example>
+        ✅ "You're exhausted. Despite doing everything 'right'—melatonin, meditation apps, sleep trackers—you still wake up tired. Here's why: your body's hormonal timing is off."
+      </Example>
+      <Rationale>Creates engagement through rhythm</Rationale>
+    </Do>
+  </VoiceDos>
+
+  <!-- DON'TS (Voice Violations) -->
+  <VoiceDonts count="7">
+    <Dont priority="critical">
+      <Rule>Never use hype language (revolutionary, miracle, breakthrough, secret)</Rule>
+      <Example>
+        ❌ "This revolutionary breakthrough will transform your life overnight!"
+        ✅ "This approach addresses the root cause that most solutions miss."
+      </Example>
+      <Rationale>Credibility killer, triggers skepticism</Rationale>
+    </Dont>
+
+    <Dont priority="critical">
+      <Rule>Never use fake urgency or scarcity (unless objectively true)</Rule>
+      <Example>
+        ❌ "Only 3 spots left! Price increases at midnight!"
+        ✅ "We're limiting new members to 50 per week to maintain quality support. Current cohort closes Friday."
+      </Example>
+      <Rationale>Manipulation destroys trust</Rationale>
+    </Dont>
+
+    <Dont priority="high">
+      <Rule>Never be condescending or suggest problem is "simple"</Rule>
+      <Example>
+        ❌ "You just need to fix your sleep hygiene. It's that simple."
+        ✅ "Sleep hygiene helps, but if your hormonal timing is off, hygiene alone won't fix it."
+      </Example>
+      <Rationale>Invalidates their experience</Rationale>
+    </Dont>
+
+    <Dont priority="high">
+      <Rule>Never dwell excessively on pain (acknowledge then move to solution)</Rule>
+      <Example>
+        ❌ "Imagine another year of exhaustion... another year of brain fog... another year of suffering..."
+        ✅ "I know the exhaustion. Here's what actually addresses it."
+      </Example>
+      <Rationale>Pain-dwelling feels manipulative</Rationale>
+    </Dont>
+
+    <Dont priority="medium">
+      <Rule>Never use MLM/get-rich-quick language patterns</Rule>
+      <Example>
+        ❌ "Imagine waking up every morning feeling like a million bucks, living your best life..."
+        ✅ "Imagine waking up refreshed—like you used to before this started."
+      </Example>
+      <Rationale>Wrong associations</Rationale>
+    </Dont>
+
+    <Dont priority="medium">
+      <Rule>Never speak in third person or use "we" for reader</Rule>
+      <Example>
+        ❌ "When someone struggles with sleep, they often feel hopeless."
+        ✅ "When you struggle with sleep, you often feel hopeless."
+      </Example>
+      <Rationale>Creates distance, reduces relevance</Rationale>
+    </Dont>
+
+    <Dont priority="medium">
+      <Rule>Never end sections with manipulative cliffhangers</Rule>
+      <Example>
+        ❌ "But there's one thing I haven't told you yet... and when you discover what it is..."
+        ✅ "Next, I'll explain how the protocol actually works."
+      </Example>
+      <Rationale>Feels gimmicky, erodes trust</Rationale>
+    </Dont>
+  </VoiceDonts>
+
+  <!-- SENTENCE RHYTHM & STRUCTURE -->
+  <SentenceRhythm>
+    <Pattern>Mixed (short punches + medium explanations + occasional longer builds)</Pattern>
+
+    <ShortSentences target="30%">
+      <Purpose>Emphasis, clarity, rhythm breaks</Purpose>
+      <Length>3-7 words</Length>
+      <Examples>
+        <Example>You're not broken.</Example>
+        <Example>This is fixable.</Example>
+        <Example>Here's how it works.</Example>
+      </Examples>
+    </ShortSentences>
+
+    <MediumSentences target="50%">
+      <Purpose>Main explanations, information delivery</Purpose>
+      <Length>8-20 words</Length>
+      <Examples>
+        <Example>Most sleep problems aren't in your head—they're hormonal.</Example>
+        <Example>Within 14 days, most users report sleeping like they used to.</Example>
+      </Examples>
+    </MediumSentences>
+
+    <LongSentences target="20%">
+      <Purpose>Complex ideas, building momentum</Purpose>
+      <Length>21-35 words (rarely longer)</Length>
+      <Examples>
+        <Example>When your cortisol stays elevated at night and your melatonin never peaks, your body simply can't produce the deep, restorative sleep you need.</Example>
+      </Examples>
+    </LongSentences>
+  </SentenceRhythm>
+
+  <!-- PARAGRAPH STRUCTURE -->
+  <ParagraphRules>
+    <StandardParagraph>
+      <Length>2-4 sentences</Length>
+      <MaxLines>4 lines on mobile</MaxLines>
+      <Purpose>Readability, white space, visual rhythm</Purpose>
+    </StandardParagraph>
+
+    <OneLinerParagraph allowed="yes">
+      <Purpose>Emphasis, transition, dramatic pause</Purpose>
+      <Frequency>Use sparingly (max 20% of paragraphs)</Frequency>
+      <Examples>
+        <Example>That's the missing piece.</Example>
+        <Example>You're not broken.</Example>
+      </Examples>
+    </OneLinerParagraph>
+  </ParagraphRules>
+
+  <!-- SIGNATURE MOVES (Voice Patterns) -->
+  <SignatureMoves>
+    <Move name="empathetic_mirror_into_solution">
+      <Pattern>Acknowledge struggle → Name root cause → Offer solution</Pattern>
+      <Example>
+        "I know how frustrating it is to try everything and still wake up exhausted. The problem isn't you—it's your cortisol-melatonin timing. Here's how we fix it."
+      </Example>
+      <Usage>Opening sections, objection handling</Usage>
+    </Move>
+
+    <Move name="reframe_the_problem">
+      <Pattern>Common belief → "Actually, it's not X, it's Y" → Explanation</Pattern>
+      <Example>
+        "Most people think insomnia is a mental problem. Actually, it's usually hormonal—your body's sleep signals are mistimed."
+      </Example>
+      <Usage>Mechanism explanation, objection counters</Usage>
+    </Move>
+
+    <Move name="mechanism_simplification">
+      <Pattern>Technical term → Simple definition → Why it matters</Pattern>
+      <Example>
+        "Your cortisol-melatonin axis—the hormonal system controlling sleep timing—gets disrupted by chronic stress. When cortisol stays high at night, melatonin can't peak. That's why you can't sleep deeply."
+      </Example>
+      <Usage>Mechanism explanation, science-backed claims</Usage>
+    </Move>
+  </SignatureMoves>
+
+  <!-- TABOO MOVES (Voice Violations) -->
+  <TabooMoves>
+    <TabooMove name="fake_scarcity_countdown">
+      <Pattern>Timer, artificial deadlines, "only X spots left" (unless true)</Pattern>
+      <Why>Manipulation, erodes trust, feels salesy</Why>
+    </TabooMove>
+
+    <TabooMove name="guru_flex">
+      <Pattern>"I discovered the secret...", heroic narrative</Pattern>
+      <Why>Creates distance, feels self-aggrandizing</Why>
+    </TabooMove>
+
+    <TabooMove name="vague_hype">
+      <Pattern>"Life-changing", "revolutionary", "miracle"</Pattern>
+      <Why>Triggers skepticism, lacks specificity</Why>
+    </TabooMove>
+
+    <TabooMove name="pain_amplification_spiral">
+      <Pattern>Multiple paragraphs dwelling on suffering</Pattern>
+      <Why>Feels manipulative, exhausting to read</Why>
+    </TabooMove>
+  </TabooMoves>
+
+  <!-- WORD CHOICES (Vocabulary Alignment) -->
+  <WordChoices>
+    <Preferred>
+      <Word context="problem">Disrupted, mistimed, dysregulated</Word>
+      <Word context="solution">Protocol, approach, system</Word>
+      <Word context="proof">Report, experience, results</Word>
+      <Word context="mechanism">Re-synchronize, reset, restore</Word>
+      <Word context="action">Order, get started, begin</Word>
+    </Preferred>
+
+    <Avoid>
+      <Word context="hype">Revolutionary, breakthrough, miracle</Word>
+      <Word context="pseudoscience">Detox, toxins, cleanse</Word>
+      <Word context="medical">Cure, treat, diagnose, heal</Word>
+      <Word context="pressure">Buy, purchase, act now, don't miss</Word>
+    </Avoid>
+  </WordChoices>
+
+  <!-- VOICE VALIDATION CHECKLIST -->
+  <VoiceValidation>
+    <ChecklistForSkills>
+      <Check>Uses "you/your" (not third person)</Check>
+      <Check>ToneDials within ±1 of target values</Check>
+      <Check>No hype language present</Check>
+      <Check>No fake urgency/scarcity</Check>
+      <Check>Paragraph length 2-4 sentences (mostly)</Check>
+      <Check>Sentence rhythm varied</Check>
+      <Check>Signature moves present (at least 2)</Check>
+      <Check>Taboo moves absent (zero tolerance)</Check>
+      <Check>Science explained simply</Check>
+      <Check>Founder story relatable (not heroic)</Check>
+    </ChecklistForSkills>
+  </VoiceValidation>
+
+  <!-- LOCK & VERSION CONTROL -->
+  <LockProtocol>
+    <LockStatus>locked</LockStatus>
+    <LockedBy>master_writing_partner + human</LockedBy>
+    <LockDate>YYYY-MM-DD</LockDate>
+    <UnlockConditions>
+      <Condition>Brand voice pivot (requires human approval)</Condition>
+      <Condition>Target audience shift</Condition>
+    </UnlockConditions>
+  </LockProtocol>
+
+  <!-- USAGE TRACKING -->
+  <UsageTracking>
+    <SkillsUsingThisVoice>
+      <Skill>sales_page_copywriter</Skill>
+      <Skill>email_copy_genius</Skill>
+      <Skill>vsl_short_form</Skill>
+      <Skill>vsl_long_form</Skill>
+      <Skill>advertorial_copy_master</Skill>
+      <Skill>human_persuasion_editor</Skill>
+      <Skill>master_writing_partner</Skill>
+    </SkillsUsingThisVoice>
+  </UsageTracking>
+
+</VoiceGuide>

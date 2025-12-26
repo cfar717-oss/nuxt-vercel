@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- MESSAGE_SPINE v2.0 - Multi-Asset Consistency Lock -->
+<MessageSpine ms_id="MS-YYYYMMDD-BRAND-OFFER-SHORTTAG" version="2.0.0" status="locked">
+
+  <!-- METADATA & PROVENANCE -->
+  <Meta>
+    <ProjectBriefId>PB-YYYYMMDD-BRAND-OFFER-SHORTTAG</ProjectBriefId>
+    <CreatedBy agent_or_human="agent" agent_id="offer_architect"/>
+    <DateCreated>YYYY-MM-DD</DateCreated>
+    <LastUpdated>YYYY-MM-DD</LastUpdated>
+    <ApprovedBy>strategic_copy_director</ApprovedBy>
+    <LockStatus>locked</LockStatus>
+    <LockReason>Multi-asset consistency required</LockReason>
+    <UpdateHistory>
+      <Update date="YYYY-MM-DD" by="offer_architect" change="initial_creation"/>
+      <Update date="YYYY-MM-DD" by="strategic_copy_director" change="approved_and_locked"/>
+    </UpdateHistory>
+  </Meta>
+
+  <!-- VALIDATION STATUS -->
+  <Validation>
+    <Status>complete</Status>
+    <ApprovalRequired>strategic_copy_director</ApprovalRequired>
+    <ApprovalStatus>approved</ApprovalStatus>
+    <QualityScore>
+      <Clarity>9</Clarity>
+      <Completeness>10</Completeness>
+      <Consistency>10</Consistency>
+    </QualityScore>
+  </Validation>
+
+  <!-- CORE PROMISE (Canonical 1-Liner) -->
+  <Promise>
+    <Promise1Liner max_chars="120">
+      Your core promise in one powerful sentence with timeframe and mechanism
+    </Promise1Liner>
+    <PromiseComponents>
+      <Outcome>Specific result or transformation</Outcome>
+      <Timeframe>When they'll see results</Timeframe>
+      <Mechanism>How it works (method name)</Mechanism>
+      <NegativeRemoval>What they avoid (without drugs, side effects, etc.)</NegativeRemoval>
+    </PromiseComponents>
+    <AlternativePhrasing>
+      <Version context="email">Shorter, more conversational version</Version>
+      <Version context="vsl">Spoken, natural variation</Version>
+      <Version context="ad">Punchy, attention-grabbing version</Version>
+    </AlternativePhrasing>
+  </Promise>
+
+  <!-- UNIQUE MECHANISM (Canonical Paragraph) -->
+  <Mechanism>
+    <CanonicalParagraph max_words="150">
+      Your unique mechanism explained in 100-150 words. This is the "how it works" that differentiates you from alternatives. Use this exact language across all assets to maintain consistency.
+    </CanonicalParagraph>
+
+    <MechanismComponents>
+      <CoreConcept>The main idea in one sentence</CoreConcept>
+      <RootCause>What's really causing the problem</RootCause>
+      <ThreeElements>
+        <Element>First component of your method</Element>
+        <Element>Second component of your method</Element>
+        <Element>Third component of your method</Element>
+      </ThreeElements>
+      <Differentiation>Why this is different from alternatives</Differentiation>
+    </MechanismComponents>
+
+    <MechanismLanguageRules>
+      <AlwaysUse>
+        <Phrase>Key terminology for your mechanism</Phrase>
+        <Phrase>Branded method name</Phrase>
+        <Phrase>Core concept phrasing</Phrase>
+      </AlwaysUse>
+      <NeverUse>
+        <Phrase>Overused buzzwords to avoid</Phrase>
+        <Phrase>Competitor terminology</Phrase>
+      </NeverUse>
+    </MechanismLanguageRules>
+  </Mechanism>
+
+  <!-- PROOF PILLARS (3 Core Evidence Types) -->
+  <ProofPillars>
+    <Pillar index="1" type="founder_story" weight="high">
+      <Label>Real transformation, not theory</Label>
+      <KeyPoint>
+        Founder credibility statement - personal experience that led to creating this solution
+      </KeyPoint>
+      <EvidenceRef>EP-YYYYMMDD-PROJECT:E01</EvidenceRef>
+      <UsageGuidance>
+        Use early in sales page (credibility), opening of VSL (connection), briefly in emails (relatability)
+      </UsageGuidance>
+      <EmotionalResonance>
+        Relatability, trust, "they get it because they lived it"
+      </EmotionalResonance>
+    </Pillar>
+
+    <Pillar index="2" type="clinical_data" weight="high">
+      <Label>Science-backed approach</Label>
+      <KeyPoint>
+        Research, studies, or clinical validation that supports the mechanism
+      </KeyPoint>
+      <EvidenceRef>EP-YYYYMMDD-PROJECT:E02-E13</EvidenceRef>
+      <UsageGuidance>
+        Use mid-page (mechanism explanation), in objection handling, briefly in emails for credibility
+      </UsageGuidance>
+      <EmotionalResonance>
+        Authority, legitimacy, "this is real science, not pseudoscience"
+      </EmotionalResonance>
+    </Pillar>
+
+    <Pillar index="3" type="user_results" weight="critical">
+      <Label>Real people, real results</Label>
+      <KeyPoint>
+        Specific user outcomes with numbers - verified results from actual customers
+      </KeyPoint>
+      <EvidenceRef>EP-YYYYMMDD-PROJECT:E14-E50</EvidenceRef>
+      <UsageGuidance>
+        Use throughout (proof of promise), in objection handling, multiple testimonials in emails and VSL
+      </UsageGuidance>
+      <EmotionalResonance>
+        Social proof, "people like me succeeded", hope without hype
+      </EmotionalResonance>
+      <SpecificTestimonials>
+        <Featured name="Name K" age="42" profession="profession">
+          "Specific testimonial quote that demonstrates the transformation and includes concrete details"
+        </Featured>
+        <Featured name="Name T" age="51" profession="profession">
+          "Another powerful testimonial with specific outcomes and authentic voice"
+        </Featured>
+      </SpecificTestimonials>
+    </Pillar>
+
+    <ProofOrchestration>
+      <OpenWith>pillar_1</OpenWith>
+      <BuildWith>pillar_2</BuildWith>
+      <CloseWith>pillar_3</CloseWith>
+      <Reason>Story → Science → Social Proof = credibility + relatability + proof</Reason>
+    </ProofOrchestration>
+  </ProofPillars>
+
+  <!-- OBJECTIONS & COUNTERS (Top 5) -->
+  <Objections>
+    <Objection index="1" priority="critical">
+      <Statement>I've tried everything—why would this work when nothing else has?</Statement>
+      <RootConcern>Skepticism from past failures</RootConcern>
+      <Counter max_words="100">
+        Your counter-argument that reframes the objection and explains why your approach is different. Focus on the mechanism or root cause that other solutions missed.
+      </Counter>
+      <EvidenceRef>EP-YYYYMMDD-PROJECT:E02,E14</EvidenceRef>
+      <PlacementGuidance>
+        Address early (sales page section 3-4, email 2-3, VSL minute 2-3)
+      </PlacementGuidance>
+    </Objection>
+
+    <Objection index="2" priority="high">
+      <Statement>This seems expensive—what if it doesn't work for me?</Statement>
+      <RootConcern>Financial risk, investment hesitation</RootConcern>
+      <Counter max_words="80">
+        Address with guarantee, value comparison, or cost of inaction. Make the investment feel proportional to the outcome.
+      </Counter>
+      <EvidenceRef>EP-YYYYMMDD-PROJECT:E22,PB-guarantee</EvidenceRef>
+      <PlacementGuidance>
+        Address mid-page (after mechanism, before CTA), in FAQ, email 4-5, VSL minute 8
+      </PlacementGuidance>
+    </Objection>
+
+    <Objection index="3" priority="high">
+      <Statement>I don't have time for another complicated program</Statement>
+      <RootConcern>Time scarcity, overwhelm</RootConcern>
+      <Counter max_words="70">
+        Explain the actual time investment and how it fits into busy lives. Be specific about minutes per day.
+      </Counter>
+      <EvidenceRef>EP-YYYYMMDD-PROJECT:E17</EvidenceRef>
+      <PlacementGuidance>
+        Address mid-late (section 5-6, email 5, VSL minute 6)
+      </PlacementGuidance>
+    </Objection>
+
+    <Objection index="4" priority="medium">
+      <Statement>What if my situation is different/special?</Statement>
+      <RootConcern>Uniqueness concern, edge case worry</RootConcern>
+      <Counter max_words="90">
+        Acknowledge the variety of situations while explaining what the core mechanism addresses. Include disclaimer if medical/legal needed.
+      </Counter>
+      <EvidenceRef>EP-YYYYMMDD-PROJECT:E03</EvidenceRef>
+      <PlacementGuidance>
+        Address in FAQ, email 6, briefly in VSL disclaimers
+      </PlacementGuidance>
+    </Objection>
+
+    <Objection index="5" priority="medium">
+      <Statement>Can't I just figure this out myself?</Statement>
+      <RootConcern>DIY mindset, value question</RootConcern>
+      <Counter max_words="80">
+        Acknowledge they could while explaining the time, trial-and-error, and expertise you've compressed into the system.
+      </Counter>
+      <EvidenceRef>EP-YYYYMMDD-PROJECT:E01</EvidenceRef>
+      <PlacementGuidance>
+        Address late (section 7-8, email 7, VSL close)
+      </PlacementGuidance>
+    </Objection>
+
+    <ObjectionOrchestration>
+      <Sequence>1 → 2 → 3 → 4 → 5</Sequence>
+      <Priority>Address 1, 2, 3 in every asset; 4, 5 optional depending on length</Priority>
+    </ObjectionOrchestration>
+  </Objections>
+
+  <!-- CALL TO ACTION (Canonical Frame) -->
+  <CTA>
+    <PrimaryCTA>Order [Product Name] now</PrimaryCTA>
+    <SecondaryCTA optional="true">See the full details</SecondaryCTA>
+
+    <WhyNowReal urgency_type="authentic">
+      Real reason to act now - cohort limits, seasonal timing, or launch window. Must be verifiable and true.
+    </WhyNowReal>
+
+    <NextStep>
+      Click below to choose your tier (Core / Premium / VIP), enter your details, and you'll get immediate access to [digital component] plus shipment tracking for [physical component].
+    </NextStep>
+
+    <CTALanguageRules>
+      <PreferredVerbs>
+        <Verb>Order</Verb>
+        <Verb>Get started</Verb>
+        <Verb>Join</Verb>
+        <Verb>Begin your transformation</Verb>
+      </PreferredVerbs>
+      <AvoidVerbs>
+        <Verb>Buy</Verb>
+        <Verb>Purchase</Verb>
+        <Verb>Claim</Verb>
+        <Verb>Grab</Verb>
+      </AvoidVerbs>
+    </CTALanguageRules>
+  </CTA>
+
+  <!-- NARRATIVE SPINE (Story Arc Across Assets) -->
+  <NarrativeSpine>
+    <CoreArc>
+      Frustrated state → Discovery of root cause → Hope through mechanism → Transformation → New normal
+    </CoreArc>
+
+    <OriginBeats>
+      <Beat order="1">The problem: current frustrating state</Beat>
+      <Beat order="2">The realization: what's really causing it</Beat>
+      <Beat order="3">The discovery: your unique mechanism</Beat>
+      <Beat order="4">The solution: how your system works</Beat>
+      <Beat order="5">The proof: real people, real results</Beat>
+      <Beat order="6">The choice: continue as is or try what works</Beat>
+    </OriginBeats>
+
+    <IdentityShift>
+      From: "I'm broken, nothing works, I'll always struggle"
+      To: "I now understand the real cause and have the right solution. I'm someone who [achieved outcome]."
+    </IdentityShift>
+
+    <NarrativeConsistency>
+      <SalesPage>Full arc, all beats present</SalesPage>
+      <EmailSequence>Spread across 7 emails, one beat per email</EmailSequence>
+      <VSL>Compressed arc, focus on beats 1-3-5-6</VSL>
+      <Advertorial>Founder story emphasis, beats 1-2-3-4</Advertorial>
+    </NarrativeConsistency>
+  </NarrativeSpine>
+
+  <!-- CROSS-ASSET CONSISTENCY VALIDATION -->
+  <ConsistencyChecks>
+    <PromiseCheck>
+      <Rule>All assets must use core promise or close paraphrase</Rule>
+      <Tolerance>Variation allowed in phrasing, not in claim</Tolerance>
+    </PromiseCheck>
+
+    <MechanismCheck>
+      <Rule>All assets must mention core mechanism by name</Rule>
+      <Tolerance>Can abbreviate in emails/ads, must be full in sales page/VSL</Tolerance>
+    </MechanismCheck>
+
+    <ProofCheck>
+      <Rule>All assets must reference at least 2 of 3 proof pillars</Rule>
+      <Minimum>Pillar 3 (user results) mandatory in every asset</Minimum>
+    </ProofCheck>
+
+    <ObjectionCheck>
+      <Rule>Objections 1-3 must be addressed in every long-form asset</Rule>
+      <Rule>At minimum, Objection 1 must be addressed in all assets</Rule>
+    </ObjectionCheck>
+
+    <CTACheck>
+      <Rule>All CTAs must use preferred verbs, never avoid verbs</Rule>
+      <Rule>WhyNow must be authentic, not fake urgency</Rule>
+    </CTACheck>
+  </ConsistencyChecks>
+
+  <!-- LOCK & VERSION CONTROL -->
+  <LockProtocol>
+    <LockStatus>locked</LockStatus>
+    <LockedBy>strategic_copy_director</LockedBy>
+    <LockDate>YYYY-MM-DD</LockDate>
+    <UnlockConditions>
+      <Condition>Strategic pivot approved by human</Condition>
+      <Condition>Major offer change (price, promise, mechanism)</Condition>
+      <Condition>Compliance issue identified</Condition>
+    </UnlockConditions>
+  </LockProtocol>
+
+  <!-- USAGE TRACKING -->
+  <UsageTracking>
+    <AssetsUsingThisSpine>
+      <Asset id="SP-YYYYMMDD-PROJECT" type="sales_page" status="draft"/>
+      <Asset id="ES-YYYYMMDD-PROJECT" type="email_sequence" status="draft"/>
+      <Asset id="VSL-YYYYMMDD-PROJECT" type="vsl_short" status="draft"/>
+    </AssetsUsingThisSpine>
+  </UsageTracking>
+
+</MessageSpine>

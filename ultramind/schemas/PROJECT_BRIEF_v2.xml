@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- PROJECT_BRIEF v2.0 - Production Grade SSOT Object -->
+<ProjectBrief pb_id="PB-YYYYMMDD-BRAND-OFFER-SHORTTAG" version="2.0.0" status="draft">
+
+  <!-- METADATA & PROVENANCE -->
+  <Meta>
+    <CreatedBy agent_or_human="agent" agent_id="market_intelligence_synthesizer"/>
+    <DateCreated>YYYY-MM-DD</DateCreated>
+    <LastUpdated>YYYY-MM-DD</LastUpdated>
+    <UpdateHistory>
+      <Update date="YYYY-MM-DD" by="strategic_copy_director" change="tone_dials_adjusted"/>
+    </UpdateHistory>
+  </Meta>
+
+  <!-- VALIDATION STATUS -->
+  <Validation>
+    <Status>complete</Status>
+    <CompletenessCheck>
+      <RequiredFields status="complete">
+        <Field>OfferSnapshot.CorePromise</Field>
+        <Field>AudienceMarket.PrimaryAvatar</Field>
+        <Field>VoiceResonance.ToneDials</Field>
+        <Field>EvidenceClaims.EvidencePackId</Field>
+      </RequiredFields>
+      <MissingFields/>
+    </CompletenessCheck>
+    <ValidationErrors/>
+    <ValidationWarnings/>
+  </Validation>
+
+  <!-- OBJECTIVE & SCOPE -->
+  <ObjectiveScope>
+    <PrimaryGoal>Sell</PrimaryGoal>
+    <DeliverablesRequested>
+      <Deliverable>sales_page</Deliverable>
+      <Deliverable>launch_emails</Deliverable>
+      <Deliverable>vsl_short</Deliverable>
+    </DeliverablesRequested>
+    <FunnelStage>cold</FunnelStage>
+    <LaunchDate>YYYY-MM-DD</LaunchDate>
+    <PrimaryCTA>Order Now</PrimaryCTA>
+  </ObjectiveScope>
+
+  <!-- OFFER SNAPSHOT -->
+  <OfferSnapshot>
+    <OfferName>Your Product Name</OfferName>
+    <OfferType>program_with_physical</OfferType>
+    <PricingTiers>
+      <Tier name="Core" price="497"/>
+      <Tier name="Premium" price="997"/>
+      <Tier name="VIP" price="1997"/>
+    </PricingTiers>
+    <CorePromise>Primary benefit in one sentence with timeframe</CorePromise>
+    <UniqueMechanism>How it works - the unique approach or method</UniqueMechanism>
+    <Differentiators>
+      <Point>What makes this different from alternatives</Point>
+      <Point>Unique combination or approach</Point>
+      <Point>Community or support aspect</Point>
+    </Differentiators>
+    <RiskReversal>Money-back guarantee details</RiskReversal>
+    <Inclusions>
+      <Item>Physical component or tool</Item>
+      <Item>Digital course or training</Item>
+      <Item>Community access</Item>
+      <Item>Support or coaching</Item>
+    </Inclusions>
+  </OfferSnapshot>
+
+  <!-- AUDIENCE & MARKET -->
+  <AudienceMarket>
+    <PrimaryAvatar>Target demographic, psychographic, pain point</PrimaryAvatar>
+    <AwarenessLevel>3</AwarenessLevel>
+    <MarketSophistication>4</MarketSophistication>
+    <Pains>
+      <Pain rank="1">Primary frustration or problem</Pain>
+      <Pain rank="2">Secondary pain point</Pain>
+      <Pain rank="3">Tertiary concern</Pain>
+    </Pains>
+    <Desires>
+      <Desire rank="1">Primary aspiration or goal</Desire>
+      <Desire rank="2">Secondary want</Desire>
+      <Desire rank="3">Underlying need</Desire>
+    </Desires>
+    <Objections>
+      <Objection rank="1">Why they doubt this will work</Objection>
+      <Objection rank="2">Financial hesitation</Objection>
+      <Objection rank="3">Time or complexity concern</Objection>
+      <Objection rank="4">Skepticism about approach</Objection>
+      <Objection rank="5">Alternative they're considering</Objection>
+    </Objections>
+    <TriedBefore>
+      <Item>Previous solution they attempted</Item>
+      <Item>Why it didn't work long-term</Item>
+    </TriedBefore>
+    <TriggerEvents>
+      <Event>Life change or catalyst for action</Event>
+    </TriggerEvents>
+  </AudienceMarket>
+
+  <!-- VOICE & RESONANCE -->
+  <VoiceResonance>
+    <VoiceArchetype>Informed guide who's been there</VoiceArchetype>
+    <ToneDials warmth="8" authority="7" directness="8" playfulness="2" urgency="3" mystique="2"/>
+    <LanguageStyle>Short paragraphs, story-forward, science-backed without jargon</LanguageStyle>
+    <TabooTone>
+      <Item>no_hype</Item>
+      <Item>no_mlm_vibe</Item>
+      <Item>no_pseudoscience</Item>
+      <Item>no_condescension</Item>
+    </TabooTone>
+    <SignaturePhrases>
+      <Phrase>You're not broken, you're dealing with...</Phrase>
+      <Phrase>What if the problem isn't you, it's...</Phrase>
+    </SignaturePhrases>
+    <WordsToAvoid>
+      <Word>revolutionary</Word>
+      <Word>miracle</Word>
+      <Word>secret</Word>
+      <Word>breakthrough</Word>
+    </WordsToAvoid>
+  </VoiceResonance>
+
+  <!-- EVIDENCE & CLAIMS -->
+  <EvidenceClaims>
+    <ClaimBoundary>moderate</ClaimBoundary>
+    <HardConstraints>
+      <Constraint>no_fake_urgency</Constraint>
+      <Constraint>no_fake_scarcity</Constraint>
+      <Constraint>no_unverifiable_medical_claims</Constraint>
+      <Constraint>no_drug_comparisons</Constraint>
+    </HardConstraints>
+    <ApprovedClaims>
+      <Claim evidence="EP-001">Specific claim supported by evidence</Claim>
+      <Claim evidence="EP-002">Another validated claim</Claim>
+    </ApprovedClaims>
+    <DisallowedClaims>
+      <Claim reason="unverifiable">Overpromise or guarantee</Claim>
+      <Claim reason="medical">Treatment or cure claim</Claim>
+    </DisallowedClaims>
+    <ProofAssets>
+      <Asset type="testimonials">Number of verified user stories</Asset>
+      <Asset type="case_studies">Detailed transformations</Asset>
+      <Asset type="research">Peer-reviewed studies</Asset>
+    </ProofAssets>
+    <EvidencePackId>EP-YYYYMMDD-PROJECT</EvidencePackId>
+  </EvidenceClaims>
+
+  <!-- COMPETITIVE CONTEXT -->
+  <CompetitiveContext>
+    <Competitors>
+      <Competitor name="Alternative A">
+        <Positioning>How they position themselves</Positioning>
+        <Weakness>What they're missing or doing wrong</Weakness>
+      </Competitor>
+      <Competitor name="Alternative B">
+        <Positioning>Their approach</Positioning>
+        <Weakness>Their limitation</Weakness>
+      </Competitor>
+    </Competitors>
+    <StrategicAngleSpace>
+      <Angle>Unique positioning opportunity</Angle>
+      <Angle>Differentiation strategy</Angle>
+    </StrategicAngleSpace>
+  </CompetitiveContext>
+
+  <!-- NON-NEGOTIABLES & ACCEPTANCE -->
+  <NonnegotiablesAcceptance>
+    <Nonnegotiables>
+      <Item>Must include or must avoid</Item>
+      <Item>Brand guideline requirement</Item>
+      <Item>Compliance necessity</Item>
+    </Nonnegotiables>
+    <MustInclude>
+      <Item>Specific element that must appear</Item>
+      <Item>Required testimonial or proof</Item>
+    </MustInclude>
+    <SuccessCriteria>
+      <Item>Conversion rate target</Item>
+      <Item>Refund rate threshold</Item>
+      <Item>Quality score minimum</Item>
+    </SuccessCriteria>
+    <ApprovalWorkflow>
+      <CurrentStage>draft</CurrentStage>
+      <RequiresApproval from="strategic_lead" before="final"/>
+    </ApprovalWorkflow>
+  </NonnegotiablesAcceptance>
+
+  <!-- RELATED ARTIFACTS -->
+  <RelatedArtifacts>
+    <MessageSpineId>MS-YYYYMMDD-PROJECT</MessageSpineId>
+    <VoiceGuideId>VG-YYYYMMDD-BRAND</VoiceGuideId>
+    <ResearchSynthesisId>RS-YYYYMMDD-PROJECT</ResearchSynthesisId>
+    <OfferPositioningId>OP-YYYYMMDD-PROJECT</OfferPositioningId>
+  </RelatedArtifacts>
+
+  <!-- CONTEXT BUDGET HINTS -->
+  <ContextBudget>
+    <EstimatedTokens>
+      <Total>3200</Total>
+      <Breakdown>
+        <Section name="OfferSnapshot">600</Section>
+        <Section name="AudienceMarket">1000</Section>
+        <Section name="VoiceResonance">400</Section>
+        <Section name="EvidenceClaims">600</Section>
+        <Section name="CompetitiveContext">400</Section>
+        <Section name="Nonnegotiables">200</Section>
+      </Breakdown>
+    </EstimatedTokens>
+    <LoadPriority>
+      <Essential>OfferSnapshot, AudienceMarket, VoiceResonance, EvidenceClaims</Essential>
+      <Important>Nonnegotiables</Important>
+      <Optional>CompetitiveContext</Optional>
+    </LoadPriority>
+  </ContextBudget>
+
+  <!-- ROUTING METADATA (for MOD) -->
+  <RoutingMetadata>
+    <RequiredSkills>
+      <Skill priority="high" deliverable="sales_page">sales_page_copywriter</Skill>
+      <Skill priority="high" deliverable="launch_emails">email_copy_genius</Skill>
+      <Skill priority="medium" deliverable="vsl_short">vsl_short_form</Skill>
+    </RequiredSkills>
+    <SkillSequence>
+      <Step order="1" skill="strategic_copy_director" action="validate_positioning" layer="L2"/>
+      <Step order="2" skill="sales_page_copywriter" action="draft_page" layer="L2"/>
+      <Step order="3" skill="human_persuasion_editor" action="refine_voice" layer="L2"/>
+      <Step order="4" skill="mma" action="quality_check" layer="L2"/>
+    </SkillSequence>
+    <AwakenList>
+      <Skill layer="L1">offer_architect</Skill>
+      <Skill layer="L1">market_intelligence_synthesizer</Skill>
+      <Skill layer="L1">master_writing_partner</Skill>
+    </AwakenList>
+  </RoutingMetadata>
+
+  <!-- QUALITY GATES (for MMA) -->
+  <QualityGates>
+    <Gate name="claim_verification">
+      <Rule>All claims must reference EvidencePackId items</Rule>
+      <Validator>mma_claim_checker</Validator>
+      <Severity>critical</Severity>
+    </Gate>
+    <Gate name="voice_consistency">
+      <Rule>ToneDials variance ≤ ±1 across all deliverables</Rule>
+      <Validator>mma_voice_checker</Validator>
+      <Severity>high</Severity>
+    </Gate>
+    <Gate name="cta_clarity">
+      <Rule>One primary CTA per deliverable</Rule>
+      <Validator>mma_structure_checker</Validator>
+      <Severity>high</Severity>
+    </Gate>
+    <Gate name="guarantee_prominence">
+      <Rule>Risk reversal visible above fold</Rule>
+      <Validator>mma_structure_checker</Validator>
+      <Severity>medium</Severity>
+    </Gate>
+  </QualityGates>
+
+  <!-- APPROVAL WORKFLOW -->
+  <ApprovalWorkflow>
+    <CurrentStage>draft</CurrentStage>
+    <Stages>
+      <Stage name="draft" owner="agent" next="human_review"/>
+      <Stage name="human_review" owner="human" next="final_approval"/>
+      <Stage name="final_approval" owner="strategic_lead" next="locked"/>
+      <Stage name="locked" owner="system" next="archived"/>
+    </Stages>
+    <Approvers>
+      <Approver role="strategic_lead" required="true" approved="false"/>
+      <Approver role="brand_guardian" required="false"/>
+    </Approvers>
+    <ChangeLog>
+      <Change date="YYYY-MM-DD" stage="draft" by="market_intelligence_synthesizer" action="initial_creation"/>
+    </ChangeLog>
+  </ApprovalWorkflow>
+
+</ProjectBrief>

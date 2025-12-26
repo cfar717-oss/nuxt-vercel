@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- EVIDENCE_PACK v1.0 - Claim Grounding & Proof Library -->
+<EvidencePack ep_id="EP-YYYYMMDD-BRAND-OFFER-SHORTTAG" version="1.0.0" status="draft">
+
+  <!-- METADATA & PROVENANCE -->
+  <Meta>
+    <ProjectBriefId>PB-YYYYMMDD-BRAND-OFFER-SHORTTAG</ProjectBriefId>
+    <CreatedBy agent_or_human="agent" agent_id="market_intelligence_synthesizer"/>
+    <DateCreated>YYYY-MM-DD</DateCreated>
+    <LastUpdated>YYYY-MM-DD</LastUpdated>
+    <UpdateHistory>
+      <Update date="YYYY-MM-DD" by="market_intelligence_synthesizer" change="initial_creation"/>
+    </UpdateHistory>
+  </Meta>
+
+  <!-- CLAIM POLICY -->
+  <ClaimPolicy claim_boundary="moderate">
+    <ConfidenceLabels>
+      <Label name="strong">
+        <Definition>Backed by RCT, peer-reviewed research, or verified data at scale</Definition>
+        <LanguagePattern>Can state with certainty: "X results in Y" or "Studies show..."</LanguagePattern>
+      </Label>
+      <Label name="medium">
+        <Definition>Supported by observational data, case studies, or expert consensus</Definition>
+        <LanguagePattern>Use probabilistic language: "Most users report..." or "Often leads to..."</LanguagePattern>
+      </Label>
+      <Label name="light">
+        <Definition>Anecdotal evidence, testimonials, or theoretical basis</Definition>
+        <LanguagePattern>Frame as experience: "Many people find..." or "Users report..."</LanguagePattern>
+      </Label>
+    </ConfidenceLabels>
+
+    <HardRules>
+      <Rule>certainty_requires_strong_evidence</Rule>
+      <Rule>medium_light_requires_probabilistic_language</Rule>
+      <Rule>testimonials_not_universal_proof</Rule>
+      <Rule>no_fabrication_ever</Rule>
+    </HardRules>
+  </ClaimPolicy>
+
+  <!-- APPROVED CLAIMS -->
+  <ApprovedClaims>
+    <Claim id="C01" confidence="strong">
+      <Text>Most users report improved outcomes within specified timeframe based on verified user data</Text>
+      <EvidenceRefs>
+        <Ref>E14</Ref>
+        <Ref>E15</Ref>
+        <Ref>E16</Ref>
+      </EvidenceRefs>
+      <UsageGuidance>Can state directly with numbers</UsageGuidance>
+    </Claim>
+
+    <Claim id="C02" confidence="medium">
+      <Text>Approach aligns with established research in the field</Text>
+      <EvidenceRefs>
+        <Ref>E02</Ref>
+        <Ref>E03</Ref>
+      </EvidenceRefs>
+      <UsageGuidance>Frame as "based on" or "consistent with" research</UsageGuidance>
+    </Claim>
+
+    <Claim id="C03" confidence="light">
+      <Text>Users report specific qualitative improvements</Text>
+      <EvidenceRefs>
+        <Ref>E20</Ref>
+        <Ref>E21</Ref>
+      </EvidenceRefs>
+      <UsageGuidance>Present as testimonial or user experience, not universal outcome</UsageGuidance>
+    </Claim>
+  </ApprovedClaims>
+
+  <!-- DISALLOWED CLAIMS -->
+  <DisallowedClaims>
+    <Claim id="D01">
+      <Text>Cures or treats medical conditions</Text>
+      <Reason>medical_claim_without_FDA_approval</Reason>
+      <Alternative>Can say "supports" or "may help with" with disclaimer</Alternative>
+    </Claim>
+
+    <Claim id="D02">
+      <Text>Guaranteed results for everyone</Text>
+      <Reason>unverifiable_universal_claim</Reason>
+      <Alternative>Use "most users" or specific percentage with typical results disclosure</Alternative>
+    </Claim>
+
+    <Claim id="D03">
+      <Text>Only solution or best solution</Text>
+      <Reason>superlative_without_proof</Reason>
+      <Alternative>Frame as "effective approach" or "addresses root cause"</Alternative>
+    </Claim>
+
+    <Claim id="D04">
+      <Text>Secret formula or proprietary discovery</Text>
+      <Reason>creates_false_mystique</Reason>
+      <Alternative>Explain the actual mechanism transparently</Alternative>
+    </Claim>
+  </DisallowedClaims>
+
+  <!-- EVIDENCE LIBRARY -->
+  <EvidenceLibrary>
+
+    <!-- FOUNDER STORY / ORIGIN -->
+    <Evidence id="E01" type="founder_story" confidence="medium">
+      <Title>Founder Personal Transformation</Title>
+      <Summary>
+        <Bullet>Founder experienced the same problem for X years</Bullet>
+        <Bullet>Tried conventional solutions without lasting success</Bullet>
+        <Bullet>Discovered key insight through research/experience</Bullet>
+        <Bullet>Developed methodology that worked personally</Bullet>
+      </Summary>
+      <Supports>
+        <ClaimRef>C02</ClaimRef>
+      </Supports>
+      <UsageGuidance>Use for relatability and credibility; frame as personal journey, not universal proof</UsageGuidance>
+      <AssetRef>founder_bio.pdf</AssetRef>
+      <Caveats>Personal experience; establishes credibility but not scientific validation</Caveats>
+    </Evidence>
+
+    <!-- RESEARCH / SCIENTIFIC BASIS -->
+    <Evidence id="E02" type="study" confidence="strong">
+      <Title>Peer-reviewed research on mechanism</Title>
+      <Summary>
+        <Bullet>Study from reputable institution (name it)</Bullet>
+        <Bullet>Sample size and methodology</Bullet>
+        <Bullet>Key findings relevant to your mechanism</Bullet>
+        <Bullet>Published in [journal name], [year]</Bullet>
+      </Summary>
+      <Supports>
+        <ClaimRef>C02</ClaimRef>
+      </Supports>
+      <UsageGuidance>Use to validate mechanism; can cite directly with proper attribution</UsageGuidance>
+      <AssetRef>https://pubmed.ncbi.nlm.nih.gov/[study-id]</AssetRef>
+      <Caveats>Study context may differ from product application; cite accurately</Caveats>
+    </Evidence>
+
+    <Evidence id="E03" type="study" confidence="strong">
+      <Title>Additional supporting research</Title>
+      <Summary>
+        <Bullet>Related research supporting core mechanism</Bullet>
+        <Bullet>Findings that validate approach</Bullet>
+      </Summary>
+      <Supports>
+        <ClaimRef>C02</ClaimRef>
+      </Supports>
+      <UsageGuidance>Use for additional credibility; combine with E02 for stronger case</UsageGuidance>
+      <AssetRef>research_database_link</AssetRef>
+      <Caveats>General research, not specific to product</Caveats>
+    </Evidence>
+
+    <!-- USER RESULTS / TESTIMONIALS -->
+    <Evidence id="E14" type="user_data" confidence="strong">
+      <Title>Verified User Results - Aggregate Data</Title>
+      <Summary>
+        <Bullet>Total users tracked: [number]</Bullet>
+        <Bullet>Percentage reporting improvement: [X%]</Bullet>
+        <Bullet>Average timeframe to results: [Y days/weeks]</Bullet>
+        <Bullet>Measurement method: [surveys, tracking data, etc.]</Bullet>
+      </Summary>
+      <Supports>
+        <ClaimRef>C01</ClaimRef>
+      </Supports>
+      <UsageGuidance>Can state specific percentages; include typical results disclosure</UsageGuidance>
+      <AssetRef>user_results_database.csv</AssetRef>
+      <Caveats>Self-reported data; include typical results disclosure per FTC guidelines</Caveats>
+    </Evidence>
+
+    <Evidence id="E15" type="testimonial" confidence="light">
+      <Title>Featured User: [Name K.]</Title>
+      <Summary>
+        <Bullet>Background: [age, situation, how long struggled]</Bullet>
+        <Bullet>What they tried before: [previous attempts]</Bullet>
+        <Bullet>Results achieved: [specific outcomes]</Bullet>
+        <Bullet>Timeframe: [how long it took]</Bullet>
+        <Bullet>Current status: [maintained results?]</Bullet>
+      </Summary>
+      <Supports>
+        <ClaimRef>C03</ClaimRef>
+      </Supports>
+      <UsageGuidance>Use for social proof; present as individual experience with typical results disclosure</UsageGuidance>
+      <AssetRef>testimonial_video_K.mp4</AssetRef>
+      <Caveats>Individual results; must include "results not typical" or similar disclosure</Caveats>
+    </Evidence>
+
+    <Evidence id="E16" type="testimonial" confidence="light">
+      <Title>Featured User: [Name T.]</Title>
+      <Summary>
+        <Bullet>Different demographic/situation from E15</Bullet>
+        <Bullet>Specific transformation details</Bullet>
+        <Bullet>Authentic voice and story</Bullet>
+      </Summary>
+      <Supports>
+        <ClaimRef>C03</ClaimRef>
+      </Supports>
+      <UsageGuidance>Use for diversity of proof; shows different paths to success</UsageGuidance>
+      <AssetRef>testimonial_written_T.pdf</AssetRef>
+      <Caveats>Individual results; include appropriate disclaimers</Caveats>
+    </Evidence>
+
+    <!-- MECHANISM VALIDATION -->
+    <Evidence id="E20" type="case_study" confidence="medium">
+      <Title>Detailed Case Study: [Specific Example]</Title>
+      <Summary>
+        <Bullet>Before state: [baseline measurements]</Bullet>
+        <Bullet>Intervention: [what they did, how they used product]</Bullet>
+        <Bullet>After state: [outcome measurements]</Bullet>
+        <Bullet>Duration: [timeline]</Bullet>
+      </Summary>
+      <Supports>
+        <ClaimRef>C01</ClaimRef>
+        <ClaimRef>C03</ClaimRef>
+      </Supports>
+      <UsageGuidance>Use for detailed proof; shows mechanism in action</UsageGuidance>
+      <AssetRef>case_study_detailed.pdf</AssetRef>
+      <Caveats>Single case; representative but not universal</Caveats>
+    </Evidence>
+
+    <!-- GUARANTEE / RISK REVERSAL -->
+    <Evidence id="E22" type="policy" confidence="strong">
+      <Title>Money-Back Guarantee Policy</Title>
+      <Summary>
+        <Bullet>Duration: [60 days, 90 days, etc.]</Bullet>
+        <Bullet>Terms: [what's required for refund]</Bullet>
+        <Bullet>What they keep: [any components they retain]</Bullet>
+        <Bullet>Refund rate: [actual percentage if available]</Bullet>
+      </Summary>
+      <Supports>
+        <ClaimRef>C01</ClaimRef>
+      </Supports>
+      <UsageGuidance>Use for objection handling; shows confidence in product</UsageGuidance>
+      <AssetRef>guarantee_policy_official.pdf</AssetRef>
+      <Caveats>Must honor exactly as stated; legal commitment</Caveats>
+    </Evidence>
+
+  </EvidenceLibrary>
+
+  <!-- PROOF PILLAR MAPPING -->
+  <ProofPillarMapping>
+    <Pillar index="1" type="story">
+      <Label>Founder Story - Relatable Origin</Label>
+      <PillarEvidenceRefs>
+        <Ref>E01</Ref>
+      </PillarEvidenceRefs>
+    </Pillar>
+
+    <Pillar index="2" type="science">
+      <Label>Research-Backed Mechanism</Label>
+      <PillarEvidenceRefs>
+        <Ref>E02</Ref>
+        <Ref>E03</Ref>
+      </PillarEvidenceRefs>
+    </Pillar>
+
+    <Pillar index="3" type="results">
+      <Label>Real Users, Real Results</Label>
+      <PillarEvidenceRefs>
+        <Ref>E14</Ref>
+        <Ref>E15</Ref>
+        <Ref>E16</Ref>
+        <Ref>E20</Ref>
+      </PillarEvidenceRefs>
+    </Pillar>
+  </ProofPillarMapping>
+
+  <!-- SAFE LANGUAGE SNIPPETS -->
+  <SafeLanguageSnippets>
+    <Strong confidence="strong">
+      <Snippet>Based on verified data from [X] users...</Snippet>
+      <Snippet>[Y%] of users report [outcome] within [timeframe]</Snippet>
+      <Snippet>Research from [institution] shows...</Snippet>
+    </Strong>
+
+    <Medium confidence="medium">
+      <Snippet>In many cases...</Snippet>
+      <Snippet>Most users find...</Snippet>
+      <Snippet>Often leads to...</Snippet>
+      <Snippet>Consistent with research on...</Snippet>
+    </Medium>
+
+    <Light confidence="light">
+      <Snippet>Some people report...</Snippet>
+      <Snippet>Users have experienced...</Snippet>
+      <Snippet>Here's what [Name] experienced...</Snippet>
+      <Snippet>Individual results may vary, but...</Snippet>
+    </Light>
+
+    <Testimonial>
+      <Snippet>Here's what [role/name] experienced: "[quote]"</Snippet>
+      <Snippet>[Name]'s story: [brief narrative]</Snippet>
+      <Snippet>Results not typical. Individual outcomes vary.</Snippet>
+    </Testimonial>
+
+    <Disclaimer>
+      <Snippet>These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease.</Snippet>
+      <Snippet>Individual results may vary. Testimonials represent individual experiences and are not guarantees of results.</Snippet>
+      <Snippet>Typical results: [state realistic range based on data]</Snippet>
+    </Disclaimer>
+  </SafeLanguageSnippets>
+
+  <!-- MMA VALIDATION CHECKS -->
+  <MMAChecks>
+    <Check name="unsupported_claim_flag">
+      <Rule>Every claim must reference at least one Evidence ID</Rule>
+      <Action>Flag claim, require evidence or reframe with probabilistic language</Action>
+    </Check>
+
+    <Check name="certainty_without_strong_evidence_fail">
+      <Rule>Definitive statements require "strong" confidence evidence</Rule>
+      <Action>Downgrade to probabilistic language or escalate</Action>
+    </Check>
+
+    <Check name="testimonial_presented_as_universal">
+      <Rule>Testimonials must include appropriate disclaimers</Rule>
+      <Action>Add "results not typical" or similar disclosure</Action>
+    </Check>
+
+    <Check name="medical_claim_without_disclaimer">
+      <Rule>Any health-related claim requires FDA disclaimer</Rule>
+      <Action>Add disclaimer or remove claim</Action>
+    </Check>
+
+    <Check name="disallowed_claim_present">
+      <Rule>Claims in DisallowedClaims list must not appear</Rule>
+      <Action>Remove or replace with approved alternative</Action>
+    </Check>
+  </MMAChecks>
+
+  <!-- COMPLIANCE NOTES -->
+  <ComplianceNotes>
+    <FTC_Guidelines>
+      <Note>All testimonials require typical results disclosure</Note>
+      <Note>Income claims require proof of typical results</Note>
+      <Note>Before/after images must be genuine and representative</Note>
+    </FTC_Guidelines>
+
+    <FDA_Guidelines>
+      <Note>Health claims require substantiation or disclaimer</Note>
+      <Note>Cannot claim to diagnose, treat, cure, or prevent disease without approval</Note>
+      <Note>Structure/function claims allowed with proper disclaimer</Note>
+    </FDA_Guidelines>
+
+    <Industry_Specific>
+      <Note>Add any industry-specific compliance requirements here</Note>
+    </Industry_Specific>
+  </ComplianceNotes>
+
+</EvidencePack>
